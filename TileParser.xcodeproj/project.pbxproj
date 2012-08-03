@@ -16,6 +16,10 @@
 		462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC1015B3EDD30058E14C /* MBViewController.m */; };
 		462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */; };
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
+		468D924B15C6D77100F461F0 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 468D924815C6D77100F461F0 /* checkers.png */; };
+		468D924C15C6D77100F461F0 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 468D924915C6D77100F461F0 /* Checkers.psd */; };
+		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
+		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +27,21 @@
 		462AABFD15B3EDD30058E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		462AABFF15B3EDD30058E14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		462AAC0115B3EDD30058E14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		462AAC0515B3EDD30058E14C /* TileParser-Info.plist */ = {isa = PBXFileReference; path = "TileParser-Info.plist"; sourceTree = "<group>"; };
+		462AAC0515B3EDD30058E14C /* TileParser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TileParser-Info.plist"; sourceTree = "<group>"; };
 		462AAC0715B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		462AAC0915B3EDD30058E14C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		462AAC0B15B3EDD30058E14C /* TileParser-Prefix.pch */ = {isa = PBXFileReference; path = "TileParser-Prefix.pch"; sourceTree = "<group>"; };
-		462AAC0C15B3EDD30058E14C /* MBAppDelegate.h */ = {isa = PBXFileReference; path = MBAppDelegate.h; sourceTree = "<group>"; };
+		462AAC0B15B3EDD30058E14C /* TileParser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TileParser-Prefix.pch"; sourceTree = "<group>"; };
+		462AAC0C15B3EDD30058E14C /* MBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAppDelegate.h; sourceTree = "<group>"; };
 		462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAppDelegate.m; sourceTree = "<group>"; };
-		462AAC0F15B3EDD30058E14C /* MBViewController.h */ = {isa = PBXFileReference; path = MBViewController.h; sourceTree = "<group>"; };
+		462AAC0F15B3EDD30058E14C /* MBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBViewController.h; sourceTree = "<group>"; };
 		462AAC1015B3EDD30058E14C /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		462AAC1315B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPhone.xib; sourceTree = "<group>"; };
 		462AAC1615B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
+		468D924815C6D77100F461F0 /* checkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkers.png; sourceTree = "<group>"; };
+		468D924915C6D77100F461F0 /* Checkers.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Checkers.psd; sourceTree = "<group>"; };
+		468D924A15C6D77100F461F0 /* checkers.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = checkers.tmx; sourceTree = "<group>"; };
+		468E4CD815C690E200A5E803 /* MBTileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileParser.h; path = TileParser/MBTileParser.h; sourceTree = "<group>"; };
+		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +92,9 @@
 				462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */,
 				462AAC0F15B3EDD30058E14C /* MBViewController.h */,
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
+				468E4CD815C690E200A5E803 /* MBTileParser.h */,
+				468E4CD915C690E200A5E803 /* MBTileParser.m */,
+				468D924715C6D77100F461F0 /* Map */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
@@ -99,6 +111,16 @@
 				462AAC0B15B3EDD30058E14C /* TileParser-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		468D924715C6D77100F461F0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				468D924815C6D77100F461F0 /* checkers.png */,
+				468D924915C6D77100F461F0 /* Checkers.psd */,
+				468D924A15C6D77100F461F0 /* checkers.tmx */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +177,9 @@
 				462AAC0815B3EDD30058E14C /* InfoPlist.strings in Resources */,
 				462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */,
 				462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */,
+				468D924B15C6D77100F461F0 /* checkers.png in Resources */,
+				468D924C15C6D77100F461F0 /* Checkers.psd in Resources */,
+				468D924D15C6D77100F461F0 /* checkers.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +193,7 @@
 				462AAC0A15B3EDD30058E14C /* main.m in Sources */,
 				462AAC0E15B3EDD30058E14C /* MBAppDelegate.m in Sources */,
 				462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */,
+				468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +315,7 @@
 				462AAC1C15B3EDD30058E14C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

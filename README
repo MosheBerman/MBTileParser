@@ -1,0 +1,3 @@
+MBTileParser is library in progress that allows you to parse TMX files using pure UIKit. (The TMX file format is used by Tiled, a tool which helps you make world maps for games. You can download Tiled from the web at http://mapeditor.org)
+
+

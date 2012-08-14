@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface MBTileParser : NSObject
-    @property (nonatomic) BOOL isReady;
+
+@property (nonatomic) BOOL isReady;
+
+- (id)initWithPath:(NSString *)path;
+- (void) start;
+
 @end

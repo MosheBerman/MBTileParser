@@ -8,6 +8,8 @@
 
 #import "MBViewController.h"
 
+#import "MBTileParser.h"
+
 @interface MBViewController ()
 
 @end
@@ -18,6 +20,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    MBTileParser *parser = [[MBTileParser alloc] initWithPath:@"checkers"];
+    [parser start];
 }
 
 - (void)viewDidUnload

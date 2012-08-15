@@ -8,10 +8,11 @@
 
 #import "MBTileParser.h"
 
+#import "MBTileSet.h"
+
 @interface MBTileParser () <NSXMLParserDelegate>
     @property (nonatomic, strong) NSXMLParser *parser;
     @property (nonatomic, copy) NSString *workingElement;
-
 @end
 
 @implementation MBTileParser
@@ -67,7 +68,7 @@
     
     if ([self.workingElement isEqualToString:@"tileset"]) {
         
-        NSMutableDictionary *tileset = [attributeDict mutableCopy];
+        MBTileSet *tileset = [[MBTileSet alloc] initWithDictionary:attributeDict];
         
         [[self.mapDictionary objectForKey:@"tilesets"] addObject:tileset];
     }
@@ -78,9 +79,23 @@
     
     if ([self.workingElement isEqualToString:@"image"]) {
         
-        NSMutableDictionary *lastTileset = [[self.mapDictionary objectForKey:@"tilesets"] lastObject];
+        MBTileSet *lastTileset = [[self.mapDictionary objectForKey:@"tilesets"] lastObject];
         
-        [lastTileset addEntriesFromDictionary:attributeDict];
+        //
+        
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        
+        // Load the properties of the image from the XML into the tileset
+        
+        
+        NSString *source = [attributeDict objectForKey:@"source"];
+        NSInteger width = [[formatter numberFromString:[attributeDict objectForKey:@"width"]] integerValue];
+        NSInteger height = [[formatter numberFromString:[attributeDict objectForKey:@"height"]] integerValue];
+        
+        
+        [lastTileset setSource:source];
+        [lastTileset setWidth:width];
+        [lastTileset setHeight:height];
     }
     
     //
@@ -108,7 +123,7 @@
         //  Add a string for data
         //
         
-        [lastLayer setObject:[NSMutableString string] forKey:@"data"];
+        [lastLayer setObject:[NSMutableString string] forKey:@"tempdata"];
         
     }
 
@@ -124,13 +139,13 @@
         
         NSMutableDictionary *lastLayer =  [[self.mapDictionary objectForKey:@"layers"] lastObject];
         
-        NSString *mapData = [lastLayer objectForKey:@"data"];
+        NSString *mapData = [lastLayer objectForKey:@"tempdata"];
         
         NSString *stringWithoutNewlines = [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         
         NSString *newMapData = [NSString stringWithFormat:@"%@%@", mapData, stringWithoutNewlines];
         
-        [lastLayer setObject:newMapData forKey:@"data"];
+        [lastLayer setObject:newMapData forKey:@"tempdata"];
     }
     
 }
@@ -152,11 +167,9 @@
         
         NSMutableDictionary *lastLayer =  [[self.mapDictionary objectForKey:@"layers"] lastObject];
         
-        NSString *tileIdentifiersAsString = [lastLayer objectForKey:@"data"];
+        NSString *tileIdentifiersAsString = [lastLayer objectForKey:@"tempdata"];
         
         NSArray *tileIdentifiersAsArray = [tileIdentifiersAsString componentsSeparatedByString:@","];
-        
-        [lastLayer removeObjectForKey:@"data"];
 
         [lastLayer setObject:tileIdentifiersAsArray forKey:@"data"];
 
@@ -165,7 +178,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError{
-    NSLog(@"Error Parsing: %@", [parseError description]);
+    //NSLog(@"Error Parsing: %@", [parseError description]);
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser{

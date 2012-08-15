@@ -66,16 +66,16 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 - (void) drawMapLayer{
-
+    
     
     //The list of tile IDs in the layer
     NSArray *gids = [self.layerData objectForKey:@"data"];
@@ -105,50 +105,53 @@
     for (NSInteger x = 0; x < widthInTiles; x++) {
         for (NSInteger y = 0; y < heightInTiles; y++) {
             
-            CGRect frame = CGRectMake(x*widthOfTile, y*heightOfTile, widthOfTile, heightOfTile);
-            
-            //
-            // Calculate which tile we're using,
-            //  add complete rows and then the tiles
-            //  in the current row.
-            //
-            
-            NSInteger tileIndex = (y * widthInTiles) + x;
-            
-            //
-            //  Get the gid value, create the obligatory NSNumberFormatter
-            //
-            
-            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-            
-            NSInteger GID = [[formatter numberFromString:[gids objectAtIndex:tileIndex]] integerValue];
-            
-            //  Skip empty tiles
-            if (GID == 0) {
-                continue;
+            @autoreleasepool {
+                
+                CGRect frame = CGRectMake(x*widthOfTile, y*heightOfTile, widthOfTile, heightOfTile);
+                
+                //
+                // Calculate which tile we're using,
+                //  add complete rows and then the tiles
+                //  in the current row.
+                //
+                
+                NSInteger tileIndex = (y * widthInTiles) + x;
+                
+                //
+                //  Get the gid value, create the obligatory NSNumberFormatter
+                //
+                
+                NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+                
+                NSInteger GID = [[formatter numberFromString:[gids objectAtIndex:tileIndex]] integerValue];
+                
+                //  Skip empty tiles
+                if (GID == 0) {
+                    continue;
+                }
+                
+                //
+                // Map the GID to the image in the array.
+                // Aaaand since Arrays are zero based...
+                // we need to decrement.
+                //
+                
+                GID--;
+                
+                //  Pull a UIImage from the texture array
+                UIImage *tileImage = [self.cache objectAtIndex:GID];
+                
+                UIImageView *tile = [[UIImageView alloc] initWithFrame:frame];
+                [tile setImage:tileImage];
+                [tile setOpaque:NO];
+                [tile setBackgroundColor:[UIColor clearColor]];
+                
+                //            tile.layer.borderWidth = 1.0;
+                //            tile.layer.borderColor = [UIColor redColor].CGColor;
+                
+                //Add the tile to self
+                [self addSubview:tile];
             }
-        
-            //
-            // Map the GID to the image in the array.
-            // Aaaand since Arrays are zero based...
-            // we need to decrement.
-            //
-            
-            GID--;
-            
-            //  Pull a UIImage from the texture array
-            UIImage *tileImage = [self.cache objectAtIndex:GID];
-            
-            UIImageView *tile = [[UIImageView alloc] initWithFrame:frame];
-            [tile setImage:tileImage];
-            [tile setOpaque:NO];
-            [tile setBackgroundColor:[UIColor clearColor]];
-            
-//            tile.layer.borderWidth = 1.0;
-//            tile.layer.borderColor = [UIColor redColor].CGColor;
-            
-            //Add the tile to self
-            [self addSubview:tile];
         }
     }
     

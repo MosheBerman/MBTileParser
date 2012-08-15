@@ -75,7 +75,7 @@
 //
 
 - (void) buildCache{
-
+    
     //
     //  Assume the layers are sorted by lowest firstgid
     //
@@ -88,7 +88,7 @@
         
         //  First grab the set
         MBTileSet *workingSet = [self.tilesets objectAtIndex:i];
-
+        
         NSString *source = [workingSet source];
         
         UIImage *tilesheet = [UIImage imageNamed:source];
@@ -97,7 +97,7 @@
         //  Get the dimensions and tilesize of the tilesheet
         //
         
-//        CGSize dimensionsOfTilesheet = [workingSet mapSize];
+        //        CGSize dimensionsOfTilesheet = [workingSet mapSize];
         CGSize dimensionsOfTileInSet = [workingSet tileSize];
         
         //
@@ -107,22 +107,26 @@
         for (NSInteger j = 0; j < workingSet.mapSize.height; j++) {
             for (NSInteger i = 0; i < workingSet.mapSize.width; i++) {
                 
-                CGRect tileRect = CGRectMake(dimensionsOfTileInSet.width * i, dimensionsOfTileInSet.height * j, dimensionsOfTileInSet.width, dimensionsOfTileInSet.height);
-                
-                //NSLog(@"Tilesheet image: %@", tilesheet);
-                
-                CGImageRef image = CGImageCreateWithImageInRect(tilesheet.CGImage, tileRect);
-                
-                //
-                //  TODO: Support actual scale
-                //
-                //  TODO: Support rotation - TMX supports this, so this would be where to add it.
-                //
-                
-                UIImage *tile = [UIImage imageWithCGImage:image scale:1.0 orientation:tilesheet.imageOrientation];
-                
-                [self.imagecache addObject:tile];
-                
+                @autoreleasepool {
+                    
+                    
+                    CGRect tileRect = CGRectMake(dimensionsOfTileInSet.width * i, dimensionsOfTileInSet.height * j, dimensionsOfTileInSet.width, dimensionsOfTileInSet.height);
+                    
+                    //NSLog(@"Tilesheet image: %@", tilesheet);
+                    
+                    CGImageRef image = CGImageCreateWithImageInRect(tilesheet.CGImage, tileRect);
+                    
+                    //
+                    //  TODO: Support actual scale
+                    //
+                    //  TODO: Support rotation - TMX supports this, so this would be where to add it.
+                    //
+                    
+                    UIImage *tile = [UIImage imageWithCGImage:image scale:1.0 orientation:tilesheet.imageOrientation];
+                    
+                    [self.imagecache addObject:tile];
+                    
+                }
             }
         }
     }
@@ -139,32 +143,23 @@
         return;
     }
     
-//    NSDictionary *layerData = [self.layers objectAtIndex:0];
-//    
-//    MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.tilesets imageCache:self.imagecache];
-//    
-//    if(layer){
-//        [layer drawMapLayer];
-//        [self addSubview:layer];
-//        [self.layers replaceObjectAtIndex:0 withObject:layer];
-//    }
-    
     for (NSInteger i = 0; i < self.layers.count; i++) {
         
-        NSDictionary *layerData = [self.layers objectAtIndex:i];
-        
-        MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.tilesets imageCache:self.imagecache];
-        
-        if(layer){
-            [layer drawMapLayer];
-            NSLog(@"Layer %@", layer.name);
-            if ([layer.name isEqualToString:@"Meta"]) {
-                layer.alpha = 0;
+        //Reduces initial spike
+        @autoreleasepool {
+            NSDictionary *layerData = [self.layers objectAtIndex:i];
+            
+            MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.tilesets imageCache:self.imagecache];
+            
+            if(layer){
+                [layer drawMapLayer];
+                NSLog(@"Layer %@", layer.name);
+                if ([layer.name isEqualToString:@"Meta"]) {
+                    layer.alpha = 0;
+                }
+                [self addSubview:layer];
+                [self.layers replaceObjectAtIndex:i withObject:layer];
             }
-            [self addSubview:layer];
-            [self.layers replaceObjectAtIndex:i withObject:layer];
-            
-            
         }
     }
     
@@ -178,6 +173,11 @@
     //
     
     self.contentSize = ((MBLayerView *)[self.layers objectAtIndex:0]).frame.size;
+}
+
+- (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
+{
+	return self.layers[1];
 }
 
 @end

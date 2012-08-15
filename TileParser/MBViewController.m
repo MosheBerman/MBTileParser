@@ -24,6 +24,13 @@
     
     
     MBTileParser *parser = [[MBTileParser alloc] initWithPath:@"checkers"];
+    [parser setCompletionHandler:^{
+    
+        NSLog(@"%@",parser.mapDictionary.description);
+    
+
+    }];
+    
     [parser start];
 }
 

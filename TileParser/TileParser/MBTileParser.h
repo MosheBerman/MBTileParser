@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+typedef void(^MBTileParserCompletionBlock)();
+
 @interface MBTileParser : NSObject
 
-@property (nonatomic) BOOL isReady;
+@property (nonatomic, strong) MBTileParserCompletionBlock completionHandler;
+@property (nonatomic, strong) NSMutableDictionary *mapDictionary;
 
 - (id)initWithPath:(NSString *)path;
 - (void) start;

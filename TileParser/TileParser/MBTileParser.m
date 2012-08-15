@@ -11,7 +11,7 @@
 @interface MBTileParser () <NSXMLParserDelegate>
     @property (nonatomic, strong) NSXMLParser *parser;
     @property (nonatomic, copy) NSString *workingElement;
-    @property (nonatomic, strong) NSMutableDictionary *mapDictionary;
+
 @end
 
 @implementation MBTileParser
@@ -28,7 +28,6 @@
         
         _parser = [[NSXMLParser alloc] initWithContentsOfURL:URL];
         _mapDictionary = [NSMutableDictionary dictionary];
-        _isReady = NO;
         _parser.delegate = self;
     }
     
@@ -141,8 +140,23 @@
     //
     //  TODO: If the tile id information is encoded as base64 data, decode it here.
     //
-    //  TODO: Encode the strings as arrays. 
+    
+    
+    
     //
+    //  Encode the strings as arrays.
+    //
+    
+    if ([elementName isEqualToString:@"layer"]) {
+        
+        NSMutableDictionary *lastLayer =  [[self.mapDictionary objectForKey:@"layers"] lastObject];
+        
+        NSString *tileIdentifiersAsString = [lastLayer objectForKey:@"data"];
+        
+        NSArray *tileIdentifiersAsArray = [tileIdentifiersAsString componentsSeparatedByString:@","];
+        
+        [lastLayer setObject:tileIdentifiersAsArray forKey:@"data"];
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError{
@@ -150,8 +164,9 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser{
-    NSLog(@"Map: %@", self.mapDictionary.description);
-    self.isReady = YES;
+    if (self.completionHandler) {
+        self.completionHandler();
+    }
 }
 
 

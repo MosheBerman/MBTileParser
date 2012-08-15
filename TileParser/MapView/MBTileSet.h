@@ -22,4 +22,6 @@
 @property (nonatomic, readonly) CGSize mapSize;
 @property (nonatomic, readonly) CGSize tileSize;
 
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

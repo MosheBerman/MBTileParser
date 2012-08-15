@@ -1,0 +1,92 @@
+/* Initial draft */
+"Tree" : {
+	"Dialog" : {
+		"Text" : "Are you sure?",	
+		"YesText" : "Sure",			
+		"NoText" : "No Thanks",		
+		"YesAction" : {},			
+		"NoAction" : {},			
+		"Payload" : {}				
+	}	
+}
+
+/* More Flexible - Use an array instead of yes/no, allows for multiple responses */
+
+"Tree" : {
+	"Dialog" : {
+		"Text" : "Are you sure?",	
+		"Responses" : {
+			{
+				"Text" : "Sure",
+				"Action" : MyAffirmativeActionIdentifier,
+				"Payload" : {}
+			},
+			
+			{
+				"Text" : "No",
+				"Action" : MyActionIdentifier,
+				"Payload" : {}			
+			}
+		
+		}
+	}	
+}
+
+/* Improved - Eliminate extra wrapper object */
+
+"DialogTree" : {
+	"Text" : "Are you sure?",	
+	"Responses" : {
+		{
+			"Text" : "Sure",
+			"Action" : MyAffirmativeActionIdentifier,
+			"Payload" : {}
+		},
+		
+		{
+			"Text" : "No",
+			"Action" : MyActionIdentifier,
+			"Payload" : {}			
+		}
+	}
+}
+
+/*   */
+"Tree" : {
+	"Text" : "Welcome to Hyrule Emporium, how may I help you?",
+	"Responses" : {
+		{
+			"Text" : "Bomb",
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemBombIdentifier,
+				"Quantity" : 3,
+				"Price" : 135
+			}
+		},
+		{
+			"Text" : "Hearts",
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemHeartIdentifier,
+				"Quantity" : 3,
+				"Price" : 150
+			}
+		},
+		{
+			"Text" : "Shield",
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemShieldIdentifier,
+				"Quantity" : 1,
+				"Price" : 200
+			}
+		},	
+		{
+			"Text" : "Cancel",
+			"Action" : kDialogActionCancelIdentifier,
+			"Payload" : {}
+		},	
+							
+	}
+}

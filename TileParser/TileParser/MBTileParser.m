@@ -139,6 +139,7 @@
     
     //
     //  TODO: If the tile id information is encoded as base64 data, decode it here.
+    //  Use cocos2d base64 lib here?
     //
     
     
@@ -155,10 +156,11 @@
         
         NSArray *tileIdentifiersAsArray = [tileIdentifiersAsString componentsSeparatedByString:@","];
         
-        
         [lastLayer removeObjectForKey:@"data"];
 
-        [lastLayer setObject:tileIdentifiersAsArray forKey:@"tileIdentifiers"];
+        [lastLayer setObject:tileIdentifiersAsArray forKey:@"data"];
+
+
     }
 }
 

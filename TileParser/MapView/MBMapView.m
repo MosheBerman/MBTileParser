@@ -32,6 +32,8 @@
         _tilesets = [@[] mutableCopy];
         _imagecache = [@[] mutableCopy];
         
+        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        
         _parser = [[MBTileParser alloc] initWithMapName:name];
         
         if (_parser) {

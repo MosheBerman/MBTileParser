@@ -10,4 +10,10 @@
 
 @interface MBLayerView : UIView
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic) NSInteger heightInTiles;
+@property (nonatomic) NSInteger widthInTiles;
+
+- (id)initWithLayerData:(NSDictionary *)data tilesets:(NSArray *)tilesets imageCache:(NSArray *)cache;
+
 @end

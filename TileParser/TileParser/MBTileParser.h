@@ -16,7 +16,7 @@ typedef void(^MBTileParserCompletionBlock)();
 @property (nonatomic, strong) MBTileParserCompletionBlock completionHandler;
 @property (nonatomic, strong) NSMutableDictionary *mapDictionary;
 
-- (id)initWithPath:(NSString *)path;
+- (id)initWithMapName:(NSString *)map;
 - (void) start;
 
 @end

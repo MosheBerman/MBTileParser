@@ -17,12 +17,12 @@
 @implementation MBTileParser
 
 
-- (id)initWithPath:(NSString *)path{
+- (id)initWithMapName:(NSString *)map{
     self = [super init];
     
     if (self) {
         
-        NSString *fullPath = [[NSBundle mainBundle] pathForResource:path ofType:@"tmx"];
+        NSString *fullPath = [[NSBundle mainBundle] pathForResource:map ofType:@"tmx"];
         
         NSURL *URL = [NSURL fileURLWithPath:fullPath];
         
@@ -155,7 +155,10 @@
         
         NSArray *tileIdentifiersAsArray = [tileIdentifiersAsString componentsSeparatedByString:@","];
         
-        [lastLayer setObject:tileIdentifiersAsArray forKey:@"data"];
+        
+        [lastLayer removeObjectForKey:@"data"];
+
+        [lastLayer setObject:tileIdentifiersAsArray forKey:@"tileIdentifiers"];
     }
 }
 

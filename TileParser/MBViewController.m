@@ -21,7 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"PearTown"];
+    MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"SimpsonCity"];
     [self.view addSubview:map];
 
 }

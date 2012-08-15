@@ -23,6 +23,8 @@
 		466F92EF15DC349500801802 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EC15DC349400801802 /* meta.png */; };
 		466F92F015DC349500801802 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 466F92ED15DC349400801802 /* PearTown.tmx */; };
 		466F92F115DC349500801802 /* standard_tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EE15DC349500801802 /* standard_tileset.png */; };
+		466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 466F92F215DC378C00801802 /* SimpsonCity.tmx */; };
+		466F92F515DC378C00801802 /* tilescitytextured.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92F315DC378C00801802 /* tilescitytextured.png */; };
 		468D924B15C6D77100F461F0 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 468D924815C6D77100F461F0 /* checkers.png */; };
 		468D924C15C6D77100F461F0 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 468D924915C6D77100F461F0 /* Checkers.psd */; };
 		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
@@ -54,6 +56,8 @@
 		466F92EC15DC349400801802 /* meta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta.png; sourceTree = "<group>"; };
 		466F92ED15DC349400801802 /* PearTown.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PearTown.tmx; sourceTree = "<group>"; };
 		466F92EE15DC349500801802 /* standard_tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standard_tileset.png; sourceTree = "<group>"; };
+		466F92F215DC378C00801802 /* SimpsonCity.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpsonCity.tmx; sourceTree = "<group>"; };
+		466F92F315DC378C00801802 /* tilescitytextured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilescitytextured.png; sourceTree = "<group>"; };
 		468D924815C6D77100F461F0 /* checkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkers.png; sourceTree = "<group>"; };
 		468D924915C6D77100F461F0 /* Checkers.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Checkers.psd; sourceTree = "<group>"; };
 		468D924A15C6D77100F461F0 /* checkers.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = checkers.tmx; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 		468D924715C6D77100F461F0 /* Map Data */ = {
 			isa = PBXGroup;
 			children = (
+				466F92F215DC378C00801802 /* SimpsonCity.tmx */,
+				466F92F315DC378C00801802 /* tilescitytextured.png */,
 				466F92EC15DC349400801802 /* meta.png */,
 				466F92ED15DC349400801802 /* PearTown.tmx */,
 				466F92EE15DC349500801802 /* standard_tileset.png */,
@@ -228,6 +234,8 @@
 				466F92EF15DC349500801802 /* meta.png in Resources */,
 				466F92F015DC349500801802 /* PearTown.tmx in Resources */,
 				466F92F115DC349500801802 /* standard_tileset.png in Resources */,
+				466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */,
+				466F92F515DC378C00801802 /* tilescitytextured.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

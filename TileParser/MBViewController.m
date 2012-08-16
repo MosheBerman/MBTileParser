@@ -8,7 +8,7 @@
 
 #import "MBViewController.h"
 
-#import "MBTileParser.h"
+#import "MBMapView.h"
 
 @interface MBViewController ()
 
@@ -21,17 +21,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
-    
-    MBTileParser *parser = [[MBTileParser alloc] initWithMapName:@"checkers"];
-    [parser setCompletionHandler:^{
-    
-        NSLog(@"%@",parser.mapDictionary.description);
-    
+    MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"SimpsonCity"];
+    map.minimumZoomScale = 0.5;
+    map.maximumZoomScale = 2.0;
+    [self.view addSubview:map];
 
-    }];
-    
-    [parser start];
 }
 
 - (void)viewDidUnload

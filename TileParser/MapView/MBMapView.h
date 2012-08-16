@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MBMapView : UIScrollView
-
+- (id)initWithFrame:(CGRect)frame mapName:(NSString*)name;
 @end

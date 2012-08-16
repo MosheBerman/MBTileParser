@@ -50,13 +50,25 @@
     
 }
 
+#pragma mark - Convenience Accessors
+
 - (CGSize)mapSize{
-    return CGSizeMake(_width, _height);
+    return CGSizeMake(_width/_tileWidth, _height/_tileHeight);
+}
+
+- (CGSize) sourceSize{
+    return CGSizeMake(self.mapSize.width * self.tileSize.width, self.mapSize.height * self.tileSize.height);
+}
+
+- (NSInteger) tileCount{
+    return self.mapSize.width * self.mapSize.height;
 }
 
 - (CGSize)tileSize{
     return CGSizeMake(_tileWidth, _tileHeight);
 }
+
+#pragma mark - Description
 
 - (NSString *)description{
     

@@ -141,13 +141,11 @@
                 //  Pull a UIImage from the texture array
                 UIImage *tileImage = [self.cache objectAtIndex:GID];
                 
+                //Put it into the tile
                 UIImageView *tile = [[UIImageView alloc] initWithFrame:frame];
                 [tile setImage:tileImage];
                 [tile setOpaque:NO];
                 [tile setBackgroundColor:[UIColor clearColor]];
-                
-                //            tile.layer.borderWidth = 1.0;
-                //            tile.layer.borderColor = [UIColor redColor].CGColor;
                 
                 //Add the tile to self
                 [self addSubview:tile];

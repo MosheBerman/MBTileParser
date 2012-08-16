@@ -15,7 +15,7 @@
 #import "MBLayerView.h"
 
 @interface MBMapView ()
-@property (nonatomic, strong) MBTileParser * parser;
+@property (nonatomic, strong) MBTileParser *parser;
 @property (nonatomic, strong) NSMutableArray *layers;
 @property (nonatomic, strong) NSMutableArray *tilesets;
 @property (nonatomic, strong) NSMutableArray *imagecache;
@@ -32,7 +32,10 @@
         _tilesets = [@[] mutableCopy];
         _imagecache = [@[] mutableCopy];
         
+        //Configure the map view
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        self.showsHorizontalScrollIndicator = NO;
+        self.showsVerticalScrollIndicator = NO;
         
         _parser = [[MBTileParser alloc] initWithMapName:name];
         
@@ -51,7 +54,6 @@
                 
                 strongSelf.layers = [strongSelf.parser.mapDictionary objectForKey:@"layers"];
                 strongSelf.tilesets = [strongSelf.parser.mapDictionary objectForKey:@"tilesets"];
-                
                 
                 NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"firstgid" ascending:YES];
                 [_tilesets sortUsingDescriptors:@[descriptor]];
@@ -97,7 +99,6 @@
         //  Get the dimensions and tilesize of the tilesheet
         //
         
-        //        CGSize dimensionsOfTilesheet = [workingSet mapSize];
         CGSize dimensionsOfTileInSet = [workingSet tileSize];
         
         //
@@ -153,7 +154,7 @@
             
             if(layer){
                 [layer drawMapLayer];
-                NSLog(@"Layer %@", layer.name);
+
                 if ([layer.name isEqualToString:@"Meta"]) {
                     layer.alpha = 0;
                 }
@@ -177,7 +178,7 @@
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
 {
-	return self.layers[1];
+	return [self.layers objectAtIndex:1];
 }
 
 @end

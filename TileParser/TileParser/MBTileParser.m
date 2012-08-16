@@ -30,6 +30,7 @@
         _parser = [[NSXMLParser alloc] initWithContentsOfURL:URL];
         _mapDictionary = [NSMutableDictionary dictionary];
         _parser.delegate = self;
+        
     }
     
     return self;
@@ -92,7 +93,6 @@
         NSInteger width = [[formatter numberFromString:[attributeDict objectForKey:@"width"]] integerValue];
         NSInteger height = [[formatter numberFromString:[attributeDict objectForKey:@"height"]] integerValue];
         
-        
         [lastTileset setSource:source];
         [lastTileset setWidth:width];
         [lastTileset setHeight:height];
@@ -154,7 +154,7 @@
     
     //
     //  TODO: If the tile id information is encoded as base64 data, decode it here.
-    //  Use cocos2d base64 lib here?
+    //  Use cocos2d base64 lib here? Use zlib?
     //
     
     

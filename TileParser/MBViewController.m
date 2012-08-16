@@ -21,9 +21,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //
+    //  
+    //
+    
     MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"SimpsonCity"];
-    map.minimumZoomScale = 0.5;
-    map.maximumZoomScale = 2.0;
     [self.view addSubview:map];
 
 }

@@ -19,7 +19,6 @@
 		4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646857C15DB6E6F008B3914 /* MBMapView.m */; };
 		4646858115DB7222008B3914 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646858015DB7222008B3914 /* MBLayerView.m */; };
 		466F92E815DC051100801802 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 466F92E715DC051100801802 /* MBTileSet.m */; };
-		466F92EB15DC2C5A00801802 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466F92EA15DC2C5A00801802 /* QuartzCore.framework */; };
 		466F92EF15DC349500801802 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EC15DC349400801802 /* meta.png */; };
 		466F92F015DC349500801802 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 466F92ED15DC349400801802 /* PearTown.tmx */; };
 		466F92F115DC349500801802 /* standard_tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EE15DC349500801802 /* standard_tileset.png */; };
@@ -29,6 +28,7 @@
 		468D924C15C6D77100F461F0 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 468D924915C6D77100F461F0 /* Checkers.psd */; };
 		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
 		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
+		469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 469D673915DCA0540031F7D3 /* MBTileMapObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		4646858015DB7222008B3914 /* MBLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLayerView.m; path = MapView/MBLayerView.m; sourceTree = "<group>"; };
 		466F92E615DC051100801802 /* MBTileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileSet.h; path = MapView/MBTileSet.h; sourceTree = "<group>"; };
 		466F92E715DC051100801802 /* MBTileSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileSet.m; path = MapView/MBTileSet.m; sourceTree = "<group>"; };
-		466F92EA15DC2C5A00801802 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		466F92EC15DC349400801802 /* meta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta.png; sourceTree = "<group>"; };
 		466F92ED15DC349400801802 /* PearTown.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PearTown.tmx; sourceTree = "<group>"; };
 		466F92EE15DC349500801802 /* standard_tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standard_tileset.png; sourceTree = "<group>"; };
@@ -63,6 +62,8 @@
 		468D924A15C6D77100F461F0 /* checkers.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = checkers.tmx; sourceTree = "<group>"; };
 		468E4CD815C690E200A5E803 /* MBTileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileParser.h; path = TileParser/MBTileParser.h; sourceTree = "<group>"; };
 		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
+		469D673815DCA0540031F7D3 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileMapObject.h; path = MapView/MBTileMapObject.h; sourceTree = "<group>"; };
+		469D673915DCA0540031F7D3 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileMapObject.m; path = MapView/MBTileMapObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466F92EB15DC2C5A00801802 /* QuartzCore.framework in Frameworks */,
 				462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */,
 				462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */,
 				462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */,
@@ -100,7 +100,6 @@
 		462AABFC15B3EDD30058E14C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				466F92EA15DC2C5A00801802 /* QuartzCore.framework */,
 				462AABFD15B3EDD30058E14C /* UIKit.framework */,
 				462AABFF15B3EDD30058E14C /* Foundation.framework */,
 				462AAC0115B3EDD30058E14C /* CoreGraphics.framework */,
@@ -115,8 +114,7 @@
 				462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */,
 				462AAC0F15B3EDD30058E14C /* MBViewController.h */,
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
-				4646858315DB8002008B3914 /* MBTileParser */,
-				4646858215DB7227008B3914 /* MBMapView */,
+				469D672D15DC84C80031F7D3 /* Map */,
 				468D924715C6D77100F461F0 /* Map Data */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
@@ -141,10 +139,8 @@
 			children = (
 				4646857B15DB6E6F008B3914 /* MBMapView.h */,
 				4646857C15DB6E6F008B3914 /* MBMapView.m */,
-				4646857F15DB7222008B3914 /* MBLayerView.h */,
-				4646858015DB7222008B3914 /* MBLayerView.m */,
-				466F92E615DC051100801802 /* MBTileSet.h */,
-				466F92E715DC051100801802 /* MBTileSet.m */,
+				46E816D915DC505900854143 /* LayerView */,
+				46E816DB15DC506A00854143 /* Tiles and Objects */,
 			);
 			name = MBMapView;
 			sourceTree = "<group>";
@@ -172,6 +168,35 @@
 			);
 			name = "Map Data";
 			path = Map;
+			sourceTree = "<group>";
+		};
+		469D672D15DC84C80031F7D3 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4646858315DB8002008B3914 /* MBTileParser */,
+				4646858215DB7227008B3914 /* MBMapView */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		46E816D915DC505900854143 /* LayerView */ = {
+			isa = PBXGroup;
+			children = (
+				4646857F15DB7222008B3914 /* MBLayerView.h */,
+				4646858015DB7222008B3914 /* MBLayerView.m */,
+			);
+			name = LayerView;
+			sourceTree = "<group>";
+		};
+		46E816DB15DC506A00854143 /* Tiles and Objects */ = {
+			isa = PBXGroup;
+			children = (
+				466F92E615DC051100801802 /* MBTileSet.h */,
+				466F92E715DC051100801802 /* MBTileSet.m */,
+				469D673815DCA0540031F7D3 /* MBTileMapObject.h */,
+				469D673915DCA0540031F7D3 /* MBTileMapObject.m */,
+			);
+			name = "Tiles and Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +278,7 @@
 				4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */,
 				4646858115DB7222008B3914 /* MBLayerView.m in Sources */,
 				466F92E815DC051100801802 /* MBTileSet.m in Sources */,
+				469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,13 +16,7 @@
     
     if (self) {
         
-        //
-        //  Number formatter for pulling numbers...
-        //
-        
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        
-        _firstgid = [[formatter numberFromString:[dictionary objectForKey:@"firstgid"]] integerValue];
+        _firstgid = [[dictionary objectForKey:@"firstgid"] integerValue];
         
         //  GIDs can't be 0, so if the preceding line converted nil to 0,
         //  we're not in a valid tileset.
@@ -32,19 +26,19 @@
             // Blow up? 
         }
         
-        _height = [[formatter numberFromString:[dictionary objectForKey:@"height"]] integerValue];
+        _height = [[dictionary objectForKey:@"height"] integerValue];
         
         _name = [dictionary objectForKey:@"name"];
         
         _source = [dictionary objectForKey:@"source"];
         
-        _tileHeight = [[formatter numberFromString:[dictionary objectForKey:@"tileheight"]] integerValue];
+        _tileHeight = [[dictionary objectForKey:@"tileheight"] integerValue];
         
-        _tileWidth = [[formatter numberFromString:[dictionary objectForKey:@"tilewidth"]] integerValue];
+        _tileWidth = [[dictionary objectForKey:@"tilewidth"] integerValue];
         
-        _width = [[formatter numberFromString:[dictionary objectForKey:@"width"]] integerValue];
+        _width = [[dictionary objectForKey:@"width"] integerValue];
         
-        _tileProperties = [@{} mutableCopy];
+        _tileProperties = [NSMutableDictionary dictionary];
         
     }
     
@@ -87,7 +81,8 @@
                               "source = %@, "
                               "mapSize = %@, "
                               "tileSize = %@, "
-                              "", _firstgid, _height, _tileHeight, _tileWidth, _width, _name, _source, mapSize, tileSize];
+                              "tileProperties = %@"
+                              "", _firstgid, _height, _tileHeight, _tileWidth, _width, _name, _source, mapSize, tileSize, _tileProperties];
     
     return _description;
     

@@ -82,11 +82,8 @@
     //The list of tile IDs in the layer
     NSArray *gids = [self.layerData objectForKey:@"data"];
     
-    //Obligatory number formatter
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    
-    NSInteger heightInTiles = [[formatter numberFromString:[self.layerData objectForKey:@"height"]] integerValue];
-    NSInteger widthInTiles = [[formatter numberFromString:[self.layerData objectForKey:@"width"]] integerValue];
+    NSInteger heightInTiles = [[self.layerData objectForKey:@"height" ] integerValue];
+    NSInteger widthInTiles = [[self.layerData objectForKey:@"width"] integerValue];
     
     
     //
@@ -119,13 +116,7 @@
                 
                 NSInteger tileIndex = (y * widthInTiles) + x;
                 
-                //
-                //  Get the gid value, create the obligatory NSNumberFormatter
-                //
-                
-                NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-                
-                NSInteger GID = [[formatter numberFromString:[gids objectAtIndex:tileIndex]] integerValue];
+                NSInteger GID = [[gids objectAtIndex:tileIndex] integerValue];
                 
                 //  Skip empty tiles
                 if (GID == 0) {
@@ -147,7 +138,7 @@
                 UIImageView *tile = [[UIImageView alloc] initWithFrame:frame];
                 [tile setImage:tileImage];
                 [tile setOpaque:NO];
-                [tile setBackgroundColor:[UIColor clearColor]];
+                //[tile setBackgroundColor:clearColor];     // This is slow and uneccessary
                 
                 //Add the tile to self
                 [self addSubview:tile];

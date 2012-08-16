@@ -10,4 +10,11 @@
 
 @interface MBMapObject : NSObject
 
+@property (nonatomic) NSInteger x;
+@property (nonatomic) NSInteger y;
+@property (nonatomic) NSInteger width;
+@property (nonatomic) NSInteger height;
+
+@property (nonatomic, strong) NSMutableDictionary *properties;
+
 @end

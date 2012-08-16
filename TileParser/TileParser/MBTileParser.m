@@ -10,14 +10,15 @@
 
 #import "MBTileSet.h"
 
+#import "MBMapObjectGroup.h"
+
 @interface MBTileParser () <NSXMLParserDelegate>
 @property (nonatomic, strong) NSXMLParser *parser;
 @property (nonatomic, copy) NSString *workingElement;
-@property (nonatomic) NSInteger workingTileIdentifier;
+@property (nonatomic) NSNumber *workingTileIdentifier;
 @end
 
 @implementation MBTileParser
-
 
 - (id)initWithMapName:(NSString *)map{
     self = [super init];
@@ -29,10 +30,10 @@
         NSURL *URL = [NSURL fileURLWithPath:fullPath];
         
         _parser = [[NSXMLParser alloc] initWithContentsOfURL:URL];
-        _mapDictionary = [NSMutableDictionary dictionary];
+        _mapDictionary = [@{} mutableCopy];
         _parser.delegate = self;
         _workingElement = nil;
-        _workingTileIdentifier = -1;
+        _workingTileIdentifier = nil;
     }
     
     return self;
@@ -53,6 +54,9 @@
     
     NSMutableArray *layers = [NSMutableArray array];
     [self.mapDictionary setObject:layers forKey:@"layers"];
+    
+    NSMutableArray *mapObjects = [NSMutableArray array];
+    [self.mapDictionary setObject:mapObjects forKey:@"objectGroups"];
     
 }
 
@@ -82,9 +86,80 @@
     
     if ([self.workingElement isEqualToString:@"tile"]) {
         
-        NSInteger tileIdentifier = [[attributeDict objectForKey:@"id"] integerValue];
+        NSNumber *tileIdentifier = [NSNumber numberWithInteger:[[attributeDict objectForKey:@"id"] integerValue]];
         
         self.workingTileIdentifier = tileIdentifier;
+        
+        MBTileSet *tileset = [[self.mapDictionary objectForKey:@"tilesets"] lastObject];
+        [tileset.tileProperties setObject:[@{} mutableCopy] forKey:tileIdentifier];
+    }
+    
+    //
+    //  Add object groups where relevant
+    //
+    
+    if ([self.workingElement isEqualToString:@"objectgroup"]) {
+        
+        NSMutableArray *objectGroups = [self.mapDictionary objectForKey:@"objectGroups"];
+        
+        MBMapObjectGroup *group = [[MBMapObjectGroup alloc] init];
+        
+        //
+        //  Configure the group
+        //
+        
+        NSInteger width = [[attributeDict objectForKey:@"width"] integerValue];
+        NSInteger height = [[attributeDict objectForKey:@"height"] integerValue];
+        
+        group.width = width;
+        group.height = height;
+        
+        group.name = [attributeDict objectForKey:@"name"];
+        
+        //
+        //  Store it
+        //
+        
+        [objectGroups addObject:group];
+
+    }
+    
+    if([self.workingElement isEqualToString:@"object"]){
+        MBMapObject *object = [[MBMapObject alloc] init];
+        object.x = [[attributeDict objectForKey:@"x"] integerValue];
+        object.y = [[attributeDict objectForKey:@"y"] integerValue];
+        
+        object.width = [[attributeDict objectForKey:@"width"] integerValue];
+        object.height = [[attributeDict objectForKey:@"height"] integerValue];
+        
+        NSMutableArray *objectGroups = [self.mapDictionary objectForKey:@"objectGroups"];
+        MBMapObjectGroup *group = [objectGroups lastObject];
+        [group.mapObjects addObject:object];
+    }
+    
+    //
+    //  Pull out properties from the XML and assign them
+    //
+    
+    if ([self.workingElement isEqualToString:@"property"]) {
+        
+        if (!self.workingTileIdentifier) {
+            
+            NSMutableArray *objectGroups = [self.mapDictionary objectForKey:@"objectGroups"];
+            
+            MBMapObjectGroup *workingGroup = [objectGroups lastObject];
+            
+            MBMapObject *mapObject = [workingGroup.mapObjects lastObject];
+            
+            [mapObject.properties addEntriesFromDictionary:attributeDict];
+            
+        }else{
+            
+            MBTileSet *tileset = [[self.mapDictionary objectForKey:@"tilesets"] lastObject];
+            NSMutableDictionary *tileProperties = [tileset.tileProperties objectForKey:self.workingTileIdentifier];
+            [tileProperties addEntriesFromDictionary:attributeDict];
+        }
+        
     }
     
     //
@@ -95,16 +170,11 @@
         
         MBTileSet *lastTileset = [[self.mapDictionary objectForKey:@"tilesets"] lastObject];
         
-        //
-        
-        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-        
         // Load the properties of the image from the XML into the tileset
         
-        
         NSString *source = [attributeDict objectForKey:@"source"];
-        NSInteger width = [[formatter numberFromString:[attributeDict objectForKey:@"width"]] integerValue];
-        NSInteger height = [[formatter numberFromString:[attributeDict objectForKey:@"height"]] integerValue];
+        NSInteger width = [[attributeDict objectForKey:@"width"] integerValue];
+        NSInteger height = [[attributeDict objectForKey:@"height"] integerValue];
         
         [lastTileset setSource:source];
         [lastTileset setWidth:width];
@@ -166,8 +236,8 @@
     //  We're done reading properties for 
     //
     
-    if ([self.workingElement isEqualToString:@"tile"]) {
-        self.workingTileIdentifier = -1;
+    if ([elementName isEqualToString:@"tile"]) {
+        self.workingTileIdentifier = nil;
     }
     
     //

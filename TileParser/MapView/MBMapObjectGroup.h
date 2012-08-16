@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MBMapObject.h"
+
 @interface MBMapObjectGroup : NSObject
+
+@property (nonatomic) NSInteger width;
+@property (nonatomic) NSInteger height;
+
+@property (nonatomic, strong) NSMutableArray *mapObjects;
+@property (nonatomic, strong) NSString *name;
+
+@property (nonatomic, readonly) CGSize sizeInTiles;
+
+- (id) lastObject;
+- (id) objectAtIndex:(NSInteger)index;
 
 @end

@@ -14,6 +14,8 @@
 
 #import "MBLayerView.h"
 
+#import "MBMapObjectGroup.h"
+
 #import "UIImage+TileData.h"
 
 @interface MBMapView ()
@@ -21,7 +23,7 @@
 @property (nonatomic, strong) NSMutableArray *layers;
 @property (nonatomic, strong) NSMutableArray *tilesets;
 @property (nonatomic, strong) NSMutableArray *tileCache;
-@property (nonatomic, strong) NSMutableArray *objectGroup;
+@property (nonatomic, strong) NSMutableDictionary *objectGroups;
 @end
 
 @implementation MBMapView
@@ -37,7 +39,7 @@
         
         _tileCache = [@[] mutableCopy];
         
-        _objectGroup = [@[] mutableCopy];
+        _objectGroups = [@{} mutableCopy];
         
         //
         //  Configure the map view
@@ -65,6 +67,13 @@
                 strongSelf.layers = [strongSelf.parser.mapDictionary objectForKey:@"layers"];
                 strongSelf.tilesets = [strongSelf.parser.mapDictionary objectForKey:@"tilesets"];
                 
+                
+                NSMutableArray *objectGroups = [strongSelf.parser.mapDictionary objectForKey:@"objectGroups"];
+                
+                for (MBMapObjectGroup *objectGroup in objectGroups) {
+                    [self.objectGroups setObject:objectGroup  forKey:objectGroup.name];
+                }
+                
                 NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"firstgid" ascending:YES];
                 [_tilesets sortUsingDescriptors:@[descriptor]];
                 
@@ -76,7 +85,6 @@
             [_parser setCompletionHandler:block];
             
             [_parser start];
-            
         }
     }
     return self;

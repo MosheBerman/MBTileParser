@@ -10,4 +10,21 @@
 
 @implementation MBMapObject
 
+- (id) init{
+    
+    self = [super init];
+    
+    if (self) {
+        
+        _properties = [[NSMutableDictionary alloc] init];
+        
+    }
+    
+    return self;
+}
+
+- (NSString *)description{
+    return [NSString stringWithFormat:@"X: %i Y: %i Width: %i Height: %i Properties: %@", self.x, self.y, self.width, self.height, self.properties];
+}
+
 @end

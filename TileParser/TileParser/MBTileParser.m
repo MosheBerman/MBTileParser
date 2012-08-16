@@ -11,8 +11,9 @@
 #import "MBTileSet.h"
 
 @interface MBTileParser () <NSXMLParserDelegate>
-    @property (nonatomic, strong) NSXMLParser *parser;
-    @property (nonatomic, copy) NSString *workingElement;
+@property (nonatomic, strong) NSXMLParser *parser;
+@property (nonatomic, copy) NSString *workingElement;
+@property (nonatomic) NSInteger workingTileIdentifier;
 @end
 
 @implementation MBTileParser
@@ -30,7 +31,8 @@
         _parser = [[NSXMLParser alloc] initWithContentsOfURL:URL];
         _mapDictionary = [NSMutableDictionary dictionary];
         _parser.delegate = self;
-        
+        _workingElement = nil;
+        _workingTileIdentifier = -1;
     }
     
     return self;
@@ -45,7 +47,7 @@
 /* NSXMLParser Delegate methods */
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser{
-
+    
     NSMutableArray *tilesets = [NSMutableArray array];
     [self.mapDictionary setObject:tilesets forKey:@"tilesets"];
     
@@ -72,6 +74,17 @@
         MBTileSet *tileset = [[MBTileSet alloc] initWithDictionary:attributeDict];
         
         [[self.mapDictionary objectForKey:@"tilesets"] addObject:tileset];
+    }
+    
+    //
+    //  Adjust the working tile where appropriate
+    //
+    
+    if ([self.workingElement isEqualToString:@"tile"]) {
+        
+        NSInteger tileIdentifier = [[attributeDict objectForKey:@"id"] integerValue];
+        
+        self.workingTileIdentifier = tileIdentifier;
     }
     
     //
@@ -105,28 +118,24 @@
     if ([self.workingElement isEqualToString:@"layer"]) {
         
         NSMutableDictionary *layerInfo = [attributeDict mutableCopy];
-    
+        
         [[self.mapDictionary objectForKey:@"layers"] addObject:layerInfo];
     }
     
     //
     //  If we have layer data, store it in the last layer
     //
-
+    
     if([self.workingElement isEqualToString:@"data"]){
         
         NSMutableDictionary *lastLayer =  [[self.mapDictionary objectForKey:@"layers"] lastObject];
         
         [lastLayer addEntriesFromDictionary:attributeDict];
         
-        //
-        //  Add a string for data
-        //
-        
         [lastLayer setObject:[NSMutableString string] forKey:@"tempdata"];
         
     }
-
+    
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
@@ -148,9 +157,18 @@
         [lastLayer setObject:newMapData forKey:@"tempdata"];
     }
     
+
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    
+    //
+    //  We're done reading properties for 
+    //
+    
+    if ([self.workingElement isEqualToString:@"tile"]) {
+        self.workingTileIdentifier = -1;
+    }
     
     //
     //  TODO: If the tile id information is encoded as base64 data, decode it here.
@@ -170,10 +188,8 @@
         NSString *tileIdentifiersAsString = [lastLayer objectForKey:@"tempdata"];
         
         NSArray *tileIdentifiersAsArray = [tileIdentifiersAsString componentsSeparatedByString:@","];
-
+        
         [lastLayer setObject:tileIdentifiersAsArray forKey:@"data"];
-
-
     }
 }
 

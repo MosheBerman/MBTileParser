@@ -24,6 +24,8 @@
 @property (nonatomic, copy) NSString *name;     //  The name of the tileset
 @property (nonatomic, copy) NSString *source;   //  The path of the source image
 
+@property (nonatomic, strong) NSMutableDictionary *tileProperties; //   Dictionary of dictionaries.
+
 @property (nonatomic, readonly) CGSize mapSize;         //  The pixel dimensions of the source image
 @property (nonatomic, readonly) CGSize sourceSize;      //  The pixel dimensions of the source image, by multiplying things
 @property (nonatomic, readonly) NSInteger tileCount;    //  The number of tiles in a tileset, by multiplication

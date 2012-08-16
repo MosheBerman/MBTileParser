@@ -18,6 +18,10 @@
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
 		4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646857C15DB6E6F008B3914 /* MBMapView.m */; };
 		4646858115DB7222008B3914 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646858015DB7222008B3914 /* MBLayerView.m */; };
+		466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */; };
+		466B65AF15DD8169009CB7BF /* MBTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65AE15DD8169009CB7BF /* MBTileView.m */; };
+		466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65B115DD817D009CB7BF /* MBMapObject.m */; };
+		466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65B715DD84BE009CB7BF /* UIImage+TileData.m */; };
 		466F92E815DC051100801802 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 466F92E715DC051100801802 /* MBTileSet.m */; };
 		466F92EF15DC349500801802 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EC15DC349400801802 /* meta.png */; };
 		466F92F015DC349500801802 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 466F92ED15DC349400801802 /* PearTown.tmx */; };
@@ -29,15 +33,6 @@
 		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
 		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
 		469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 469D673915DCA0540031F7D3 /* MBTileMapObject.m */; };
-		493DA56115DC076400F435EF /* MBWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA56015DC076400F435EF /* MBWorld.m */; };
-		493DA56415DC078700F435EF /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA56315DC078700F435EF /* MBMap.m */; };
-		493DA56815DC088A00F435EF /* MBEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA56715DC088A00F435EF /* MBEntity.m */; };
-		493DA56B15DC089D00F435EF /* MBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA56A15DC089D00F435EF /* MBPlayer.m */; };
-		493DA56E15DC08A900F435EF /* MBNPC.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA56D15DC08A900F435EF /* MBNPC.m */; };
-		493DA57115DC08B100F435EF /* MBMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57015DC08B100F435EF /* MBMonster.m */; };
-		493DA57615DC094E00F435EF /* MBInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57515DC094E00F435EF /* MBInventory.m */; };
-		493DA57915DC095500F435EF /* MBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57815DC095500F435EF /* MBItem.m */; };
-		493DA57C15DC0EA400F435EF /* MBCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57B15DC0EA400F435EF /* MBCharacter.m */; };
 		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
 		493DA58E15DD87F100F435EF /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58C15DD87F100F435EF /* zack.plist */; };
 		493DA58F15DD87F100F435EF /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58D15DD87F100F435EF /* zack.png */; };
@@ -62,6 +57,14 @@
 		4646857C15DB6E6F008B3914 /* MBMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapView.m; path = MapView/MBMapView.m; sourceTree = "<group>"; };
 		4646857F15DB7222008B3914 /* MBLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLayerView.h; path = MapView/MBLayerView.h; sourceTree = "<group>"; };
 		4646858015DB7222008B3914 /* MBLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLayerView.m; path = MapView/MBLayerView.m; sourceTree = "<group>"; };
+		466B65A915DD8060009CB7BF /* MBMapObjectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapObjectGroup.h; path = MapView/MBMapObjectGroup.h; sourceTree = "<group>"; };
+		466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapObjectGroup.m; path = MapView/MBMapObjectGroup.m; sourceTree = "<group>"; };
+		466B65AD15DD8169009CB7BF /* MBTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileView.h; path = MapView/MBTileView.h; sourceTree = "<group>"; };
+		466B65AE15DD8169009CB7BF /* MBTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileView.m; path = MapView/MBTileView.m; sourceTree = "<group>"; };
+		466B65B015DD817D009CB7BF /* MBMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapObject.h; path = MapView/MBMapObject.h; sourceTree = "<group>"; };
+		466B65B115DD817D009CB7BF /* MBMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapObject.m; path = MapView/MBMapObject.m; sourceTree = "<group>"; };
+		466B65B615DD84BE009CB7BF /* UIImage+TileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+TileData.h"; path = "MapView/UIImage+TileData.h"; sourceTree = "<group>"; };
+		466B65B715DD84BE009CB7BF /* UIImage+TileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+TileData.m"; path = "MapView/UIImage+TileData.m"; sourceTree = "<group>"; };
 		466F92E615DC051100801802 /* MBTileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileSet.h; path = MapView/MBTileSet.h; sourceTree = "<group>"; };
 		466F92E715DC051100801802 /* MBTileSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileSet.m; path = MapView/MBTileSet.m; sourceTree = "<group>"; };
 		466F92EC15DC349400801802 /* meta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta.png; sourceTree = "<group>"; };
@@ -76,24 +79,6 @@
 		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
 		469D673815DCA0540031F7D3 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileMapObject.h; path = MapView/MBTileMapObject.h; sourceTree = "<group>"; };
 		469D673915DCA0540031F7D3 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileMapObject.m; path = MapView/MBTileMapObject.m; sourceTree = "<group>"; };
-		493DA55F15DC076400F435EF /* MBWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBWorld.h; sourceTree = "<group>"; };
-		493DA56015DC076400F435EF /* MBWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBWorld.m; sourceTree = "<group>"; };
-		493DA56215DC078700F435EF /* MBMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMap.h; sourceTree = "<group>"; };
-		493DA56315DC078700F435EF /* MBMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMap.m; sourceTree = "<group>"; };
-		493DA56615DC088A00F435EF /* MBEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEntity.h; sourceTree = "<group>"; };
-		493DA56715DC088A00F435EF /* MBEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEntity.m; sourceTree = "<group>"; };
-		493DA56915DC089D00F435EF /* MBPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPlayer.h; sourceTree = "<group>"; };
-		493DA56A15DC089D00F435EF /* MBPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPlayer.m; sourceTree = "<group>"; };
-		493DA56C15DC08A900F435EF /* MBNPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPC.h; sourceTree = "<group>"; };
-		493DA56D15DC08A900F435EF /* MBNPC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPC.m; sourceTree = "<group>"; };
-		493DA56F15DC08B100F435EF /* MBMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMonster.h; sourceTree = "<group>"; };
-		493DA57015DC08B100F435EF /* MBMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMonster.m; sourceTree = "<group>"; };
-		493DA57415DC094E00F435EF /* MBInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBInventory.h; sourceTree = "<group>"; };
-		493DA57515DC094E00F435EF /* MBInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBInventory.m; sourceTree = "<group>"; };
-		493DA57715DC095500F435EF /* MBItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBItem.h; sourceTree = "<group>"; };
-		493DA57815DC095500F435EF /* MBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBItem.m; sourceTree = "<group>"; };
-		493DA57A15DC0EA400F435EF /* MBCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCharacter.h; sourceTree = "<group>"; };
-		493DA57B15DC0EA400F435EF /* MBCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCharacter.m; sourceTree = "<group>"; };
 		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
 		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
 		493DA58C15DD87F100F435EF /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
@@ -145,8 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				493DA58715DD7CD900F435EF /* Sprite View */,
-				493DA56515DC087900F435EF /* Entity */,
-				493DA55D15DC073100F435EF /* World */,
 				462AAC0C15B3EDD30058E14C /* MBAppDelegate.h */,
 				462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */,
 				462AAC0F15B3EDD30058E14C /* MBViewController.h */,
@@ -176,7 +159,7 @@
 			children = (
 				4646857B15DB6E6F008B3914 /* MBMapView.h */,
 				4646857C15DB6E6F008B3914 /* MBMapView.m */,
-				46E816D915DC505900854143 /* LayerView */,
+				46E816D915DC505900854143 /* Tile Layer */,
 				46E816DB15DC506A00854143 /* Tiles and Objects */,
 			);
 			name = MBMapView;
@@ -189,6 +172,17 @@
 				468E4CD915C690E200A5E803 /* MBTileParser.m */,
 			);
 			name = MBTileParser;
+			sourceTree = "<group>";
+		};
+		466B65AC15DD80EE009CB7BF /* Object Layer */ = {
+			isa = PBXGroup;
+			children = (
+				466B65A915DD8060009CB7BF /* MBMapObjectGroup.h */,
+				466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */,
+				466B65B015DD817D009CB7BF /* MBMapObject.h */,
+				466B65B115DD817D009CB7BF /* MBMapObject.m */,
+			);
+			name = "Object Layer";
 			sourceTree = "<group>";
 		};
 		468D924715C6D77100F461F0 /* Map Data */ = {
@@ -216,13 +210,18 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
-		46E816D915DC505900854143 /* LayerView */ = {
+		46E816D915DC505900854143 /* Tile Layer */ = {
 			isa = PBXGroup;
 			children = (
 				4646857F15DB7222008B3914 /* MBLayerView.h */,
 				4646858015DB7222008B3914 /* MBLayerView.m */,
+				466B65AD15DD8169009CB7BF /* MBTileView.h */,
+				466B65AE15DD8169009CB7BF /* MBTileView.m */,
+				466B65B615DD84BE009CB7BF /* UIImage+TileData.h */,
+				466B65B715DD84BE009CB7BF /* UIImage+TileData.m */,
+				466B65AC15DD80EE009CB7BF /* Object Layer */,
 			);
-			name = LayerView;
+			name = "Tile Layer";
 			sourceTree = "<group>";
 		};
 		46E816DB15DC506A00854143 /* Tiles and Objects */ = {
@@ -234,46 +233,6 @@
 				469D673915DCA0540031F7D3 /* MBTileMapObject.m */,
 			);
 			name = "Tiles and Objects";
-			sourceTree = "<group>";
-		};
-		493DA55D15DC073100F435EF /* World */ = {
-			isa = PBXGroup;
-			children = (
-				493DA55F15DC076400F435EF /* MBWorld.h */,
-				493DA56015DC076400F435EF /* MBWorld.m */,
-				493DA56215DC078700F435EF /* MBMap.h */,
-				493DA56315DC078700F435EF /* MBMap.m */,
-			);
-			path = World;
-			sourceTree = "<group>";
-		};
-		493DA56515DC087900F435EF /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				493DA57315DC094300F435EF /* Inventory */,
-				493DA56615DC088A00F435EF /* MBEntity.h */,
-				493DA56715DC088A00F435EF /* MBEntity.m */,
-				493DA57A15DC0EA400F435EF /* MBCharacter.h */,
-				493DA57B15DC0EA400F435EF /* MBCharacter.m */,
-				493DA56915DC089D00F435EF /* MBPlayer.h */,
-				493DA56A15DC089D00F435EF /* MBPlayer.m */,
-				493DA56C15DC08A900F435EF /* MBNPC.h */,
-				493DA56D15DC08A900F435EF /* MBNPC.m */,
-				493DA56F15DC08B100F435EF /* MBMonster.h */,
-				493DA57015DC08B100F435EF /* MBMonster.m */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		493DA57315DC094300F435EF /* Inventory */ = {
-			isa = PBXGroup;
-			children = (
-				493DA57415DC094E00F435EF /* MBInventory.h */,
-				493DA57515DC094E00F435EF /* MBInventory.m */,
-				493DA57715DC095500F435EF /* MBItem.h */,
-				493DA57815DC095500F435EF /* MBItem.m */,
-			);
-			path = Inventory;
 			sourceTree = "<group>";
 		};
 		493DA58715DD7CD900F435EF /* Sprite View */ = {
@@ -367,18 +326,13 @@
 				468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */,
 				4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */,
 				4646858115DB7222008B3914 /* MBLayerView.m in Sources */,
-				493DA56115DC076400F435EF /* MBWorld.m in Sources */,
-				493DA56415DC078700F435EF /* MBMap.m in Sources */,
-				493DA56815DC088A00F435EF /* MBEntity.m in Sources */,
-				493DA56B15DC089D00F435EF /* MBPlayer.m in Sources */,
-				493DA56E15DC08A900F435EF /* MBNPC.m in Sources */,
-				493DA57115DC08B100F435EF /* MBMonster.m in Sources */,
-				493DA57615DC094E00F435EF /* MBInventory.m in Sources */,
-				493DA57915DC095500F435EF /* MBItem.m in Sources */,
-				493DA57C15DC0EA400F435EF /* MBCharacter.m in Sources */,
 				466F92E815DC051100801802 /* MBTileSet.m in Sources */,
 				469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */,
 				493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */,
+				466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */,
+				466B65AF15DD8169009CB7BF /* MBTileView.m in Sources */,
+				466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */,
+				466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,6 +44,8 @@
         
         _width = [[formatter numberFromString:[dictionary objectForKey:@"width"]] integerValue];
         
+        _tileProperties = [@{} mutableCopy];
+        
     }
     
     return self;

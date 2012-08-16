@@ -12,6 +12,8 @@
 
 #import "MBTileSet.h"
 
+#import "MBTileView.h"
+
 @interface MBLayerView ()
 @property (nonatomic, strong) NSDictionary *layerData;
 @property (nonatomic, strong) NSArray *tilesets;

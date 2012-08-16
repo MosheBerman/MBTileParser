@@ -14,11 +14,14 @@
 
 #import "MBLayerView.h"
 
+#import "UIImage+TileData.h"
+
 @interface MBMapView ()
 @property (nonatomic, strong) MBTileParser *parser;
 @property (nonatomic, strong) NSMutableArray *layers;
 @property (nonatomic, strong) NSMutableArray *tilesets;
-@property (nonatomic, strong) NSMutableArray *imagecache;
+@property (nonatomic, strong) NSMutableArray *tileCache;
+@property (nonatomic, strong) NSMutableArray *objectGroup;
 @end
 
 @implementation MBMapView
@@ -29,10 +32,17 @@
         // Initialization code
         
         _layers = [@[] mutableCopy];
-        _tilesets = [@[] mutableCopy];
-        _imagecache = [@[] mutableCopy];
         
-        //Configure the map view
+        _tilesets = [@[] mutableCopy];
+        
+        _tileCache = [@[] mutableCopy];
+        
+        _objectGroup = [@[] mutableCopy];
+        
+        //
+        //  Configure the map view
+        //
+        
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
@@ -105,6 +115,10 @@
         //  Loop through the tilesheet now, chopping it up
         //
         
+        //
+        //  TODO: Load properties into the images from the tileset
+        //
+        
         for (NSInteger j = 0; j < workingSet.mapSize.height; j++) {
             for (NSInteger i = 0; i < workingSet.mapSize.width; i++) {
                 
@@ -125,7 +139,7 @@
                     
                     UIImage *tile = [UIImage imageWithCGImage:image scale:1.0 orientation:tilesheet.imageOrientation];
                     
-                    [self.imagecache addObject:tile];
+                    [self.tileCache addObject:tile];
                     
                 }
             }
@@ -150,7 +164,7 @@
         @autoreleasepool {
             NSDictionary *layerData = [self.layers objectAtIndex:i];
             
-            MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.tilesets imageCache:self.imagecache];
+            MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.tilesets imageCache:self.tileCache];
             
             if(layer){
                 [layer drawMapLayer];

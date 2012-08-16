@@ -38,6 +38,9 @@
 		493DA57615DC094E00F435EF /* MBInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57515DC094E00F435EF /* MBInventory.m */; };
 		493DA57915DC095500F435EF /* MBItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57815DC095500F435EF /* MBItem.m */; };
 		493DA57C15DC0EA400F435EF /* MBCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA57B15DC0EA400F435EF /* MBCharacter.m */; };
+		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
+		493DA58E15DD87F100F435EF /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58C15DD87F100F435EF /* zack.plist */; };
+		493DA58F15DD87F100F435EF /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58D15DD87F100F435EF /* zack.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,10 @@
 		493DA57815DC095500F435EF /* MBItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBItem.m; sourceTree = "<group>"; };
 		493DA57A15DC0EA400F435EF /* MBCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCharacter.h; sourceTree = "<group>"; };
 		493DA57B15DC0EA400F435EF /* MBCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCharacter.m; sourceTree = "<group>"; };
+		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
+		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
+		493DA58C15DD87F100F435EF /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
+		493DA58D15DD87F100F435EF /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +144,7 @@
 		462AAC0315B3EDD30058E14C /* TileParser */ = {
 			isa = PBXGroup;
 			children = (
+				493DA58715DD7CD900F435EF /* Sprite View */,
 				493DA56515DC087900F435EF /* Entity */,
 				493DA55D15DC073100F435EF /* World */,
 				462AAC0C15B3EDD30058E14C /* MBAppDelegate.h */,
@@ -268,7 +276,17 @@
 			path = Inventory;
 			sourceTree = "<group>";
 		};
-		
+		493DA58715DD7CD900F435EF /* Sprite View */ = {
+			isa = PBXGroup;
+			children = (
+				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
+				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
+				493DA58C15DD87F100F435EF /* zack.plist */,
+				493DA58D15DD87F100F435EF /* zack.png */,
+			);
+			path = "Sprite View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,6 +349,8 @@
 				466F92F115DC349500801802 /* standard_tileset.png in Resources */,
 				466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */,
 				466F92F515DC378C00801802 /* tilescitytextured.png in Resources */,
+				493DA58E15DD87F100F435EF /* zack.plist in Resources */,
+				493DA58F15DD87F100F435EF /* zack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +378,7 @@
 				493DA57C15DC0EA400F435EF /* MBCharacter.m in Sources */,
 				466F92E815DC051100801802 /* MBTileSet.m in Sources */,
 				469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */,
+				493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

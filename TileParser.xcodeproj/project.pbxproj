@@ -321,7 +321,6 @@
 				468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */,
 				4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */,
 				4646858115DB7222008B3914 /* MBLayerView.m in Sources */,
-<<<<<<< HEAD
 				493DA56115DC076400F435EF /* MBWorld.m in Sources */,
 				493DA56415DC078700F435EF /* MBMap.m in Sources */,
 				493DA56815DC088A00F435EF /* MBEntity.m in Sources */,
@@ -331,10 +330,8 @@
 				493DA57615DC094E00F435EF /* MBInventory.m in Sources */,
 				493DA57915DC095500F435EF /* MBItem.m in Sources */,
 				493DA57C15DC0EA400F435EF /* MBCharacter.m in Sources */,
-=======
 				466F92E815DC051100801802 /* MBTileSet.m in Sources */,
->>>>>>> 3c8015d76baca19d7f5edf480168d93dc77bdefb
-			);
+);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */

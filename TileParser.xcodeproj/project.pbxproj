@@ -33,6 +33,9 @@
 		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
 		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
 		469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 469D673915DCA0540031F7D3 /* MBTileMapObject.m */; };
+		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
+		493DA58E15DD87F100F435EF /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58C15DD87F100F435EF /* zack.plist */; };
+		493DA58F15DD87F100F435EF /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58D15DD87F100F435EF /* zack.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,10 @@
 		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
 		469D673815DCA0540031F7D3 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileMapObject.h; path = MapView/MBTileMapObject.h; sourceTree = "<group>"; };
 		469D673915DCA0540031F7D3 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileMapObject.m; path = MapView/MBTileMapObject.m; sourceTree = "<group>"; };
+		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
+		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
+		493DA58C15DD87F100F435EF /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
+		493DA58D15DD87F100F435EF /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +129,7 @@
 		462AAC0315B3EDD30058E14C /* TileParser */ = {
 			isa = PBXGroup;
 			children = (
+				493DA58715DD7CD900F435EF /* Sprite View */,
 				462AAC0C15B3EDD30058E14C /* MBAppDelegate.h */,
 				462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */,
 				462AAC0F15B3EDD30058E14C /* MBViewController.h */,
@@ -227,6 +235,17 @@
 			name = "Tiles and Objects";
 			sourceTree = "<group>";
 		};
+		493DA58715DD7CD900F435EF /* Sprite View */ = {
+			isa = PBXGroup;
+			children = (
+				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
+				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
+				493DA58C15DD87F100F435EF /* zack.plist */,
+				493DA58D15DD87F100F435EF /* zack.png */,
+			);
+			path = "Sprite View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,6 +308,8 @@
 				466F92F115DC349500801802 /* standard_tileset.png in Resources */,
 				466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */,
 				466F92F515DC378C00801802 /* tilescitytextured.png in Resources */,
+				493DA58E15DD87F100F435EF /* zack.plist in Resources */,
+				493DA58F15DD87F100F435EF /* zack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +328,7 @@
 				4646858115DB7222008B3914 /* MBLayerView.m in Sources */,
 				466F92E815DC051100801802 /* MBTileSet.m in Sources */,
 				469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */,
+				493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */,
 				466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */,
 				466B65AF15DD8169009CB7BF /* MBTileView.m in Sources */,
 				466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */,

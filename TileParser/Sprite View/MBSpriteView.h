@@ -10,7 +10,7 @@
 
 @interface MBSpriteView : UIImageView
 
-- (id)initWithFrame:(CGRect)frame spriteSheetName:(NSString *)spriteSheetName;
+- (id)initWithAnimations:(NSDictionary *)animations;
 - (void)beginAnimation:(NSString *)animationID;
 - (void)stopAnimation;
 

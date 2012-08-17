@@ -36,6 +36,7 @@
 		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
 		493DA58E15DD87F100F435EF /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58C15DD87F100F435EF /* zack.plist */; };
 		493DA58F15DD87F100F435EF /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58D15DD87F100F435EF /* zack.png */; };
+		493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA59615DDB5FF00F435EF /* MBSpriteParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,8 @@
 		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
 		493DA58C15DD87F100F435EF /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
 		493DA58D15DD87F100F435EF /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
+		493DA59515DDB5FF00F435EF /* MBSpriteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteParser.h; sourceTree = "<group>"; };
+		493DA59615DDB5FF00F435EF /* MBSpriteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
 				493DA58C15DD87F100F435EF /* zack.plist */,
 				493DA58D15DD87F100F435EF /* zack.png */,
+				493DA59515DDB5FF00F435EF /* MBSpriteParser.h */,
+				493DA59615DDB5FF00F435EF /* MBSpriteParser.m */,
 			);
 			path = "Sprite View";
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				466B65AF15DD8169009CB7BF /* MBTileView.m in Sources */,
 				466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */,
 				466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */,
+				493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

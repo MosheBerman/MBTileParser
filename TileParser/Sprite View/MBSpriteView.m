@@ -16,28 +16,22 @@
 
 @implementation MBSpriteView
 
-- (id)initWithFrame:(CGRect)frame spriteSheetName:(NSString *)spriteSheetName{
-	self = [super initWithFrame:frame];
+- (id)initWithAnimations:(NSDictionary *)animations{
+	self = [super init];
 	if(self){
-		NSURL *url = [[NSBundle mainBundle] URLForResource:spriteSheetName withExtension:@"plist"];
-		NSError *error = nil;
-		NSPropertyListSerialization *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
-		if(error){
-			NSLog(@"Error: %@", error);
-		}
-		
-		
-		
-		//self.animations = animations;
+		self.animations = animations;
+		self.animationDuration = 1.0/3.0;
 	}
 	return self;
 }
 
 - (void)beginAnimation:(NSString *)animationID{
 	self.animationImages = [self.animations objectForKey:animationID];
+	[self startAnimating];
 }
 
 - (void)stopAnimation{
+	[self stopAnimating];
 	self.image = self.animationImages[0];
 	self.animationImages = nil;
 }

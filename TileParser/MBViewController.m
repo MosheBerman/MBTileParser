@@ -9,6 +9,8 @@
 #import "MBViewController.h"
 
 #import "MBMapView.h"
+#import "MBSpriteView.h"
+#import "MBSpriteParser.h"
 
 @interface MBViewController ()
 
@@ -21,13 +23,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //
-    //  
-    //
-    
     MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"SimpsonCity"];
     [self.view addSubview:map];
-
+	
+	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"zack"];
+	sprite.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+	[self.view addSubview:sprite];
+	
+	[sprite beginAnimation:@"left"];
 }
 
 - (void)viewDidUnload

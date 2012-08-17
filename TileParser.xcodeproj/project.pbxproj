@@ -33,9 +33,20 @@
 		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
 		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
 		469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 469D673915DCA0540031F7D3 /* MBTileMapObject.m */; };
+		46F2BD2815DEDA9E006820D9 /* dude.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0715DEDA9E006820D9 /* dude.plist */; };
+		46F2BD2915DEDA9E006820D9 /* dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0815DEDA9E006820D9 /* dude.png */; };
+		46F2BD2A15DEDA9E006820D9 /* explorer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0A15DEDA9E006820D9 /* explorer.plist */; };
+		46F2BD2B15DEDA9E006820D9 /* explorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0B15DEDA9E006820D9 /* explorer.png */; };
+		46F2BD2D15DEDA9E006820D9 /* nikkie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0E15DEDA9E006820D9 /* nikkie.plist */; };
+		46F2BD2E15DEDA9E006820D9 /* nikkie.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0F15DEDA9E006820D9 /* nikkie.png */; };
+		46F2BD2F15DEDA9E006820D9 /* tuna_guy-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1115DEDA9E006820D9 /* tuna_guy-hd.plist */; };
+		46F2BD3015DEDA9E006820D9 /* tuna_guy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1215DEDA9E006820D9 /* tuna_guy-hd.png */; };
+		46F2BD3115DEDA9E006820D9 /* tuna_guy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1315DEDA9E006820D9 /* tuna_guy.plist */; };
+		46F2BD3215DEDA9E006820D9 /* tuna_guy.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1415DEDA9E006820D9 /* tuna_guy.png */; };
+		46F2BD3315DEDA9E006820D9 /* tuna_guy.tps in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */; };
+		46F2BD6415DEDAFD006820D9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD5415DEDAFD006820D9 /* zack.plist */; };
+		46F2BD6515DEDAFD006820D9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD5515DEDAFD006820D9 /* zack.png */; };
 		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
-		493DA58E15DD87F100F435EF /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58C15DD87F100F435EF /* zack.plist */; };
-		493DA58F15DD87F100F435EF /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 493DA58D15DD87F100F435EF /* zack.png */; };
 		493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA59615DDB5FF00F435EF /* MBSpriteParser.m */; };
 /* End PBXBuildFile section */
 
@@ -80,10 +91,21 @@
 		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
 		469D673815DCA0540031F7D3 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileMapObject.h; path = MapView/MBTileMapObject.h; sourceTree = "<group>"; };
 		469D673915DCA0540031F7D3 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileMapObject.m; path = MapView/MBTileMapObject.m; sourceTree = "<group>"; };
+		46F2BD0715DEDA9E006820D9 /* dude.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dude.plist; sourceTree = "<group>"; };
+		46F2BD0815DEDA9E006820D9 /* dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dude.png; sourceTree = "<group>"; };
+		46F2BD0A15DEDA9E006820D9 /* explorer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explorer.plist; sourceTree = "<group>"; };
+		46F2BD0B15DEDA9E006820D9 /* explorer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explorer.png; sourceTree = "<group>"; };
+		46F2BD0E15DEDA9E006820D9 /* nikkie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nikkie.plist; sourceTree = "<group>"; };
+		46F2BD0F15DEDA9E006820D9 /* nikkie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nikkie.png; sourceTree = "<group>"; };
+		46F2BD1115DEDA9E006820D9 /* tuna_guy-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tuna_guy-hd.plist"; sourceTree = "<group>"; };
+		46F2BD1215DEDA9E006820D9 /* tuna_guy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuna_guy-hd.png"; sourceTree = "<group>"; };
+		46F2BD1315DEDA9E006820D9 /* tuna_guy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tuna_guy.plist; sourceTree = "<group>"; };
+		46F2BD1415DEDA9E006820D9 /* tuna_guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuna_guy.png; sourceTree = "<group>"; };
+		46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = tuna_guy.tps; sourceTree = "<group>"; };
+		46F2BD5415DEDAFD006820D9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
+		46F2BD5515DEDAFD006820D9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
 		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
-		493DA58C15DD87F100F435EF /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
-		493DA58D15DD87F100F435EF /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 		493DA59515DDB5FF00F435EF /* MBSpriteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteParser.h; sourceTree = "<group>"; };
 		493DA59615DDB5FF00F435EF /* MBSpriteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,12 +158,12 @@
 				462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */,
 				462AAC0F15B3EDD30058E14C /* MBViewController.h */,
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
+				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
+				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
 				469D672D15DC84C80031F7D3 /* Tiled Map View */,
 				493DA58715DD7CD900F435EF /* Sprite View */,
 				468D924715C6D77100F461F0 /* Map Data */,
-				46F2BCF815DEB76C006820D9 /* Sprites Data */,
-				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
-				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
+				46F2BD0515DEDA9D006820D9 /* Sample Sprites */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
 			);
 			path = TileParser;
@@ -239,22 +261,65 @@
 			name = "Tiles and Objects";
 			sourceTree = "<group>";
 		};
-		46F2BCF815DEB76C006820D9 /* Sprites Data */ = {
+		46F2BD0515DEDA9D006820D9 /* Sample Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				46F2BD0415DED344006820D9 /* Zack */,
+				46F2BD4415DEDAFD006820D9 /* Zack */,
+				46F2BD0615DEDA9E006820D9 /* Dude */,
+				46F2BD0915DEDA9E006820D9 /* Explorer */,
+				46F2BD0D15DEDA9E006820D9 /* Nikkie */,
+				46F2BD1015DEDA9E006820D9 /* Tuna Guy */,
 			);
-			name = "Sprites Data";
-			path = "Sprite View";
+			name = "Sample Sprites";
+			path = "Sprite View/Sprites";
 			sourceTree = "<group>";
 		};
-		46F2BD0415DED344006820D9 /* Zack */ = {
+		46F2BD0615DEDA9E006820D9 /* Dude */ = {
 			isa = PBXGroup;
 			children = (
-				493DA58C15DD87F100F435EF /* zack.plist */,
-				493DA58D15DD87F100F435EF /* zack.png */,
+				46F2BD0715DEDA9E006820D9 /* dude.plist */,
+				46F2BD0815DEDA9E006820D9 /* dude.png */,
 			);
-			name = Zack;
+			path = Dude;
+			sourceTree = "<group>";
+		};
+		46F2BD0915DEDA9E006820D9 /* Explorer */ = {
+			isa = PBXGroup;
+			children = (
+				46F2BD0A15DEDA9E006820D9 /* explorer.plist */,
+				46F2BD0B15DEDA9E006820D9 /* explorer.png */,
+			);
+			path = Explorer;
+			sourceTree = "<group>";
+		};
+		46F2BD0D15DEDA9E006820D9 /* Nikkie */ = {
+			isa = PBXGroup;
+			children = (
+				46F2BD0E15DEDA9E006820D9 /* nikkie.plist */,
+				46F2BD0F15DEDA9E006820D9 /* nikkie.png */,
+			);
+			path = Nikkie;
+			sourceTree = "<group>";
+		};
+		46F2BD1015DEDA9E006820D9 /* Tuna Guy */ = {
+			isa = PBXGroup;
+			children = (
+				46F2BD1115DEDA9E006820D9 /* tuna_guy-hd.plist */,
+				46F2BD1215DEDA9E006820D9 /* tuna_guy-hd.png */,
+				46F2BD1315DEDA9E006820D9 /* tuna_guy.plist */,
+				46F2BD1415DEDA9E006820D9 /* tuna_guy.png */,
+				46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */,
+			);
+			path = "Tuna Guy";
+			sourceTree = "<group>";
+		};
+		46F2BD4415DEDAFD006820D9 /* Zack */ = {
+			isa = PBXGroup;
+			children = (
+				46F2BD5415DEDAFD006820D9 /* zack.plist */,
+				46F2BD5515DEDAFD006820D9 /* zack.png */,
+			);
+			path = Zack;
 			sourceTree = "<group>";
 		};
 		493DA58715DD7CD900F435EF /* Sprite View */ = {
@@ -330,8 +395,19 @@
 				466F92F115DC349500801802 /* standard_tileset.png in Resources */,
 				466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */,
 				466F92F515DC378C00801802 /* tilescitytextured.png in Resources */,
-				493DA58E15DD87F100F435EF /* zack.plist in Resources */,
-				493DA58F15DD87F100F435EF /* zack.png in Resources */,
+				46F2BD2815DEDA9E006820D9 /* dude.plist in Resources */,
+				46F2BD2915DEDA9E006820D9 /* dude.png in Resources */,
+				46F2BD2A15DEDA9E006820D9 /* explorer.plist in Resources */,
+				46F2BD2B15DEDA9E006820D9 /* explorer.png in Resources */,
+				46F2BD2D15DEDA9E006820D9 /* nikkie.plist in Resources */,
+				46F2BD2E15DEDA9E006820D9 /* nikkie.png in Resources */,
+				46F2BD2F15DEDA9E006820D9 /* tuna_guy-hd.plist in Resources */,
+				46F2BD3015DEDA9E006820D9 /* tuna_guy-hd.png in Resources */,
+				46F2BD3115DEDA9E006820D9 /* tuna_guy.plist in Resources */,
+				46F2BD3215DEDA9E006820D9 /* tuna_guy.png in Resources */,
+				46F2BD3315DEDA9E006820D9 /* tuna_guy.tps in Resources */,
+				46F2BD6415DEDAFD006820D9 /* zack.plist in Resources */,
+				46F2BD6515DEDAFD006820D9 /* zack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

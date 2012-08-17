@@ -24,11 +24,17 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"SimpsonCity"];
+    
     [self.view addSubview:map];
+    
+    map.minimumZoomScale = 1.0;
+    map.maximumZoomScale = 3.0;
+    
 	
-	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"zack"];
+	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"nikkie"];
     [map addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(4,0) beneathLayerNamed:@"TreeTops"];
-	[sprite beginAnimation:@"down"];
+    
+	[sprite setDirection:@"down"];
 }
 
 - (void)viewDidUnload
@@ -40,10 +46,18 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+        return UIInterfaceOrientationIsLandscape(interfaceOrientation);
     } else {
         return YES;
     }
+}
+
+- (NSUInteger)supportedInterfaceOrientations{
+     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+         return UIInterfaceOrientationMaskLandscape;
+     }else{
+         return UIInterfaceOrientationMaskAll;
+     }
 }
 
 @end

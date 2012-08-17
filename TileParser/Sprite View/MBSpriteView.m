@@ -44,4 +44,9 @@
 	self.animationImages = nil;
 }
 
+- (void) setDirection:(NSString *)direction{
+	self.animationImages = [self.animations objectForKey:direction];
+	self.image = self.animationImages[0];
+}
+
 @end

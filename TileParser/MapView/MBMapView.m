@@ -59,8 +59,6 @@
         _zoomWrapper = [UIView new];
         
         self.delegate = self;
-        self.minimumZoomScale = 1.0;
-        self.maximumZoomScale = 2.0;
         
         //
         //  Configure the map view

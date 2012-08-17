@@ -12,6 +12,10 @@
 
 @interface MBSpriteParser : NSObject
 
+//
+//  Returns an instance of MBSpriteParser, nil if the data can't load.
+//
+
 + (MBSpriteView *)spriteViewWithSpriteName:(NSString *)name;
 
 @end

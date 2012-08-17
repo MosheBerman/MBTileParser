@@ -19,13 +19,20 @@
 	NSDictionary *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
     
 	if(error){
-		NSLog(@"Error: %@", error);
+		NSLog(@"Can't load plist. Returning nil.\nError: %@", error);
+        return nil;
 	}
 	
 	NSDictionary *metadata = [serialization objectForKey:@"metadata"];
-	NSString *imageName = [metadata objectForKey:@"realTextureFileName"];
-	UIImage *sourceImage = [UIImage imageNamed:imageName];
+	NSString *imageName = [metadata objectForKey:@"textureFileName"];
 	
+    UIImage *sourceImage = [UIImage imageNamed:imageName];
+	
+    if (!sourceImage) {
+        NSLog(@"Can't load image, returning nil");
+        return nil;
+    }
+    
 	NSMutableDictionary *animations = [NSMutableDictionary dictionary];
     
 	for(NSString *frameName in [[serialization objectForKey:@"frames"] allKeys]){
@@ -43,14 +50,21 @@
             
 		}
         
-//		while([animationValues count] < frameNumber){
-//			[animationValues addObject:[NSNull null]];
-//		}
+        
+        //
+        //  Deal with out of order objw
+        //
+        
+        NSInteger frameNumber = [frameNameSeparated[2] integerValue];
+        
+		while([animationValues count] < frameNumber){
+			[animationValues addObject:[NSNull null]];
+		}
 		
 		CGImageRef cutImage = CGImageCreateWithImageInRect(sourceImage.CGImage, CGRectFromString([frameMetadata objectForKey:@"frame"]));
 		UIImage *image = [UIImage imageWithCGImage:cutImage];
 		
-		[animationValues addObject:image];
+		[animationValues replaceObjectAtIndex:frameNumber-1 withObject:image];
 	}
     
     //

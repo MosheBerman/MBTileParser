@@ -14,4 +14,7 @@
 - (void)beginAnimation:(NSString *)animationID;
 - (void)stopAnimation;
 
+//Set a direction without animating
+- (void) setDirection:(NSString *)direction;
+
 @end

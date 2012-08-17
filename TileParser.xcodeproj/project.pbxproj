@@ -132,12 +132,12 @@
 		462AAC0315B3EDD30058E14C /* TileParser */ = {
 			isa = PBXGroup;
 			children = (
-				493DA58715DD7CD900F435EF /* Sprite View */,
 				462AAC0C15B3EDD30058E14C /* MBAppDelegate.h */,
 				462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */,
 				462AAC0F15B3EDD30058E14C /* MBViewController.h */,
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
-				469D672D15DC84C80031F7D3 /* Map */,
+				469D672D15DC84C80031F7D3 /* Tiled Map View */,
+				493DA58715DD7CD900F435EF /* Sprite View */,
 				468D924715C6D77100F461F0 /* Map Data */,
 				46F2BCF815DEB76C006820D9 /* Sprite Data */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
@@ -205,13 +205,13 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		469D672D15DC84C80031F7D3 /* Map */ = {
+		469D672D15DC84C80031F7D3 /* Tiled Map View */ = {
 			isa = PBXGroup;
 			children = (
 				4646858315DB8002008B3914 /* MBTileParser */,
 				4646858215DB7227008B3914 /* MBMapView */,
 			);
-			name = Map;
+			name = "Tiled Map View";
 			sourceTree = "<group>";
 		};
 		46E816D915DC505900854143 /* Tile Layer */ = {

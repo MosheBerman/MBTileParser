@@ -27,27 +27,32 @@
 	UIImage *sourceImage = [UIImage imageNamed:imageName];
 	
 	NSMutableDictionary *animations = [NSMutableDictionary dictionary];
+    
 	for(NSString *frameName in [[serialization objectForKey:@"frames"] allKeys]){
+        
 		NSDictionary *frameMetadata = [[serialization objectForKey:@"frames"] objectForKey:frameName];
 		NSArray *frameNameSeparated = [frameName componentsSeparatedByString:@"-"];
 		
-		NSInteger frameNumber = [frameNameSeparated[2] integerValue];
 		NSString *animationKey = frameNameSeparated[1];
 		
 		NSMutableArray *animationValues = [animations objectForKey:animationKey];
+        
 		if(!animationValues){
 			animationValues = [NSMutableArray array];
 			[animations setObject:animationValues forKey:animationKey];
+            
 		}
-		
-		while([animationValues count] < frameNumber){
-			[animationValues addObject:[NSNull null]];
-		}
+        
+	
+        
+//		while([animationValues count] < frameNumber){
+//			[animationValues addObject:[NSNull null]];
+//		}
 		
 		CGImageRef cutImage = CGImageCreateWithImageInRect(sourceImage.CGImage, CGRectFromString([frameMetadata objectForKey:@"frame"]));
 		UIImage *image = [UIImage imageWithCGImage:cutImage];
 		
-		[animationValues replaceObjectAtIndex:frameNumber-1 withObject:image];
+		[animationValues addObject:image];
 	}
     
     //

@@ -18,12 +18,15 @@
 
 #import "UIImage+TileData.h"
 
+#import "MBSpriteview.h"
+
 @interface MBMapView ()
 @property (nonatomic, strong) MBTileParser *parser;
 @property (nonatomic, strong) NSMutableArray *layers;
 @property (nonatomic, strong) NSMutableArray *tilesets;
 @property (nonatomic, strong) NSMutableArray *tileCache;
 @property (nonatomic, strong) NSMutableDictionary *objectGroups;
+@property (nonatomic, strong) NSMutableDictionary *sprites;
 @end
 
 @implementation MBMapView
@@ -40,6 +43,8 @@
         _tileCache = [@[] mutableCopy];
         
         _objectGroups = [@{} mutableCopy];
+        
+        _sprites = [@{} mutableCopy];
         
         //
         //  Configure the map view
@@ -201,6 +206,50 @@
 - (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
 {
 	return [self.layers objectAtIndex:1];
+}
+
+#pragma mark - Public Sprite Methods
+
+- (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords{
+
+    [self setSprite:sprite forKey:key];
+    [self addSubview:sprite];
+    [self moveSpriteForKey:key toTileCoordinates:coords animated:YES];
+    
+}
+
+//TODO: Add completion block, add animation support
+- (void) moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated{
+    
+    MBSpriteView * sprite = [self spriteForKey:key];
+    MBTileSet *tileSet = self.tilesets[0];
+    
+    CGSize tileSize = tileSet.tileSize;
+    
+    coords.x = coords.x * tileSize.width;
+    coords.y = coords.y * tileSize.height;
+    
+    CGSize spriteSize = sprite.frame.size;
+    
+    if (animated) {
+        sprite.frame = CGRectMake(coords.x, coords.y, spriteSize.width, spriteSize.height);
+    }else{
+        sprite.frame = CGRectMake(coords.x, coords.y, spriteSize.width, spriteSize.height);
+    }
+}
+
+- (void) removeSpriteForKey:(NSString*) key{
+    [self.sprites removeObjectForKey:key];
+}
+
+#pragma mark - Private Sprite Methods
+
+- (void) setSprite:(MBSpriteView *)sprite forKey:(NSString *)key{
+    [self.sprites setObject:sprite forKey:key];
+}
+
+- (MBSpriteView *) spriteForKey:(NSString *)key{
+    return [self.sprites objectForKey:key];
 }
 
 @end

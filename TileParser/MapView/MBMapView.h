@@ -16,7 +16,6 @@
 
 //  If the layer doesn't exist, the view is inserted at the top
 - (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName;
-
 - (void) moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated;
 - (void) removeSpriteForKey:(NSString*) key;
 

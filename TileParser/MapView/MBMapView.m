@@ -20,20 +20,26 @@
 
 #import "MBSpriteview.h"
 
-@interface MBMapView ()
+@interface MBMapView () <UIScrollViewDelegate>
 @property (nonatomic, strong) MBTileParser *parser;
+
 @property (nonatomic, strong) NSMutableArray *layers;
 @property (nonatomic, strong) NSMutableArray *tilesets;
 @property (nonatomic, strong) NSMutableArray *tileCache;
 @property (nonatomic, strong) NSMutableDictionary *objectGroups;
 @property (nonatomic, strong) NSMutableDictionary *sprites;
+
+@property (nonatomic, strong) UIView *zoomWrapper;
 @end
 
 @implementation MBMapView
 
 - (id)initWithFrame:(CGRect)frame mapName:(NSString*)name{
+    
     self = [super initWithFrame:frame];
+
     if (self) {
+        
         // Initialization code
         
         _layers = [@[] mutableCopy];
@@ -45,6 +51,16 @@
         _objectGroups = [@{} mutableCopy];
         
         _sprites = [@{} mutableCopy];
+        
+        //
+        //  Add zoom support
+        //
+        
+        _zoomWrapper = [UIView new];
+        
+        self.delegate = self;
+        self.minimumZoomScale = 1.0;
+        self.maximumZoomScale = 2.0;
         
         //
         //  Configure the map view
@@ -85,6 +101,7 @@
                 [strongSelf buildCache];
                 
                 [strongSelf layoutMap];
+                
             };
             
             [_parser setCompletionHandler:block];
@@ -182,12 +199,12 @@
             if(layer){
                 [layer drawMapLayer];
 
-                if ([layer.name isEqualToString:@"Meta"]) {
+                if ([[layer name] isEqualToString:@"Meta"]) {
                     layer.alpha = 0;
                 }
                 
-                [self addSubview:layer];
-                [self.layers replaceObjectAtIndex:i withObject:layer];
+                [[self zoomWrapper] addSubview:layer];
+                [[self layers] replaceObjectAtIndex:i withObject:layer];
             }
         }
     }
@@ -201,12 +218,22 @@
     //  it's a waste of time, as is this comment.
     //
     
-    self.contentSize = ((MBLayerView *)[self.layers objectAtIndex:0]).frame.size;
+    CGRect frameOfFirstLayer = ((MBLayerView *)[self.layers objectAtIndex:0]).frame;
+    
+    [[self zoomWrapper] setFrame:frameOfFirstLayer];
+    
+    self.contentSize = [[self zoomWrapper] frame].size;
+    
+    //
+    //
+    //
+    
+    [self addSubview:self.zoomWrapper];
 }
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
 {
-	return [self.layers objectAtIndex:1];
+	return [self zoomWrapper];
 }
 
 #pragma mark - Public Sprite Methods
@@ -218,9 +245,9 @@
     [self setSprite:sprite forKey:key];
     
     if(layer){
-        [self insertSubview:sprite belowSubview:layer];
+        [[self zoomWrapper] insertSubview:sprite belowSubview:layer];
     }else{
-        [self addSubview:sprite];
+        [[self zoomWrapper] addSubview:sprite];
     }
     
     [self moveSpriteForKey:key toTileCoordinates:coords animated:YES];
@@ -254,7 +281,7 @@
 #pragma mark - Private Sprite Methods
 
 - (void) setSprite:(MBSpriteView *)sprite forKey:(NSString *)key{
-    [self.sprites setObject:sprite forKey:key];
+    [[self sprites] setObject:sprite forKey:key];
 }
 
 - (MBSpriteView *) spriteForKey:(NSString *)key{
@@ -264,8 +291,9 @@
 #pragma mark - Layer Accessor
 
 - (MBLayerView *)layerNamed:(NSString *)name{
+   
     for (MBLayerView *layer in self.layers) {
-        if ([layer.name isEqualToString:name]) {
+        if ([[layer name] isEqualToString:name]) {
             return layer;
         }
     }

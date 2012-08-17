@@ -139,7 +139,7 @@
 				469D672D15DC84C80031F7D3 /* Tiled Map View */,
 				493DA58715DD7CD900F435EF /* Sprite View */,
 				468D924715C6D77100F461F0 /* Map Data */,
-				46F2BCF815DEB76C006820D9 /* Sprite Data */,
+				46F2BCF815DEB76C006820D9 /* Sprites Data */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
@@ -239,14 +239,22 @@
 			name = "Tiles and Objects";
 			sourceTree = "<group>";
 		};
-		46F2BCF815DEB76C006820D9 /* Sprite Data */ = {
+		46F2BCF815DEB76C006820D9 /* Sprites Data */ = {
+			isa = PBXGroup;
+			children = (
+				46F2BD0415DED344006820D9 /* Zack */,
+			);
+			name = "Sprites Data";
+			path = "Sprite View";
+			sourceTree = "<group>";
+		};
+		46F2BD0415DED344006820D9 /* Zack */ = {
 			isa = PBXGroup;
 			children = (
 				493DA58C15DD87F100F435EF /* zack.plist */,
 				493DA58D15DD87F100F435EF /* zack.png */,
 			);
-			name = "Sprite Data";
-			path = "Sprite View";
+			name = Zack;
 			sourceTree = "<group>";
 		};
 		493DA58715DD7CD900F435EF /* Sprite View */ = {

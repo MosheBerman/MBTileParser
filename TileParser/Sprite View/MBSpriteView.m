@@ -19,8 +19,16 @@
 - (id)initWithAnimations:(NSDictionary *)animations{
 	self = [super init];
 	if(self){
-		self.animations = animations;
+		
+        _animations = animations;
 		self.animationDuration = 1.0/3.0;
+        
+        NSString *randomKey = [[animations allKeys] objectAtIndex:0];
+        CGSize imageSize = [[[animations objectForKey:randomKey] objectAtIndex:0] size];
+        
+        self.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
+        self.contentMode = UIViewContentModeTopLeft;
+        
 	}
 	return self;
 }

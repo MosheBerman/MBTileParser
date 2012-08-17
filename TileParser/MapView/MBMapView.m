@@ -185,6 +185,7 @@
                 if ([layer.name isEqualToString:@"Meta"]) {
                     layer.alpha = 0;
                 }
+                
                 [self addSubview:layer];
                 [self.layers replaceObjectAtIndex:i withObject:layer];
             }
@@ -210,10 +211,18 @@
 
 #pragma mark - Public Sprite Methods
 
-- (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords{
+- (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName{
 
+    MBLayerView *layer = [self layerNamed:layerName];
+    
     [self setSprite:sprite forKey:key];
-    [self addSubview:sprite];
+    
+    if(layer){
+        [self insertSubview:sprite belowSubview:layer];
+    }else{
+        [self addSubview:sprite];
+    }
+    
     [self moveSpriteForKey:key toTileCoordinates:coords animated:YES];
     
 }
@@ -252,4 +261,15 @@
     return [self.sprites objectForKey:key];
 }
 
+#pragma mark - Layer Accessor
+
+- (MBLayerView *)layerNamed:(NSString *)name{
+    for (MBLayerView *layer in self.layers) {
+        if ([layer.name isEqualToString:name]) {
+            return layer;
+        }
+    }
+    
+    return nil;
+}
 @end

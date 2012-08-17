@@ -27,8 +27,7 @@
     [self.view addSubview:map];
 	
 	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"zack"];
-    [map addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(4, 0)];
-    [map moveSpriteForKey:@"player" toTileCoordinates:CGPointMake(4, 10) animated:YES];
+    [map addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(4,0) beneathLayerNamed:@"TreeTops"];
 	[sprite beginAnimation:@"down"];
 }
 

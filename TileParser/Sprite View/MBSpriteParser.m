@@ -43,8 +43,6 @@
             
 		}
         
-	
-        
 //		while([animationValues count] < frameNumber){
 //			[animationValues addObject:[NSNull null]];
 //		}
@@ -60,12 +58,6 @@
     //
 	
 	MBSpriteView *sprite = [[MBSpriteView alloc] initWithAnimations:animations];
-    
-    NSString *randomKey = [[animations allKeys] objectAtIndex:0];
-    
-    CGSize imageSize = [[[animations objectForKey:randomKey] objectAtIndex:0] size];
-    
-    sprite.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
 	
 	return sprite;
 }

@@ -15,7 +15,9 @@
 + (MBSpriteView *)spriteViewWithSpriteName:(NSString *)name{
 	NSURL *url = [[NSBundle mainBundle] URLForResource:name withExtension:@"plist"];
 	NSError *error = nil;
+    
 	NSDictionary *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
+    
 	if(error){
 		NSLog(@"Error: %@", error);
 	}
@@ -47,8 +49,18 @@
 		
 		[animationValues replaceObjectAtIndex:frameNumber-1 withObject:image];
 	}
+    
+    //
+    //  Automatically size the sprite
+    //
 	
 	MBSpriteView *sprite = [[MBSpriteView alloc] initWithAnimations:animations];
+    
+    NSString *randomKey = [[animations allKeys] objectAtIndex:0];
+    
+    CGSize imageSize = [[[animations objectForKey:randomKey] objectAtIndex:0] size];
+    
+    sprite.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
 	
 	return sprite;
 }

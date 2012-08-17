@@ -27,7 +27,7 @@
     [self.view addSubview:map];
 	
 	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"zack"];
-	sprite.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+
 	[self.view addSubview:sprite];
 	
 	[sprite beginAnimation:@"left"];

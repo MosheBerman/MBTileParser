@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class MBSpriteView;
+#import "MBSpriteView.h"
+
+#import "MBMap.h"
 
 @interface MBMapView : UIScrollView
 
-- (id)initWithFrame:(CGRect)frame mapName:(NSString*)name;
+- (id)init;
+- (void) loadMap:(MBMap *)map;
 
 //  If the layer doesn't exist, the view is inserted at the top
 - (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName;

@@ -8,7 +8,7 @@
 
 #import "MBViewController.h"
 
-#import "MBMapView.h"
+#import "MBMapViewController.h"
 #import "MBSpriteView.h"
 #import "MBSpriteParser.h"
 
@@ -23,18 +23,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    MBMapView *map = [[MBMapView alloc] initWithFrame:self.view.frame mapName:@"SimpsonCity"];
+    MBMapViewController *mapViewController = [[MBMapViewController alloc] initMapName:@"SimpsonCity"];
+    [mapViewController.mapView setMaximumZoomScale:2.0];
+    [self.view addSubview:mapViewController.view];
+
+	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];
+    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,4) beneathLayerNamed:@"TreeTops"];
     
-    [self.view addSubview:map];
-    
-    map.minimumZoomScale = 1.0;
-    map.maximumZoomScale = 3.0;
-    
-	
-	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"nikkie"];
-    [map addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(4,0) beneathLayerNamed:@"TreeTops"];
-    
-	[sprite setDirection:@"down"];
+	[sprite beginAnimation:@"down"];
 }
 
 - (void)viewDidUnload

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MBMapView.h"
+
 @interface MBViewController : UIViewController
+
+@property (nonatomic, strong) MBMapView *view;
 
 @end

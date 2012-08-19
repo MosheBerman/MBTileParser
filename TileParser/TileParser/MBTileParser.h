@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MBMap.h"
 
-typedef void(^MBTileParserCompletionBlock)();
+typedef void(^MBTileParserCompletionBlock)(MBMap *map);
 
 @interface MBTileParser : NSObject
 

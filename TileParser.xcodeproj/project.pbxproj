@@ -46,6 +46,8 @@
 		46F2BD3315DEDA9E006820D9 /* tuna_guy.tps in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */; };
 		46F2BD6415DEDAFD006820D9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD5415DEDAFD006820D9 /* zack.plist */; };
 		46F2BD6515DEDAFD006820D9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD5515DEDAFD006820D9 /* zack.png */; };
+		46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2BD6815DEE280006820D9 /* MBMapViewController.m */; };
+		46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2BD6B15DEE28E006820D9 /* MBMap.m */; };
 		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
 		493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA59615DDB5FF00F435EF /* MBSpriteParser.m */; };
 /* End PBXBuildFile section */
@@ -104,6 +106,10 @@
 		46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = tuna_guy.tps; sourceTree = "<group>"; };
 		46F2BD5415DEDAFD006820D9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
 		46F2BD5515DEDAFD006820D9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
+		46F2BD6715DEE27F006820D9 /* MBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapViewController.h; path = MapView/MBMapViewController.h; sourceTree = "<group>"; };
+		46F2BD6815DEE280006820D9 /* MBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapViewController.m; path = MapView/MBMapViewController.m; sourceTree = "<group>"; };
+		46F2BD6A15DEE28E006820D9 /* MBMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMap.h; path = MapView/MBMap.h; sourceTree = "<group>"; };
+		46F2BD6B15DEE28E006820D9 /* MBMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMap.m; path = MapView/MBMap.m; sourceTree = "<group>"; };
 		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
 		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
 		493DA59515DDB5FF00F435EF /* MBSpriteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteParser.h; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
 				469D672D15DC84C80031F7D3 /* Tiled Map View */,
 				493DA58715DD7CD900F435EF /* Sprite View */,
+				46F2BD6615DEDFDE006820D9 /* Control View */,
 				468D924715C6D77100F461F0 /* Map Data */,
 				46F2BD0515DEDA9D006820D9 /* Sample Sprites */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
@@ -183,8 +190,12 @@
 		4646858215DB7227008B3914 /* MBMapView */ = {
 			isa = PBXGroup;
 			children = (
+				46F2BD6715DEE27F006820D9 /* MBMapViewController.h */,
+				46F2BD6815DEE280006820D9 /* MBMapViewController.m */,
 				4646857B15DB6E6F008B3914 /* MBMapView.h */,
 				4646857C15DB6E6F008B3914 /* MBMapView.m */,
+				46F2BD6A15DEE28E006820D9 /* MBMap.h */,
+				46F2BD6B15DEE28E006820D9 /* MBMap.m */,
 				46E816D915DC505900854143 /* Tile Layer */,
 				46E816DB15DC506A00854143 /* Tiles and Objects */,
 			);
@@ -322,6 +333,13 @@
 			path = Zack;
 			sourceTree = "<group>";
 		};
+		46F2BD6615DEDFDE006820D9 /* Control View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Control View";
+			sourceTree = "<group>";
+		};
 		493DA58715DD7CD900F435EF /* Sprite View */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +450,8 @@
 				466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */,
 				466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */,
 				493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */,
+				46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */,
+				46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

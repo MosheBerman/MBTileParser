@@ -8,8 +8,6 @@
 
 #import "MBMapView.h"
 
-#import "MBTileParser.h"
-
 #import "MBTileSet.h"
 
 #import "MBLayerView.h"
@@ -18,37 +16,27 @@
 
 #import "UIImage+TileData.h"
 
-#import "MBSpriteview.h"
+#import "MBMap.h"
 
 @interface MBMapView () <UIScrollViewDelegate>
-@property (nonatomic, strong) MBTileParser *parser;
 
-@property (nonatomic, strong) NSMutableArray *layers;
-@property (nonatomic, strong) NSMutableArray *tilesets;
-@property (nonatomic, strong) NSMutableArray *tileCache;
-@property (nonatomic, strong) NSMutableDictionary *objectGroups;
+@property (nonatomic, strong) MBMap *map;
+
 @property (nonatomic, strong) NSMutableDictionary *sprites;
 
 @property (nonatomic, strong) UIView *zoomWrapper;
+
 @end
 
 @implementation MBMapView
 
-- (id)initWithFrame:(CGRect)frame mapName:(NSString*)name{
+- (id)init{
     
-    self = [super initWithFrame:frame];
+    self = [super init];
 
     if (self) {
         
         // Initialization code
-        
-        _layers = [@[] mutableCopy];
-        
-        _tilesets = [@[] mutableCopy];
-        
-        _tileCache = [@[] mutableCopy];
-        
-        _objectGroups = [@{} mutableCopy];
         
         _sprites = [@{} mutableCopy];
         
@@ -68,46 +56,21 @@
         self.showsHorizontalScrollIndicator = NO;
         self.showsVerticalScrollIndicator = NO;
         
-        _parser = [[MBTileParser alloc] initWithMapName:name];
-        
-        if (_parser) {
-            
-            //
-            //  Keep a weak reference to self to
-            //  avoid retain cycle
-            //
-            
-            __weak MBMapView *weakSelf = self;
-            
-            MBTileParserCompletionBlock block = ^{
-                
-                __strong MBMapView *strongSelf = weakSelf;
-                
-                strongSelf.layers = [strongSelf.parser.mapDictionary objectForKey:@"layers"];
-                strongSelf.tilesets = [strongSelf.parser.mapDictionary objectForKey:@"tilesets"];
-                
-                
-                NSMutableArray *objectGroups = [strongSelf.parser.mapDictionary objectForKey:@"objectGroups"];
-                
-                for (MBMapObjectGroup *objectGroup in objectGroups) {
-                    [self.objectGroups setObject:objectGroup  forKey:objectGroup.name];
-                }
-                
-                NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"firstgid" ascending:YES];
-                [_tilesets sortUsingDescriptors:@[descriptor]];
-                
-                [strongSelf buildCache];
-                
-                [strongSelf layoutMap];
-                
-            };
-            
-            [_parser setCompletionHandler:block];
-            
-            [_parser start];
-        }
+
     }
     return self;
+}
+
+- (void) loadMap:(MBMap *)map{
+    
+    self.map = map;
+    
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    [self buildCache];
+    [self layoutMap];
 }
 
 //
@@ -120,14 +83,14 @@
     //  Assume the layers are sorted by lowest firstgid
     //
     
-    for (NSInteger i = 0; i < self.tilesets.count;i++) {
+    for (NSInteger i = 0; i < self.map.tilesets.count;i++) {
         
         //
         //  Break up the larger image into UIImages
         //
         
         //  First grab the set
-        MBTileSet *workingSet = [self.tilesets objectAtIndex:i];
+        MBTileSet *workingSet = [self.map.tilesets objectAtIndex:i];
         
         NSString *source = [workingSet source];
         
@@ -167,7 +130,7 @@
                     
                     UIImage *tile = [UIImage imageWithCGImage:image scale:1.0 orientation:tilesheet.imageOrientation];
                     
-                    [self.tileCache addObject:tile];
+                    [self.map.tileCache addObject:tile];
                     
                 }
             }
@@ -180,19 +143,14 @@
 //
 
 - (void) layoutMap{
-    
-    //Safety check
-    if (!self.parser) {
-        return;
-    }
-    
-    for (NSInteger i = 0; i < self.layers.count; i++) {
+
+    for (NSInteger i = 0; i < self.map.layers.count; i++) {
         
         //Reduces initial spike
         @autoreleasepool {
-            NSDictionary *layerData = [self.layers objectAtIndex:i];
+            NSDictionary *layerData = [self.map.layers objectAtIndex:i];
             
-            MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.tilesets imageCache:self.tileCache];
+            MBLayerView *layer = [[MBLayerView alloc] initWithLayerData:layerData tilesets:self.map.tilesets imageCache:self.map.tileCache];
             
             if(layer){
                 [layer drawMapLayer];
@@ -202,7 +160,7 @@
                 }
                 
                 [[self zoomWrapper] addSubview:layer];
-                [[self layers] replaceObjectAtIndex:i withObject:layer];
+                [[self.map layers] replaceObjectAtIndex:i withObject:layer];
             }
         }
     }
@@ -216,9 +174,9 @@
     //  it's a waste of time, as is this comment.
     //
     
-    CGRect frameOfFirstLayer = ((MBLayerView *)[self.layers objectAtIndex:0]).frame;
+    MBLayerView * layer = [[self.map layers] objectAtIndex:0];
     
-    [[self zoomWrapper] setFrame:frameOfFirstLayer];
+    self.zoomWrapper.frame = layer.frame;
     
     self.contentSize = [[self zoomWrapper] frame].size;
     
@@ -227,6 +185,7 @@
     //
     
     [self addSubview:self.zoomWrapper];
+
 }
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
@@ -249,14 +208,13 @@
     }
     
     [self moveSpriteForKey:key toTileCoordinates:coords animated:YES];
-    
 }
 
 //TODO: Add completion block, add animation support
 - (void) moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated{
     
     MBSpriteView * sprite = [self spriteForKey:key];
-    MBTileSet *tileSet = self.tilesets[0];
+    MBTileSet *tileSet = self.map.tilesets[0];
     
     CGSize tileSize = tileSet.tileSize;
     
@@ -289,8 +247,8 @@
 #pragma mark - Layer Accessor
 
 - (MBLayerView *)layerNamed:(NSString *)name{
-   
-    for (MBLayerView *layer in self.layers) {
+    
+    for (MBLayerView *layer in self.map.layers) {
         if ([[layer name] isEqualToString:name]) {
             return layer;
         }
@@ -298,4 +256,5 @@
     
     return nil;
 }
+
 @end

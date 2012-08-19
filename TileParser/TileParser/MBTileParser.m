@@ -269,7 +269,23 @@
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser{
     if (self.completionHandler) {
-        self.completionHandler();
+        
+        MBMap *map = [[MBMap alloc] init];
+        
+        map.layers = [self.mapDictionary objectForKey:@"layers"];
+        
+        map.tilesets = [self.mapDictionary objectForKey:@"tilesets"];
+        
+        NSMutableArray *objectGroups = [self.mapDictionary objectForKey:@"objectGroups"];
+        
+        for (MBMapObjectGroup *objectGroup in objectGroups) {
+            [map.objectGroups setObject:objectGroup forKey:objectGroup.name];
+        }
+        
+        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"firstgid" ascending:YES];
+        [map.tilesets sortUsingDescriptors:@[descriptor]];
+         
+        self.completionHandler(map);
     }
 }
 

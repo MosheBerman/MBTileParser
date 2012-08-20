@@ -48,7 +48,6 @@
 		if(!animationValues){
 			animationValues = [NSMutableArray array];
 			[animations setObject:animationValues forKey:animationKey];
-            
 		}
         
         //

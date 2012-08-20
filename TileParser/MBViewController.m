@@ -29,6 +29,8 @@
 
 	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];
     [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,4) beneathLayerNamed:@"TreeTops"];
+    [sprite beginAnimation:@"down"];
+    
 }
 
 - (void)viewDidUnload

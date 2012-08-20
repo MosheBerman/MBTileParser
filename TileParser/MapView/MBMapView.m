@@ -176,9 +176,9 @@
     
     MBLayerView * layer = [[self.map layers] objectAtIndex:0];
     
-    self.zoomWrapper.frame = layer.frame;
+    [[self zoomWrapper] setFrame: layer.frame];
     
-    self.contentSize = [[self zoomWrapper] frame].size;
+    [self setContentSize: [[self zoomWrapper] frame].size];
     
     //
     //

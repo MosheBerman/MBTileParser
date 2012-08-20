@@ -13,7 +13,8 @@
 @implementation MBSpriteParser
 
 + (MBSpriteView *)spriteViewWithSpriteName:(NSString *)name{
-	NSURL *url = [[NSBundle mainBundle] URLForResource:name withExtension:@"plist"];
+	
+    NSURL *url = [[NSBundle mainBundle] URLForResource:name withExtension:@"plist"];
 	NSError *error = nil;
     
 	NSDictionary *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
@@ -50,9 +51,8 @@
             
 		}
         
-        
         //
-        //  Deal with out of order objw
+        //  Deal with frames being out of order in the plist
         //
         
         NSInteger frameNumber = [frameNameSeparated[2] integerValue];
@@ -66,10 +66,6 @@
 		
 		[animationValues replaceObjectAtIndex:frameNumber-1 withObject:image];
 	}
-    
-    //
-    //  Automatically size the sprite
-    //
 	
 	MBSpriteView *sprite = [[MBSpriteView alloc] initWithAnimations:animations];
 	

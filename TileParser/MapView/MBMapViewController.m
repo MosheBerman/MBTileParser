@@ -60,17 +60,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.view = self.mapView;
+    [self setView:self.mapView];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    self.view.frame = self.view.superview.frame;
+    
+    CGRect frame = [[[self view] superview] frame];
+    [[self view] setFrame:frame];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (MBMapView *)view{
+    return (MBMapView*)[super view];
 }
 
 @end

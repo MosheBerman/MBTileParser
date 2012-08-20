@@ -3,7 +3,7 @@
 //  TileParser
 //
 //  Created by Moshe Berman on 7/16/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Moshe Berman. All rights reserved.
 //
 
 #import "MBViewController.h"
@@ -24,13 +24,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     MBMapViewController *mapViewController = [[MBMapViewController alloc] initMapName:@"SimpsonCity"];
-    [mapViewController.mapView setMaximumZoomScale:2.0];
-    [self.view addSubview:mapViewController.view];
+    [[mapViewController view] setMaximumZoomScale:2.0];
+    [self.view addSubview:[mapViewController view]];
 
 	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];
     [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,4) beneathLayerNamed:@"TreeTops"];
-    
-	[sprite beginAnimation:@"down"];
 }
 
 - (void)viewDidUnload

@@ -12,6 +12,4 @@
 
 @interface MBViewController : UIViewController
 
-@property (nonatomic, strong) MBMapView *view;
-
 @end

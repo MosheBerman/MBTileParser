@@ -56,6 +56,7 @@
 /* Begin PBXFileReference section */
 		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
 		4611130315EA72D900404504 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerViewController.m; path = ControllerView/MBControllerViewController.m; sourceTree = "<group>"; };
+		4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpriteMovementDelegate.h; sourceTree = "<group>"; };
 		462AABF915B3EDD30058E14C /* TileParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462AABFD15B3EDD30058E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		462AABFF15B3EDD30058E14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -348,10 +349,11 @@
 		493DA58715DD7CD900F435EF /* Sprite Classes */ = {
 			isa = PBXGroup;
 			children = (
-				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
-				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
 				493DA59515DDB5FF00F435EF /* MBSpriteParser.h */,
 				493DA59615DDB5FF00F435EF /* MBSpriteParser.m */,
+				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
+				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
+				4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */,
 			);
 			name = "Sprite Classes";
 			path = "Sprite View";

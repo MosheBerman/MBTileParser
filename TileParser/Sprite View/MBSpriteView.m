@@ -44,9 +44,62 @@
 	self.animationImages = nil;
 }
 
+
+#pragma mark - Movement Methods
+
 - (void) setDirection:(NSString *)direction{
-	self.animationImages = [self.animations objectForKey:direction];
+	self.animationImages = [[self animations] objectForKey:direction];
 	self.image = self.animationImages[0];
 }
+
+//  Move in a direction
+- (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion{
+    
+    CGRect oldFrame = [self frame];
+    CGSize tileDimensions = [[self movementDelegate] tileSizeInPoints];
+    
+    //  Calculate the new position
+    
+    if (direction == MBSpriteMovementDirectionHorizontal) {
+        oldFrame.origin.x += (tileDimensions.width * distanceInTiles);
+    }else{
+        oldFrame.origin.y += (tileDimensions.height * distanceInTiles);
+    }
+    
+    [UIView animateWithDuration:distanceInTiles*0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        
+        [self setFrame:oldFrame];
+    }
+     completion:^(BOOL finished) {
+         //  Perform whatever the callback warrants
+         if(completion){
+             completion();
+         }
+     }];
+}
+
+#pragma mark - Single Tile Movement
+
+- (void) moveUpWithCompletion:(void (^)()) completion{
+    [self beginAnimation:@"up"];
+    [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:-1 withCompletion:completion];
+}
+
+- (void) moveDownWithCompletion:(void (^)()) completion{
+    [self beginAnimation:@"down"];
+    [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:1 withCompletion:completion];
+}
+
+- (void) moveLeftWithCompletion:(void (^)()) completion{
+    [self beginAnimation:@"left"];
+    [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:-1 withCompletion:completion];
+}
+
+- (void) moveRightWithCompletion:(void (^)()) completion{
+    [self beginAnimation:@"right"];
+    [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:1 withCompletion:completion];
+}
+
+
 
 @end

@@ -16,4 +16,5 @@
 
 - (id)initMapName:(NSString *)name;
 
+
 @end

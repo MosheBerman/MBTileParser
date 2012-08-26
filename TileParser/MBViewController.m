@@ -10,7 +10,7 @@
 #import "MBMapViewController.h"
 #import "MBSpriteParser.h"
 
-@interface MBViewController () <MBSpriteMovementDelegate>
+@interface MBViewController ()
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @end
@@ -24,15 +24,16 @@
     
     MBMapViewController *mapViewController = [[MBMapViewController alloc] initMapName:@"SimpsonCity"];
     [[mapViewController mapView] setMaximumZoomScale:2.0];
+    [self setMapViewController:mapViewController];
     [self.view addSubview:[mapViewController view]];
     
     MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];
-    
     [self setPlayer:sprite];
     
-    [sprite setMovementDelegate:self];
+    [sprite setMovementDelegate:mapViewController];
     
     [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,4) beneathLayerNamed:@"TreeTops"];
+    
     [sprite beginAnimation:@"down"];
     
 }
@@ -40,52 +41,44 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [[self player] moveUpWithCompletion:^{
+    
+    
+    [[self player] moveLeftWithCompletion:^{
+        [[self player] moveLeftWithCompletion:^{
             [[self player] moveLeftWithCompletion:^{
-                [[self player] moveDownWithCompletion:^{
-                    [[self player] moveRightWithCompletion:^{
-                        [[self player] setDirection:@"down"];
+                [[self player] moveLeftWithCompletion:^{
+                    [[self player] moveLeftWithCompletion:^{
+                        [[self player] moveLeftWithCompletion:^{
+                            [[self player] setDirection:@"down"];
+                        }];
                     }];
                 }];
             }];
+        }];
     }];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationIsLandscape(interfaceOrientation);
-    } else {
-        return YES;
+     - (void)viewDidUnload
+    {
+        [super viewDidUnload];
+        // Release any retained subviews of the main view.
     }
-}
-
-- (NSUInteger)supportedInterfaceOrientations{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskLandscape;
-    }else{
-        return UIInterfaceOrientationMaskAll;
+     
+     - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+    {
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+        } else {
+            return YES;
+        }
     }
-}
-
-#pragma mark - Movement Delegate
-
-- (CGSize) tileSizeInPoints{
-    
-    //TODO: Get size of a tile from the mapview somehow
-
-    //TODO: remove this when the delegate is implemented...
-    return CGSizeMake(32.0, 32.0);
-}
-
-- (BOOL) tileIsOpenAtCoordinates:(CGPoint)coordinates{
-    // Figure out if a tile is open at some point
-}
-
-@end
+     
+     - (NSUInteger)supportedInterfaceOrientations{
+         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+             return UIInterfaceOrientationMaskLandscape;
+         }else{
+             return UIInterfaceOrientationMaskAll;
+         }
+     }
+     
+     @end

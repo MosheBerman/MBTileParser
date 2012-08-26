@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MBTileSet.h"
+
 @interface MBLayerView : UIView
 
 @property (nonatomic, strong) NSString *name;
@@ -16,5 +18,7 @@
 
 - (id)initWithLayerData:(NSDictionary *)data tilesets:(NSArray *)tilesets imageCache:(NSArray *)cache;
 - (void) drawMapLayer;
+
+- (UIImage *)tileAtCoordinates:(CGPoint)coordinates;
 
 @end

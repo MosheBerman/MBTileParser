@@ -33,4 +33,5 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
+- (NSString *)description;
 @end

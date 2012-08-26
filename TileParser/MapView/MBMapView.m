@@ -22,8 +22,6 @@
 
 @property (nonatomic, strong) MBMap *map;
 
-@property (nonatomic, strong) NSMutableDictionary *sprites;
-
 @property (nonatomic, strong) UIView *zoomWrapper;
 
 @end
@@ -90,7 +88,7 @@
         //
         
         //  First grab the set
-        MBTileSet *workingSet = [self.map.tilesets objectAtIndex:i];
+        MBTileSet *workingSet = [[[self map] tilesets] objectAtIndex:i];
         
         NSString *source = [workingSet source];
         
@@ -103,20 +101,21 @@
         CGSize dimensionsOfTileInSet = [workingSet tileSize];
         
         //
+        //  A reference to the cache
+        //
+        
+        NSMutableArray *cache = self.map.tileCache;
+        
+        //
         //  Loop through the tilesheet now, chopping it up
         //
         
-        //
-        //  TODO: Load properties into the images from the tileset
-        //
-        
         for (NSInteger j = 0; j < workingSet.mapSize.height; j++) {
-            for (NSInteger i = 0; i < workingSet.mapSize.width; i++) {
+            for (NSInteger k = 0; k < workingSet.mapSize.width; k++) {
                 
                 @autoreleasepool {
                     
-                    
-                    CGRect tileRect = CGRectMake(dimensionsOfTileInSet.width * i, dimensionsOfTileInSet.height * j, dimensionsOfTileInSet.width, dimensionsOfTileInSet.height);
+                    CGRect tileRect = CGRectMake(dimensionsOfTileInSet.width * k, dimensionsOfTileInSet.height * j, dimensionsOfTileInSet.width, dimensionsOfTileInSet.height);
                     
                     //NSLog(@"Tilesheet image: %@", tilesheet);
                     
@@ -130,8 +129,23 @@
                     
                     UIImage *tile = [UIImage imageWithCGImage:image scale:1.0 orientation:tilesheet.imageOrientation];
                     
-                    [self.map.tileCache addObject:tile];
+                    //
+                    //  TODO: Load properties into the images from the tileset
+                    //
                     
+                    if ([[workingSet tileProperties] allKeys].count) {
+                        
+                        NSInteger index =  (j*workingSet.mapSize.width)+k;
+                        
+                        NSNumber *key = [NSNumber numberWithInteger:index];
+                        
+                        NSDictionary *tileProperties = [workingSet tileProperties];
+                    
+                        [tile setTileData:tileProperties[key]];
+                    }
+                    
+                    
+                    [cache addObject:tile];
                 }
             }
         }
@@ -267,6 +281,16 @@
     }
     
     return nil;
+}
+
+- (UIImage *)tileAtCoordinates:(CGPoint)coordinates inLayerNamed:(NSString *)layerName{
+
+    MBLayerView *layer = [self layerNamed:@"Meta"];
+    
+    UIImage *tileImage = [layer tileAtCoordinates:coordinates];
+    
+    return tileImage;
+    
 }
 
 @end

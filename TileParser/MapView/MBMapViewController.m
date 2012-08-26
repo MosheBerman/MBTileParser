@@ -8,11 +8,13 @@
 
 #import "MBMapViewController.h"
 
-#import "MBTileParser.h"
-
 #import "MBMap.h"
 
 #import "MBTileParser.h"
+
+#import "MBTileSet.h"
+
+#import "UIImage+TileData.h"
 
 @interface MBMapViewController ()
 
@@ -76,11 +78,52 @@
         
         [[strongSelf mapView] loadMap:map];
         
+        [strongSelf setMap:map];
+        
     };
     
     [_parser setCompletionHandler:block];
     
     [_parser start];
+}
+
+#pragma mark - Sprite Movement Delegate 
+
+- (CGSize)tileSizeInPoints{
+    MBTileSet *tileSet = [[self map] tilesets][0];
+    return [tileSet tileSize];
+}
+
+- (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite{
+    
+    /*
+    CGSize tileSize = [self tileSizeInPoints];
+    
+    
+    //  Get a rect covering the target tile
+    CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
+    
+    
+    //Check for other sprites
+    for (MBSpriteView *sprite in [[self mapView] sprites]) {
+
+        if (CGRectIntersectsRect(sprite.frame, targetLocation)) {
+            return NO;
+        }
+    }
+     */
+    
+    
+    UIImage *destinationTile = [[self mapView] tileAtCoordinates:coordinates inLayerNamed:@"Meta"];
+    
+    NSDictionary *tileProperties = [destinationTile tileData];
+    
+    if ([tileProperties[@"name"] isEqualToString:@"solid"]) {
+        return NO;
+    }
+    
+    
+    return YES;
 }
 
 @end

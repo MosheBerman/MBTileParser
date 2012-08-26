@@ -10,15 +10,15 @@
 
 #import <objc/runtime.h>
 
-static char kTileDataKey;
+static char *kTileDataKey = "tileData";
 
 @implementation UIImage (TileData)
 
-- (void) setPropertiesDictionary:(NSDictionary *)properties{
+- (void) setTileData:(NSDictionary *)properties{
     objc_setAssociatedObject(self, &kTileDataKey, properties, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSDictionary *) propertiesDictionary{
+- (NSDictionary *) tileData{
     return objc_getAssociatedObject(self, &kTileDataKey);
 }
 

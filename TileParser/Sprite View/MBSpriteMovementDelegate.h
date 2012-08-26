@@ -15,9 +15,10 @@ enum MBSpriteMovementDirection {
     MBSpriteMovementDirectionHorizontal
 };
 
+@class MBSpriteView;
 @protocol MBSpriteMovementDelegate <NSObject>
 
 - (CGSize) tileSizeInPoints;
-- (BOOL) tileIsOpenAtCoordinates:(CGPoint)coordinates;
+- (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite;
 
 @end

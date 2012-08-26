@@ -58,12 +58,20 @@
     CGRect oldFrame = [self frame];
     CGSize tileDimensions = [[self movementDelegate] tileSizeInPoints];
     
-    //  Calculate the new position
+    CGPoint tileCoordinates = CGPointMake(oldFrame.origin.x/tileDimensions.width, oldFrame.origin.y/tileDimensions.height);
     
+    //  Calculate the new position
     if (direction == MBSpriteMovementDirectionHorizontal) {
         oldFrame.origin.x += (tileDimensions.width * distanceInTiles);
+        tileCoordinates.x += distanceInTiles;
     }else{
         oldFrame.origin.y += (tileDimensions.height * distanceInTiles);
+        tileCoordinates.y += distanceInTiles;
+    }
+    
+    if (![[self movementDelegate] tileIsOpenAtCoordinates:tileCoordinates forSprite:self]) {
+        [self stopAnimation];
+        return;
     }
     
     [UIView animateWithDuration:distanceInTiles*0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{

@@ -12,19 +12,22 @@
 
 #import "MBMap.h"
 
+
 @interface MBMapView : UIScrollView
+
+@property (nonatomic, strong) NSMutableDictionary *sprites;
 
 - (id)init;
 - (void) loadMap:(MBMap *)map;
 
-#pragma mark - Add/Remove Sprites
-
-//  If the layer doesn't exist, the view is inserted at the top
+//  Insert a sprite beneath a layer
+//  If the layer doesn't exist or if the parameter is nil, the view is inserted at the top
 - (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName;
+
+//Remove a given sprite from the map
 - (void) removeSpriteForKey:(NSString*) key;
 
-#pragma mark - Move Sprites
-
-- (void)moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated duration:(NSTimeInterval)duration;
+//  Returns the tile in a given layer at a given coordinate
+- (UIImage *)tileAtCoordinates:(CGPoint)coordinates inLayerNamed:(NSString *)layerName;
 
 @end

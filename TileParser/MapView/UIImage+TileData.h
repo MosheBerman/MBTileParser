@@ -10,4 +10,7 @@
 
 @interface UIImage (TileData)
 
+- (void) setTileData:(NSDictionary *)properties;
+- (NSDictionary *) tileData;
+
 @end

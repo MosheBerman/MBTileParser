@@ -98,7 +98,7 @@
     //  Add object groups where relevant
     //
     
-    if ([self.workingElement isEqualToString:@"objectgroup"]) {
+    if ([[self workingElement] isEqualToString:@"objectgroup"]) {
         
         NSMutableArray *objectGroups = [self.mapDictionary objectForKey:@"objectGroups"];
         
@@ -111,10 +111,10 @@
         NSInteger width = [[attributeDict objectForKey:@"width"] integerValue];
         NSInteger height = [[attributeDict objectForKey:@"height"] integerValue];
         
-        group.width = width;
-        group.height = height;
+        [group setWidth: width];
+        [group setHeight: height];
         
-        group.name = [attributeDict objectForKey:@"name"];
+        [group setName: [attributeDict objectForKey:@"name"]];
         
         //
         //  Store it

@@ -1,3 +1,4 @@
+
 //
 //  MBLayerView.m
 //  TileParser
@@ -10,9 +11,7 @@
 
 #import "MBMapView.h"
 
-#import "MBTileSet.h"
-
-#import "MBTileView.h"
+#import "UIImage+TileData.h"
 
 @interface MBLayerView ()
 @property (nonatomic, strong) NSDictionary *layerData;
@@ -32,7 +31,7 @@
     //  tile dimensions.
     //
     
-    MBTileSet *workingTileset = [tilesets objectAtIndex:0];
+    MBTileSet *workingTileset = tilesets[0];
     
     //
     //  The number of tiles comes from the layer
@@ -132,7 +131,7 @@
                 GID--;
                 
                 //  Pull a UIImage from the texture array
-                UIImage *tileImage = [self.cache objectAtIndex:GID];
+                UIImage *tileImage = [[self cache] objectAtIndex:GID];
                 
                 //Put it into the tile
                 UIImageView *tile = [[UIImageView alloc] initWithFrame:frame];
@@ -155,6 +154,23 @@
     
     self.frame = CGRectMake(0, 0, width, height);
     
+}
+
+- (UIImage *)tileAtCoordinates:(CGPoint)coordinates{
+    
+    NSArray *gids = [self.layerData objectForKey:@"data"];
+    
+    NSInteger index = (coordinates.y * [self widthInTiles]) + coordinates.x;
+    
+    NSInteger gid = [gids[index] integerValue];
+    
+    if (gid > 0) {
+        gid --;
+    }
+    
+    UIImage *imageAtGID = [self cache][gid];
+    
+    return imageAtGID;
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4611130415EA72D900404504 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611130315EA72D900404504 /* MBControllerViewController.m */; };
 		462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFD15B3EDD30058E14C /* UIKit.framework */; };
 		462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFF15B3EDD30058E14C /* Foundation.framework */; };
 		462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AAC0115B3EDD30058E14C /* CoreGraphics.framework */; };
@@ -53,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
+		4611130315EA72D900404504 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerViewController.m; path = ControllerView/MBControllerViewController.m; sourceTree = "<group>"; };
 		462AABF915B3EDD30058E14C /* TileParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462AABFD15B3EDD30058E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		462AABFF15B3EDD30058E14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,9 +169,9 @@
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
-				469D672D15DC84C80031F7D3 /* Tiled Map View */,
-				493DA58715DD7CD900F435EF /* Sprite View */,
-				46F2BD6615DEDFDE006820D9 /* Control View */,
+				469D672D15DC84C80031F7D3 /* Tiled Map Classes */,
+				493DA58715DD7CD900F435EF /* Sprite Classes */,
+				46F2BD6615DEDFDE006820D9 /* Controller Classes */,
 				468D924715C6D77100F461F0 /* Map Data */,
 				46F2BD0515DEDA9D006820D9 /* Sample Sprites */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
@@ -238,13 +241,13 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		469D672D15DC84C80031F7D3 /* Tiled Map View */ = {
+		469D672D15DC84C80031F7D3 /* Tiled Map Classes */ = {
 			isa = PBXGroup;
 			children = (
 				4646858315DB8002008B3914 /* MBTileParser */,
 				4646858215DB7227008B3914 /* MBMapView */,
 			);
-			name = "Tiled Map View";
+			name = "Tiled Map Classes";
 			sourceTree = "<group>";
 		};
 		46E816D915DC505900854143 /* Tile Layer */ = {
@@ -333,14 +336,16 @@
 			path = Zack;
 			sourceTree = "<group>";
 		};
-		46F2BD6615DEDFDE006820D9 /* Control View */ = {
+		46F2BD6615DEDFDE006820D9 /* Controller Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4611130215EA72D900404504 /* MBControllerViewController.h */,
+				4611130315EA72D900404504 /* MBControllerViewController.m */,
 			);
-			name = "Control View";
+			name = "Controller Classes";
 			sourceTree = "<group>";
 		};
-		493DA58715DD7CD900F435EF /* Sprite View */ = {
+		493DA58715DD7CD900F435EF /* Sprite Classes */ = {
 			isa = PBXGroup;
 			children = (
 				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
@@ -348,6 +353,7 @@
 				493DA59515DDB5FF00F435EF /* MBSpriteParser.h */,
 				493DA59615DDB5FF00F435EF /* MBSpriteParser.m */,
 			);
+			name = "Sprite Classes";
 			path = "Sprite View";
 			sourceTree = "<group>";
 		};
@@ -452,6 +458,7 @@
 				493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */,
 				46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */,
 				46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */,
+				4611130415EA72D900404504 /* MBControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

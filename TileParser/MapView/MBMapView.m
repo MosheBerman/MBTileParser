@@ -181,7 +181,7 @@
     [self setContentSize: [[self zoomWrapper] frame].size];
     
     //
-    //
+    //  Add the zoom wrapper
     //
     
     [self addSubview:self.zoomWrapper];
@@ -193,7 +193,7 @@
 	return [self zoomWrapper];
 }
 
-#pragma mark - Public Sprite Methods
+#pragma mark - Add/Remove Sprites
 
 - (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName{
 
@@ -207,27 +207,7 @@
         [[self zoomWrapper] addSubview:sprite];
     }
     
-    [self moveSpriteForKey:key toTileCoordinates:coords animated:YES];
-}
-
-//TODO: Add completion block, add animation support
-- (void) moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated{
-    
-    MBSpriteView * sprite = [self spriteForKey:key];
-    MBTileSet *tileSet = self.map.tilesets[0];
-    
-    CGSize tileSize = tileSet.tileSize;
-    
-    coords.x = coords.x * tileSize.width;
-    coords.y = coords.y * tileSize.height;
-    
-    CGSize spriteSize = sprite.frame.size;
-    
-    if (animated) {
-        sprite.frame = CGRectMake(coords.x, coords.y, spriteSize.width, spriteSize.height);
-    }else{
-        sprite.frame = CGRectMake(coords.x, coords.y, spriteSize.width, spriteSize.height);
-    }
+    [self moveSpriteForKey:key toTileCoordinates:coords animated:NO duration:0];
 }
 
 - (void) removeSpriteForKey:(NSString*) key{
@@ -242,6 +222,38 @@
 
 - (MBSpriteView *) spriteForKey:(NSString *)key{
     return [self.sprites objectForKey:key];
+}
+
+#pragma mark - Move Sprites
+
+//TODO: Add completion block, add animation support
+
+- (void)moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated duration:(NSTimeInterval)duration{
+    [self moveSpriteForKey:key toTileCoordinates:coords animated:animated duration:duration completion:nil];
+}
+
+- (void)moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated duration:(NSTimeInterval)duration completion:(void (^)(BOOL finished))completion{
+    MBSpriteView * sprite = [self spriteForKey:key];
+    MBTileSet *tileSet = self.map.tilesets[0];
+    
+    CGSize tileSize = tileSet.tileSize;
+    
+    coords.x = coords.x * tileSize.width;
+    coords.y = coords.y * tileSize.height;
+    
+    CGSize spriteSize = sprite.frame.size;
+    
+    if (animated) {
+        [UIView
+         animateWithDuration:duration
+         animations:^{
+             sprite.frame = CGRectMake(coords.x, coords.y, spriteSize.width, spriteSize.height);
+         }
+         completion:completion];
+        
+    }else{
+        sprite.frame = CGRectMake(coords.x, coords.y, spriteSize.width, spriteSize.height);
+    }
 }
 
 #pragma mark - Layer Accessor

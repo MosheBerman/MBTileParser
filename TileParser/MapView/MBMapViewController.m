@@ -56,11 +56,16 @@
     return self;
 }
 
+- (void)loadView{
+    [self setView:self.mapView];
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     
-    [self setView:self.mapView];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -73,10 +78,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (MBMapView *)view{
-    return (MBMapView*)[super view];
 }
 
 @end

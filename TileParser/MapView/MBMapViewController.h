@@ -16,6 +16,4 @@
 
 - (id)initMapName:(NSString *)name;
 
-- (MBMapView *)view;
-
 @end

@@ -24,7 +24,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     MBMapViewController *mapViewController = [[MBMapViewController alloc] initMapName:@"SimpsonCity"];
-    [[mapViewController view] setMaximumZoomScale:2.0];
+    [[mapViewController mapView] setMaximumZoomScale:2.0];
     [self.view addSubview:[mapViewController view]];
 
 	MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];

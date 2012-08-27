@@ -12,8 +12,6 @@
 
 #import "MBSpriteMovementDelegate.h"
 
-#import "UIImage+TileData.h"
-
 @interface MBMapViewController : UIViewController <MBSpriteMovementDelegate>
 
 @property (nonatomic, strong) MBMapView *mapView;

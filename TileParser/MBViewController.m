@@ -43,19 +43,6 @@
     
     
     
-    [[self player] moveLeftWithCompletion:^{
-        [[self player] moveLeftWithCompletion:^{
-            [[self player] moveLeftWithCompletion:^{
-                [[self player] moveLeftWithCompletion:^{
-                    [[self player] moveLeftWithCompletion:^{
-                        [[self player] moveLeftWithCompletion:^{
-                            [[self player] setDirection:@"down"];
-                        }];
-                    }];
-                }];
-            }];
-        }];
-    }];
 }
 
      - (void)viewDidUnload

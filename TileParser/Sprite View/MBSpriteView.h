@@ -29,8 +29,9 @@
 //  Move in a direction
 - (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion;
 
-- (void) moveUpWithCompletion:(void (^)()) completion;
-- (void) moveDownWithCompletion:(void (^)()) completion;
-- (void) moveLeftWithCompletion:(void (^)()) completion;
-- (void) moveRightWithCompletion:(void (^)()) completion;
+- (void) moveUpWithCompletion:(void (^)())completion;
+- (void) moveDownWithCompletion:(void (^)())completion;
+- (void) moveLeftWithCompletion:(void (^)())completion;
+- (void) moveRightWithCompletion:(void (^)())completion;
+
 @end

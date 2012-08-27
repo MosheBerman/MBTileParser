@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4611130415EA72D900404504 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611130315EA72D900404504 /* MBControllerViewController.m */; };
+		4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */; };
+		4619C63F15EBFE3B009D095A /* MBJoystickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63E15EBFE3B009D095A /* MBJoystickViewController.m */; };
 		462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFD15B3EDD30058E14C /* UIKit.framework */; };
 		462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFF15B3EDD30058E14C /* Foundation.framework */; };
 		462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AAC0115B3EDD30058E14C /* CoreGraphics.framework */; };
@@ -56,6 +58,11 @@
 		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
 		4611130315EA72D900404504 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerViewController.m; path = ControllerView/MBControllerViewController.m; sourceTree = "<group>"; };
 		4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpriteMovementDelegate.h; sourceTree = "<group>"; };
+		4619C63815EBFBAC009D095A /* MBControllerEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBControllerEvent.h; path = ControllerView/MBControllerEvent.h; sourceTree = "<group>"; };
+		4619C63A15EBFE0E009D095A /* MBGameBoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGameBoyViewController.h; path = ControllerView/Gameboy/MBGameBoyViewController.h; sourceTree = "<group>"; };
+		4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGameBoyViewController.m; path = ControllerView/Gameboy/MBGameBoyViewController.m; sourceTree = "<group>"; };
+		4619C63D15EBFE3B009D095A /* MBJoystickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBJoystickViewController.h; path = ControllerView/MBJoystickViewController.h; sourceTree = "<group>"; };
+		4619C63E15EBFE3B009D095A /* MBJoystickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBJoystickViewController.m; path = ControllerView/MBJoystickViewController.m; sourceTree = "<group>"; };
 		462AABF915B3EDD30058E14C /* TileParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462AABFD15B3EDD30058E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		462AABFF15B3EDD30058E14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -335,8 +342,13 @@
 		46F2BD6615DEDFDE006820D9 /* Controller Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4619C63815EBFBAC009D095A /* MBControllerEvent.h */,
 				4611130215EA72D900404504 /* MBControllerViewController.h */,
 				4611130315EA72D900404504 /* MBControllerViewController.m */,
+				4619C63D15EBFE3B009D095A /* MBJoystickViewController.h */,
+				4619C63E15EBFE3B009D095A /* MBJoystickViewController.m */,
+				4619C63A15EBFE0E009D095A /* MBGameBoyViewController.h */,
+				4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -455,6 +467,8 @@
 				46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */,
 				46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */,
 				4611130415EA72D900404504 /* MBControllerViewController.m in Sources */,
+				4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */,
+				4619C63F15EBFE3B009D095A /* MBJoystickViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

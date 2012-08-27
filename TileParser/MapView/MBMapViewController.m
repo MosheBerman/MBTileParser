@@ -8,8 +8,6 @@
 
 #import "MBMapViewController.h"
 
-#import "MBMap.h"
-
 #import "MBTileParser.h"
 
 #import "MBTileSet.h"
@@ -96,23 +94,17 @@
 
 - (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite{
     
-    /*
     CGSize tileSize = [self tileSizeInPoints];
-    
     
     //  Get a rect covering the target tile
     CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
     
-    
     //Check for other sprites
-    for (MBSpriteView *sprite in [[self mapView] sprites]) {
-
-        if (CGRectIntersectsRect(sprite.frame, targetLocation)) {
+    for (MBSpriteView *aSprite in [[[self mapView] sprites] allValues]) {
+        if (CGRectIntersectsRect(sprite.frame, targetLocation) && aSprite != sprite) {
             return NO;
         }
     }
-     */
-    
     
     UIImage *destinationTile = [[self mapView] tileAtCoordinates:coordinates inLayerNamed:@"Meta"];
     

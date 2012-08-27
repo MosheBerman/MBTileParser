@@ -164,6 +164,9 @@
     
     NSInteger gid = [gids[index] integerValue];
     
+    //  Ensure we don't try and check a bad GID for data,
+    //  but keep in line with zero based indexing.
+    
     if (gid > 0) {
         gid --;
     }

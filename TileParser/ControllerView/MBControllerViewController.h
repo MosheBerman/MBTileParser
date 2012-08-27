@@ -10,4 +10,11 @@
 
 @interface MBControllerViewController : UIViewController
 
+//
+//
+//
+
+- (void) addObserver:(id)observer;
+- (void) removeObserver:(id)observer;
+
 @end

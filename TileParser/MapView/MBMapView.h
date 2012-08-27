@@ -12,7 +12,6 @@
 
 #import "MBMap.h"
 
-
 @interface MBMapView : UIScrollView
 
 @property (nonatomic, strong) NSMutableDictionary *sprites;

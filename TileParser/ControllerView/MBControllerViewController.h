@@ -11,7 +11,7 @@
 @interface MBControllerViewController : UIViewController
 
 //
-//
+//  Add/Remove Observers for controller events
 //
 
 - (void) addObserver:(id)observer;

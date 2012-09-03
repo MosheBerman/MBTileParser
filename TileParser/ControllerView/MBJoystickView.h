@@ -23,4 +23,6 @@
 @property (nonatomic) float thumbRadius;
 @property (nonatomic) float deadRadius;
 
+- (id)initWithFrame:(CGRect)frame;
+
 @end

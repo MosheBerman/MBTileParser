@@ -10,6 +10,8 @@
 #import "MBMapViewController.h"
 #import "MBSpriteParser.h"
 
+#import "MBJoystickView.h"
+
 @interface MBViewController ()
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
@@ -35,6 +37,9 @@
     [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,4) beneathLayerNamed:@"TreeTops"];
     
     [sprite beginAnimation:@"down"];
+    
+    MBJoystickView *js = [[MBJoystickView alloc] initWithFrame:CGRectMake(32, 224, 64, 64)];
+    [self.view addSubview:js];
     
 }
 

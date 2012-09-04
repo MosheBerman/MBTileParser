@@ -10,6 +10,8 @@
 
 #import "MBControllerEvent.h"
 
+#import "MBJoystickView.h"
+
 @interface MBControllerViewController ()
 @property (nonatomic, strong) NSMutableSet *observers;
 @end
@@ -69,8 +71,11 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if ([object isKindOfClass:[MBJoystick class]]) {
-        
+    if ([object isKindOfClass:[MBJoystickView class]]) {
+        if ([keyPath isEqual:@"velocity"]) {
+            [self dispatchJoystickChangedNotificationWithSender:object];
+               
+        }
     }
 }
 

@@ -38,6 +38,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self observeControls];    
     [self displayControls];
     [self layoutControls];
     
@@ -79,6 +80,11 @@
 }
 
 #pragma mark - Controler
+
+- (void) observeControls{
+    [[self joystick] addObserver:self forKeyPath:@"velocity" options:NSKeyValueObservingOptionNew context:nil];
+    [[self joystick] addObserver:self forKeyPath:@"stickPosition" options:NSKeyValueObservingOptionNew context:nil];
+}
 
 - (void)hideControls{
     [[self joystick] removeFromSuperview];

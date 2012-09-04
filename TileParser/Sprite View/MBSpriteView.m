@@ -76,6 +76,7 @@
     
     if (![[self movementDelegate] tileIsOpenAtCoordinates:tileCoordinates forSprite:self]) {
         [self stopAnimation];
+        [self setIsMoving:NO];
         return;
     }
     
@@ -135,6 +136,7 @@
     
     if (velocity.x == 1) {
         
+        [self setDirection:@"right"];
         [self setIsMoving:YES];
         [self startAnimating];
         
@@ -143,8 +145,10 @@
             [self stopAnimation];
         }];
     }
+    
     if(velocity.y == 1){
 
+        [self setDirection:@"up"];        
         [self setIsMoving:YES];
         [self startAnimating];
         
@@ -153,8 +157,10 @@
             [self stopAnimation];
         }];
     }
+    
     if (velocity.x == -1) {
 
+        [self setDirection:@"left"];        
         [self setIsMoving:YES];
         [self startAnimating];
         
@@ -166,6 +172,7 @@
     
     if(velocity.y == -1){
 
+        [self setDirection:@"down"];        
         [self setIsMoving:YES];
         [self startAnimating];
         

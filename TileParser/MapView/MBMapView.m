@@ -302,8 +302,8 @@
     
     //TODO: Fix this so that the bottom and right sides don't show what's behind them
     
-    offset.x = MIN(self.contentSize.width, MAX(0, offset.x));
-    offset.y = MIN(self.contentSize.height, MAX(0, offset.y));
+    offset.x = MIN(self.contentSize.width-self.bounds.size.width, MAX(0, offset.x));
+    offset.y = MIN(self.contentSize.height-self.bounds.size.height, MAX(0, offset.y));
     
     
     [self setContentOffset:offset];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958315F59EE5003EC5C6 /* MBControllerButton.m */; };
+		4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958715F59F46003EC5C6 /* UIColor+Extensions.m */; };
 		4611130415EA72D900404504 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611130315EA72D900404504 /* MBControllerViewController.m */; };
 		4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */; };
 		4619C63F15EBFE3B009D095A /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63E15EBFE3B009D095A /* MBJoystickView.m */; };
@@ -55,6 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4600957C15F598D8003EC5C6 /* MBControllerToggling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBControllerToggling.h; path = ControllerView/MBControllerToggling.h; sourceTree = "<group>"; };
+		4600958215F59EE4003EC5C6 /* MBControllerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerButton.h; path = ControllerView/MBControllerButton.h; sourceTree = "<group>"; };
+		4600958315F59EE5003EC5C6 /* MBControllerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerButton.m; path = ControllerView/MBControllerButton.m; sourceTree = "<group>"; };
+		4600958615F59F46003EC5C6 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extensions.h"; path = "TileParser/Categories/UIColor+Extensions.h"; sourceTree = "<group>"; };
+		4600958715F59F46003EC5C6 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extensions.m"; path = "TileParser/Categories/UIColor+Extensions.m"; sourceTree = "<group>"; };
 		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
 		4611130315EA72D900404504 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerViewController.m; path = ControllerView/MBControllerViewController.m; sourceTree = "<group>"; };
 		4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpriteMovementDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +145,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4600958915F59F62003EC5C6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4600958615F59F46003EC5C6 /* UIColor+Extensions.h */,
+				4600958715F59F46003EC5C6 /* UIColor+Extensions.m */,
+			);
+			name = Categories;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		462AABEE15B3EDD20058E14C = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +266,7 @@
 		469D672D15DC84C80031F7D3 /* Tiled Map Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4600958915F59F62003EC5C6 /* Categories */,
 				4646858315DB8002008B3914 /* MBTileParser */,
 				4646858215DB7227008B3914 /* MBMapView */,
 			);
@@ -343,12 +361,15 @@
 			isa = PBXGroup;
 			children = (
 				4619C63815EBFBAC009D095A /* MBControllerEvent.h */,
+				4600957C15F598D8003EC5C6 /* MBControllerToggling.h */,
 				4611130215EA72D900404504 /* MBControllerViewController.h */,
 				4611130315EA72D900404504 /* MBControllerViewController.m */,
 				4619C63A15EBFE0E009D095A /* MBGameBoyViewController.h */,
 				4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */,
 				4619C63D15EBFE3B009D095A /* MBJoystickView.h */,
 				4619C63E15EBFE3B009D095A /* MBJoystickView.m */,
+				4600958215F59EE4003EC5C6 /* MBControllerButton.h */,
+				4600958315F59EE5003EC5C6 /* MBControllerButton.m */,
 			);
 			name = "Controller Classes";
 			sourceTree = "<group>";
@@ -469,6 +490,8 @@
 				4611130415EA72D900404504 /* MBControllerViewController.m in Sources */,
 				4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */,
 				4619C63F15EBFE3B009D095A /* MBJoystickView.m in Sources */,
+				4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */,
+				4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

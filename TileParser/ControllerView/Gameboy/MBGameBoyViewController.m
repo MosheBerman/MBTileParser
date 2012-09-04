@@ -8,6 +8,7 @@
 
 #import "MBGameBoyViewController.h"
 
+#define kJoystickDiameter 72 
 @interface MBGameBoyViewController ()
 
 @end
@@ -20,7 +21,7 @@
     
     if (self) {
         
-        _joystick = [[MBJoystickView alloc] initWithFrame:CGRectMake(32, 224, 64, 64)];
+        _joystick = [[MBJoystickView alloc] initWithFrame:CGRectMake(32, 224, kJoystickDiameter, kJoystickDiameter)];
         _joystick.isDPad = YES;
         
         _buttonA = [MBControllerButton buttonWithColor:[UIColor whiteColor]];

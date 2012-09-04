@@ -128,27 +128,50 @@
     if (_isMoving) {
         return;
     }
+    
     MBJoystickView *joystick = value;
     
     CGPoint velocity = [joystick velocity];
     
     if (velocity.x == 1) {
         
+        [self setIsMoving:YES];
+        [self startAnimating];
+        
         [self moveRightWithCompletion:^{
             [self setIsMoving:NO];
+            [self stopAnimation];
         }];
-    }else if(velocity.y == 1){
+    }
+    if(velocity.y == 1){
+
+        [self setIsMoving:YES];
+        [self startAnimating];
+        
         [self moveUpWithCompletion:^{
             [self setIsMoving:NO];
+            [self stopAnimation];
         }];
-    }else if (velocity.x == -1) {
+    }
+    if (velocity.x == -1) {
+
+        [self setIsMoving:YES];
+        [self startAnimating];
         
         [self moveLeftWithCompletion:^{
             [self setIsMoving:NO];
+            [self stopAnimation];
         }];
-    }else if(velocity.y == -1){
+    }
+    
+    if(velocity.y == -1){
+
+        [self setIsMoving:YES];
+        [self startAnimating];
+        
         [self moveDownWithCompletion:^{
             [self setIsMoving:NO];
+            [self stopAnimation];
         }];
     }
     

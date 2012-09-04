@@ -28,7 +28,7 @@
 @property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
 
 // Set the image to the first frame of a given animation
-- (void) setDirection:(NSString *)direction;
+- (void) setActiveAnimation:(NSString *)direction;
 
 //  Move in a direction
 - (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion;

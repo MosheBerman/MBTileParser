@@ -29,4 +29,10 @@
 //  Returns the tile in a given layer at a given coordinate
 - (UIImage *)tileAtCoordinates:(CGPoint)coordinates inLayerNamed:(NSString *)layerName;
 
+//  Assigns a target to follow
+- (void)beginFollowingSpriteForKey:(NSString *)key;
+
+//  Removes target to follow
+- (void)stopFollowingSpriteForKey:(NSString *)key;
+
 @end

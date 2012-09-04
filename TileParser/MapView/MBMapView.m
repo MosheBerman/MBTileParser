@@ -21,8 +21,8 @@
 @interface MBMapView () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) MBMap *map;
-
 @property (nonatomic, strong) UIView *zoomWrapper;
+@property (nonatomic, copy) NSString *keyForFollowedSprite;
 
 @end
 
@@ -270,6 +270,40 @@
     }
 }
 
+#pragma mark - Follow a sprite
+
+- (void)beginFollowingSpriteForKey:(NSString *)key{
+    
+    if ([self keyForFollowedSprite]) {
+        [self stopFollowingSpriteForKey:key];
+    }
+    
+    [[self spriteForKey:key] addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
+    [self setKeyForFollowedSprite:key];
+}
+
+- (void)stopFollowingSpriteForKey:(NSString *)key{
+    [[self spriteForKey:key] removeObserver:self forKeyPath:@"frame"];
+    [self setKeyForFollowedSprite:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([object isEqual:[self spriteForKey:[self keyForFollowedSprite]]] && [keyPath isEqual:@"frame"]) {
+        
+        CGSize size = self.bounds.size;
+        CGPoint offset = [[self spriteForKey:[self keyForFollowedSprite]] frame].origin;
+        offset.x -= size.width/2;
+        offset.y -= size.height/2;
+        
+        offset.x = MIN(self.contentSize.width, offset.x);
+        offset.x = MAX(0, offset.x);
+        offset.y = MIN(self.contentSize.height, offset.y);
+        offset.y = MAX(0, offset.y);
+        
+        
+        [self setContentOffset:offset];
+    }
+}
 #pragma mark - Layer Accessor
 
 - (MBLayerView *)layerNamed:(NSString *)name{

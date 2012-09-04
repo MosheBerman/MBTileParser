@@ -127,6 +127,8 @@
     
 }
 
+//  TODO: Consolidate all of these completion blocks into one place
+
 - (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
     
     if (_isMoving) {

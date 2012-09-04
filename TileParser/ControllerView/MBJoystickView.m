@@ -10,6 +10,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+#import "UIColor+Extensions.h"
+
 #define kJoystickPI 3.1415926539f
 
 #define kJoystickPIx2 6.2831850718f
@@ -35,6 +37,7 @@
     if(self){
         _stickPosition = CGPointZero;
         _degrees = 0;
+        _velocity  = CGPointZero;
         _autoCenter = YES;
         _isDPad = NO;
         _hasDeadZone = NO;
@@ -47,9 +50,7 @@
         [self setMultipleTouchEnabled:NO];
         
         self.layer.cornerRadius = _joystickRadius;
-        self.layer.borderColor = [UIColor whiteColor].CGColor;
-        self.layer.borderWidth = 1.0;
-        self.layer.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.7].CGColor;
+        [self setColor:[UIColor lightGrayColor]];
     }
     
     return self;
@@ -57,23 +58,36 @@
 
 - (void)updateVelocity:(CGPoint)point{
     
+    point.x = point.x - _joystickRadius;
+    point.y = _joystickRadius - point.y;
+    
+    
+    
     float dx = point.x;
     float dy = point.y;
-    float distanceSquared = (dx *dx) + (dy*dy);
+    
+    float distanceSquared = dx * dx + dy * dy;
     
     if(distanceSquared <= _deadRadiusSquared){
         _velocity = CGPointZero;
         _degrees = 0.0f;
         _stickPosition = point;
+        
+        
+        
         return;
     }
 
     float angle = atan2f(dy, dx);   //In radians
+    
+    
+    
     if(angle < 0){
         angle += kJoystickPIx2;
     }
 
-    float cosAngle, sinAngle;
+    float cosAngle;
+    float sinAngle;
 
     if(_isDPad){
         float anglePerSector = 360.0f / _numberOfDirections * kJoystickDegreesToRadians;
@@ -109,6 +123,11 @@
     _joystickRadiusSquared = joystickRadius * joystickRadius;
 }
 
+- (void)setThumbRadius:(float)thumbRadius{
+    _thumbRadius = thumbRadius;
+    _thumbRadiusSquared = thumbRadius * thumbRadius;
+}
+
 - (void)setDeadRadius:(float)deadRadius{
     _deadRadius = deadRadius;
     _deadRadiusSquared = deadRadius * deadRadius;
@@ -132,8 +151,6 @@
     
     CGPoint location = [[touches anyObject] locationInView:self];
     [self updateVelocity:location];
-    
-    
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -150,8 +167,12 @@
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     [self touchesEnded:touches withEvent:event];
-    
-    
 }
-    
+
+- (void) setColor:(UIColor*)color{
+    self.layer.borderColor = color.CGColor;
+    self.layer.borderWidth = 1.0;
+    self.layer.backgroundColor = [color colorByChangingAlphaTo:0.65].CGColor;
+}
+
 @end

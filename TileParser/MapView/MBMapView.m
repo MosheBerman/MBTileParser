@@ -280,6 +280,7 @@
     
     [[self spriteForKey:key] addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
     [self setKeyForFollowedSprite:key];
+    [self centerOnSpriteView:[self spriteForKey:[self keyForFollowedSprite]]];
 }
 
 - (void)stopFollowingSpriteForKey:(NSString *)key{
@@ -289,21 +290,25 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([object isEqual:[self spriteForKey:[self keyForFollowedSprite]]] && [keyPath isEqual:@"frame"]) {
-        
-        CGSize size = self.bounds.size;
-        CGPoint offset = [[self spriteForKey:[self keyForFollowedSprite]] frame].origin;
-        offset.x -= size.width/2;
-        offset.y -= size.height/2;
-        
-        offset.x = MIN(self.contentSize.width, offset.x);
-        offset.x = MAX(0, offset.x);
-        offset.y = MIN(self.contentSize.height, offset.y);
-        offset.y = MAX(0, offset.y);
-        
-        
-        [self setContentOffset:offset];
+        [self centerOnSpriteView:[self spriteForKey:[self keyForFollowedSprite]]];
     }
 }
+
+- (void) centerOnSpriteView:(MBSpriteView *)spriteView {
+    CGSize size = self.bounds.size;
+    CGPoint offset = [spriteView frame].origin;
+    offset.x -= size.width/2;
+    offset.y -= size.height/2;
+    
+    //TODO: Fix this so that the bottom and right sides don't show what's behind them
+    
+    offset.x = MIN(self.contentSize.width, MAX(0, offset.x));
+    offset.y = MIN(self.contentSize.height, MAX(0, offset.y));
+    
+    
+    [self setContentOffset:offset];
+}
+
 #pragma mark - Layer Accessor
 
 - (MBLayerView *)layerNamed:(NSString *)name{

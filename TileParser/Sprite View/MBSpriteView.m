@@ -8,10 +8,14 @@
 
 #import "MBSpriteView.h"
 
+#import "MBControllerEvent.h"
+
+#import "MBJoystickView.h"
+
 @interface MBSpriteView()
 
-@property(nonatomic, strong) NSDictionary *animations;
-
+@property (nonatomic, strong) NSDictionary *animations;
+@property (nonatomic) BOOL isMoving;
 @end
 
 @implementation MBSpriteView
@@ -29,6 +33,7 @@
         self.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
         self.contentMode = UIViewContentModeTopLeft;
         
+        _isMoving = NO;
 	}
 	return self;
 }
@@ -78,12 +83,12 @@
         
         [self setFrame:oldFrame];
     }
-     completion:^(BOOL finished) {
-         //  Perform whatever the callback warrants
-         if(completion){
-             completion();
-         }
-     }];
+                     completion:^(BOOL finished) {
+                         //  Perform whatever the callback warrants
+                         if(completion){
+                             completion();
+                         }
+                     }];
 }
 
 #pragma mark - Single Tile Movement
@@ -108,6 +113,45 @@
     [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:1 withCompletion:completion];
 }
 
+#pragma mark - Game Controller Support
 
+- (void)gameController:(MBControllerViewController *)controller buttonsPressedWithSender:(id)sender{
+    
+}
+
+- (void)gameController:(MBControllerViewController *)controller buttonsReleasedWithSender:(id)sender{
+    
+}
+
+- (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
+    
+    if (_isMoving) {
+        return;
+    }
+    MBJoystickView *joystick = value;
+    
+    CGPoint velocity = [joystick velocity];
+    
+    if (velocity.x == 1) {
+        
+        [self moveRightWithCompletion:^{
+            [self setIsMoving:NO];
+        }];
+    }else if(velocity.y == 1){
+        [self moveUpWithCompletion:^{
+            [self setIsMoving:NO];
+        }];
+    }else if (velocity.x == -1) {
+        
+        [self moveLeftWithCompletion:^{
+            [self setIsMoving:NO];
+        }];
+    }else if(velocity.y == -1){
+        [self moveDownWithCompletion:^{
+            [self setIsMoving:NO];
+        }];
+    }
+    
+}
 
 @end

@@ -42,6 +42,7 @@
     
     MBGameBoyViewController *controller = [[MBGameBoyViewController alloc] init];
     [self setGameboyControls:controller];
+    [controller addObserver:[self player]];
     [[self view] addSubview:[controller view]];
 }
 

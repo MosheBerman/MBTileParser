@@ -10,9 +10,8 @@
 
 #import "MBSpriteMovementDelegate.h"
 
-@interface MBSpriteView : UIImageView
 
-@property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
+@interface MBSpriteView : UIImageView
 
 //  Designated initializer
 - (id)initWithAnimations:(NSDictionary *)animations;
@@ -23,12 +22,18 @@
 //  Stop whatever animation is playing
 - (void)stopAnimation;
 
+#pragma mark - Movement related
+
+//A movement delegate
+@property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
+
 // Set the image to the first frame of a given animation
 - (void) setDirection:(NSString *)direction;
 
 //  Move in a direction
 - (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion;
 
+//Move one tile in a given direction with a completion handler
 - (void) moveUpWithCompletion:(void (^)())completion;
 - (void) moveDownWithCompletion:(void (^)())completion;
 - (void) moveLeftWithCompletion:(void (^)())completion;

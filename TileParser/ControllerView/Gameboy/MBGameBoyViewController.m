@@ -21,6 +21,7 @@
     if (self) {
         
         _joystick = [[MBJoystickView alloc] initWithFrame:CGRectMake(32, 224, 64, 64)];
+        _joystick.isDPad = YES;
         
         _buttonA = [MBControllerButton buttonWithColor:[UIColor whiteColor]];
         _buttonB = [MBControllerButton buttonWithColor:[UIColor whiteColor]];

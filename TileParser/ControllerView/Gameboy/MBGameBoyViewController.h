@@ -8,6 +8,17 @@
 
 #import "MBControllerViewController.h"
 
-@interface MBGameBoyViewController : MBControllerViewController
+#import "MBJoystickView.h"
+
+#import "MBControllerButton.h"
+
+@interface MBGameBoyViewController : MBControllerViewController <MBControllerToggling>
+
+@property (nonatomic, strong) MBJoystickView *joystick;
+
+@property (nonatomic, strong) MBControllerButton *buttonA;
+@property (nonatomic, strong) MBControllerButton *buttonB;
+@property (nonatomic, strong) MBControllerButton *buttonStart;
+@property (nonatomic, strong) MBControllerButton *buttonSelect;
 
 @end

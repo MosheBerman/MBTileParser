@@ -78,10 +78,11 @@
     }
     
     if (![[self movementDelegate] tileIsOpenAtCoordinates:tileCoordinates forSprite:self]) {
-        [self stopAnimation];
-        [self setIsMoving:NO];
+        [self resetMovementState];
         return;
     }
+    
+    [self startMoving];
     
     [UIView animateWithDuration:distanceInTiles*kMovementDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         
@@ -92,8 +93,18 @@
                          if(completion){
                              completion();
                          }
-                         
+                         [self resetMovementState];
                      }];
+}
+
+- (void) startMoving{
+    [self setIsMoving:YES];
+    [self startAnimating];
+}
+
+- (void) resetMovementState{
+    [self setIsMoving:NO];
+    [self stopAnimation];
 }
 
 #pragma mark - Single Tile Movement
@@ -128,8 +139,6 @@
     
 }
 
-//  TODO: Consolidate all of these completion blocks into one place
-
 - (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
     
     if (_isMoving) {
@@ -143,51 +152,26 @@
     if (velocity.x == 1) {
         
         [self setActiveAnimation:@"right"];
-        [self setIsMoving:YES];
-        [self startAnimating];
-        
-        [self moveRightWithCompletion:^{
-            [self setIsMoving:NO];
-            [self stopAnimation];
-        }];
+        [self moveRightWithCompletion:nil];
     }
     
     if(velocity.y == 1){
 
-        [self setActiveAnimation:@"up"];        
-        [self setIsMoving:YES];
-        [self startAnimating];
-        
-        [self moveUpWithCompletion:^{
-            [self setIsMoving:NO];
-            [self stopAnimation];
-        }];
+        [self setActiveAnimation:@"up"];
+        [self moveUpWithCompletion:nil];
     }
     
     if (velocity.x == -1) {
 
         [self setActiveAnimation:@"left"];        
-        [self setIsMoving:YES];
-        [self startAnimating];
-        
-        [self moveLeftWithCompletion:^{
-            [self setIsMoving:NO];
-            [self stopAnimation];
-        }];
+        [self moveLeftWithCompletion:nil];
     }
     
     if(velocity.y == -1){
 
         [self setActiveAnimation:@"down"];        
-        [self setIsMoving:YES];
-        [self startAnimating];
-        
-        [self moveDownWithCompletion:^{
-            [self setIsMoving:NO];
-            [self stopAnimation];
-        }];
+        [self moveDownWithCompletion:nil];
     }
-    
 }
 
 @end

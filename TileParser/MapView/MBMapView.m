@@ -280,6 +280,11 @@
     
     [[self spriteForKey:key] addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
     [self setKeyForFollowedSprite:key];
+    
+    if (self.bounds.size.width == 0 && self.bounds.size.height == 0) {
+        [self setBounds:[[self superview] bounds]];
+    }
+    
     [self centerOnSpriteView:[self spriteForKey:[self keyForFollowedSprite]]];
 }
 
@@ -297,14 +302,12 @@
 - (void) centerOnSpriteView:(MBSpriteView *)spriteView {
     CGSize size = self.bounds.size;
     CGPoint offset = [spriteView frame].origin;
+    
     offset.x -= size.width/2;
     offset.y -= size.height/2;
     
-    //TODO: Fix this so that the bottom and right sides don't show what's behind them
-    
     offset.x = MIN(self.contentSize.width-self.bounds.size.width, MAX(0, offset.x));
     offset.y = MIN(self.contentSize.height-self.bounds.size.height, MAX(0, offset.y));
-    
     
     [self setContentOffset:offset];
 }

@@ -29,17 +29,26 @@
     return self;
 }
 
-- (void)viewDidLoad
+#pragma mark - Autorotation
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    } else {
+        return YES;
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSUInteger)supportedInterfaceOrientations{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return UIInterfaceOrientationMaskLandscape;
+    }else{
+        return UIInterfaceOrientationMaskAll;
+    }
 }
+
+#pragma mark - Input Notifications
 
 - (void) dispatchButtonPressedNotificationWithSender:(id)sender{
     for (id<MBControllerEvent> observer in [self observers]) {
@@ -59,9 +68,7 @@
     }
 }
 
-//
-//
-//
+#pragma mark - Input Observers
 
 - (void) addObserver:(id)observer{
     [[self observers] addObject:observer];

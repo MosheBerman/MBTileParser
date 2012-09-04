@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MBControllerToggling.h"
+
 @interface MBControllerViewController : UIViewController
 
 //

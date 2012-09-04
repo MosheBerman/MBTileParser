@@ -26,20 +26,34 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //
+    //  Create a sprite for the game world.
+    //
+    
+    MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];
+    [self setPlayer:sprite];
+
+    //
+    //  Create a map view controller and display the map
+    //
+    
     MBMapViewController *mapViewController = [[MBMapViewController alloc] initMapName:@"SimpsonCity"];
     [[mapViewController mapView] setMaximumZoomScale:2.0];
     [self setMapViewController:mapViewController];
     [self.view addSubview:[mapViewController view]];
     
-    MBSpriteView *sprite = [MBSpriteParser spriteViewWithSpriteName:@"explorer"];
-    [self setPlayer:sprite];
-
+    //  Attach the map to the sprite as the movement delegate
+    
     [sprite setMovementDelegate:mapViewController];
     
-    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,4) beneathLayerNamed:@"TreeTops"];
+    //  Add the sprite to the map and follow it
+    
+    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(29,7) beneathLayerNamed:@"TreeTops"];
     [[mapViewController mapView] beginFollowingSpriteForKey:@"player"];
     
-    [sprite beginAnimation:@"down"];
+    //
+    //  Set up the game controls
+    //
     
     MBGameBoyViewController *controller = [[MBGameBoyViewController alloc] init];
     [self setGameboyControls:controller];

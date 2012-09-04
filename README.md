@@ -1,4 +1,4 @@
-**Look Ma, no low-level codee!**
+**Look Ma, no low-level code!**
 
 MBTileParser began as a small library that allows you to parse TMX files and then display them  using pure UIKit. (You don't need to learn OpenGL and you don't have to use a game engine. ) Now, MBTileParser is more of a game engine, in that it supports loading TMX files, cocos2d spritesheets created with TexturePacker, and more. Loaded sprites can be displayed onscreen and even animated. Work is in progress to allow sprites to move onscreen via emulated joystick input.
 

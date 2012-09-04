@@ -10,11 +10,13 @@
 #import "MBMapViewController.h"
 #import "MBSpriteParser.h"
 
-#import "MBJoystickView.h"
+#import "MBGameBoyViewController.h"
 
 @interface MBViewController ()
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
+@property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
+
 @end
 
 @implementation MBViewController
@@ -38,39 +40,39 @@
     
     [sprite beginAnimation:@"down"];
     
-    MBJoystickView *js = [[MBJoystickView alloc] initWithFrame:CGRectMake(32, 224, 64, 64)];
-    [self.view addSubview:js];
-    
+    MBGameBoyViewController *controller = [[MBGameBoyViewController alloc] init];
+    [self setGameboyControls:controller];
+    [[self view] addSubview:[controller view]];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    
-    
+
 }
 
-     - (void)viewDidUnload
-    {
-        [super viewDidUnload];
-        // Release any retained subviews of the main view.
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+    } else {
+        return YES;
     }
-     
-     - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-    {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            return UIInterfaceOrientationIsLandscape(interfaceOrientation);
-        } else {
-            return YES;
-        }
+}
+
+- (NSUInteger)supportedInterfaceOrientations{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return UIInterfaceOrientationMaskLandscape;
+    }else{
+        return UIInterfaceOrientationMaskAll;
     }
-     
-     - (NSUInteger)supportedInterfaceOrientations{
-         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-             return UIInterfaceOrientationMaskLandscape;
-         }else{
-             return UIInterfaceOrientationMaskAll;
-         }
-     }
-     
-     @end
+}
+
+
+
+@end

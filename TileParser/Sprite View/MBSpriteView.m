@@ -12,6 +12,8 @@
 
 #import "MBJoystickView.h"
 
+#define kMovementDuration 0.4
+
 @interface MBSpriteView()
 
 @property (nonatomic, strong) NSDictionary *animations;
@@ -80,7 +82,7 @@
         return;
     }
     
-    [UIView animateWithDuration:distanceInTiles*0.4 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:distanceInTiles*kMovementDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         
         [self setFrame:oldFrame];
     }
@@ -89,6 +91,7 @@
                          if(completion){
                              completion();
                          }
+                         
                      }];
 }
 

@@ -10,4 +10,7 @@
 
 @protocol MBControllerToggling <NSObject>
 
+- (void) hideControls;
+- (void) displayControls;
+
 @end

@@ -96,6 +96,9 @@
 
 - (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite{
     
+   
+    
+    
     if (coordinates.x < 0 || coordinates.y < 0)  {
         return NO;
     }

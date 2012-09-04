@@ -31,6 +31,7 @@
         
         NSString *randomKey = [[animations allKeys] objectAtIndex:0];
         CGSize imageSize = [[[animations objectForKey:randomKey] objectAtIndex:0] size];
+        [self setActiveAnimation:randomKey];
         
         self.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
         self.contentMode = UIViewContentModeTopLeft;
@@ -54,7 +55,7 @@
 
 #pragma mark - Movement Methods
 
-- (void) setDirection:(NSString *)direction{
+- (void) setActiveAnimation:(NSString *)direction{
 	self.animationImages = [[self animations] objectForKey:direction];
 	self.image = self.animationImages[0];
 }
@@ -141,7 +142,7 @@
     
     if (velocity.x == 1) {
         
-        [self setDirection:@"right"];
+        [self setActiveAnimation:@"right"];
         [self setIsMoving:YES];
         [self startAnimating];
         
@@ -153,7 +154,7 @@
     
     if(velocity.y == 1){
 
-        [self setDirection:@"up"];        
+        [self setActiveAnimation:@"up"];        
         [self setIsMoving:YES];
         [self startAnimating];
         
@@ -165,7 +166,7 @@
     
     if (velocity.x == -1) {
 
-        [self setDirection:@"left"];        
+        [self setActiveAnimation:@"left"];        
         [self setIsMoving:YES];
         [self startAnimating];
         
@@ -177,7 +178,7 @@
     
     if(velocity.y == -1){
 
-        [self setDirection:@"down"];        
+        [self setActiveAnimation:@"down"];        
         [self setIsMoving:YES];
         [self startAnimating];
         

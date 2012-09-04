@@ -10,4 +10,6 @@
 
 @interface UIColor (Extensions)
 
+- (UIColor *)colorByChangingAlphaTo:(CGFloat)newAlpha;
+
 @end

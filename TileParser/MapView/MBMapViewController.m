@@ -96,9 +96,6 @@
 
 - (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite{
     
-   
-    
-    
     if (coordinates.x < 0 || coordinates.y < 0)  {
         return NO;
     }
@@ -120,6 +117,10 @@
     NSDictionary *tileProperties = [destinationTile tileData];
     
     if ([tileProperties[@"name"] isEqualToString:@"solid"]) {
+        return NO;
+    }
+    
+    if ([tileProperties[@"name"] isEqualToString:@"water"]) {
         return NO;
     }
     

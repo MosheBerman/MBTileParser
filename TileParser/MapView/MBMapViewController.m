@@ -46,6 +46,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
     
     CGRect frame = [[[self view] superview] frame];
     [[self view] setFrame:frame];

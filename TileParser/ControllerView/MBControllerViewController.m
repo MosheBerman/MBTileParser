@@ -68,6 +68,12 @@
     }
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if ([object isKindOfClass:[MBJoystick class]]) {
+        
+    }
+}
+
 #pragma mark - Input Observers
 
 - (void) addObserver:(id)observer{

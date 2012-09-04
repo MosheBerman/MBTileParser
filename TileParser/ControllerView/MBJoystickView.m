@@ -58,6 +58,7 @@
 
 - (void)updateVelocity:(CGPoint)point{
     
+    
     point.x = point.x - _joystickRadius;
     point.y = _joystickRadius - point.y;
     
@@ -69,11 +70,16 @@
     float distanceSquared = dx * dx + dy * dy;
     
     if(distanceSquared <= _deadRadiusSquared){
+        
+        [self willChangeValueForKey:@"velocity"];
         _velocity = CGPointZero;
+        [self didChangeValueForKey:@"velocity"];
+        
         _degrees = 0.0f;
+        
+        [self willChangeValueForKey:@"stickPosition"];
         _stickPosition = point;
-        
-        
+        [self didChangeValueForKey:@"stickPosition"];
         
         return;
     }
@@ -103,11 +109,15 @@
         dy = sinAngle * _joystickRadius;
     }
 
+    [self willChangeValueForKey:@"velocity"];
     _velocity = CGPointMake(dx/_joystickRadius, dy/_joystickRadius);
+    [self didChangeValueForKey:@"velocity"];
+    
     _degrees = angle * kJoystickRadiansToDegrees;
 
+    [self willChangeValueForKey:@"stickPosition"];
     _stickPosition = CGPointMake(dx, dy);
-
+    [self didChangeValueForKey:@"stickPosition"];
 }
 
 - (void) setIsDPad:(BOOL)isDPad{

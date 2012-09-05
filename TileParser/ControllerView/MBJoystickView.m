@@ -58,11 +58,14 @@
 
 - (void)updateVelocity:(CGPoint)point{
     
+    if (point.x == 0 && point.y == 0) {
+        [[self thumbView] setCenter:[[self backgroundView] center]];
+    }else{
+        [[self thumbView] setCenter:point];
+    }
     
     point.x = point.x - _joystickRadius;
     point.y = _joystickRadius - point.y;
-    
-    
     
     float dx = point.x;
     float dy = point.y;
@@ -118,8 +121,6 @@
     [self willChangeValueForKey:@"stickPosition"];
     _stickPosition = CGPointMake(dx, dy);
     [self didChangeValueForKey:@"stickPosition"];
-    
-    [[self thumbView] setCenter:_stickPosition];
 }
 
 - (void) setIsDPad:(BOOL)isDPad{

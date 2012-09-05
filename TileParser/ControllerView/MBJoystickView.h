@@ -26,6 +26,10 @@
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIView *thumbView;
 
+@property (nonatomic) float repeatInterval;
+@property (nonatomic) BOOL repeatEventDispatchWithoutRequiringMovement;
+
+
 - (id)initWithFrame:(CGRect)frame;
 
 - (void) setBackgroundImage:(UIImage *)image;

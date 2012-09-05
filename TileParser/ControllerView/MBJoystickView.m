@@ -21,11 +21,15 @@
 #define kJoystickDegreesToRadians kJoystickPI/180.0f
 
 @interface MBJoystickView ()
+
 - (void) updateVelocity:(CGPoint)point;
 
 @property (nonatomic) float joystickRadiusSquared;
 @property (nonatomic) float thumbRadiusSquared;
 @property (nonatomic) float deadRadiusSquared;
+
+@property (nonatomic) CGPoint lastPoint;
+@property (nonatomic, strong) NSTimer *repeatTimer;
 
 @end
 
@@ -47,6 +51,11 @@
         _thumbRadius = 32.0f;
         _deadRadius = 0.0f;
         
+        _repeatInterval = 0.2;
+        _repeatTimer = nil;
+        _lastPoint = CGPointZero;
+        _repeatEventDispatchWithoutRequiringMovement = YES;
+        
         [self setMultipleTouchEnabled:NO];
         
         self.layer.cornerRadius = _joystickRadius;
@@ -56,7 +65,14 @@
     return self;
 }
 
+
+- (void)repeatVelocity{
+    [self updateVelocity:[self lastPoint]];   
+}
+
 - (void)updateVelocity:(CGPoint)point{
+    
+    [self setLastPoint:point];
     
     if (point.x == 0 && point.y == 0) {
         [[self thumbView] setCenter:[[self backgroundView] center]];
@@ -158,6 +174,13 @@
             [self updateVelocity:location];
         }
     }
+    
+    //  Set up a repeat dispatch while 
+    
+    if (_repeatEventDispatchWithoutRequiringMovement && (![self repeatTimer] || ![[self repeatTimer] isValid])) {
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[self repeatInterval] target:self selector:@selector(repeatVelocity) userInfo:nil repeats:YES];
+        [self setRepeatTimer:timer];
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -175,11 +198,20 @@
     
     [self updateVelocity:location];
     
+    if ([self repeatTimer]) {
+        [[self repeatTimer] invalidate];
+        self.repeatTimer = nil;
+    }
     
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     [self touchesEnded:touches withEvent:event];
+    
+    if ([self repeatTimer]) {
+        [[self repeatTimer] invalidate];
+        self.repeatTimer = nil;
+    }
 }
 
 #pragma mark - Set Color 

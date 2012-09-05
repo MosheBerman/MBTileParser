@@ -97,7 +97,14 @@
 }
 
 - (void)displayControls{
-    [[self view] addSubview:[self joystick]];
+
+    MBJoystickView *joystick = [self joystick];
+    [[self view] addSubview:joystick];
+    
+    [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];
+    [joystick setThumbImage:[UIImage imageNamed:@"joystick"]];
+    
+
     
     /*
     [[self view] addSubview:[self buttonA]];

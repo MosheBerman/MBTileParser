@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958315F59EE5003EC5C6 /* MBControllerButton.m */; };
 		4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958715F59F46003EC5C6 /* UIColor+Extensions.m */; };
+		460761A815F7A8530061EA09 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 460761A615F7A8530061EA09 /* dpad.png */; };
+		460761A915F7A8530061EA09 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 460761A715F7A8530061EA09 /* joystick.png */; };
 		4611130415EA72D900404504 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611130315EA72D900404504 /* MBControllerViewController.m */; };
 		4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */; };
 		4619C63F15EBFE3B009D095A /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63E15EBFE3B009D095A /* MBJoystickView.m */; };
@@ -62,6 +64,8 @@
 		4600958315F59EE5003EC5C6 /* MBControllerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerButton.m; path = ControllerView/MBControllerButton.m; sourceTree = "<group>"; };
 		4600958615F59F46003EC5C6 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extensions.h"; path = "TileParser/Categories/UIColor+Extensions.h"; sourceTree = "<group>"; };
 		4600958715F59F46003EC5C6 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extensions.m"; path = "TileParser/Categories/UIColor+Extensions.m"; sourceTree = "<group>"; };
+		460761A615F7A8530061EA09 /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		460761A715F7A8530061EA09 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
 		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
 		4611130315EA72D900404504 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerViewController.m; path = ControllerView/MBControllerViewController.m; sourceTree = "<group>"; };
 		4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpriteMovementDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +157,16 @@
 			);
 			name = Categories;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		460761A515F7A8530061EA09 /* Joystick Images */ = {
+			isa = PBXGroup;
+			children = (
+				460761A615F7A8530061EA09 /* dpad.png */,
+				460761A715F7A8530061EA09 /* joystick.png */,
+			);
+			name = "Joystick Images";
+			path = ControllerView/Joystick;
 			sourceTree = "<group>";
 		};
 		462AABEE15B3EDD20058E14C = {
@@ -360,6 +374,7 @@
 		46F2BD6615DEDFDE006820D9 /* Controller Classes */ = {
 			isa = PBXGroup;
 			children = (
+				460761A515F7A8530061EA09 /* Joystick Images */,
 				4619C63815EBFBAC009D095A /* MBControllerEvent.h */,
 				4600957C15F598D8003EC5C6 /* MBControllerToggling.h */,
 				4611130215EA72D900404504 /* MBControllerViewController.h */,
@@ -462,6 +477,8 @@
 				46F2BD3315DEDA9E006820D9 /* tuna_guy.tps in Resources */,
 				46F2BD6415DEDAFD006820D9 /* zack.plist in Resources */,
 				46F2BD6515DEDAFD006820D9 /* zack.png in Resources */,
+				460761A815F7A8530061EA09 /* dpad.png in Resources */,
+				460761A915F7A8530061EA09 /* joystick.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

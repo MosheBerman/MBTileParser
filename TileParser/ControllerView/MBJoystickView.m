@@ -27,9 +27,6 @@
 @property (nonatomic) float thumbRadiusSquared;
 @property (nonatomic) float deadRadiusSquared;
 
-@property (nonatomic, strong) UIView *backgroundView;
-@property (nonatomic, strong) UIView *thumbView;
-
 @end
 
 @implementation MBJoystickView
@@ -219,7 +216,7 @@
     
     CGRect frame = CGRectMake(0, 0, [self thumbRadius], [self thumbRadius]);
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-    [imageView setCenter:[self center]];
+    [imageView setCenter:[[self backgroundView] center]];
     [imageView setImage:image];
     [self setThumbView:imageView];
     

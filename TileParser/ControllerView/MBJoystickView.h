@@ -23,6 +23,12 @@
 @property (nonatomic) float thumbRadius;
 @property (nonatomic) float deadRadius;
 
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIView *thumbView;
+
 - (id)initWithFrame:(CGRect)frame;
+
+- (void) setBackgroundImage:(UIImage *)image;
+- (void) setThumbImage:(UIImage *)image;
 
 @end

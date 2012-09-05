@@ -27,6 +27,9 @@
 @property (nonatomic) float thumbRadiusSquared;
 @property (nonatomic) float deadRadiusSquared;
 
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIView *thumbView;
+
 @end
 
 @implementation MBJoystickView
@@ -118,6 +121,8 @@
     [self willChangeValueForKey:@"stickPosition"];
     _stickPosition = CGPointMake(dx, dy);
     [self didChangeValueForKey:@"stickPosition"];
+    
+    [[self thumbView] setCenter:_stickPosition];
 }
 
 - (void) setIsDPad:(BOOL)isDPad{
@@ -179,10 +184,49 @@
     [self touchesEnded:touches withEvent:event];
 }
 
+#pragma mark - Set Color 
+
 - (void) setColor:(UIColor*)color{
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = 1.0;
     self.layer.backgroundColor = [color colorByChangingAlphaTo:0.65].CGColor;
+}
+
+- (void)setBackgroundView:(UIView *)backgroundView{
+    _backgroundView = backgroundView;
+    
+    if(backgroundView){
+        [self setBackgroundColor:[UIColor clearColor]];
+        [[self layer] setBorderWidth:0];
+        [[self layer] setCornerRadius:0];
+    }else{
+        self.layer.cornerRadius = [self joystickRadius];
+        [self setColor:[UIColor lightGrayColor]];
+    }
+}
+
+- (void) setBackgroundImage:(UIImage *)image{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:[self bounds]];
+    [imageView setImage:image];
+    [self setBackgroundView:imageView];
+    
+    if ([self backgroundView]) {
+        [self addSubview:[self backgroundView]];
+    }
+}
+
+- (void) setThumbImage:(UIImage *)image{
+    
+    CGRect frame = CGRectMake(0, 0, [self thumbRadius], [self thumbRadius]);
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+    [imageView setCenter:[self center]];
+    [imageView setImage:image];
+    [self setThumbView:imageView];
+    
+    if ([self thumbView]) {
+        [self addSubview:[self thumbView]];
+        [self bringSubviewToFront:[self thumbView]];
+    }
 }
 
 @end

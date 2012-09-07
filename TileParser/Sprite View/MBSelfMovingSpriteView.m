@@ -18,10 +18,15 @@
     
     MBSpriteMovementDirection direction = arc4random()%4;
     
-    float delay = (arc4random()%6);
+    __weak MBSelfMovingSpriteView *weakSelf = self;
     
     MBMovementCompletionHandler completion = ^{
-        [self performSelector:@selector(moveInRandomDirection) withObject:nil afterDelay:delay];
+        
+        __strong MBSelfMovingSpriteView *strongSelf = weakSelf;
+        
+        float delay = arc4random()%3;
+        
+        [strongSelf performSelector:@selector(moveInRandomDirection) withObject:nil afterDelay:delay];
     };
     
     if (direction == 0) {

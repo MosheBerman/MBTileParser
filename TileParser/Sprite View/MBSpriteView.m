@@ -14,34 +14,94 @@
 
 #define kMovementDuration 0.4
 
-@interface MBSpriteView()
-
-@property (nonatomic, strong) NSDictionary *animations;
-@property (nonatomic) BOOL isMoving;
-@end
-
 @implementation MBSpriteView
 
-- (id)initWithAnimations:(NSDictionary *)animations{
-	self = [super init];
-	if(self){
-		
-        _animations = animations;
-		self.animationDuration = 1.0/3.0;
+- (id) initWithSpriteName:(NSString *)name{
+
+    self = [super init];
+    
+    if(self){
         
-        NSString *randomKey = [[animations allKeys] objectAtIndex:0];
-        CGSize imageSize = [[[animations objectForKey:randomKey] objectAtIndex:0] size];
+        _animations = [self animationsDictionaryFromFile:name];
+        
+		self.animationDuration = 1.0 * kMovementDuration;
+        
+        NSString *randomKey = [[_animations allKeys] objectAtIndex:0];
+        CGSize imageSize = [[[_animations objectForKey:randomKey] objectAtIndex:0] size];
+        
         [self setActiveAnimation:randomKey];
         
         self.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
         self.contentMode = UIViewContentModeTopLeft;
         
         _isMoving = NO;
-	}
-	return self;
+    }
+    
+    return self;
 }
 
-- (void)beginAnimation:(NSString *)animationID{
+#pragma mark - Start/Stop Animation
+
+- (NSDictionary *)animationsDictionaryFromFile:(NSString *)name{
+	
+    NSURL *url = [[NSBundle mainBundle] URLForResource:name withExtension:@"plist"];
+	NSError *error = nil;
+    
+	NSDictionary *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
+    
+	if(error){
+		NSLog(@"Can't load plist. Returning nil.\nError: %@", error);
+        return nil;
+	}
+	
+	NSDictionary *metadata = [serialization objectForKey:@"metadata"];
+	NSString *imageName = [metadata objectForKey:@"textureFileName"];
+	
+    UIImage *sourceImage = [UIImage imageNamed:imageName];
+	
+    if (!sourceImage) {
+        NSLog(@"Can't load image, returning nil");
+        return nil;
+    }
+    
+	NSMutableDictionary *animations = [NSMutableDictionary dictionary];
+    
+	for(NSString *frameName in [[serialization objectForKey:@"frames"] allKeys]){
+        
+		NSDictionary *frameMetadata = [[serialization objectForKey:@"frames"] objectForKey:frameName];
+		NSArray *frameNameSeparated = [frameName componentsSeparatedByString:@"-"];
+		
+		NSString *animationKey = frameNameSeparated[1];
+		
+		NSMutableArray *animationValues = [animations objectForKey:animationKey];
+        
+		if(!animationValues){
+			animationValues = [NSMutableArray array];
+			[animations setObject:animationValues forKey:animationKey];
+		}
+        
+        //
+        //  Deal with frames being out of order in the plist
+        //
+        
+        NSInteger frameNumber = [frameNameSeparated[2] integerValue];
+        
+		while([animationValues count] < frameNumber){
+			[animationValues addObject:[NSNull null]];
+		}
+		
+		CGImageRef cutImage = CGImageCreateWithImageInRect(sourceImage.CGImage, CGRectFromString([frameMetadata objectForKey:@"frame"]));
+		UIImage *image = [UIImage imageWithCGImage:cutImage];
+		
+		[animationValues replaceObjectAtIndex:frameNumber-1 withObject:image];
+	}
+	
+    return animations;
+}
+
+#pragma mark - Animation Playback Control
+
+- (void)beginAnimationWithKey:(NSString *)animationID{
 	self.animationImages = [self.animations objectForKey:animationID];
 	[self startAnimating];
 }
@@ -84,7 +144,7 @@
     
     [self startMoving];
     
-    [UIView animateWithDuration:distanceInTiles*kMovementDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:distanceInTiles*kMovementDuration delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
         
         [self setFrame:oldFrame];
     }
@@ -110,22 +170,22 @@
 #pragma mark - Single Tile Movement
 
 - (void) moveUpWithCompletion:(void (^)()) completion{
-    [self beginAnimation:@"up"];
+    [self beginAnimationWithKey:@"up"];
     [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:-1 withCompletion:completion];
 }
 
 - (void) moveDownWithCompletion:(void (^)()) completion{
-    [self beginAnimation:@"down"];
+    [self beginAnimationWithKey:@"down"];
     [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:1 withCompletion:completion];
 }
 
 - (void) moveLeftWithCompletion:(void (^)()) completion{
-    [self beginAnimation:@"left"];
+    [self beginAnimationWithKey:@"left"];
     [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:-1 withCompletion:completion];
 }
 
 - (void) moveRightWithCompletion:(void (^)()) completion{
-    [self beginAnimation:@"right"];
+    [self beginAnimationWithKey:@"right"];
     [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:1 withCompletion:completion];
 }
 

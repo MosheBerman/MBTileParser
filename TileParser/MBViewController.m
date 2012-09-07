@@ -8,7 +8,7 @@
 
 #import "MBViewController.h"
 #import "MBMapViewController.h"
-#import "MBSpriteView.h"
+#import "MBMovableSpriteView.h"
 
 #import "MBGameBoyViewController.h"
 
@@ -30,7 +30,7 @@
     //  Create a sprite for the game world.
     //
     
-    MBSpriteView *sprite = [[MBSpriteView alloc] initWithSpriteName:@"explorer"];
+    MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
     [self setPlayer:sprite];
 
     //

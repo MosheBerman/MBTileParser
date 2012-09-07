@@ -55,6 +55,9 @@
     
     if (![[self movementDelegate] tileIsOpenAtCoordinates:tileCoordinates forSprite:self]) {
         [self resetMovementState];
+        if(completion){
+            completion();
+        }
         return;
     }
     

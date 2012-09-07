@@ -8,12 +8,6 @@
 
 #import "MBSpriteView.h"
 
-#import "MBControllerEvent.h"
-
-#import "MBJoystickView.h"
-
-#define kMovementDuration 0.4
-
 @implementation MBSpriteView
 
 - (id) initWithSpriteName:(NSString *)name{
@@ -24,8 +18,6 @@
         
         _animations = [self animationsDictionaryFromFile:name];
         
-		self.animationDuration = 1.0 * kMovementDuration;
-        
         NSString *randomKey = [[_animations allKeys] objectAtIndex:0];
         CGSize imageSize = [[[_animations objectForKey:randomKey] objectAtIndex:0] size];
         
@@ -34,13 +26,17 @@
         self.frame = CGRectMake(0, 0, imageSize.width, imageSize.height);
         self.contentMode = UIViewContentModeTopLeft;
         
-        _isMoving = NO;
     }
     
     return self;
 }
 
 #pragma mark - Start/Stop Animation
+
+//
+//  This method was written by Andrew Dudney on 8/16/12 and moved
+//  into the MBSpriteView class by Moshe Berman on 9/7/12.
+//
 
 - (NSDictionary *)animationsDictionaryFromFile:(NSString *)name{
 	
@@ -112,126 +108,11 @@
 	self.animationImages = nil;
 }
 
-
-#pragma mark - Movement Methods
-
 - (void) setActiveAnimation:(NSString *)direction{
 	self.animationImages = [[self animations] objectForKey:direction];
 	self.image = self.animationImages[0];
 }
 
-//  Move in a direction
-- (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion{
-    
-    CGRect oldFrame = [self frame];
-    CGSize tileDimensions = [[self movementDelegate] tileSizeInPoints];
-    
-    CGPoint tileCoordinates = CGPointMake(oldFrame.origin.x/tileDimensions.width, oldFrame.origin.y/tileDimensions.height);
-    
-    //  Calculate the new position
-    if (direction == MBSpriteMovementDirectionHorizontal) {
-        oldFrame.origin.x += (tileDimensions.width * distanceInTiles);
-        tileCoordinates.x += distanceInTiles;
-    }else{
-        oldFrame.origin.y += (tileDimensions.height * distanceInTiles);
-        tileCoordinates.y += distanceInTiles;
-    }
-    
-    if (![[self movementDelegate] tileIsOpenAtCoordinates:tileCoordinates forSprite:self]) {
-        [self resetMovementState];
-        return;
-    }
-    
-    [self startMoving];
-    
-    [UIView animateWithDuration:distanceInTiles*kMovementDuration delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
-        
-        [self setFrame:oldFrame];
-    }
-                     completion:^(BOOL finished) {
-                         //  Perform whatever the callback warrants
-                         if(completion){
-                             completion();
-                         }
-                         [self resetMovementState];
-                     }];
-}
 
-- (void) startMoving{
-    [self setIsMoving:YES];
-    [self startAnimating];
-}
-
-- (void) resetMovementState{
-    [self setIsMoving:NO];
-    [self stopAnimation];
-}
-
-#pragma mark - Single Tile Movement
-
-- (void) moveUpWithCompletion:(void (^)()) completion{
-    [self beginAnimationWithKey:@"up"];
-    [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:-1 withCompletion:completion];
-}
-
-- (void) moveDownWithCompletion:(void (^)()) completion{
-    [self beginAnimationWithKey:@"down"];
-    [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:1 withCompletion:completion];
-}
-
-- (void) moveLeftWithCompletion:(void (^)()) completion{
-    [self beginAnimationWithKey:@"left"];
-    [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:-1 withCompletion:completion];
-}
-
-- (void) moveRightWithCompletion:(void (^)()) completion{
-    [self beginAnimationWithKey:@"right"];
-    [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:1 withCompletion:completion];
-}
-
-#pragma mark - Game Controller Support
-
-- (void)gameController:(MBControllerViewController *)controller buttonsPressedWithSender:(id)sender{
-    
-}
-
-- (void)gameController:(MBControllerViewController *)controller buttonsReleasedWithSender:(id)sender{
-    
-}
-
-- (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
-    
-    if (_isMoving) {
-        return;
-    }
-    
-    MBJoystickView *joystick = value;
-    
-    CGPoint velocity = [joystick velocity];
-    
-    if (velocity.x == 1) {
-        
-        [self setActiveAnimation:@"right"];
-        [self moveRightWithCompletion:nil];
-    }
-    
-    if(velocity.y == 1){
-
-        [self setActiveAnimation:@"up"];
-        [self moveUpWithCompletion:nil];
-    }
-    
-    if (velocity.x == -1) {
-
-        [self setActiveAnimation:@"left"];        
-        [self moveLeftWithCompletion:nil];
-    }
-    
-    if(velocity.y == -1){
-
-        [self setActiveAnimation:@"down"];        
-        [self moveDownWithCompletion:nil];
-    }
-}
 
 @end

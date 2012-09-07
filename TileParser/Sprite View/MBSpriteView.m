@@ -68,7 +68,7 @@
 		NSArray *frameNameSeparated = [frameName componentsSeparatedByString:@"-"];
 		
 		NSString *animationKey = frameNameSeparated[1];
-		
+        
 		NSMutableArray *animationValues = [animations objectForKey:animationKey];
         
 		if(!animationValues){
@@ -88,7 +88,7 @@
 		
 		CGImageRef cutImage = CGImageCreateWithImageInRect(sourceImage.CGImage, CGRectFromString([frameMetadata objectForKey:@"frame"]));
 		UIImage *image = [UIImage imageWithCGImage:cutImage];
-		
+        
 		[animationValues replaceObjectAtIndex:frameNumber-1 withObject:image];
 	}
 	

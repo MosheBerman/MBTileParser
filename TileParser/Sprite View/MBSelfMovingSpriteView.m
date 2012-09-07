@@ -8,24 +8,31 @@
 
 #import "MBSelfMovingSpriteView.h"
 
+@interface MBSelfMovingSpriteView ()
+
+@end
+
 @implementation MBSelfMovingSpriteView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+- (void) moveInRandomDirection{
+    
+    MBSpriteMovementDirection direction = arc4random()%4;
+    
+    float delay = (arc4random()%6);
+    
+    MBMovementCompletionHandler completion = ^{
+        [self performSelector:@selector(moveInRandomDirection) withObject:nil afterDelay:delay];
+    };
+    
+    if (direction == 0) {
+        [self moveUpWithCompletion:completion];
+    }else if(direction == 1){
+        [self moveDownWithCompletion:completion];
+    }else if(direction == 2){
+        [self moveLeftWithCompletion:completion];
+    }else if(direction == 3){
+        [self moveRightWithCompletion:completion];
     }
-    return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

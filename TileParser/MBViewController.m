@@ -7,8 +7,12 @@
 //
 
 #import "MBViewController.h"
+
 #import "MBMapViewController.h"
+
 #import "MBMovableSpriteView.h"
+
+#import "MBSelfMovingSpriteView.h"
 
 #import "MBGameBoyViewController.h"
 
@@ -32,7 +36,7 @@
     
     MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
     [self setPlayer:sprite];
-
+    
     //
     //  Create a map view controller and display the map
     //
@@ -48,8 +52,17 @@
     
     //  Add the sprite to the map and follow it
     
-    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(29,7) beneathLayerNamed:@"TreeTops"];
+    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(8,7) beneathLayerNamed:@"TreeTops"];
     [[mapViewController mapView] beginFollowingSpriteForKey:@"player"];
+    
+    
+    //
+    //  Add and configure a self-moving sprite
+    //
+    
+    MBSelfMovingSpriteView *movingSprite = [[MBSelfMovingSpriteView alloc] initWithSpriteName:@"tuna_guy"];
+    [[mapViewController mapView] addSprite:movingSprite forKey:@"movingSprite" atTileCoordinates:CGPointMake(7, 7) beneathLayerNamed:@"TreeTops"];
+    [movingSprite setMovementDelegate:mapViewController];
     
     //
     //  Set up the game controls
@@ -59,6 +72,13 @@
     [self setGameboyControls:controller];
     [controller addObserver:[self player]];
     [[self view] addSubview:[controller view]];
+    
+    //
+    //  Trigger automatic motion
+    //
+    
+    [movingSprite moveInRandomDirection];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{

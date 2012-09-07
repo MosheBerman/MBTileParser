@@ -97,6 +97,8 @@
 }
 
 - (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite{
+ 
+    
     
     if (coordinates.x < 0 || coordinates.y < 0)  {
         return NO;
@@ -105,11 +107,11 @@
     CGSize tileSize = [self tileSizeInPoints];
     
     //  Get a rect covering the target tile
-    CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
+    CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, tileSize.width,  tileSize.height);
     
     //Check for other sprites
     for (MBSpriteView *aSprite in [[[self mapView] sprites] allValues]) {
-        if (CGRectIntersectsRect(sprite.frame, targetLocation) && aSprite != sprite) {
+        if (CGRectIntersectsRect(aSprite.frame, targetLocation) && aSprite != sprite) {
             return NO;
         }
     }

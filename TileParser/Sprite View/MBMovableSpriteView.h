@@ -12,6 +12,8 @@
 
 #define kDefaultMovementDuration 0.45
 
+typedef void(^MBMovementCompletionHandler)();
+
 @interface MBMovableSpriteView : MBSpriteView
 
 @property (nonatomic, assign) BOOL isMoving;
@@ -30,9 +32,9 @@
 //  The size of a tile is determined by the movementDelegate.
 //
 
-- (void) moveUpWithCompletion:(void (^)())completion;
-- (void) moveDownWithCompletion:(void (^)())completion;
-- (void) moveLeftWithCompletion:(void (^)())completion;
-- (void) moveRightWithCompletion:(void (^)())completion;
+- (void) moveUpWithCompletion:(MBMovementCompletionHandler)completion;
+- (void) moveDownWithCompletion:(MBMovementCompletionHandler)completion;
+- (void) moveLeftWithCompletion:(MBMovementCompletionHandler)completion;
+- (void) moveRightWithCompletion:(MBMovementCompletionHandler)completion;
 
 @end

@@ -19,11 +19,19 @@
     
     if (self) {
         
-        self.animationDuration = 1.0 * kMovementDuration;
+        _movementTimeScaleFactor = kDefaultMovementDuration;
+        self.animationDuration = 1.0 * _movementTimeScaleFactor;
         _isMoving = NO;
     }
     
     return self;
+}
+
+#pragma mark - Custom Setters
+
+- (void)setMovementTimeScaleFactor:(float)movementTimeScaleFactor{
+    _movementTimeScaleFactor = movementTimeScaleFactor;
+    self.animationDuration = 1.0 * movementTimeScaleFactor;
 }
 
 #pragma mark - Movement Methods
@@ -52,7 +60,7 @@
     
     [self startMoving];
     
-    [UIView animateWithDuration:distanceInTiles*kMovementDuration delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateWithDuration:distanceInTiles*[self movementTimeScaleFactor] delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
         
         [self setFrame:oldFrame];
     }
@@ -75,7 +83,7 @@
     [self stopAnimation];
 }
 
-#pragma mark - Single Tile Movement
+#pragma mark - Single Tile Movement Convenience Methods
 
 - (void) moveUpWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"up"];

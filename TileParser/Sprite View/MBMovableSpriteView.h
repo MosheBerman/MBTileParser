@@ -10,12 +10,13 @@
 
 #import "MBSpriteMovementDelegate.h"
 
-#define kMovementDuration 0.45
+#define kDefaultMovementDuration 0.45
 
 @interface MBMovableSpriteView : MBSpriteView
 
-@property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
 @property (nonatomic, assign) BOOL isMoving;
+@property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
+@property (nonatomic, assign) float movementTimeScaleFactor;    // Used to calculate how long animations and movements take
 
 //
 //  Move N tiles in a given direction.

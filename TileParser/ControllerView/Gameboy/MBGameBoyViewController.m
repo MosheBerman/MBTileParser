@@ -85,7 +85,6 @@
 
 - (void) observeControls{
     [[self joystick] addObserver:self forKeyPath:@"velocity" options:NSKeyValueObservingOptionNew context:nil];
-    [[self joystick] addObserver:self forKeyPath:@"stickPosition" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)hideControls{
@@ -105,9 +104,7 @@
     
     [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];
     [joystick setThumbImage:[UIImage imageNamed:@"joystick"]];
-    
 
-    
     /*
     [[self view] addSubview:[self buttonA]];
     [[self view] addSubview:[self buttonB]];

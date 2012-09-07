@@ -55,7 +55,6 @@
 		46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2BD6815DEE280006820D9 /* MBMapViewController.m */; };
 		46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2BD6B15DEE28E006820D9 /* MBMap.m */; };
 		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
-		493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA59615DDB5FF00F435EF /* MBSpriteParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,8 +130,6 @@
 		46F2BD6B15DEE28E006820D9 /* MBMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMap.m; path = MapView/MBMap.m; sourceTree = "<group>"; };
 		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
 		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
-		493DA59515DDB5FF00F435EF /* MBSpriteParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteParser.h; sourceTree = "<group>"; };
-		493DA59615DDB5FF00F435EF /* MBSpriteParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,8 +389,6 @@
 		493DA58715DD7CD900F435EF /* Sprite Classes */ = {
 			isa = PBXGroup;
 			children = (
-				493DA59515DDB5FF00F435EF /* MBSpriteParser.h */,
-				493DA59615DDB5FF00F435EF /* MBSpriteParser.m */,
 				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
 				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
 				4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */,
@@ -501,7 +496,6 @@
 				466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */,
 				466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */,
 				466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */,
-				493DA59715DDB5FF00F435EF /* MBSpriteParser.m in Sources */,
 				46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */,
 				46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */,
 				4611130415EA72D900404504 /* MBControllerViewController.m in Sources */,

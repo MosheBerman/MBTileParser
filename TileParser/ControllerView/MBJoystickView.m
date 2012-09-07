@@ -51,7 +51,7 @@
         _thumbRadius = 32.0f;
         _deadRadius = 0.0f;
         
-        _repeatInterval = 0.1;
+        _repeatInterval = 0.01;
         _repeatTimer = nil;
         _lastPoint = CGPointZero;
         _repeatEventDispatchWithoutRequiringMovement = YES;

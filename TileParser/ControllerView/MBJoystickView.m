@@ -77,7 +77,13 @@
     if (point.x == 0 && point.y == 0) {
         [[self thumbView] setCenter:[[self backgroundView] center]];
     }else{
-        [[self thumbView] setCenter:point];
+        
+        CGPoint thumbCenter = point;
+
+        thumbCenter.x = MIN(MAX(0, thumbCenter.x), self.bounds.size.width);
+        thumbCenter.y = MIN(MAX(0, thumbCenter.y), self.bounds.size.height);
+        
+        [[self thumbView] setCenter:thumbCenter];
     }
     
     point.x = point.x - _joystickRadius;

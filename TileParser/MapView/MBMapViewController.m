@@ -140,7 +140,7 @@
     CGSize tileSize = [self tileSizeInPoints];
     
     //  Get a rect covering the target tile
-    CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
+    //CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
 
     for (MBTileMapObject *object in [[[self map] objectGroups] objectForKey:@"Connections"]) {
         

@@ -25,7 +25,7 @@
 
 @implementation MBMapViewController
 
-- (id)initMapName:(NSString *)name{
+- (id)initWithMapName:(NSString *)name{
     self = [super init];
     if (self) {
         

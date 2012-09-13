@@ -36,7 +36,7 @@
     //  Create a map view controller and display the map
     //
     
-    MBMapViewController *mapViewController = [[MBMapViewController alloc] initMapName:@"SimpsonCity"];
+    MBMapViewController *mapViewController = [[MBMapViewController alloc] initWithMapName:@"SimpsonCity"];
     [[mapViewController mapView] setMaximumZoomScale:2.0];
     [self setMapViewController:mapViewController];
     [self.view addSubview:[mapViewController view]];

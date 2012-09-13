@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) MBMapView *mapView;
 
-- (id)initMapName:(NSString *)name;
+- (id)initWithMapName:(NSString *)name;
 
 
 @end

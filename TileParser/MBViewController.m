@@ -16,6 +16,8 @@
 
 #import "MBGameBoyViewController.h"
 
+#import "UIView+Diagnostics.h"
+
 @interface MBViewController ()
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
@@ -31,13 +33,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     //
-    //  Create a sprite for the game world.
-    //
-    
-    MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
-    [self setPlayer:sprite];
-    
-    //
     //  Create a map view controller and display the map
     //
     
@@ -46,15 +41,19 @@
     [self setMapViewController:mapViewController];
     [self.view addSubview:[mapViewController view]];
     
-    //  Attach the map to the sprite as the movement delegate
+    //
+    //  Create a sprite for the game world.
+    //
     
-    [sprite setMovementDelegate:mapViewController];
+     MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
+     [self setPlayer:sprite];
+     [sprite setMovementDelegate:mapViewController];
+     
     
     //  Add the sprite to the map and follow it
     
     [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(8,7) beneathLayerNamed:@"TreeTops"];
     [[mapViewController mapView] beginFollowingSpriteForKey:@"player"];
-    
     
     //
     //  Add and configure a self-moving sprite
@@ -62,6 +61,8 @@
     
     MBSelfMovingSpriteView *movingSprite = [[MBSelfMovingSpriteView alloc] initWithSpriteName:@"tuna_guy"];
     [[mapViewController mapView] addSprite:movingSprite forKey:@"movingSprite" atTileCoordinates:CGPointMake(7, 7) beneathLayerNamed:@"TreeTops"];
+    
+    //  Attach the map to the sprite as the movement delegate    
     [movingSprite setMovementDelegate:mapViewController];
     
     //
@@ -83,6 +84,11 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+
+    
+    
+    //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.view];
+    //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.gameboyControls.view];
 
 }
 

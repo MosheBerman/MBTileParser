@@ -96,7 +96,7 @@
     return [tileSet tileSize];
 }
 
-- (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite{
+- (BOOL)sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates{
  
     
     

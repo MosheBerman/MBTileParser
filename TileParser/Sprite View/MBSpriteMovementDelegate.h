@@ -18,8 +18,8 @@ enum MBSpriteMovementDirection {
 @class MBSpriteView;
 @protocol MBSpriteMovementDelegate <NSObject>
 
-- (CGSize) tileSizeInPoints;
-- (BOOL)tileIsOpenAtCoordinates:(CGPoint)coordinates forSprite:(MBSpriteView *)sprite;
-- (void)interactWithTileAtCoordinates:(CGPoint)coordinates;
+- (CGSize)tileSizeInPoints;
+- (BOOL)sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates;
+- (void)sprite:(MBSpriteView*)sprite interactWithTileAtCoordinates:(CGPoint)coordinates;
 
 @end

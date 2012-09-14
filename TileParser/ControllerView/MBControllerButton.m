@@ -29,6 +29,7 @@
         _color = [UIColor whiteColor];
         _radius = radius;
         _isPressed = NO;
+        _indicatesTouch = YES;
     }
     return self;
 }
@@ -61,7 +62,7 @@
     UIColor *borderColor = [self color];
     UIColor *fillColor = [borderColor colorByChangingAlphaTo:0.7];
     
-    if([self isPressed]){
+    if([self isPressed] && [self indicatesTouch]){
         borderColor = [borderColor colorByChangingAlphaTo:0.7];
         fillColor = [borderColor colorByChangingAlphaTo:0.4];
     }

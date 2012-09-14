@@ -12,7 +12,8 @@
 
 @property (nonatomic, strong) UIColor *color;
 
-@property (nonatomic) CGFloat radius;
+@property (nonatomic, assign) BOOL indicatesTouch;
+@property (nonatomic, assign) CGFloat radius;
 
 - (id)initWithRadius:(CGFloat) radius;
 - (id) initWithColor:(UIColor *) color;

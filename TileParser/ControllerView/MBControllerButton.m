@@ -12,6 +12,10 @@
 
 #import "UIColor+Extensions.h"
 
+@interface MBControllerButton ()
+@property (nonatomic, assign) BOOL isPressed;
+@end
+
 @implementation MBControllerButton
 
 - (id)initWithRadius:(CGFloat)radius
@@ -24,6 +28,7 @@
         // Initialization code
         _color = [UIColor whiteColor];
         _radius = radius;
+        _isPressed = NO;
     }
     return self;
 }
@@ -53,11 +58,30 @@
 {
     // Drawing code
     
-    [[self layer] setBorderColor:[self color].CGColor];
+    UIColor *borderColor = [self color];
+    UIColor *fillColor = [borderColor colorByChangingAlphaTo:0.7];
+    
+    if([self isPressed]){
+        borderColor = [borderColor colorByChangingAlphaTo:0.7];
+        fillColor = [borderColor colorByChangingAlphaTo:0.4];
+    }
+    
+    [[self layer] setBorderColor:borderColor.CGColor];
     [[self layer] setBorderWidth:1.0f];
-    [[self layer] setBackgroundColor:[[self color] colorByChangingAlphaTo:0.7].CGColor];
+    [[self layer] setBackgroundColor:fillColor.CGColor];
     [[self layer] setCornerRadius:[self radius]];
 }
 
+#pragma mark
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self setIsPressed:YES];
+    [self setNeedsDisplay];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self setIsPressed:NO];
+    [self setNeedsDisplay];
+}
 
 @end

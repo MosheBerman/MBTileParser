@@ -73,7 +73,7 @@
     [[self layer] setCornerRadius:[self radius]];
 }
 
-#pragma mark
+#pragma mark - Touch Handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self setIsPressed:YES];
@@ -83,6 +83,30 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [self setIsPressed:NO];
     [self setNeedsDisplay];
+}
+
+//
+//  Set the button color then call setNeedsDisplay
+//
+
+- (void)setColor:(UIColor *)color{
+    _color = color;
+    [self setNeedsDisplay];
+}
+
+//
+//  Resize the button, and keep it centered on its current position.
+//
+
+- (void)setRadius:(CGFloat)radius{
+    CGPoint oldCenter = [self center];
+    CGRect bounds = CGRectMake(0, 0, radius*2, radius*2);
+    
+    _radius = radius;
+    
+    [self setBounds:bounds];
+    [self setNeedsDisplay];
+    [self setCenter:oldCenter];
 }
 
 @end

@@ -16,9 +16,21 @@
 @property (nonatomic, assign) CGFloat radius;
 
 - (id)initWithRadius:(CGFloat) radius;
-- (id) initWithColor:(UIColor *) color;
+- (id)initWithColor:(UIColor *) color;
 
 + (MBControllerButton *) buttonWithRadius:(CGFloat) radius;
 + (MBControllerButton *) buttonWithColor:(UIColor *) color;
+
+//
+//  Set the button color then call setNeedsDisplay
+//
+
+- (void)setColor:(UIColor *)color;
+
+//
+//  Resize the button, and keep it centered on its current position.
+//
+
+- (void)setRadius:(CGFloat)radius;
 
 @end

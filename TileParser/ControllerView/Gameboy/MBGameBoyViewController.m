@@ -105,8 +105,12 @@
     [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];
     [joystick setThumbImage:[UIImage imageNamed:@"joystick"]];
 
-    /*
     [[self view] addSubview:[self buttonA]];
+    
+    [[self buttonA] setRadius:22];
+    [[self buttonA] setColor:[UIColor darkGrayColor]];
+    
+    /*
     [[self view] addSubview:[self buttonB]];
     [[self view] addSubview:[self buttonStart]];
     [[self view] addSubview:[self buttonSelect]];

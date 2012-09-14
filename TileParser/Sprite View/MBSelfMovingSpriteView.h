@@ -10,6 +10,6 @@
 
 @interface MBSelfMovingSpriteView : MBMovableSpriteView
 
-- (void) moveInRandomDirection;
+- (void)moveInRandomDirection;
 
 @end

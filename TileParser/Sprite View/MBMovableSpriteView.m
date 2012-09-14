@@ -37,7 +37,7 @@
 #pragma mark - Movement Methods
 
 //  Move in a direction
-- (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion{
+- (void)moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion{
     
     CGRect oldFrame = [self frame];
     CGSize tileDimensions = [[self movementDelegate] tileSizeInPoints];
@@ -76,34 +76,34 @@
                      }];
 }
 
-- (void) startMoving{
+- (void)startMoving{
     [self setIsMoving:YES];
     [self startAnimating];
 }
 
-- (void) resetMovementState{
+- (void)resetMovementState{
     [self setIsMoving:NO];
     [self stopAnimation];
 }
 
 #pragma mark - Single Tile Movement Convenience Methods
 
-- (void) moveUpWithCompletion:(void (^)()) completion{
+- (void)moveUpWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"up"];
     [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:-1 withCompletion:completion];
 }
 
-- (void) moveDownWithCompletion:(void (^)()) completion{
+- (void)moveDownWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"down"];
     [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:1 withCompletion:completion];
 }
 
-- (void) moveLeftWithCompletion:(void (^)()) completion{
+- (void)moveLeftWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"left"];
     [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:-1 withCompletion:completion];
 }
 
-- (void) moveRightWithCompletion:(void (^)()) completion{
+- (void)moveRightWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"right"];
     [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:1 withCompletion:completion];
 }

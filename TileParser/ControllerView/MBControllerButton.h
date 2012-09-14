@@ -15,11 +15,11 @@
 @property (nonatomic, assign) BOOL indicatesTouch;
 @property (nonatomic, assign) CGFloat radius;
 
-- (id)initWithRadius:(CGFloat) radius;
-- (id)initWithColor:(UIColor *) color;
+- (id)initWithRadius:(CGFloat)radius;
+- (id)initWithColor:(UIColor *)color;
 
-+ (MBControllerButton *) buttonWithRadius:(CGFloat) radius;
-+ (MBControllerButton *) buttonWithColor:(UIColor *) color;
++ (MBControllerButton *)buttonWithRadius:(CGFloat)radius;
++ (MBControllerButton *)buttonWithColor:(UIColor *)color;
 
 //
 //  Set the button color then call setNeedsDisplay

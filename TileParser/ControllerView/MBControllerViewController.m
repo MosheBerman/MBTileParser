@@ -52,19 +52,19 @@
 
 #pragma mark - Input Notifications
 
-- (void) dispatchButtonPressedNotificationWithSender:(id)sender{
+- (void)dispatchButtonPressedNotificationWithSender:(id)sender{
     for (id<MBControllerEvent> observer in [self observers]) {
         [observer gameController:self buttonsPressedWithSender:sender];
     }
 }
 
-- (void) dispatchButtonReleasedNotificationWithSender:(id)sender{
+- (void)dispatchButtonReleasedNotificationWithSender:(id)sender{
     for (id<MBControllerEvent> observer in [self observers]) {
         [observer gameController:self buttonsReleasedWithSender:sender];
     }
 }
 
-- (void) dispatchJoystickChangedNotificationWithSender:(id)sender{
+- (void)dispatchJoystickChangedNotificationWithSender:(id)sender{
     for (id<MBControllerEvent> observer in [self observers]) {
         [observer gameController:self joystickValueChangedWithSender:sender];
     }
@@ -80,11 +80,11 @@
 
 #pragma mark - Input Observers
 
-- (void) addObserver:(id)observer{
+- (void)addObserver:(id)observer{
     [[self observers] addObject:observer];
 }
 
-- (void) removeObserver:(id)observer{
+- (void)removeObserver:(id)observer{
     if ([[self observers] containsObject:observer]) {
         [[self observers] removeObject:observer];
     }

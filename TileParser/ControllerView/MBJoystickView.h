@@ -32,7 +32,7 @@
 
 - (id)initWithFrame:(CGRect)frame;
 
-- (void) setBackgroundImage:(UIImage *)image;
-- (void) setThumbImage:(UIImage *)image;
+- (void)setBackgroundImage:(UIImage *)image;
+- (void)setThumbImage:(UIImage *)image;
 
 @end

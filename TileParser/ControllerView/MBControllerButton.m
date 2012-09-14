@@ -18,8 +18,7 @@
 
 @implementation MBControllerButton
 
-- (id)initWithRadius:(CGFloat)radius
-{
+- (id)initWithRadius:(CGFloat)radius{
     
     CGRect frame = CGRectMake(0, 0, radius*2, radius*2);
     
@@ -34,7 +33,7 @@
     return self;
 }
 
-- (id) initWithColor:(UIColor *) color{
+- (id)initWithColor:(UIColor *) color{
     
     self = [self initWithRadius:32.0f];
     if (self) {
@@ -55,8 +54,7 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect{
     // Drawing code
     
     UIColor *borderColor = [self color];

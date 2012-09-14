@@ -11,16 +11,14 @@
 @implementation UIColor (Extensions)
 
 
-- (UIColor *)colorByChangingAlphaTo:(CGFloat)newAlpha
-{
+- (UIColor *)colorByChangingAlphaTo:(CGFloat)newAlpha{
 	// oldComponents is the array INSIDE the original color
 	// changing these changes the original, so we copy it
 	CGFloat *oldComponents = (CGFloat *)CGColorGetComponents([self CGColor]);
 	int numComponents = CGColorGetNumberOfComponents([self CGColor]);
 	CGFloat newComponents[4];
     
-	switch (numComponents)
-	{
+	switch (numComponents){
 		case 2:
 		{
 			//grayscale

@@ -16,7 +16,7 @@
 //  Add/Remove Observers for controller events
 //
 
-- (void) addObserver:(id)observer;
-- (void) removeObserver:(id)observer;
+- (void)addObserver:(id)observer;
+- (void)removeObserver:(id)observer;
 
 @end

@@ -17,14 +17,14 @@
 @property (nonatomic, strong) NSMutableDictionary *sprites;
 
 - (id)init;
-- (void) loadMap:(MBMap *)map;
+- (void)loadMap:(MBMap *)map;
 
 //  Insert a sprite beneath a layer
 //  If the layer doesn't exist or if the parameter is nil, the view is inserted at the top
-- (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName;
+- (void)addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName;
 
 //Remove a given sprite from the map
-- (void) removeSpriteForKey:(NSString*) key;
+- (void)removeSpriteForKey:(NSString*)key;
 
 //  Returns the tile in a given layer at a given coordinate
 - (UIImage *)tileAtCoordinates:(CGPoint)coordinates inLayerNamed:(NSString *)layerName;

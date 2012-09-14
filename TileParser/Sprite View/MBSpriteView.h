@@ -13,14 +13,14 @@
 @property (readonly, nonatomic, strong) NSDictionary *animations;
 
 //  Initializer
-- (id) initWithSpriteName:(NSString *)name;
+- (id)initWithSpriteName:(NSString *)name;
 
 //  Animation playback control methods
 - (void)beginAnimationWithKey:(NSString *)animationID;
 - (void)stopAnimation;
 
 // Set the image to the first frame of a given animation
-- (void) setActiveAnimation:(NSString *)direction;
+- (void)setActiveAnimation:(NSString *)direction;
 
 
 @end

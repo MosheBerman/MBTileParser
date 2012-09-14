@@ -10,7 +10,7 @@
 
 @implementation MBSpriteView
 
-- (id) initWithSpriteName:(NSString *)name{
+- (id)initWithSpriteName:(NSString *)name{
 
     self = [super init];
     
@@ -45,7 +45,7 @@
     
 	NSDictionary *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
     
-	if(error){
+	if (error) {
 		NSLog(@"Can't load plist. Returning nil.\nError: %@", error);
         return nil;
 	}
@@ -62,7 +62,7 @@
     
 	NSMutableDictionary *animations = [NSMutableDictionary dictionary];
     
-	for(NSString *frameName in [[serialization objectForKey:@"frames"] allKeys]){
+	for (NSString *frameName in [[serialization objectForKey:@"frames"] allKeys]) {
         
 		NSDictionary *frameMetadata = [[serialization objectForKey:@"frames"] objectForKey:frameName];
 		NSArray *frameNameSeparated = [frameName componentsSeparatedByString:@"-"];
@@ -82,7 +82,7 @@
         
         NSInteger frameNumber = [frameNameSeparated[2] integerValue];
         
-		while([animationValues count] < frameNumber){
+		while ([animationValues count] < frameNumber) {
 			[animationValues addObject:[NSNull null]];
 		}
 		

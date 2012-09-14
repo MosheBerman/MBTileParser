@@ -17,7 +17,7 @@
 @property (nonatomic) NSInteger widthInTiles;
 
 - (id)initWithLayerData:(NSDictionary *)data tilesets:(NSArray *)tilesets imageCache:(NSArray *)cache;
-- (void) drawMapLayer;
+- (void)drawMapLayer;
 
 - (UIImage *)tileAtCoordinates:(CGPoint)coordinates;
 

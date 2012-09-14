@@ -14,7 +14,7 @@
 
 @implementation MBSelfMovingSpriteView
 
-- (void) moveInRandomDirection{
+- (void)moveInRandomDirection{
     
     MBSpriteMovementDirection direction = arc4random()%4;
     

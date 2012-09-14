@@ -25,16 +25,16 @@ typedef void(^MBMovementCompletionHandler)();
 //  The size of a tile is determined by the movementDelegate.
 //
 
-- (void) moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion;
+- (void)moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion;
 
 //
 //  Move one 'tile' in a given direction.
 //  The size of a tile is determined by the movementDelegate.
 //
 
-- (void) moveUpWithCompletion:(MBMovementCompletionHandler)completion;
-- (void) moveDownWithCompletion:(MBMovementCompletionHandler)completion;
-- (void) moveLeftWithCompletion:(MBMovementCompletionHandler)completion;
-- (void) moveRightWithCompletion:(MBMovementCompletionHandler)completion;
+- (void)moveUpWithCompletion:(MBMovementCompletionHandler)completion;
+- (void)moveDownWithCompletion:(MBMovementCompletionHandler)completion;
+- (void)moveLeftWithCompletion:(MBMovementCompletionHandler)completion;
+- (void)moveRightWithCompletion:(MBMovementCompletionHandler)completion;
 
 @end

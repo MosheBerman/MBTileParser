@@ -222,7 +222,7 @@
 
 #pragma mark - Set Color 
 
-- (void) setColor:(UIColor*)color{
+- (void)setColor:(UIColor*)color{
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = 1.0;
     self.layer.backgroundColor = [color colorByChangingAlphaTo:0.65].CGColor;
@@ -241,7 +241,7 @@
     }
 }
 
-- (void) setBackgroundImage:(UIImage *)image{
+- (void)setBackgroundImage:(UIImage *)image{
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:[self bounds]];
     [imageView setImage:image];
     [self setBackgroundView:imageView];
@@ -251,7 +251,7 @@
     }
 }
 
-- (void) setThumbImage:(UIImage *)image{
+- (void)setThumbImage:(UIImage *)image{
     
     CGRect frame = CGRectMake(0, 0, [self thumbRadius], [self thumbRadius]);
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];

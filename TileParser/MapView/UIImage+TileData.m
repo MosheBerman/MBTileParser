@@ -14,11 +14,11 @@ static char *kTileDataKey = "tileData";
 
 @implementation UIImage (TileData)
 
-- (void) setTileData:(NSDictionary *)properties{
+- (void)setTileData:(NSDictionary *)properties{
     objc_setAssociatedObject(self, &kTileDataKey, properties, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSDictionary *) tileData{
+- (NSDictionary *)tileData{
     return objc_getAssociatedObject(self, &kTileDataKey);
 }
 

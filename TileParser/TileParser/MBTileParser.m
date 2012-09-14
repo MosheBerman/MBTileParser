@@ -41,7 +41,7 @@
 
 /*  Start parsing */
 
-- (void) start{
+- (void)start{
     [self.parser parse];
 }
 
@@ -124,7 +124,7 @@
 
     }
     
-    if([self.workingElement isEqualToString:@"object"]){
+    if ([self.workingElement isEqualToString:@"object"]) {
         MBMapObject *object = [[MBMapObject alloc] init];
         object.x = [[attributeDict objectForKey:@"x"] integerValue];
         object.y = [[attributeDict objectForKey:@"y"] integerValue];
@@ -196,7 +196,7 @@
     //  If we have layer data, store it in the last layer
     //
     
-    if([self.workingElement isEqualToString:@"data"]){
+    if ([self.workingElement isEqualToString:@"data"]) {
         
         NSMutableDictionary *lastLayer =  [[self.mapDictionary objectForKey:@"layers"] lastObject];
         
@@ -226,8 +226,6 @@
         
         [lastLayer setObject:newMapData forKey:@"tempdata"];
     }
-    
-
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{

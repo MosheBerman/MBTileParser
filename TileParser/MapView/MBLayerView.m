@@ -75,7 +75,7 @@
  }
  */
 
-- (void) drawMapLayer{
+- (void)drawMapLayer{
     
     
     //The list of tile IDs in the layer

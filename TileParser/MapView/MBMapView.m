@@ -50,18 +50,17 @@
         //  Configure the map view
         //
         
-        self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-        self.showsHorizontalScrollIndicator = NO;
-        self.showsVerticalScrollIndicator = NO;
-        
-
+        [self setAutoresizingMask: (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth)];;
+        [self setShowsHorizontalScrollIndicator:NO];
+        [self setShowsVerticalScrollIndicator:NO];
     }
+    
     return self;
 }
 
-- (void) loadMap:(MBMap *)map{
+- (void)loadMap:(MBMap *)map{
     
-    self.map = map;
+    [self setMap:map];
     
     for (UIView *view in self.subviews) {
         [view removeFromSuperview];
@@ -75,7 +74,7 @@
 //  Build a cache of UIImage objects from the tilesets
 //
 
-- (void) buildCache{
+- (void)buildCache{
     
     //
     //  Assume the layers are sorted by lowest firstgid
@@ -156,7 +155,7 @@
 //  Layout the map in the scroll view
 //
 
-- (void) layoutMap{
+- (void)layoutMap{
 
     for (NSInteger i = 0; i < self.map.layers.count; i++) {
         
@@ -202,14 +201,13 @@
 
 }
 
-- (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView
-{
+- (UIView*)viewForZoomingInScrollView:(UIScrollView*)scrollView{
 	return [self zoomWrapper];
 }
 
 #pragma mark - Add/Remove Sprites
 
-- (void) addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName{
+- (void)addSprite:(MBSpriteView *)sprite forKey:(NSString *)key atTileCoordinates:(CGPoint)coords beneathLayerNamed:(NSString*)layerName{
 
     MBLayerView *layer = [self layerNamed:layerName];
     
@@ -224,24 +222,23 @@
     [self moveSpriteForKey:key toTileCoordinates:coords animated:NO duration:0];
 }
 
-- (void) removeSpriteForKey:(NSString*) key{
+- (void)removeSpriteForKey:(NSString*)key{
     [self.sprites removeObjectForKey:key];
 }
 
 #pragma mark - Private Sprite Methods
 
-- (void) setSprite:(MBSpriteView *)sprite forKey:(NSString *)key{
+- (void)setSprite:(MBSpriteView *)sprite forKey:(NSString *)key{
     [[self sprites] setObject:sprite forKey:key];
 }
 
-- (MBSpriteView *) spriteForKey:(NSString *)key{
+- (MBSpriteView *)spriteForKey:(NSString *)key{
     return [self.sprites objectForKey:key];
 }
 
 #pragma mark - Move Sprites
 
-//TODO: Add completion block, add animation support
-
+//  Calls moveSpriteForKey:toTileCoordinates:duration:completion: with a nil completion block.
 - (void)moveSpriteForKey:(NSString *)key toTileCoordinates:(CGPoint)coords animated:(BOOL)animated duration:(NSTimeInterval)duration{
     [self moveSpriteForKey:key toTileCoordinates:coords animated:animated duration:duration completion:nil];
 }
@@ -281,7 +278,7 @@
     [[self spriteForKey:key] addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:nil];
     [self setKeyForFollowedSprite:key];
     
-    if (self.bounds.size.width == 0 && self.bounds.size.height == 0) {
+    if ([self bounds].size.width == 0 && [self bounds].size.height == 0) {
         [self setBounds:[[self superview] bounds]];
     }
     
@@ -299,7 +296,7 @@
     }
 }
 
-- (void) centerOnSpriteView:(MBSpriteView *)spriteView {
+- (void)centerOnSpriteView:(MBSpriteView *)spriteView{
     CGSize size = self.bounds.size;
     CGPoint offset = [spriteView frame].origin;
     
@@ -332,7 +329,6 @@
     UIImage *tileImage = [layer tileAtCoordinates:coordinates];
     
     return tileImage;
-    
 }
 
 @end

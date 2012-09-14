@@ -10,7 +10,7 @@
 
 @implementation MBMap
 
-- (id) init{
+- (id)init{
     
     self = [super init];
     

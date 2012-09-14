@@ -131,7 +131,7 @@
     return YES;
 }
 
-- (void)interactWithTileAtCoordinates:(CGPoint)coordinates{
+- (void)sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates{
     
     if (coordinates.x < 0 || coordinates.y < 0)  {
         return;

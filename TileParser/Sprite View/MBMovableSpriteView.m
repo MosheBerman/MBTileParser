@@ -53,7 +53,7 @@
         tileCoordinates.y += distanceInTiles;
     }
     
-    if (![[self movementDelegate] tileIsOpenAtCoordinates:tileCoordinates forSprite:self]) {
+    if (![[self movementDelegate] sprite:self canMoveToCoordinates:tileCoordinates]) {
         [self resetMovementState];
         if(completion){
             completion();

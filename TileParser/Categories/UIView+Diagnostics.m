@@ -13,6 +13,8 @@
 - (void)displayBorderOfColor:(UIColor *)color onSubviewsOfView:(UIView *)aView{
     for (UIView *subview in aView.subviews) {
         if ([[subview subviews] count]) {
+            subview.layer.borderColor = color.CGColor;
+            subview.layer.borderWidth = 1.0f;
             [self displayBorderOfColor:color onSubviewsOfView:subview];
         }else{
             subview.layer.borderColor = color.CGColor;

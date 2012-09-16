@@ -9,7 +9,7 @@
 #import "MBGameBoyViewController.h"
 
 #define kJoystickDiameter 72 
-#define kMargin 32;
+#define kMargin 32
 
 @interface MBGameBoyViewController ()
 
@@ -110,11 +110,13 @@
     [joystick setThumbImage:[UIImage imageNamed:@"joystick"]];
 
     [[self view] addSubview:[self buttonA]];
-    
     [[self buttonA] setRadius:22];
     
-    /*
+    
     [[self view] addSubview:[self buttonB]];
+    [[self buttonB] setRadius:22];
+    
+    /*
     [[self view] addSubview:[self buttonStart]];
     [[self view] addSubview:[self buttonSelect]];
      */
@@ -129,17 +131,24 @@
     CGRect joystickFrame = [[self joystick] frame];
     CGRect selfFrame = [[self view] frame];
     CGRect buttonAFrame = [[self buttonA] frame];
+    CGRect buttonBFrame = [[self buttonB] frame];
     
     joystickFrame.origin.y = selfFrame.size.height - joystickFrame.size.height - kMargin;
     
     [[self joystick] setFrame:joystickFrame];
     [[self joystick] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-    
+
     buttonAFrame.origin.x = selfFrame.size.width - buttonAFrame.size.width - kMargin;
-    buttonAFrame.origin.y = selfFrame.size.height - buttonAFrame.size.height - kMargin;
+    buttonAFrame.origin.y = selfFrame.size.height - buttonAFrame.size.height * 1.75 - kMargin/2;
     
     [[self buttonA] setFrame:buttonAFrame];
     [[self buttonA] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
+    
+    buttonBFrame.origin.x = selfFrame.size.width - buttonBFrame.size.width * 2 - kMargin;
+    buttonBFrame.origin.y = selfFrame.size.height - buttonBFrame.size.height - kMargin/2;
+    
+    [[self buttonB] setFrame:buttonBFrame];
+    [[self buttonB] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
     
 }
 

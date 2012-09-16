@@ -18,7 +18,9 @@
 
 #import "UIView+Diagnostics.h"
 
-@interface MBViewController ()
+#import "MBControllerEvent.h"
+
+@interface MBViewController () <MBControllerEvent>
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
@@ -72,6 +74,7 @@
     MBGameBoyViewController *controller = [[MBGameBoyViewController alloc] init];
     [self setGameboyControls:controller];
     [controller addObserver:[self player]];
+    [controller addObserver:self];
     [[self view] addSubview:[controller view]];
     
     //
@@ -113,6 +116,18 @@
     }else{
         return UIInterfaceOrientationMaskAll;
     }
+}
+
+- (void)gameController:(MBControllerViewController *)controller buttonsPressedWithSender:(id)sender{
+    
+}
+
+- (void)gameController:(MBControllerViewController *)controller buttonsReleasedWithSender:(id)sender{
+    
+}
+
+- (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
+    
 }
 
 

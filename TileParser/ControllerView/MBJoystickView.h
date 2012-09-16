@@ -27,7 +27,7 @@
 @property (nonatomic, strong) UIView *thumbView;
 
 @property (nonatomic) float repeatInterval;
-@property (nonatomic) BOOL repeatEventDispatchWithoutRequiringMovement;
+@property (nonatomic) BOOL shouldRepeat;
 
 
 - (id)initWithFrame:(CGRect)frame;

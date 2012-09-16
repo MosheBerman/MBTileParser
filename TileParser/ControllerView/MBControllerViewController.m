@@ -56,13 +56,13 @@
 
 - (void)dispatchButtonPressedNotificationWithSender:(id)sender{
     for (id<MBControllerEvent> observer in [self observers]) {
-        [observer gameController:self buttonsPressedWithSender:sender];
+        [observer gameController:self buttonPressedWithSender:sender];
     }
 }
 
 - (void)dispatchButtonReleasedNotificationWithSender:(id)sender{
     for (id<MBControllerEvent> observer in [self observers]) {
-        [observer gameController:self buttonsReleasedWithSender:sender];
+        [observer gameController:self buttonReleasedWithSender:sender];
     }
 }
 

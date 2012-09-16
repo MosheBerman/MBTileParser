@@ -12,8 +12,8 @@
 
 @protocol MBControllerEvent <NSObject>
 
-- (void)gameController:(MBControllerViewController *)controller buttonsPressedWithSender:(id)sender;
-- (void)gameController:(MBControllerViewController *)controller buttonsReleasedWithSender:(id)sender;
+- (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender;
+- (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender;
 - (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value;
 
 @end

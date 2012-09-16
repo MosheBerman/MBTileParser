@@ -15,6 +15,11 @@
 @property (nonatomic, assign) BOOL indicatesTouch;
 @property (nonatomic, assign) CGFloat radius;
 
+@property (nonatomic) float repeatInterval;
+@property (nonatomic) BOOL shouldRepeat;
+
+@property (nonatomic, assign) BOOL isPressed;
+
 - (id)initWithRadius:(CGFloat)radius;
 - (id)initWithColor:(UIColor *)color;
 

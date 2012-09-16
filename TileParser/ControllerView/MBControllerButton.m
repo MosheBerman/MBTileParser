@@ -13,7 +13,7 @@
 #import "UIColor+Extensions.h"
 
 @interface MBControllerButton ()
-@property (nonatomic, assign) BOOL isPressed;
+@property (nonatomic, strong) NSTimer *repeatTimer;
 @end
 
 @implementation MBControllerButton
@@ -29,6 +29,8 @@
         _radius = radius;
         _isPressed = NO;
         _indicatesTouch = YES;
+        _repeatInterval = 0.5;
+        _shouldRepeat = YES;
     }
     return self;
 }
@@ -74,12 +76,34 @@
 #pragma mark - Touch Handling
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self setIsPressed:YES];
-    [self setNeedsDisplay];
+    [self press];
+    
+    if ([self shouldRepeat] && (![self repeatTimer] || ![[self repeatTimer] isValid])) {
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[self repeatInterval] target:self selector:@selector(press) userInfo:nil repeats:YES];
+        [self setRepeatTimer:timer];
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self unpress];
+
+    if ([self repeatTimer]) {
+        [[self repeatTimer] invalidate];
+        self.repeatTimer = nil;
+    }
+}
+
+- (void)press{
+    [self willChangeValueForKey:@"isPressed"];
+    [self setIsPressed:YES];
+    [self didChangeValueForKey:@"isPressed"];
+    [self setNeedsDisplay];
+}
+
+- (void)unpress{
+    [self willChangeValueForKey:@"isPressed"];
     [self setIsPressed:NO];
+    [self didChangeValueForKey:@"isPressed"];
     [self setNeedsDisplay];
 }
 

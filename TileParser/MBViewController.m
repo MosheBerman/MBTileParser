@@ -119,11 +119,19 @@
 }
 
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
-    
+    if ([sender isEqual:[[self gameboyControls] buttonA]]) {
+        
+    }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
+        
+    }
 }
 
 - (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender{
-    
+    if ([sender isEqual:[[self gameboyControls] buttonA]]) {
+        
+    }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
+        
+    }
 }
 
 - (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{

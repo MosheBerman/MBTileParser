@@ -12,6 +12,8 @@
 
 #import "MBJoystickView.h"
 
+#import "MBControllerButton.h"
+
 @interface MBControllerViewController ()
 @property (nonatomic, strong) NSMutableSet *observers;
 @end
@@ -74,6 +76,14 @@
     if ([object isKindOfClass:[MBJoystickView class]]) {
         if ([keyPath isEqual:@"velocity"]) {
             [self dispatchJoystickChangedNotificationWithSender:object];        
+        }
+    }else if ([object isKindOfClass:[MBControllerButton class]]){
+        if ([keyPath isEqual:@"isPressed"]) {
+            if ([(MBControllerButton *)object isPressed]) {
+                [self dispatchButtonPressedNotificationWithSender:object];
+            }else{
+                [self dispatchButtonReleasedNotificationWithSender:object];
+            }
         }
     }
 }

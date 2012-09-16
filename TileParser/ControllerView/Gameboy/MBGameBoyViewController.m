@@ -114,10 +114,11 @@
 
     [[self view] addSubview:[self buttonA]];
     [[self buttonA] setRadius:22];
-    
+    [[self buttonA] setTitle:@"A" forState:UIControlStateNormal];
     
     [[self view] addSubview:[self buttonB]];
     [[self buttonB] setRadius:22];
+    [[self buttonB] setTitle:@"B" forState:UIControlStateNormal];
     
     /*
     [[self view] addSubview:[self buttonStart]];

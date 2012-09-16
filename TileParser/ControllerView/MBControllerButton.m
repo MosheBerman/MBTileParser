@@ -30,7 +30,7 @@
         _isPressed = NO;
         _indicatesTouch = YES;
         _repeatInterval = 0.5;
-        _shouldRepeat = YES;
+        _shouldRepeat = NO;
     }
     return self;
 }
@@ -94,16 +94,12 @@
 }
 
 - (void)press{
-    [self willChangeValueForKey:@"isPressed"];
     [self setIsPressed:YES];
-    [self didChangeValueForKey:@"isPressed"];
     [self setNeedsDisplay];
 }
 
 - (void)unpress{
-    [self willChangeValueForKey:@"isPressed"];
     [self setIsPressed:NO];
-    [self didChangeValueForKey:@"isPressed"];
     [self setNeedsDisplay];
 }
 

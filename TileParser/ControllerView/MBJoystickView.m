@@ -54,7 +54,7 @@
         _repeatInterval = 0.01;
         _repeatTimer = nil;
         _lastPoint = CGPointZero;
-        _repeatEventDispatchWithoutRequiringMovement = YES;
+        _shouldRepeat = YES;
         
         [self setMultipleTouchEnabled:NO];
         

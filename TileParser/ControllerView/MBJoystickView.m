@@ -183,7 +183,7 @@
     
     //  Set up a repeat dispatch while 
     
-    if (_repeatEventDispatchWithoutRequiringMovement && (![self repeatTimer] || ![[self repeatTimer] isValid])) {
+    if ([self shouldRepeat] && (![self repeatTimer] || ![[self repeatTimer] isValid])) {
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[self repeatInterval] target:self selector:@selector(repeatVelocity) userInfo:nil repeats:YES];
         [self setRepeatTimer:timer];
     }

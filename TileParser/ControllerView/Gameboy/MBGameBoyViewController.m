@@ -89,6 +89,10 @@
 
 - (void) observeControls{
     [[self joystick] addObserver:self forKeyPath:@"velocity" options:NSKeyValueObservingOptionNew context:nil];
+    [[self buttonA] addObserver:self forKeyPath:@"isPressed" options:NSKeyValueObservingOptionNew context:nil];
+    [[self buttonB] addObserver:self forKeyPath:@"isPressed" options:NSKeyValueObservingOptionNew context:nil];
+    [[self buttonSelect] addObserver:self forKeyPath:@"isPressed" options:NSKeyValueObservingOptionNew context:nil];
+    [[self buttonStart] addObserver:self forKeyPath:@"isPressed" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)hideControls{
@@ -102,7 +106,6 @@
 - (void)displayControls{
 
     MBJoystickView *joystick = [self joystick];
-
     
     [[self view] addSubview:joystick];
     

@@ -9,6 +9,8 @@
 #import "MBGameBoyViewController.h"
 
 #define kJoystickDiameter 72 
+#define kMargin 32;
+
 @interface MBGameBoyViewController ()
 
 @end
@@ -41,18 +43,22 @@
     
     [self observeControls];    
     [self displayControls];
-    [self layoutControls];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [[self view] setFrame:[[[self view] superview] bounds]];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    CGRect frame = [[[self view] superview] bounds];
+    [[self view] setBounds:frame];
+    [[self view] setFrame:frame];
+    
+    [self layoutControls];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -106,7 +112,6 @@
     [[self view] addSubview:[self buttonA]];
     
     [[self buttonA] setRadius:22];
-    [[self buttonA] setColor:[UIColor darkGrayColor]];
     
     /*
     [[self view] addSubview:[self buttonB]];
@@ -120,6 +125,21 @@
     //
     //  TODO: Use Autolayout in here
     //
+    
+    CGRect joystickFrame = [[self joystick] frame];
+    CGRect selfFrame = [[self view] frame];
+    CGRect buttonAFrame = [[self buttonA] frame];
+    
+    joystickFrame.origin.y = selfFrame.size.height - joystickFrame.size.height - kMargin;
+    
+    [[self joystick] setFrame:joystickFrame];
+    [[self joystick] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+    
+    buttonAFrame.origin.x = selfFrame.size.width - buttonAFrame.size.width - kMargin;
+    buttonAFrame.origin.y = selfFrame.size.height - buttonAFrame.size.height - kMargin;
+    
+    [[self buttonA] setFrame:buttonAFrame];
+    [[self buttonA] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
     
 }
 

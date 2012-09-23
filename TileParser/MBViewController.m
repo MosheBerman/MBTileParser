@@ -18,7 +18,6 @@
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
 @property (nonatomic, strong) MBDialogView *dialogView;
-@property (nonatomic) BOOL isShowingDialog;
 
 @end
 
@@ -28,9 +27,8 @@
     
     self = [super initWithCoder:aDecoder];
     
-    
     if (self) {
-        _isShowingDialog = NO;
+        
     }
     return self;
 }
@@ -144,17 +142,16 @@
         }
         
         if ([self isShowingDialog]) {
-            [self setIsShowingDialog:NO];
-            [[self dialogView] removeFromSuperview];
+            [[self dialogView] cycleText];
         }else{
-            [self setIsShowingDialog:YES];
-            [[self dialogView] showInView:[self view]];
+            MBDialogView *aDialogView = [self dialogView];
+            
+            [aDialogView showInView:[self view]];
         }
     }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
         
         if ([self dialogView]) {
-            [self setIsShowingDialog:NO];
-            [[self dialogView] removeFromSuperview];
+            [[self dialogView] cycleText];
         }
         
     }
@@ -245,4 +242,15 @@
 
 #pragma mark - Dialog Delegate
 
+
+#pragma mark - Dialog Detection
+
+- (BOOL) isShowingDialog{
+    
+    UIView *dialogView = [self dialogView];
+    BOOL isShowing = [[[self view] subviews] containsObject:dialogView];
+    
+    
+    return isShowing;
+}
 @end

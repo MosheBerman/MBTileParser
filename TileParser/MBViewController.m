@@ -18,10 +18,22 @@
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
 @property (nonatomic, strong) MBDialogView *dialogView;
+@property (nonatomic) BOOL isShowingDialog;
 
 @end
 
 @implementation MBViewController
+
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    
+    
+    if (self) {
+        _isShowingDialog = NO;
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -41,11 +53,11 @@
     //  Create a sprite for the game world.
     //
     
-     MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
-     [self setPlayer:sprite];
-     [sprite setMovementDelegate:self];
-     [sprite setMovementDataSource:[self mapViewController]];
-     
+    MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
+    [self setPlayer:sprite];
+    [sprite setMovementDelegate:self];
+    [sprite setMovementDataSource:[self mapViewController]];
+    
     
     //  Add the sprite to the map and follow it
     
@@ -59,7 +71,7 @@
     MBSelfMovingSpriteView *movingSprite = [[MBSelfMovingSpriteView alloc] initWithSpriteName:@"tuna_guy"];
     [[mapViewController mapView] addSprite:movingSprite forKey:@"movingSprite" atTileCoordinates:CGPointMake(7, 7) beneathLayerNamed:@"TreeTops"];
     
-    //  Attach the map to the sprite as the movement delegate    
+    //  Attach the map to the sprite as the movement delegate
     [movingSprite setMovementDelegate:self];
     [movingSprite setMovementDataSource:[self mapViewController]];
     
@@ -78,7 +90,7 @@
     //
     
     [movingSprite moveInRandomDirection];
-   
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -86,7 +98,7 @@
     
     //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.view];
     //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.gameboyControls.view];
-
+    
 }
 
 - (void)viewDidUnload
@@ -113,7 +125,7 @@
 }
 
 
-#pragma mark - Controller Delegate 
+#pragma mark - Controller Delegate
 
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
@@ -127,15 +139,21 @@
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
         
         if(![self dialogView]){
-            MBDialogView *dialogView = [[MBDialogView alloc] initWithText:@"A Button Pressed"];
+            MBDialogView *dialogView = [[MBDialogView alloc] initWithText:@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss."];
             [self setDialogView:dialogView];
         }
         
-        [[self dialogView] showInView:[self view]];
-        
+        if ([self isShowingDialog]) {
+            [self setIsShowingDialog:NO];
+            [[self dialogView] removeFromSuperview];
+        }else{
+            [self setIsShowingDialog:YES];
+            [[self dialogView] showInView:[self view]];
+        }
     }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
         
         if ([self dialogView]) {
+            [self setIsShowingDialog:NO];
             [[self dialogView] removeFromSuperview];
         }
         
@@ -157,10 +175,16 @@
 // FIXME: Make a flag to indicate if we're moving based on velocity or per-tile increments.
 
 - (BOOL)sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates {
-
+    
     //  Disallow movement off the top and left edges.
     
     if (coordinates.x < 0 || coordinates.y < 0)  {
+        return NO;
+    }
+    
+    //  Freeze movement during dialog.
+    
+    if ([self isShowingDialog]) {
         return NO;
     }
     
@@ -190,7 +214,7 @@
         return NO;
     }
     
-    if ([tileProperties[@"name"] isEqualToString:@"message"]) {
+    if ([tileProperties[@"name"] isEqualToString:@"message"] && sprite != [self player]) {
         return NO;
     }
     
@@ -203,7 +227,7 @@
 //
 
 - (BOOL)spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction{
-    return YES;
+    return ![self isShowingDialog];
 }
 
 - (void)sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates{

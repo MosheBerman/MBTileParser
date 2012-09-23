@@ -64,7 +64,7 @@
 }
 
 - (void) rewindToFirstNode{
-    [self setActiveNode:[self nodes][0]];
+    [self setActiveNode:[self firstNode]];
 }
 
 @end

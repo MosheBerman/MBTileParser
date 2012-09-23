@@ -249,8 +249,6 @@
     
     UIView *dialogView = [self dialogView];
     BOOL isShowing = [[[self view] subviews] containsObject:dialogView];
-    
-    
     return isShowing;
 }
 @end

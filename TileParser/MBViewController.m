@@ -8,22 +8,16 @@
 
 #import "MBViewController.h"
 
-#import "MBMapViewController.h"
-
-#import "MBMovableSpriteView.h"
-
-#import "MBSelfMovingSpriteView.h"
-
-#import "MBGameBoyViewController.h"
+#import "MBGameEngine/MBGameEngine.h"
 
 #import "UIView+Diagnostics.h"
 
-#import "MBControllerEvent.h"
 
 @interface MBViewController () <MBControllerEvent>
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
+@property (nonatomic, strong) MBDialogView *dialogView;
 
 @end
 
@@ -129,7 +123,18 @@
 - (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender{
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
         
+        if(![self dialogView]){
+            MBDialogView *dialogView = [[MBDialogView alloc] initWithText:@"A Button Pressed"];
+            [self setDialogView:dialogView];
+        }
+        
+        [[self dialogView] showInView:[self view]];
+        
     }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
+        
+        if ([self dialogView]) {
+            [[self dialogView] removeFromSuperview];
+        }
         
     }
 }

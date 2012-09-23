@@ -124,8 +124,6 @@
 
     float cosAngle;
     float sinAngle;
-
-    NSLog(@"Angle: %f", angle);
     
     if(_isDPad){
         float anglePerSector = 360.0f / _numberOfDirections * kJoystickDegreesToRadians;

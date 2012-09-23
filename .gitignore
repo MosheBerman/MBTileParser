@@ -1,0 +1,5 @@
+#Ignore IPA files.
+
+*.ipa
+
+./builds

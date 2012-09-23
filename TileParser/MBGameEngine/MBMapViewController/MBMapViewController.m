@@ -12,9 +12,9 @@
 
 #import "MBTileSet.h"
 
-#import "MBTileMapObject.h"
-
 #import "UIImage+TileData.h"
+
+#import "MBTileMapObject.h"
 
 @interface MBMapViewController ()
 
@@ -89,20 +89,33 @@
     [_parser start];
 }
 
-#pragma mark - MBMapData Protocol 
+#pragma mark - MBMapMetadata Protocol
 
-- (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *) atPoint:(CGPoint)points{
+- (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *)groupName atPoint:(CGPoint)point{
+    NSArray *group = [[self map] objectGroups][groupName];
     
+    for (MBTileMapObject *object in group) {
+        
+        CGRect frame = CGRectMake(object.x, object.y, object.width, object.height);
+        
+        if (CGRectContainsPoint(frame, points)) {
+            return [object properties];
+        }
+    }
+    
+    return nil;
 }
 
 - (NSDictionary *)propertiesForTileInLayer:(NSString *)layerName atCoordinates:(CGPoint)coordinates{
-    
+    return [[[self mapView] tileAtCoordinates:coordinates inLayerNamed:@"Meta"] tileData];
 }
 
 
 - (CGSize)tileSizeInPoints{
     MBTileSet *tileSet = [[self map] tilesets][0];
-    return [tileSet tileSize];
+    CGSize size = [tileSet tileSize];
+    
+    return size;
 }
 
 @end

@@ -10,9 +10,9 @@
 
 #import "MBMapView.h"
 
-#import "MBMapData.h"
+#import "MBMapMetadata.h"
 
-@interface MBMapViewController : UIViewController <MBMapData>
+@interface MBMapViewController : UIViewController <MBMapMetadata>
 
 @property (nonatomic, strong) MBMapView *mapView;
 

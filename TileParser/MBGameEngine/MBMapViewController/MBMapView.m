@@ -312,6 +312,9 @@
     [self setContentOffset:offset];
 }
 
+- (void) refocusOnSprite{
+    [self centerOnSpriteView:[self spriteForKey:[self keyForFollowedSprite]]];
+}
 
 - (BOOL)isFollowingSprite{
     return [self keyForFollowedSprite] != nil;

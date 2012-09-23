@@ -36,4 +36,7 @@
 //  Removes target to follow
 - (void)stopFollowingSpriteForKey:(NSString *)key;
 
+//  Center on the sprite that's being followed. Use after orientation or other frame changes.
+- (void) refocusOnSprite;
+
 @end

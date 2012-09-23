@@ -9,7 +9,8 @@
 #import "MBGameBoyViewController.h"
 
 #define kJoystickDiameter 88 
-#define kMargin 44
+#define kJoystickMargin 40
+#define kButtonMargin 32
 
 @interface MBGameBoyViewController ()
 
@@ -23,7 +24,7 @@
     
     if (self) {
         
-        _joystick = [[MBJoystickView alloc] initWithFrame:CGRectMake(32, 224, kJoystickDiameter, kJoystickDiameter)];
+        _joystick = [[MBJoystickView alloc] initWithFrame:CGRectMake(kJoystickMargin, 224, kJoystickDiameter, kJoystickDiameter)];
         _joystick.isDPad = YES;
         
         _buttonA = [MBControllerButton buttonWithColor:[UIColor whiteColor]];
@@ -47,8 +48,6 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
-
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -137,19 +136,19 @@
     CGRect buttonAFrame = [[self buttonA] frame];
     CGRect buttonBFrame = [[self buttonB] frame];
     
-    joystickFrame.origin.y = selfFrame.size.height - joystickFrame.size.height - kMargin;
+    joystickFrame.origin.y = selfFrame.size.height - joystickFrame.size.height - kJoystickMargin;
     
     [[self joystick] setFrame:joystickFrame];
     [[self joystick] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
 
-    buttonAFrame.origin.x = selfFrame.size.width - buttonAFrame.size.width - kMargin;
-    buttonAFrame.origin.y = selfFrame.size.height - buttonAFrame.size.height * 1.75 - kMargin/2;
+    buttonAFrame.origin.x = selfFrame.size.width - buttonAFrame.size.width - kButtonMargin/2;
+    buttonAFrame.origin.y = selfFrame.size.height - buttonAFrame.size.height * 1.75 - kButtonMargin/2;
     
     [[self buttonA] setFrame:buttonAFrame];
     [[self buttonA] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];
     
-    buttonBFrame.origin.x = selfFrame.size.width - buttonBFrame.size.width * 2 - kMargin;
-    buttonBFrame.origin.y = selfFrame.size.height - buttonBFrame.size.height - kMargin/2;
+    buttonBFrame.origin.x = selfFrame.size.width - buttonBFrame.size.width * 2 - kButtonMargin/2;
+    buttonBFrame.origin.y = selfFrame.size.height - buttonBFrame.size.height - kButtonMargin/2;
     
     [[self buttonB] setFrame:buttonBFrame];
     [[self buttonB] setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin];

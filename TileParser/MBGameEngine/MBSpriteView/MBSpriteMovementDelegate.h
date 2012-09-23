@@ -11,12 +11,10 @@
 typedef NSInteger MBSpriteMovementDirection;
 
 enum MBSpriteMovementDirection {
-    MBSpriteMovementDirectionVertical = 0,
-    MBSpriteMovementDirectionHorizontal,
-    MBSpriteMovementDirectionNorth,
-    MBSpriteMovementDirectionEast,
-    MBSpriteMovementDirectionSouth,
-    MBSpriteMovementDirectionWest
+    MBSpriteMovementDirectionUp = 0,
+    MBSpriteMovementDirectionRight,
+    MBSpriteMovementDirectionDown,
+    MBSpriteMovementDirectionLeft
 };
 
 @class MBSpriteView;
@@ -26,7 +24,6 @@ enum MBSpriteMovementDirection {
 - (BOOL) sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates;
 - (BOOL) spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction;
 
-- (CGFloat)sprite:(MBSpriteView *)sprite distanceToMoveInDirection:(MBSpriteMovementDirection)direction;  //In points
 - (void) sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates;
 
 @end

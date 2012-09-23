@@ -51,8 +51,7 @@
 
     [super viewWillAppear:animated];
     
-    CGRect frame = [[[self view] superview] frame];
-    [[self view] setFrame:frame];
+    [self sizeToSuperview];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,6 +115,22 @@
     CGSize size = [tileSet tileSize];
     
     return size;
+}
+
+#pragma mark - Frame Resizes
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [self sizeToSuperview];
+}
+
+- (void) sizeToSuperview{
+    
+    CGRect frame = [[[self view] superview] frame];
+    [[self view] setFrame:frame];
+
+    if ([[self mapView] isFollowingSprite]) {
+        [[self mapView] refocusOnSprite];
+    }
 }
 
 @end

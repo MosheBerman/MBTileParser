@@ -125,7 +125,7 @@
     }
     
     if ([self.workingElement isEqualToString:@"object"]) {
-        MBMapObject *object = [[MBMapObject alloc] init];
+        MBTileMapObject *object = [[MBTileMapObject alloc] init];
         object.x = [[attributeDict objectForKey:@"x"] integerValue];
         object.y = [[attributeDict objectForKey:@"y"] integerValue];
         
@@ -149,7 +149,7 @@
             
             MBMapObjectGroup *workingGroup = [objectGroups lastObject];
             
-            MBMapObject *mapObject = [workingGroup.mapObjects lastObject];
+            MBTileMapObject *mapObject = [workingGroup.mapObjects lastObject];
             
             [mapObject.properties addEntriesFromDictionary:attributeDict];
             

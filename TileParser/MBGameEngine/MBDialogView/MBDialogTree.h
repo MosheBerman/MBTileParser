@@ -24,4 +24,9 @@
 - (id) initWithContentsOfFile:(NSString *)path;
 - (id) initWithContentsOfURL:(NSURL *)url;
 
+// Accessing nodes
+
+- (BOOL) hasNext;
+- (MBDialogTreeNode *)nextNode;
+
 @end

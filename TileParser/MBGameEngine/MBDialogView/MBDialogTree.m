@@ -40,5 +40,27 @@
     return [self initWithContentsOfArray:dialogNodes];
 }
 
+- (NSUInteger) currentNode{
+    return [[self nodes] indexOfObject:[self activeNode]];
+}
+
+- (BOOL) hasNext{
+    if (![self activeNode] || ![[self nodes] count]) {
+        return NO;
+    }
+    return [self currentNode] < [[self nodes] count];
+}
+
+- (MBDialogTreeNode *)nextNode{
+    
+    if (![self hasNext]) {
+        return nil;
+    }
+
+    NSUInteger indexOfNext =[self currentNode] +1;
+    MBDialogTreeNode *newNext = [self nodes][indexOfNext];
+    [self setActiveNode:newNext];
+    return newNext;
+}
 
 @end

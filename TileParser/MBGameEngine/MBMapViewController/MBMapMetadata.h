@@ -10,7 +10,7 @@
 
 @protocol MBMapMetadata <NSObject>
 
-- (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *) atPoint:(CGPoint)points;
+- (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *)groupName atPoint:(CGPoint)point;
 - (NSDictionary *)propertiesForTileInLayer:(NSString *)layerName atCoordinates:(CGPoint)coordinates;
 - (CGSize)tileSizeInPoints;
 

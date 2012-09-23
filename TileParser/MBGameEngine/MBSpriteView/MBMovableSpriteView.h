@@ -10,7 +10,7 @@
 
 #import "MBSpriteMovementDelegate.h"
 
-#import "MBMapData.h"
+#import "MBMapMetadata.h"
 
 #define kDefaultMovementDuration 0.45
 

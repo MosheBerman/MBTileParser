@@ -107,6 +107,7 @@
         [self renderText:textToRender];
     }else{
         [self removeFromSuperview];
+        [[self dialogTree] rewindToFirstNode];
     }
 }
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MBMapObject.h"
+#import "MBTileMapObject.h"
 
 @interface MBMapObjectGroup : NSObject
 

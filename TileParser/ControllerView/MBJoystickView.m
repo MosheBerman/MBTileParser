@@ -20,6 +20,8 @@
 
 #define kJoystickDegreesToRadians kJoystickPI/180.0f
 
+#define CGPointCenter CGPointMake(_joystickRadius, _joystickRadius)
+
 @interface MBJoystickView ()
 
 - (void) updateVelocity:(CGPoint)point;
@@ -39,9 +41,8 @@
     self = [super initWithFrame:frame];
     
     if(self){
-        _stickPosition = CGPointZero;
-        _degrees = 0;
         _velocity  = CGPointZero;
+        _degrees = 0;
         _autoCenter = YES;
         _isDPad = NO;
         _hasDeadZone = NO;
@@ -51,9 +52,11 @@
         _thumbRadius = 32.0f;
         _deadRadius = 0.0f;
         
+        _stickPosition = CGPointCenter;
+        
         _repeatInterval = 0.01;
         _repeatTimer = nil;
-        _lastPoint = CGPointZero;
+        _lastPoint = _stickPosition;
         _shouldRepeat = YES;
         
         [self setMultipleTouchEnabled:NO];
@@ -89,10 +92,13 @@
     point.x = point.x - _joystickRadius;
     point.y = _joystickRadius - point.y;
     
+    
+    
     float dx = point.x;
     float dy = point.y;
     
     float distanceSquared = dx * dx + dy * dy;
+
     
     if(distanceSquared <= _deadRadiusSquared){
         
@@ -103,15 +109,13 @@
         _degrees = 0.0f;
         
         [self willChangeValueForKey:@"stickPosition"];
-        _stickPosition = point;
+        _stickPosition = CGPointCenter;
         [self didChangeValueForKey:@"stickPosition"];
         
         return;
     }
 
     float angle = atan2f(dy, dx);   //In radians
-    
-    
     
     if(angle < 0){
         angle += kJoystickPIx2;
@@ -120,6 +124,8 @@
     float cosAngle;
     float sinAngle;
 
+    NSLog(@"Angle: %f", angle);
+    
     if(_isDPad){
         float anglePerSector = 360.0f / _numberOfDirections * kJoystickDegreesToRadians;
         angle = roundf(angle/anglePerSector) * anglePerSector;
@@ -143,6 +149,8 @@
     [self willChangeValueForKey:@"stickPosition"];
     _stickPosition = CGPointMake(dx, dy);
     [self didChangeValueForKey:@"stickPosition"];
+    
+    
 }
 
 - (void) setIsDPad:(BOOL)isDPad{
@@ -199,7 +207,7 @@
     CGPoint location = [[touches anyObject] locationInView:self];
     
     if (_autoCenter) {
-        location = CGPointZero;
+        location = CGPointMake([self joystickRadius], [self joystickRadius]);
     }
     
     [self updateVelocity:location];

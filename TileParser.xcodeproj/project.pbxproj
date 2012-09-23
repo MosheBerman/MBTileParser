@@ -7,16 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958315F59EE5003EC5C6 /* MBControllerButton.m */; };
-		4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958715F59F46003EC5C6 /* UIColor+Extensions.m */; };
-		4601158115FA776200B5F87D /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601158015FA776200B5F87D /* MBMovableSpriteView.m */; };
-		4601158415FA816400B5F87D /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601158315FA816400B5F87D /* MBSelfMovingSpriteView.m */; };
-		4601158715FA8FD200B5F87D /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601158615FA8FD200B5F87D /* UIView+Diagnostics.m */; };
-		460761A815F7A8530061EA09 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 460761A615F7A8530061EA09 /* dpad.png */; };
-		460761A915F7A8530061EA09 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 460761A715F7A8530061EA09 /* joystick.png */; };
-		4611130415EA72D900404504 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611130315EA72D900404504 /* MBControllerViewController.m */; };
-		4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */; };
-		4619C63F15EBFE3B009D095A /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4619C63E15EBFE3B009D095A /* MBJoystickView.m */; };
 		462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFD15B3EDD30058E14C /* UIKit.framework */; };
 		462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFF15B3EDD30058E14C /* Foundation.framework */; };
 		462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AAC0115B3EDD30058E14C /* CoreGraphics.framework */; };
@@ -26,67 +16,72 @@
 		462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC1015B3EDD30058E14C /* MBViewController.m */; };
 		462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */; };
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
-		4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646857C15DB6E6F008B3914 /* MBMapView.m */; };
-		4646858115DB7222008B3914 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646858015DB7222008B3914 /* MBLayerView.m */; };
-		4669E012160EE0EE003BA9B9 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E011160EE0EE003BA9B9 /* MBDialogView.m */; };
-		4669E017160EE2AC003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E016160EE2AC003BA9B9 /* NSString+MBDialogString.m */; };
-		466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */; };
-		466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65B115DD817D009CB7BF /* MBMapObject.m */; };
-		466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65B715DD84BE009CB7BF /* UIImage+TileData.m */; };
-		466F92E815DC051100801802 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 466F92E715DC051100801802 /* MBTileSet.m */; };
-		466F92EF15DC349500801802 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EC15DC349400801802 /* meta.png */; };
-		466F92F015DC349500801802 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 466F92ED15DC349400801802 /* PearTown.tmx */; };
-		466F92F115DC349500801802 /* standard_tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92EE15DC349500801802 /* standard_tileset.png */; };
-		466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 466F92F215DC378C00801802 /* SimpsonCity.tmx */; };
-		466F92F515DC378C00801802 /* tilescitytextured.png in Resources */ = {isa = PBXBuildFile; fileRef = 466F92F315DC378C00801802 /* tilescitytextured.png */; };
-		468D924B15C6D77100F461F0 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 468D924815C6D77100F461F0 /* checkers.png */; };
-		468D924C15C6D77100F461F0 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 468D924915C6D77100F461F0 /* Checkers.psd */; };
-		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
-		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
+		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
+		4669E05C160F02CE003BA9B9 /* DialogSamples.json in Resources */ = {isa = PBXBuildFile; fileRef = 4669E025160F02CE003BA9B9 /* DialogSamples.json */; };
+		4669E05D160F02CE003BA9B9 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E027160F02CE003BA9B9 /* MBDialogView.m */; };
+		4669E05E160F02CE003BA9B9 /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E02B160F02CE003BA9B9 /* MBGameBoyViewController.m */; };
+		4669E05F160F02CE003BA9B9 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02D160F02CE003BA9B9 /* dpad.png */; };
+		4669E060160F02CE003BA9B9 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02E160F02CE003BA9B9 /* joystick.png */; };
+		4669E061160F02CE003BA9B9 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E030160F02CE003BA9B9 /* MBControllerButton.m */; };
+		4669E062160F02CE003BA9B9 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E034160F02CE003BA9B9 /* MBControllerViewController.m */; };
+		4669E063160F02CE003BA9B9 /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E036160F02CE003BA9B9 /* MBJoystickView.m */; };
+		4669E064160F02CE003BA9B9 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03B160F02CE003BA9B9 /* UIColor+Extensions.m */; };
+		4669E065160F02CE003BA9B9 /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03D160F02CE003BA9B9 /* UIImage+TileData.m */; };
+		4669E066160F02CE003BA9B9 /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */; };
+		4669E067160F02CE003BA9B9 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E041160F02CE003BA9B9 /* MBLayerView.m */; };
+		4669E068160F02CE003BA9B9 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E043160F02CE003BA9B9 /* MBMap.m */; };
+		4669E069160F02CE003BA9B9 /* MBMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E045160F02CE003BA9B9 /* MBMapObject.m */; };
+		4669E06A160F02CE003BA9B9 /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */; };
+		4669E06B160F02CE003BA9B9 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E049160F02CE003BA9B9 /* MBMapView.m */; };
+		4669E06C160F02CE003BA9B9 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04B160F02CE003BA9B9 /* MBMapViewController.m */; };
+		4669E06D160F02CE003BA9B9 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04D160F02CE003BA9B9 /* MBTileMapObject.m */; };
+		4669E06E160F02CE003BA9B9 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04F160F02CE003BA9B9 /* MBTileSet.m */; };
+		4669E06F160F02CE003BA9B9 /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */; };
+		4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */; };
+		4669E071160F02CE003BA9B9 /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E057160F02CE003BA9B9 /* MBSpriteView.m */; };
+		4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E05A160F02CE003BA9B9 /* MBTileParser.m */; };
+		4669E0A0160F02F5003BA9B9 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E075160F02F5003BA9B9 /* checkers.png */; };
+		4669E0A1160F02F5003BA9B9 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4669E076160F02F5003BA9B9 /* Checkers.psd */; };
+		4669E0A2160F02F5003BA9B9 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E077160F02F5003BA9B9 /* checkers.tmx */; };
+		4669E0A3160F02F5003BA9B9 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E078160F02F5003BA9B9 /* meta.png */; };
+		4669E0A4160F02F5003BA9B9 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E079160F02F5003BA9B9 /* PearTown.tmx */; };
+		4669E0A5160F02F5003BA9B9 /* SimpsonCity.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07A160F02F5003BA9B9 /* SimpsonCity.tmx */; };
+		4669E0A6160F02F5003BA9B9 /* standard_tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07B160F02F5003BA9B9 /* standard_tileset.png */; };
+		4669E0A7160F02F5003BA9B9 /* tilescitytextured.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07C160F02F5003BA9B9 /* tilescitytextured.png */; };
+		4669E0A8160F02F5003BA9B9 /* dude.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07F160F02F5003BA9B9 /* dude.plist */; };
+		4669E0A9160F02F5003BA9B9 /* dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E080160F02F5003BA9B9 /* dude.png */; };
+		4669E0AA160F02F5003BA9B9 /* explorer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E082160F02F5003BA9B9 /* explorer.plist */; };
+		4669E0AB160F02F5003BA9B9 /* explorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E083160F02F5003BA9B9 /* explorer.png */; };
+		4669E0AC160F02F5003BA9B9 /* zack.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E084160F02F5003BA9B9 /* zack.tps */; };
+		4669E0AD160F02F5003BA9B9 /* nikkie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E086160F02F5003BA9B9 /* nikkie.plist */; };
+		4669E0AE160F02F5003BA9B9 /* nikkie.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E087160F02F5003BA9B9 /* nikkie.png */; };
+		4669E0AF160F02F5003BA9B9 /* tuna_guy-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E089160F02F5003BA9B9 /* tuna_guy-hd.plist */; };
+		4669E0B0160F02F5003BA9B9 /* tuna_guy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08A160F02F5003BA9B9 /* tuna_guy-hd.png */; };
+		4669E0B1160F02F5003BA9B9 /* tuna_guy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08B160F02F5003BA9B9 /* tuna_guy.plist */; };
+		4669E0B2160F02F5003BA9B9 /* tuna_guy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08C160F02F5003BA9B9 /* tuna_guy.png */; };
+		4669E0B3160F02F5003BA9B9 /* tuna_guy.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08D160F02F5003BA9B9 /* tuna_guy.tps */; };
+		4669E0B4160F02F5003BA9B9 /* zack-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E090160F02F5003BA9B9 /* zack-down-1.png */; };
+		4669E0B5160F02F5003BA9B9 /* zack-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E091160F02F5003BA9B9 /* zack-down-2.png */; };
+		4669E0B6160F02F5003BA9B9 /* zack-down-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E092160F02F5003BA9B9 /* zack-down-3.png */; };
+		4669E0B7160F02F5003BA9B9 /* zack-left-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E093160F02F5003BA9B9 /* zack-left-1.png */; };
+		4669E0B8160F02F5003BA9B9 /* zack-left-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E094160F02F5003BA9B9 /* zack-left-2.png */; };
+		4669E0B9160F02F5003BA9B9 /* zack-left-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E095160F02F5003BA9B9 /* zack-left-3.png */; };
+		4669E0BA160F02F5003BA9B9 /* zack-right-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E096160F02F5003BA9B9 /* zack-right-1.png */; };
+		4669E0BB160F02F5003BA9B9 /* zack-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E097160F02F5003BA9B9 /* zack-right-2.png */; };
+		4669E0BC160F02F5003BA9B9 /* zack-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E098160F02F5003BA9B9 /* zack-right-3.png */; };
+		4669E0BD160F02F5003BA9B9 /* zack-up-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E099160F02F5003BA9B9 /* zack-up-1.png */; };
+		4669E0BE160F02F5003BA9B9 /* zack-up-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09A160F02F5003BA9B9 /* zack-up-2.png */; };
+		4669E0BF160F02F5003BA9B9 /* zack-up-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09B160F02F5003BA9B9 /* zack-up-3.png */; };
+		4669E0C0160F02F5003BA9B9 /* zack.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09C160F02F5003BA9B9 /* zack.tps */; };
+		4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09D160F02F5003BA9B9 /* zack@2x.tps */; };
+		4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09E160F02F5003BA9B9 /* zack.plist */; };
+		4669E0C3160F02F5003BA9B9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09F160F02F5003BA9B9 /* zack.png */; };
 		469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754916019E5D00912D26 /* Default-568h@2x.png */; };
 		469B754D16019EC700912D26 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754B16019EC700912D26 /* Default.png */; };
 		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
-		469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 469D673915DCA0540031F7D3 /* MBTileMapObject.m */; };
-		46F2BD2815DEDA9E006820D9 /* dude.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0715DEDA9E006820D9 /* dude.plist */; };
-		46F2BD2915DEDA9E006820D9 /* dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0815DEDA9E006820D9 /* dude.png */; };
-		46F2BD2A15DEDA9E006820D9 /* explorer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0A15DEDA9E006820D9 /* explorer.plist */; };
-		46F2BD2B15DEDA9E006820D9 /* explorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0B15DEDA9E006820D9 /* explorer.png */; };
-		46F2BD2D15DEDA9E006820D9 /* nikkie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0E15DEDA9E006820D9 /* nikkie.plist */; };
-		46F2BD2E15DEDA9E006820D9 /* nikkie.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0F15DEDA9E006820D9 /* nikkie.png */; };
-		46F2BD2F15DEDA9E006820D9 /* tuna_guy-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1115DEDA9E006820D9 /* tuna_guy-hd.plist */; };
-		46F2BD3015DEDA9E006820D9 /* tuna_guy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1215DEDA9E006820D9 /* tuna_guy-hd.png */; };
-		46F2BD3115DEDA9E006820D9 /* tuna_guy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1315DEDA9E006820D9 /* tuna_guy.plist */; };
-		46F2BD3215DEDA9E006820D9 /* tuna_guy.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1415DEDA9E006820D9 /* tuna_guy.png */; };
-		46F2BD3315DEDA9E006820D9 /* tuna_guy.tps in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */; };
-		46F2BD6415DEDAFD006820D9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD5415DEDAFD006820D9 /* zack.plist */; };
-		46F2BD6515DEDAFD006820D9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD5515DEDAFD006820D9 /* zack.png */; };
-		46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2BD6815DEE280006820D9 /* MBMapViewController.m */; };
-		46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F2BD6B15DEE28E006820D9 /* MBMap.m */; };
-		493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 493DA58A15DD7D3700F435EF /* MBSpriteView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4600957C15F598D8003EC5C6 /* MBControllerToggling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBControllerToggling.h; path = ControllerView/MBControllerToggling.h; sourceTree = "<group>"; };
-		4600958215F59EE4003EC5C6 /* MBControllerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerButton.h; path = ControllerView/MBControllerButton.h; sourceTree = "<group>"; };
-		4600958315F59EE5003EC5C6 /* MBControllerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerButton.m; path = ControllerView/MBControllerButton.m; sourceTree = "<group>"; };
-		4600958615F59F46003EC5C6 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extensions.h"; path = "TileParser/Categories/UIColor+Extensions.h"; sourceTree = "<group>"; };
-		4600958715F59F46003EC5C6 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extensions.m"; path = "TileParser/Categories/UIColor+Extensions.m"; sourceTree = "<group>"; };
-		4601157F15FA776200B5F87D /* MBMovableSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMovableSpriteView.h; sourceTree = "<group>"; };
-		4601158015FA776200B5F87D /* MBMovableSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMovableSpriteView.m; sourceTree = "<group>"; };
-		4601158215FA816400B5F87D /* MBSelfMovingSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSelfMovingSpriteView.h; sourceTree = "<group>"; };
-		4601158315FA816400B5F87D /* MBSelfMovingSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSelfMovingSpriteView.m; sourceTree = "<group>"; };
-		4601158515FA8FD200B5F87D /* UIView+Diagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Diagnostics.h"; path = "TileParser/Categories/UIView+Diagnostics.h"; sourceTree = "<group>"; };
-		4601158615FA8FD200B5F87D /* UIView+Diagnostics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Diagnostics.m"; path = "TileParser/Categories/UIView+Diagnostics.m"; sourceTree = "<group>"; };
-		460761A615F7A8530061EA09 /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
-		460761A715F7A8530061EA09 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
-		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
-		4611130315EA72D900404504 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerViewController.m; path = ControllerView/MBControllerViewController.m; sourceTree = "<group>"; };
-		4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBSpriteMovementDelegate.h; sourceTree = "<group>"; };
-		4619C63815EBFBAC009D095A /* MBControllerEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBControllerEvent.h; path = ControllerView/MBControllerEvent.h; sourceTree = "<group>"; };
-		4619C63A15EBFE0E009D095A /* MBGameBoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGameBoyViewController.h; path = ControllerView/Gameboy/MBGameBoyViewController.h; sourceTree = "<group>"; };
-		4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGameBoyViewController.m; path = ControllerView/Gameboy/MBGameBoyViewController.m; sourceTree = "<group>"; };
-		4619C63D15EBFE3B009D095A /* MBJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBJoystickView.h; path = ControllerView/MBJoystickView.h; sourceTree = "<group>"; };
-		4619C63E15EBFE3B009D095A /* MBJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBJoystickView.m; path = ControllerView/MBJoystickView.m; sourceTree = "<group>"; };
 		462AABF915B3EDD30058E14C /* TileParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		462AABFD15B3EDD30058E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		462AABFF15B3EDD30058E14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,56 +96,94 @@
 		462AAC1015B3EDD30058E14C /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		462AAC1315B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPhone.xib; sourceTree = "<group>"; };
 		462AAC1615B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
-		4646857B15DB6E6F008B3914 /* MBMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapView.h; path = MapView/MBMapView.h; sourceTree = "<group>"; };
-		4646857C15DB6E6F008B3914 /* MBMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapView.m; path = MapView/MBMapView.m; sourceTree = "<group>"; };
-		4646857F15DB7222008B3914 /* MBLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLayerView.h; path = MapView/MBLayerView.h; sourceTree = "<group>"; };
-		4646858015DB7222008B3914 /* MBLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLayerView.m; path = MapView/MBLayerView.m; sourceTree = "<group>"; };
-		4669E010160EE0EE003BA9B9 /* MBDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDialogView.h; path = DialogView/MBDialogView.h; sourceTree = "<group>"; };
-		4669E011160EE0EE003BA9B9 /* MBDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDialogView.m; path = DialogView/MBDialogView.m; sourceTree = "<group>"; };
-		4669E015160EE2AC003BA9B9 /* NSString+MBDialogString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MBDialogString.h"; path = "DialogView/Categories/NSString+MBDialogString.h"; sourceTree = "<group>"; };
-		4669E016160EE2AC003BA9B9 /* NSString+MBDialogString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MBDialogString.m"; path = "DialogView/Categories/NSString+MBDialogString.m"; sourceTree = "<group>"; };
-		466B65A915DD8060009CB7BF /* MBMapObjectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapObjectGroup.h; path = MapView/MBMapObjectGroup.h; sourceTree = "<group>"; };
-		466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapObjectGroup.m; path = MapView/MBMapObjectGroup.m; sourceTree = "<group>"; };
-		466B65B015DD817D009CB7BF /* MBMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapObject.h; path = MapView/MBMapObject.h; sourceTree = "<group>"; };
-		466B65B115DD817D009CB7BF /* MBMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapObject.m; path = MapView/MBMapObject.m; sourceTree = "<group>"; };
-		466B65B615DD84BE009CB7BF /* UIImage+TileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+TileData.h"; path = "MapView/UIImage+TileData.h"; sourceTree = "<group>"; };
-		466B65B715DD84BE009CB7BF /* UIImage+TileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+TileData.m"; path = "MapView/UIImage+TileData.m"; sourceTree = "<group>"; };
-		466F92E615DC051100801802 /* MBTileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileSet.h; path = MapView/MBTileSet.h; sourceTree = "<group>"; };
-		466F92E715DC051100801802 /* MBTileSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileSet.m; path = MapView/MBTileSet.m; sourceTree = "<group>"; };
-		466F92EC15DC349400801802 /* meta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta.png; sourceTree = "<group>"; };
-		466F92ED15DC349400801802 /* PearTown.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PearTown.tmx; sourceTree = "<group>"; };
-		466F92EE15DC349500801802 /* standard_tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standard_tileset.png; sourceTree = "<group>"; };
-		466F92F215DC378C00801802 /* SimpsonCity.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpsonCity.tmx; sourceTree = "<group>"; };
-		466F92F315DC378C00801802 /* tilescitytextured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilescitytextured.png; sourceTree = "<group>"; };
-		468D924815C6D77100F461F0 /* checkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkers.png; sourceTree = "<group>"; };
-		468D924915C6D77100F461F0 /* Checkers.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Checkers.psd; sourceTree = "<group>"; };
-		468D924A15C6D77100F461F0 /* checkers.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = checkers.tmx; sourceTree = "<group>"; };
-		468E4CD815C690E200A5E803 /* MBTileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileParser.h; path = TileParser/MBTileParser.h; sourceTree = "<group>"; };
-		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
+		4669E022160F02CE003BA9B9 /* NSString+MBDialogString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MBDialogString.h"; sourceTree = "<group>"; };
+		4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MBDialogString.m"; sourceTree = "<group>"; };
+		4669E025160F02CE003BA9B9 /* DialogSamples.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DialogSamples.json; sourceTree = "<group>"; };
+		4669E026160F02CE003BA9B9 /* MBDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogView.h; sourceTree = "<group>"; };
+		4669E027160F02CE003BA9B9 /* MBDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogView.m; sourceTree = "<group>"; };
+		4669E02A160F02CE003BA9B9 /* MBGameBoyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGameBoyViewController.h; sourceTree = "<group>"; };
+		4669E02B160F02CE003BA9B9 /* MBGameBoyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGameBoyViewController.m; sourceTree = "<group>"; };
+		4669E02D160F02CE003BA9B9 /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		4669E02E160F02CE003BA9B9 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
+		4669E02F160F02CE003BA9B9 /* MBControllerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerButton.h; sourceTree = "<group>"; };
+		4669E030160F02CE003BA9B9 /* MBControllerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBControllerButton.m; sourceTree = "<group>"; };
+		4669E031160F02CE003BA9B9 /* MBControllerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerEvent.h; sourceTree = "<group>"; };
+		4669E032160F02CE003BA9B9 /* MBControllerToggling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerToggling.h; sourceTree = "<group>"; };
+		4669E033160F02CE003BA9B9 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerViewController.h; sourceTree = "<group>"; };
+		4669E034160F02CE003BA9B9 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBControllerViewController.m; sourceTree = "<group>"; };
+		4669E035160F02CE003BA9B9 /* MBJoystickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBJoystickView.h; sourceTree = "<group>"; };
+		4669E036160F02CE003BA9B9 /* MBJoystickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBJoystickView.m; sourceTree = "<group>"; };
+		4669E037160F02CE003BA9B9 /* MBGameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGameEngine.h; sourceTree = "<group>"; };
+		4669E03A160F02CE003BA9B9 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		4669E03B160F02CE003BA9B9 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		4669E03C160F02CE003BA9B9 /* UIImage+TileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TileData.h"; sourceTree = "<group>"; };
+		4669E03D160F02CE003BA9B9 /* UIImage+TileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TileData.m"; sourceTree = "<group>"; };
+		4669E03E160F02CE003BA9B9 /* UIView+Diagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Diagnostics.h"; sourceTree = "<group>"; };
+		4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Diagnostics.m"; sourceTree = "<group>"; };
+		4669E040160F02CE003BA9B9 /* MBLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLayerView.h; sourceTree = "<group>"; };
+		4669E041160F02CE003BA9B9 /* MBLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLayerView.m; sourceTree = "<group>"; };
+		4669E042160F02CE003BA9B9 /* MBMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMap.h; sourceTree = "<group>"; };
+		4669E043160F02CE003BA9B9 /* MBMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMap.m; sourceTree = "<group>"; };
+		4669E044160F02CE003BA9B9 /* MBMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapObject.h; sourceTree = "<group>"; };
+		4669E045160F02CE003BA9B9 /* MBMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapObject.m; sourceTree = "<group>"; };
+		4669E046160F02CE003BA9B9 /* MBMapObjectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapObjectGroup.h; sourceTree = "<group>"; };
+		4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapObjectGroup.m; sourceTree = "<group>"; };
+		4669E048160F02CE003BA9B9 /* MBMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapView.h; sourceTree = "<group>"; };
+		4669E049160F02CE003BA9B9 /* MBMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapView.m; sourceTree = "<group>"; };
+		4669E04A160F02CE003BA9B9 /* MBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapViewController.h; sourceTree = "<group>"; };
+		4669E04B160F02CE003BA9B9 /* MBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapViewController.m; sourceTree = "<group>"; };
+		4669E04C160F02CE003BA9B9 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTileMapObject.h; sourceTree = "<group>"; };
+		4669E04D160F02CE003BA9B9 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTileMapObject.m; sourceTree = "<group>"; };
+		4669E04E160F02CE003BA9B9 /* MBTileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTileSet.h; sourceTree = "<group>"; };
+		4669E04F160F02CE003BA9B9 /* MBTileSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTileSet.m; sourceTree = "<group>"; };
+		4669E051160F02CE003BA9B9 /* MBMovableSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMovableSpriteView.h; sourceTree = "<group>"; };
+		4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMovableSpriteView.m; sourceTree = "<group>"; };
+		4669E053160F02CE003BA9B9 /* MBSelfMovingSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSelfMovingSpriteView.h; sourceTree = "<group>"; };
+		4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSelfMovingSpriteView.m; sourceTree = "<group>"; };
+		4669E055160F02CE003BA9B9 /* MBSpriteMovementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteMovementDelegate.h; sourceTree = "<group>"; };
+		4669E056160F02CE003BA9B9 /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
+		4669E057160F02CE003BA9B9 /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
+		4669E059160F02CE003BA9B9 /* MBTileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTileParser.h; sourceTree = "<group>"; };
+		4669E05A160F02CE003BA9B9 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTileParser.m; sourceTree = "<group>"; };
+		4669E075160F02F5003BA9B9 /* checkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkers.png; sourceTree = "<group>"; };
+		4669E076160F02F5003BA9B9 /* Checkers.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Checkers.psd; sourceTree = "<group>"; };
+		4669E077160F02F5003BA9B9 /* checkers.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = checkers.tmx; sourceTree = "<group>"; };
+		4669E078160F02F5003BA9B9 /* meta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta.png; sourceTree = "<group>"; };
+		4669E079160F02F5003BA9B9 /* PearTown.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PearTown.tmx; sourceTree = "<group>"; };
+		4669E07A160F02F5003BA9B9 /* SimpsonCity.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SimpsonCity.tmx; sourceTree = "<group>"; };
+		4669E07B160F02F5003BA9B9 /* standard_tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standard_tileset.png; sourceTree = "<group>"; };
+		4669E07C160F02F5003BA9B9 /* tilescitytextured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tilescitytextured.png; sourceTree = "<group>"; };
+		4669E07F160F02F5003BA9B9 /* dude.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dude.plist; sourceTree = "<group>"; };
+		4669E080160F02F5003BA9B9 /* dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dude.png; sourceTree = "<group>"; };
+		4669E082160F02F5003BA9B9 /* explorer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explorer.plist; sourceTree = "<group>"; };
+		4669E083160F02F5003BA9B9 /* explorer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explorer.png; sourceTree = "<group>"; };
+		4669E084160F02F5003BA9B9 /* zack.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = zack.tps; sourceTree = "<group>"; };
+		4669E086160F02F5003BA9B9 /* nikkie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nikkie.plist; sourceTree = "<group>"; };
+		4669E087160F02F5003BA9B9 /* nikkie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nikkie.png; sourceTree = "<group>"; };
+		4669E089160F02F5003BA9B9 /* tuna_guy-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tuna_guy-hd.plist"; sourceTree = "<group>"; };
+		4669E08A160F02F5003BA9B9 /* tuna_guy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuna_guy-hd.png"; sourceTree = "<group>"; };
+		4669E08B160F02F5003BA9B9 /* tuna_guy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tuna_guy.plist; sourceTree = "<group>"; };
+		4669E08C160F02F5003BA9B9 /* tuna_guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuna_guy.png; sourceTree = "<group>"; };
+		4669E08D160F02F5003BA9B9 /* tuna_guy.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = tuna_guy.tps; sourceTree = "<group>"; };
+		4669E090160F02F5003BA9B9 /* zack-down-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-down-1.png"; sourceTree = "<group>"; };
+		4669E091160F02F5003BA9B9 /* zack-down-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-down-2.png"; sourceTree = "<group>"; };
+		4669E092160F02F5003BA9B9 /* zack-down-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-down-3.png"; sourceTree = "<group>"; };
+		4669E093160F02F5003BA9B9 /* zack-left-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-left-1.png"; sourceTree = "<group>"; };
+		4669E094160F02F5003BA9B9 /* zack-left-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-left-2.png"; sourceTree = "<group>"; };
+		4669E095160F02F5003BA9B9 /* zack-left-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-left-3.png"; sourceTree = "<group>"; };
+		4669E096160F02F5003BA9B9 /* zack-right-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-right-1.png"; sourceTree = "<group>"; };
+		4669E097160F02F5003BA9B9 /* zack-right-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-right-2.png"; sourceTree = "<group>"; };
+		4669E098160F02F5003BA9B9 /* zack-right-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-right-3.png"; sourceTree = "<group>"; };
+		4669E099160F02F5003BA9B9 /* zack-up-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-up-1.png"; sourceTree = "<group>"; };
+		4669E09A160F02F5003BA9B9 /* zack-up-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-up-2.png"; sourceTree = "<group>"; };
+		4669E09B160F02F5003BA9B9 /* zack-up-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zack-up-3.png"; sourceTree = "<group>"; };
+		4669E09C160F02F5003BA9B9 /* zack.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = zack.tps; sourceTree = "<group>"; };
+		4669E09D160F02F5003BA9B9 /* zack@2x.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zack@2x.tps"; sourceTree = "<group>"; };
+		4669E09E160F02F5003BA9B9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
+		4669E09F160F02F5003BA9B9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 		469B754916019E5D00912D26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		469B754B16019EC700912D26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		469B754C16019EC700912D26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		469D673815DCA0540031F7D3 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileMapObject.h; path = MapView/MBTileMapObject.h; sourceTree = "<group>"; };
-		469D673915DCA0540031F7D3 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileMapObject.m; path = MapView/MBTileMapObject.m; sourceTree = "<group>"; };
-		46F2BD0715DEDA9E006820D9 /* dude.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dude.plist; sourceTree = "<group>"; };
-		46F2BD0815DEDA9E006820D9 /* dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dude.png; sourceTree = "<group>"; };
-		46F2BD0A15DEDA9E006820D9 /* explorer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explorer.plist; sourceTree = "<group>"; };
-		46F2BD0B15DEDA9E006820D9 /* explorer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explorer.png; sourceTree = "<group>"; };
-		46F2BD0E15DEDA9E006820D9 /* nikkie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nikkie.plist; sourceTree = "<group>"; };
-		46F2BD0F15DEDA9E006820D9 /* nikkie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nikkie.png; sourceTree = "<group>"; };
-		46F2BD1115DEDA9E006820D9 /* tuna_guy-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tuna_guy-hd.plist"; sourceTree = "<group>"; };
-		46F2BD1215DEDA9E006820D9 /* tuna_guy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tuna_guy-hd.png"; sourceTree = "<group>"; };
-		46F2BD1315DEDA9E006820D9 /* tuna_guy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tuna_guy.plist; sourceTree = "<group>"; };
-		46F2BD1415DEDA9E006820D9 /* tuna_guy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuna_guy.png; sourceTree = "<group>"; };
-		46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = tuna_guy.tps; sourceTree = "<group>"; };
-		46F2BD5415DEDAFD006820D9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
-		46F2BD5515DEDAFD006820D9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
-		46F2BD6715DEE27F006820D9 /* MBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapViewController.h; path = MapView/MBMapViewController.h; sourceTree = "<group>"; };
-		46F2BD6815DEE280006820D9 /* MBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapViewController.m; path = MapView/MBMapViewController.m; sourceTree = "<group>"; };
-		46F2BD6A15DEE28E006820D9 /* MBMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMap.h; path = MapView/MBMap.h; sourceTree = "<group>"; };
-		46F2BD6B15DEE28E006820D9 /* MBMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMap.m; path = MapView/MBMap.m; sourceTree = "<group>"; };
-		493DA58915DD7D3700F435EF /* MBSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSpriteView.h; sourceTree = "<group>"; };
-		493DA58A15DD7D3700F435EF /* MBSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSpriteView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,28 +200,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4600958915F59F62003EC5C6 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				4600958615F59F46003EC5C6 /* UIColor+Extensions.h */,
-				4600958715F59F46003EC5C6 /* UIColor+Extensions.m */,
-				4601158515FA8FD200B5F87D /* UIView+Diagnostics.h */,
-				4601158615FA8FD200B5F87D /* UIView+Diagnostics.m */,
-			);
-			name = Categories;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		460761A515F7A8530061EA09 /* Joystick Images */ = {
-			isa = PBXGroup;
-			children = (
-				460761A615F7A8530061EA09 /* dpad.png */,
-				460761A715F7A8530061EA09 /* joystick.png */,
-			);
-			name = "Joystick Images";
-			path = ControllerView/Joystick;
-			sourceTree = "<group>";
-		};
 		462AABEE15B3EDD20058E14C = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +207,8 @@
 				469B754B16019EC700912D26 /* Default.png */,
 				469B754C16019EC700912D26 /* Default@2x.png */,
 				462AAC0315B3EDD30058E14C /* TileParser */,
+				4669E073160F02F5003BA9B9 /* Sample Data */,
+				462AAC0415B3EDD30058E14C /* Supporting Files */,
 				462AABFC15B3EDD30058E14C /* Frameworks */,
 				462AABFA15B3EDD30058E14C /* Products */,
 			);
@@ -228,9 +241,7 @@
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
-				4669E01D160EFC6A003BA9B9 /* MBTileParser */,
-				4669E01C160EFC53003BA9B9 /* Sample Data */,
-				462AAC0415B3EDD30058E14C /* Supporting Files */,
+				4669E01F160F02CE003BA9B9 /* MBGameEngine */,
 			);
 			path = TileParser;
 			sourceTree = "<group>";
@@ -244,215 +255,251 @@
 				462AAC0B15B3EDD30058E14C /* TileParser-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = TileParser;
 			sourceTree = "<group>";
 		};
-		4646858215DB7227008B3914 /* MBMapView */ = {
+		4669E01F160F02CE003BA9B9 /* MBGameEngine */ = {
 			isa = PBXGroup;
 			children = (
-				46F2BD6715DEE27F006820D9 /* MBMapViewController.h */,
-				46F2BD6815DEE280006820D9 /* MBMapViewController.m */,
-				4646857B15DB6E6F008B3914 /* MBMapView.h */,
-				4646857C15DB6E6F008B3914 /* MBMapView.m */,
-				46F2BD6A15DEE28E006820D9 /* MBMap.h */,
-				46F2BD6B15DEE28E006820D9 /* MBMap.m */,
-				46E816D915DC505900854143 /* Tile Layer */,
-				46E816DB15DC506A00854143 /* Tiles and Objects */,
+				4669E020160F02CE003BA9B9 /* MBDialogView */,
+				4669E028160F02CE003BA9B9 /* MBGameControllerViewController */,
+				4669E037160F02CE003BA9B9 /* MBGameEngine.h */,
+				4669E038160F02CE003BA9B9 /* MBMapViewController */,
+				4669E050160F02CE003BA9B9 /* MBSpriteView */,
+				4669E058160F02CE003BA9B9 /* MBTileParser */,
 			);
-			name = MBMapView;
+			path = MBGameEngine;
 			sourceTree = "<group>";
 		};
-		4646858315DB8002008B3914 /* MBTileParser */ = {
+		4669E020160F02CE003BA9B9 /* MBDialogView */ = {
 			isa = PBXGroup;
 			children = (
-				468E4CD815C690E200A5E803 /* MBTileParser.h */,
-				468E4CD915C690E200A5E803 /* MBTileParser.m */,
+				4669E021160F02CE003BA9B9 /* Categories */,
+				4669E024160F02CE003BA9B9 /* Dialog */,
+				4669E026160F02CE003BA9B9 /* MBDialogView.h */,
+				4669E027160F02CE003BA9B9 /* MBDialogView.m */,
 			);
-			name = MBTileParser;
+			path = MBDialogView;
 			sourceTree = "<group>";
 		};
-		4669E014160EE282003BA9B9 /* Dialog View */ = {
+		4669E021160F02CE003BA9B9 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				4669E010160EE0EE003BA9B9 /* MBDialogView.h */,
-				4669E011160EE0EE003BA9B9 /* MBDialogView.m */,
-				4669E015160EE2AC003BA9B9 /* NSString+MBDialogString.h */,
-				4669E016160EE2AC003BA9B9 /* NSString+MBDialogString.m */,
+				4669E022160F02CE003BA9B9 /* NSString+MBDialogString.h */,
+				4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */,
 			);
-			name = "Dialog View";
+			path = Categories;
 			sourceTree = "<group>";
 		};
-		4669E01C160EFC53003BA9B9 /* Sample Data */ = {
+		4669E024160F02CE003BA9B9 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
-				468D924715C6D77100F461F0 /* Maps */,
-				46F2BD0515DEDA9D006820D9 /* Sprites */,
+				4669E025160F02CE003BA9B9 /* DialogSamples.json */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
+		4669E028160F02CE003BA9B9 /* MBGameControllerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4669E029160F02CE003BA9B9 /* Gameboy */,
+				4669E02C160F02CE003BA9B9 /* Joystick */,
+				4669E02F160F02CE003BA9B9 /* MBControllerButton.h */,
+				4669E030160F02CE003BA9B9 /* MBControllerButton.m */,
+				4669E031160F02CE003BA9B9 /* MBControllerEvent.h */,
+				4669E032160F02CE003BA9B9 /* MBControllerToggling.h */,
+				4669E033160F02CE003BA9B9 /* MBControllerViewController.h */,
+				4669E034160F02CE003BA9B9 /* MBControllerViewController.m */,
+				4669E035160F02CE003BA9B9 /* MBJoystickView.h */,
+				4669E036160F02CE003BA9B9 /* MBJoystickView.m */,
+			);
+			path = MBGameControllerViewController;
+			sourceTree = "<group>";
+		};
+		4669E029160F02CE003BA9B9 /* Gameboy */ = {
+			isa = PBXGroup;
+			children = (
+				4669E02A160F02CE003BA9B9 /* MBGameBoyViewController.h */,
+				4669E02B160F02CE003BA9B9 /* MBGameBoyViewController.m */,
+			);
+			path = Gameboy;
+			sourceTree = "<group>";
+		};
+		4669E02C160F02CE003BA9B9 /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				4669E02D160F02CE003BA9B9 /* dpad.png */,
+				4669E02E160F02CE003BA9B9 /* joystick.png */,
+			);
+			path = Joystick;
+			sourceTree = "<group>";
+		};
+		4669E038160F02CE003BA9B9 /* MBMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4669E039160F02CE003BA9B9 /* Categories */,
+				4669E040160F02CE003BA9B9 /* MBLayerView.h */,
+				4669E041160F02CE003BA9B9 /* MBLayerView.m */,
+				4669E042160F02CE003BA9B9 /* MBMap.h */,
+				4669E043160F02CE003BA9B9 /* MBMap.m */,
+				4669E044160F02CE003BA9B9 /* MBMapObject.h */,
+				4669E045160F02CE003BA9B9 /* MBMapObject.m */,
+				4669E046160F02CE003BA9B9 /* MBMapObjectGroup.h */,
+				4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */,
+				4669E048160F02CE003BA9B9 /* MBMapView.h */,
+				4669E049160F02CE003BA9B9 /* MBMapView.m */,
+				4669E04A160F02CE003BA9B9 /* MBMapViewController.h */,
+				4669E04B160F02CE003BA9B9 /* MBMapViewController.m */,
+				4669E04C160F02CE003BA9B9 /* MBTileMapObject.h */,
+				4669E04D160F02CE003BA9B9 /* MBTileMapObject.m */,
+				4669E04E160F02CE003BA9B9 /* MBTileSet.h */,
+				4669E04F160F02CE003BA9B9 /* MBTileSet.m */,
+			);
+			path = MBMapViewController;
+			sourceTree = "<group>";
+		};
+		4669E039160F02CE003BA9B9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4669E03A160F02CE003BA9B9 /* UIColor+Extensions.h */,
+				4669E03B160F02CE003BA9B9 /* UIColor+Extensions.m */,
+				4669E03C160F02CE003BA9B9 /* UIImage+TileData.h */,
+				4669E03D160F02CE003BA9B9 /* UIImage+TileData.m */,
+				4669E03E160F02CE003BA9B9 /* UIView+Diagnostics.h */,
+				4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		4669E050160F02CE003BA9B9 /* MBSpriteView */ = {
+			isa = PBXGroup;
+			children = (
+				4669E051160F02CE003BA9B9 /* MBMovableSpriteView.h */,
+				4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */,
+				4669E053160F02CE003BA9B9 /* MBSelfMovingSpriteView.h */,
+				4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */,
+				4669E055160F02CE003BA9B9 /* MBSpriteMovementDelegate.h */,
+				4669E056160F02CE003BA9B9 /* MBSpriteView.h */,
+				4669E057160F02CE003BA9B9 /* MBSpriteView.m */,
+			);
+			path = MBSpriteView;
+			sourceTree = "<group>";
+		};
+		4669E058160F02CE003BA9B9 /* MBTileParser */ = {
+			isa = PBXGroup;
+			children = (
+				4669E059160F02CE003BA9B9 /* MBTileParser.h */,
+				4669E05A160F02CE003BA9B9 /* MBTileParser.m */,
+			);
+			path = MBTileParser;
+			sourceTree = "<group>";
+		};
+		4669E073160F02F5003BA9B9 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				4669E074160F02F5003BA9B9 /* Maps */,
+				4669E07D160F02F5003BA9B9 /* Sprites */,
 			);
 			name = "Sample Data";
+			path = "TileParser/Sample Data";
 			sourceTree = "<group>";
 		};
-		4669E01D160EFC6A003BA9B9 /* MBTileParser */ = {
+		4669E074160F02F5003BA9B9 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
-				469D672D15DC84C80031F7D3 /* Tiled Map Classes */,
-				493DA58715DD7CD900F435EF /* Sprite Classes */,
-				46F2BD6615DEDFDE006820D9 /* Controller Classes */,
-				4669E014160EE282003BA9B9 /* Dialog View */,
+				4669E075160F02F5003BA9B9 /* checkers.png */,
+				4669E076160F02F5003BA9B9 /* Checkers.psd */,
+				4669E077160F02F5003BA9B9 /* checkers.tmx */,
+				4669E078160F02F5003BA9B9 /* meta.png */,
+				4669E079160F02F5003BA9B9 /* PearTown.tmx */,
+				4669E07A160F02F5003BA9B9 /* SimpsonCity.tmx */,
+				4669E07B160F02F5003BA9B9 /* standard_tileset.png */,
+				4669E07C160F02F5003BA9B9 /* tilescitytextured.png */,
 			);
-			name = MBTileParser;
+			path = Maps;
 			sourceTree = "<group>";
 		};
-		466B65AC15DD80EE009CB7BF /* Object Layer */ = {
+		4669E07D160F02F5003BA9B9 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				466B65A915DD8060009CB7BF /* MBMapObjectGroup.h */,
-				466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */,
-				466B65B015DD817D009CB7BF /* MBMapObject.h */,
-				466B65B115DD817D009CB7BF /* MBMapObject.m */,
+				4669E07E160F02F5003BA9B9 /* Dude */,
+				4669E081160F02F5003BA9B9 /* Explorer */,
+				4669E085160F02F5003BA9B9 /* Nikkie */,
+				4669E088160F02F5003BA9B9 /* Tuna Guy */,
+				4669E08E160F02F5003BA9B9 /* Zack */,
 			);
-			name = "Object Layer";
+			path = Sprites;
 			sourceTree = "<group>";
 		};
-		468D924715C6D77100F461F0 /* Maps */ = {
+		4669E07E160F02F5003BA9B9 /* Dude */ = {
 			isa = PBXGroup;
 			children = (
-				466F92F215DC378C00801802 /* SimpsonCity.tmx */,
-				466F92F315DC378C00801802 /* tilescitytextured.png */,
-				466F92EC15DC349400801802 /* meta.png */,
-				466F92ED15DC349400801802 /* PearTown.tmx */,
-				466F92EE15DC349500801802 /* standard_tileset.png */,
-				468D924815C6D77100F461F0 /* checkers.png */,
-				468D924915C6D77100F461F0 /* Checkers.psd */,
-				468D924A15C6D77100F461F0 /* checkers.tmx */,
-			);
-			name = Maps;
-			path = Map;
-			sourceTree = "<group>";
-		};
-		469D672D15DC84C80031F7D3 /* Tiled Map Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4600958915F59F62003EC5C6 /* Categories */,
-				4646858315DB8002008B3914 /* MBTileParser */,
-				4646858215DB7227008B3914 /* MBMapView */,
-			);
-			name = "Tiled Map Classes";
-			sourceTree = "<group>";
-		};
-		46E816D915DC505900854143 /* Tile Layer */ = {
-			isa = PBXGroup;
-			children = (
-				4646857F15DB7222008B3914 /* MBLayerView.h */,
-				4646858015DB7222008B3914 /* MBLayerView.m */,
-				466B65B615DD84BE009CB7BF /* UIImage+TileData.h */,
-				466B65B715DD84BE009CB7BF /* UIImage+TileData.m */,
-				466B65AC15DD80EE009CB7BF /* Object Layer */,
-			);
-			name = "Tile Layer";
-			sourceTree = "<group>";
-		};
-		46E816DB15DC506A00854143 /* Tiles and Objects */ = {
-			isa = PBXGroup;
-			children = (
-				466F92E615DC051100801802 /* MBTileSet.h */,
-				466F92E715DC051100801802 /* MBTileSet.m */,
-				469D673815DCA0540031F7D3 /* MBTileMapObject.h */,
-				469D673915DCA0540031F7D3 /* MBTileMapObject.m */,
-			);
-			name = "Tiles and Objects";
-			sourceTree = "<group>";
-		};
-		46F2BD0515DEDA9D006820D9 /* Sprites */ = {
-			isa = PBXGroup;
-			children = (
-				46F2BD4415DEDAFD006820D9 /* Zack */,
-				46F2BD0615DEDA9E006820D9 /* Dude */,
-				46F2BD0915DEDA9E006820D9 /* Explorer */,
-				46F2BD0D15DEDA9E006820D9 /* Nikkie */,
-				46F2BD1015DEDA9E006820D9 /* Tuna Guy */,
-			);
-			name = Sprites;
-			path = "Sprite View/Sprites";
-			sourceTree = "<group>";
-		};
-		46F2BD0615DEDA9E006820D9 /* Dude */ = {
-			isa = PBXGroup;
-			children = (
-				46F2BD0715DEDA9E006820D9 /* dude.plist */,
-				46F2BD0815DEDA9E006820D9 /* dude.png */,
+				4669E07F160F02F5003BA9B9 /* dude.plist */,
+				4669E080160F02F5003BA9B9 /* dude.png */,
 			);
 			path = Dude;
 			sourceTree = "<group>";
 		};
-		46F2BD0915DEDA9E006820D9 /* Explorer */ = {
+		4669E081160F02F5003BA9B9 /* Explorer */ = {
 			isa = PBXGroup;
 			children = (
-				46F2BD0A15DEDA9E006820D9 /* explorer.plist */,
-				46F2BD0B15DEDA9E006820D9 /* explorer.png */,
+				4669E082160F02F5003BA9B9 /* explorer.plist */,
+				4669E083160F02F5003BA9B9 /* explorer.png */,
+				4669E084160F02F5003BA9B9 /* zack.tps */,
 			);
 			path = Explorer;
 			sourceTree = "<group>";
 		};
-		46F2BD0D15DEDA9E006820D9 /* Nikkie */ = {
+		4669E085160F02F5003BA9B9 /* Nikkie */ = {
 			isa = PBXGroup;
 			children = (
-				46F2BD0E15DEDA9E006820D9 /* nikkie.plist */,
-				46F2BD0F15DEDA9E006820D9 /* nikkie.png */,
+				4669E086160F02F5003BA9B9 /* nikkie.plist */,
+				4669E087160F02F5003BA9B9 /* nikkie.png */,
 			);
 			path = Nikkie;
 			sourceTree = "<group>";
 		};
-		46F2BD1015DEDA9E006820D9 /* Tuna Guy */ = {
+		4669E088160F02F5003BA9B9 /* Tuna Guy */ = {
 			isa = PBXGroup;
 			children = (
-				46F2BD1115DEDA9E006820D9 /* tuna_guy-hd.plist */,
-				46F2BD1215DEDA9E006820D9 /* tuna_guy-hd.png */,
-				46F2BD1315DEDA9E006820D9 /* tuna_guy.plist */,
-				46F2BD1415DEDA9E006820D9 /* tuna_guy.png */,
-				46F2BD1515DEDA9E006820D9 /* tuna_guy.tps */,
+				4669E089160F02F5003BA9B9 /* tuna_guy-hd.plist */,
+				4669E08A160F02F5003BA9B9 /* tuna_guy-hd.png */,
+				4669E08B160F02F5003BA9B9 /* tuna_guy.plist */,
+				4669E08C160F02F5003BA9B9 /* tuna_guy.png */,
+				4669E08D160F02F5003BA9B9 /* tuna_guy.tps */,
 			);
 			path = "Tuna Guy";
 			sourceTree = "<group>";
 		};
-		46F2BD4415DEDAFD006820D9 /* Zack */ = {
+		4669E08E160F02F5003BA9B9 /* Zack */ = {
 			isa = PBXGroup;
 			children = (
-				46F2BD5415DEDAFD006820D9 /* zack.plist */,
-				46F2BD5515DEDAFD006820D9 /* zack.png */,
+				4669E08F160F02F5003BA9B9 /* Zack-cutups */,
+				4669E09E160F02F5003BA9B9 /* zack.plist */,
+				4669E09F160F02F5003BA9B9 /* zack.png */,
 			);
 			path = Zack;
 			sourceTree = "<group>";
 		};
-		46F2BD6615DEDFDE006820D9 /* Controller Classes */ = {
+		4669E08F160F02F5003BA9B9 /* Zack-cutups */ = {
 			isa = PBXGroup;
 			children = (
-				460761A515F7A8530061EA09 /* Joystick Images */,
-				4619C63815EBFBAC009D095A /* MBControllerEvent.h */,
-				4600957C15F598D8003EC5C6 /* MBControllerToggling.h */,
-				4611130215EA72D900404504 /* MBControllerViewController.h */,
-				4611130315EA72D900404504 /* MBControllerViewController.m */,
-				4619C63A15EBFE0E009D095A /* MBGameBoyViewController.h */,
-				4619C63B15EBFE0E009D095A /* MBGameBoyViewController.m */,
-				4619C63D15EBFE3B009D095A /* MBJoystickView.h */,
-				4619C63E15EBFE3B009D095A /* MBJoystickView.m */,
-				4600958215F59EE4003EC5C6 /* MBControllerButton.h */,
-				4600958315F59EE5003EC5C6 /* MBControllerButton.m */,
+				4669E090160F02F5003BA9B9 /* zack-down-1.png */,
+				4669E091160F02F5003BA9B9 /* zack-down-2.png */,
+				4669E092160F02F5003BA9B9 /* zack-down-3.png */,
+				4669E093160F02F5003BA9B9 /* zack-left-1.png */,
+				4669E094160F02F5003BA9B9 /* zack-left-2.png */,
+				4669E095160F02F5003BA9B9 /* zack-left-3.png */,
+				4669E096160F02F5003BA9B9 /* zack-right-1.png */,
+				4669E097160F02F5003BA9B9 /* zack-right-2.png */,
+				4669E098160F02F5003BA9B9 /* zack-right-3.png */,
+				4669E099160F02F5003BA9B9 /* zack-up-1.png */,
+				4669E09A160F02F5003BA9B9 /* zack-up-2.png */,
+				4669E09B160F02F5003BA9B9 /* zack-up-3.png */,
+				4669E09C160F02F5003BA9B9 /* zack.tps */,
+				4669E09D160F02F5003BA9B9 /* zack@2x.tps */,
 			);
-			name = "Controller Classes";
-			sourceTree = "<group>";
-		};
-		493DA58715DD7CD900F435EF /* Sprite Classes */ = {
-			isa = PBXGroup;
-			children = (
-				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
-				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
-				4601157F15FA776200B5F87D /* MBMovableSpriteView.h */,
-				4601158015FA776200B5F87D /* MBMovableSpriteView.m */,
-				4601158215FA816400B5F87D /* MBSelfMovingSpriteView.h */,
-				4601158315FA816400B5F87D /* MBSelfMovingSpriteView.m */,
-				4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */,
-			);
-			name = "Sprite Classes";
-			path = "Sprite View";
+			path = "Zack-cutups";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,32 +556,48 @@
 				462AAC0815B3EDD30058E14C /* InfoPlist.strings in Resources */,
 				462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */,
 				462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */,
-				468D924B15C6D77100F461F0 /* checkers.png in Resources */,
-				468D924C15C6D77100F461F0 /* Checkers.psd in Resources */,
-				468D924D15C6D77100F461F0 /* checkers.tmx in Resources */,
-				466F92EF15DC349500801802 /* meta.png in Resources */,
-				466F92F015DC349500801802 /* PearTown.tmx in Resources */,
-				466F92F115DC349500801802 /* standard_tileset.png in Resources */,
-				466F92F415DC378C00801802 /* SimpsonCity.tmx in Resources */,
-				466F92F515DC378C00801802 /* tilescitytextured.png in Resources */,
-				46F2BD2815DEDA9E006820D9 /* dude.plist in Resources */,
-				46F2BD2915DEDA9E006820D9 /* dude.png in Resources */,
-				46F2BD2A15DEDA9E006820D9 /* explorer.plist in Resources */,
-				46F2BD2B15DEDA9E006820D9 /* explorer.png in Resources */,
-				46F2BD2D15DEDA9E006820D9 /* nikkie.plist in Resources */,
-				46F2BD2E15DEDA9E006820D9 /* nikkie.png in Resources */,
-				46F2BD2F15DEDA9E006820D9 /* tuna_guy-hd.plist in Resources */,
-				46F2BD3015DEDA9E006820D9 /* tuna_guy-hd.png in Resources */,
-				46F2BD3115DEDA9E006820D9 /* tuna_guy.plist in Resources */,
-				46F2BD3215DEDA9E006820D9 /* tuna_guy.png in Resources */,
-				46F2BD3315DEDA9E006820D9 /* tuna_guy.tps in Resources */,
-				46F2BD6415DEDAFD006820D9 /* zack.plist in Resources */,
-				46F2BD6515DEDAFD006820D9 /* zack.png in Resources */,
-				460761A815F7A8530061EA09 /* dpad.png in Resources */,
-				460761A915F7A8530061EA09 /* joystick.png in Resources */,
 				469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */,
 				469B754D16019EC700912D26 /* Default.png in Resources */,
 				469B754E16019EC700912D26 /* Default@2x.png in Resources */,
+				4669E05C160F02CE003BA9B9 /* DialogSamples.json in Resources */,
+				4669E05F160F02CE003BA9B9 /* dpad.png in Resources */,
+				4669E060160F02CE003BA9B9 /* joystick.png in Resources */,
+				4669E0A0160F02F5003BA9B9 /* checkers.png in Resources */,
+				4669E0A1160F02F5003BA9B9 /* Checkers.psd in Resources */,
+				4669E0A2160F02F5003BA9B9 /* checkers.tmx in Resources */,
+				4669E0A3160F02F5003BA9B9 /* meta.png in Resources */,
+				4669E0A4160F02F5003BA9B9 /* PearTown.tmx in Resources */,
+				4669E0A5160F02F5003BA9B9 /* SimpsonCity.tmx in Resources */,
+				4669E0A6160F02F5003BA9B9 /* standard_tileset.png in Resources */,
+				4669E0A7160F02F5003BA9B9 /* tilescitytextured.png in Resources */,
+				4669E0A8160F02F5003BA9B9 /* dude.plist in Resources */,
+				4669E0A9160F02F5003BA9B9 /* dude.png in Resources */,
+				4669E0AA160F02F5003BA9B9 /* explorer.plist in Resources */,
+				4669E0AB160F02F5003BA9B9 /* explorer.png in Resources */,
+				4669E0AC160F02F5003BA9B9 /* zack.tps in Resources */,
+				4669E0AD160F02F5003BA9B9 /* nikkie.plist in Resources */,
+				4669E0AE160F02F5003BA9B9 /* nikkie.png in Resources */,
+				4669E0AF160F02F5003BA9B9 /* tuna_guy-hd.plist in Resources */,
+				4669E0B0160F02F5003BA9B9 /* tuna_guy-hd.png in Resources */,
+				4669E0B1160F02F5003BA9B9 /* tuna_guy.plist in Resources */,
+				4669E0B2160F02F5003BA9B9 /* tuna_guy.png in Resources */,
+				4669E0B3160F02F5003BA9B9 /* tuna_guy.tps in Resources */,
+				4669E0B4160F02F5003BA9B9 /* zack-down-1.png in Resources */,
+				4669E0B5160F02F5003BA9B9 /* zack-down-2.png in Resources */,
+				4669E0B6160F02F5003BA9B9 /* zack-down-3.png in Resources */,
+				4669E0B7160F02F5003BA9B9 /* zack-left-1.png in Resources */,
+				4669E0B8160F02F5003BA9B9 /* zack-left-2.png in Resources */,
+				4669E0B9160F02F5003BA9B9 /* zack-left-3.png in Resources */,
+				4669E0BA160F02F5003BA9B9 /* zack-right-1.png in Resources */,
+				4669E0BB160F02F5003BA9B9 /* zack-right-2.png in Resources */,
+				4669E0BC160F02F5003BA9B9 /* zack-right-3.png in Resources */,
+				4669E0BD160F02F5003BA9B9 /* zack-up-1.png in Resources */,
+				4669E0BE160F02F5003BA9B9 /* zack-up-2.png in Resources */,
+				4669E0BF160F02F5003BA9B9 /* zack-up-3.png in Resources */,
+				4669E0C0160F02F5003BA9B9 /* zack.tps in Resources */,
+				4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */,
+				4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */,
+				4669E0C3160F02F5003BA9B9 /* zack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,27 +611,27 @@
 				462AAC0A15B3EDD30058E14C /* main.m in Sources */,
 				462AAC0E15B3EDD30058E14C /* MBAppDelegate.m in Sources */,
 				462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */,
-				468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */,
-				4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */,
-				4646858115DB7222008B3914 /* MBLayerView.m in Sources */,
-				466F92E815DC051100801802 /* MBTileSet.m in Sources */,
-				469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */,
-				493DA58B15DD7D3700F435EF /* MBSpriteView.m in Sources */,
-				466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */,
-				466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */,
-				466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */,
-				46F2BD6915DEE280006820D9 /* MBMapViewController.m in Sources */,
-				46F2BD6C15DEE28E006820D9 /* MBMap.m in Sources */,
-				4611130415EA72D900404504 /* MBControllerViewController.m in Sources */,
-				4619C63C15EBFE0E009D095A /* MBGameBoyViewController.m in Sources */,
-				4619C63F15EBFE3B009D095A /* MBJoystickView.m in Sources */,
-				4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */,
-				4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */,
-				4601158115FA776200B5F87D /* MBMovableSpriteView.m in Sources */,
-				4601158415FA816400B5F87D /* MBSelfMovingSpriteView.m in Sources */,
-				4601158715FA8FD200B5F87D /* UIView+Diagnostics.m in Sources */,
-				4669E012160EE0EE003BA9B9 /* MBDialogView.m in Sources */,
-				4669E017160EE2AC003BA9B9 /* NSString+MBDialogString.m in Sources */,
+				4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */,
+				4669E05D160F02CE003BA9B9 /* MBDialogView.m in Sources */,
+				4669E05E160F02CE003BA9B9 /* MBGameBoyViewController.m in Sources */,
+				4669E061160F02CE003BA9B9 /* MBControllerButton.m in Sources */,
+				4669E062160F02CE003BA9B9 /* MBControllerViewController.m in Sources */,
+				4669E063160F02CE003BA9B9 /* MBJoystickView.m in Sources */,
+				4669E064160F02CE003BA9B9 /* UIColor+Extensions.m in Sources */,
+				4669E065160F02CE003BA9B9 /* UIImage+TileData.m in Sources */,
+				4669E066160F02CE003BA9B9 /* UIView+Diagnostics.m in Sources */,
+				4669E067160F02CE003BA9B9 /* MBLayerView.m in Sources */,
+				4669E068160F02CE003BA9B9 /* MBMap.m in Sources */,
+				4669E069160F02CE003BA9B9 /* MBMapObject.m in Sources */,
+				4669E06A160F02CE003BA9B9 /* MBMapObjectGroup.m in Sources */,
+				4669E06B160F02CE003BA9B9 /* MBMapView.m in Sources */,
+				4669E06C160F02CE003BA9B9 /* MBMapViewController.m in Sources */,
+				4669E06D160F02CE003BA9B9 /* MBTileMapObject.m in Sources */,
+				4669E06E160F02CE003BA9B9 /* MBTileSet.m in Sources */,
+				4669E06F160F02CE003BA9B9 /* MBMovableSpriteView.m in Sources */,
+				4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */,
+				4669E071160F02CE003BA9B9 /* MBSpriteView.m in Sources */,
+				4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

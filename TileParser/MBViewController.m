@@ -12,7 +12,6 @@
 
 #import "UIView+Diagnostics.h"
 
-
 @interface MBViewController () <MBControllerEvent>
 @property (nonatomic, strong) MBSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
@@ -76,13 +75,11 @@
     //
     
     [movingSprite moveInRandomDirection];
-    
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-
-    
     
     //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.view];
     //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.gameboyControls.view];
@@ -111,6 +108,9 @@
         return UIInterfaceOrientationMaskAll;
     }
 }
+
+
+#pragma mark - Controller Delegate 
 
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
@@ -143,6 +143,9 @@
     
 }
 
+#pragma mark - Movement Delegate
 
+
+#pragma mark - Dialog Delegate
 
 @end

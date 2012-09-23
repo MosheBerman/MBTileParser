@@ -51,7 +51,8 @@
 
     [super viewWillAppear:animated];
     
-    [self sizeToSuperview];
+    CGRect frame = [[[self view] superview] frame];
+    [[self view] setFrame:frame];
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,7 +118,7 @@
     return size;
 }
 
-#pragma mark - Frame Resizes
+#pragma mark - Frame Resize
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
     [self sizeToSuperview];

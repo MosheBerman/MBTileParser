@@ -10,13 +10,12 @@
 
 #import "MBMapView.h"
 
-#import "MBSpriteMovementDelegate.h"
+#import "MBMapData.h"
 
-@interface MBMapViewController : UIViewController <MBSpriteMovementDelegate>
+@interface MBMapViewController : UIViewController <MBMapData>
 
 @property (nonatomic, strong) MBMapView *mapView;
 
 - (id)initWithMapName:(NSString *)name;
-
 
 @end

@@ -89,69 +89,20 @@
     [_parser start];
 }
 
-#pragma mark - Sprite Movement Delegate 
+#pragma mark - MBMapData Protocol 
 
-- (CGSize)tileSizeInPointsForSprite:(MBSpriteView *)sprite{
+- (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *) atPoint:(CGPoint)points{
+    
+}
+
+- (NSDictionary *)propertiesForTileInLayer:(NSString *)layerName atCoordinates:(CGPoint)coordinates{
+    
+}
+
+
+- (CGSize)tileSizeInPoints{
     MBTileSet *tileSet = [[self map] tilesets][0];
     return [tileSet tileSize];
-}
-
-- (BOOL)sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates{
-    
-    if (coordinates.x < 0 || coordinates.y < 0)  {
-        return NO;
-    }
-    
-    CGSize tileSize = [self tileSizeInPointsForSprite:sprite];
-    
-    //  Get a rect covering the target tile
-    CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, tileSize.width,  tileSize.height);
-    
-    //Check for other sprites
-    for (MBSpriteView *aSprite in [[[self mapView] sprites] allValues]) {
-        if (CGRectIntersectsRect(aSprite.frame, targetLocation) && aSprite != sprite) {
-            return NO;
-        }
-    }
-    
-    UIImage *destinationTile = [[self mapView] tileAtCoordinates:coordinates inLayerNamed:@"Meta"];
-    
-    NSDictionary *tileProperties = [destinationTile tileData];
-    
-    if ([tileProperties[@"name"] isEqualToString:@"solid"]) {
-        return NO;
-    }
-    
-    if ([tileProperties[@"name"] isEqualToString:@"water"]) {
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (void)sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates{
-    
-    if (coordinates.x < 0 || coordinates.y < 0)  {
-        return;
-    }
-    
-    //  Get a rect covering the target tile
-    //CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
-
-    for (MBTileMapObject *object in [[[self map] objectGroups] objectForKey:@"Connections"]) {
-        
-        
-        
-    }
-}
-
-- (float)sprite:(MBSpriteView *)sprite distanceToMoveInDirection:(MBSpriteMovementDirection)direction{
-    
-    if (direction == MBSpriteMovementDirectionHorizontal) {
-        return [self tileSizeInPointsForSprite:sprite].width;
-    }else{
-        return [self tileSizeInPointsForSprite:sprite].height;
-    }
 }
 
 @end

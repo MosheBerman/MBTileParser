@@ -10,10 +10,7 @@
 
 @interface MBDialogView ()
 
-@property (nonatomic, strong) NSDictionary *dialogTree;
-@property (nonatomic, assign) CGFloat maxWidth;
-@property (nonatomic, assign) CGFloat horizontalMarginWidth;
-@property (nonatomic, assign) CGFloat verticalMarginHeight;
+@property (nonatomic, strong) MBDialogTree *dialogTree;
 
 @end
 
@@ -37,14 +34,14 @@
     
     if (self) {
         
-        _dialogTree = @{@"Dialog":@[text]};
+        _dialogTree = [[MBDialogTree alloc] initWithMessage:@"A dialog tree appeared."];
         
     }
     
     return self;
 }
 
-- (id) initWithDialogTree:(NSDictionary *)dialogTree{
+- (id) initWithDialogTree:(MBDialogTree *)dialogTree{
     
     self = [self init];
     
@@ -87,11 +84,15 @@
     [view addSubview:self];
     
     //
-    //
+    //  Pull out the text we want to render
     //
     
-    NSString *textToRender = [self dialogTree][@"Dialog"][0];
-    [self renderText:textToRender];
+    MBDialogTreeNode *node = [[self dialogTree] activeNode];
+    
+    if ([node hasNext]) {
+        NSString *textToRender = [node nextStringToDisplay];
+        [self renderText:textToRender];
+    }
 }
 
 - (void) renderText:(NSString *)text{

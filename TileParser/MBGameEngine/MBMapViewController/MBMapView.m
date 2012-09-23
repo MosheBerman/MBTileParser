@@ -300,6 +300,11 @@
 }
 
 - (void)centerOnSpriteView:(MBSpriteView *)spriteView{
+    
+    if(!spriteView){
+        return;
+    }
+    
     CGSize size = self.bounds.size;
     CGPoint offset = [spriteView frame].origin;
     

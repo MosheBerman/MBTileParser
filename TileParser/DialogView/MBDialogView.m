@@ -25,7 +25,7 @@
     if (self) {
         _maxWidth = 300;
         _horizontalMarginWidth = 20;
-        _verticalMarginHeight = 10;
+        _verticalMarginHeight = 5;
     }
     
     return self;
@@ -67,7 +67,6 @@
     [[self layer] setBorderWidth:1];
     
     CGRect parentBounds = [view bounds];
-
     
     CGRect bounds = parentBounds;
     
@@ -76,6 +75,10 @@
     
     [self setBounds:bounds];
 
+    //
+    //  Position onscreen...
+    //
+    
     bounds.origin.x = parentBounds.size.width/2 - self.bounds.size.width/2;
     bounds.origin.y = _verticalMarginHeight;
     

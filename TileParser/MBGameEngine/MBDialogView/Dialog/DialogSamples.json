@@ -138,7 +138,8 @@
 		"Responses" : {
 			
 		},
-		{"Action" :
+		{
+            "Action" :
 			"Action" : kDialogActionPurchaseIdentifier,
 			"Payload" : {
 				"ItemIdentifier" : kGameItemBombIdentifier,

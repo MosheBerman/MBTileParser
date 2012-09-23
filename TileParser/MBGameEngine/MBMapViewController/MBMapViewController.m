@@ -97,8 +97,6 @@
 }
 
 - (BOOL)sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates{
- 
-    
     
     if (coordinates.x < 0 || coordinates.y < 0)  {
         return NO;
@@ -137,8 +135,6 @@
         return;
     }
     
-    CGSize tileSize = [self tileSizeInPointsForSprite:sprite];
-    
     //  Get a rect covering the target tile
     //CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
 
@@ -146,6 +142,15 @@
         
         
         
+    }
+}
+
+- (float)sprite:(MBSpriteView *)sprite distanceToMoveInDirection:(MBSpriteMovementDirection)direction{
+    
+    if (direction == MBSpriteMovementDirectionHorizontal) {
+        return [self tileSizeInPointsForSprite:sprite].width;
+    }else{
+        return [self tileSizeInPointsForSprite:sprite].height;
     }
 }
 

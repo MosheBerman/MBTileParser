@@ -10,4 +10,6 @@
 
 @interface NSString (MBDialogString)
 
+- (NSString *)reducedToFrame:(CGRect)frame withFont:(UIFont *)font inSize:(CGSize)size;
+
 @end

@@ -10,9 +10,9 @@
 
 @implementation NSString (MBDialogString)
 
-- (NSString *)reducedToWidth:(CGFloat)width withFont:(UIFont *)font inSize:(CGSize)size{
+- (NSString *)reducedToFrame:(CGRect)frame withFont:(UIFont *)font inSize:(CGSize)size{
      
-     if ([self sizeWithFont:font].width <= width || [self length] == 1) {
+     if ([self sizeWithFont:font].width <= frame.size.width || [self length] == 1) {
          return self;
      }
      NSMutableString *string = [NSMutableString string];
@@ -20,7 +20,7 @@
          [string appendString:[self substringWithRange:NSMakeRange(i, 1)]];
          
          CGSize sizeThatFitsString = [string sizeWithFont:font constrainedToSize:size];
-         if (sizeThatFitsString.width > width || sizeThatFitsString.height) {
+         if (sizeThatFitsString.width > frame.size.width || sizeThatFitsString.height) {
              [string deleteCharactersInRange:NSMakeRange(i, 1)];
              break;
          }

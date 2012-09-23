@@ -106,7 +106,7 @@
 - (void)displayControls{
 
     MBJoystickView *joystick = [self joystick];
-    
+    [joystick setDeadRadius:10.0f];
     [[self view] addSubview:joystick];
     
     [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];

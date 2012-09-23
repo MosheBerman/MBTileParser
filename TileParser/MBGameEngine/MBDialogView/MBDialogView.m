@@ -37,7 +37,7 @@
     
     if (self) {
         
-        _dialogTree = @{@"Dialog:":@[text]};
+        _dialogTree = @{@"Dialog":@[text]};
         
     }
     
@@ -74,7 +74,7 @@
     bounds.size.height = parentBounds.size.height/3.5;
     
     [self setBounds:bounds];
-
+    
     //
     //  Position onscreen...
     //
@@ -85,16 +85,50 @@
     [self setFrame:bounds];
     
     [view addSubview:self];
+    
+    //
+    //
+    //
+    
+    NSString *textToRender = [self dialogTree][@"Dialog"][0];
+    [self renderText:textToRender];
+}
+
+- (void) renderText:(NSString *)text{
+    
+    CGRect frame = [self frame];
+    CGRect selfFrame = frame;
+    
+    frame.size.width -= _horizontalMarginWidth;
+    frame.size.height -= _verticalMarginHeight;
+    
+    frame.origin.x = selfFrame.size.width/2 - frame.size.width/2;
+    frame.origin.y = selfFrame.size.height/2 - frame.size.height/2;
+    
+    for(id view in [self subviews]) {
+        if([[view class] isSubclassOfClass:[UILabel class]]){
+            [(UIView *)view removeFromSuperview];
+        }
+    }
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    [label setFont:[UIFont systemFontOfSize:16]];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor blackColor]];
+    [label setNumberOfLines:0];
+    [self addSubview:label];
+    
+    [label setText:text];
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-    
-    NSLog(@"%@", NSStringFromCGRect(rect));
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ 
+ NSLog(@"%@", NSStringFromCGRect(rect));
+ }
+ */
 @end

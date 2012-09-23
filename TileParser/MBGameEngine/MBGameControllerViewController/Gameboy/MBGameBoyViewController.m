@@ -107,6 +107,7 @@
 
     MBJoystickView *joystick = [self joystick];
     [joystick setDeadRadius:10.0f];
+    [joystick setThumbRadius:44.0f];
     [[self view] addSubview:joystick];
     
     [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];

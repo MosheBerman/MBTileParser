@@ -34,7 +34,9 @@
 
     if (self) {
         
-        // Initialization code
+        //
+        //  Sprite support
+        //
         
         _sprites = [@{} mutableCopy];
         
@@ -53,6 +55,7 @@
         [self setAutoresizingMask: (UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth)];;
         [self setShowsHorizontalScrollIndicator:NO];
         [self setShowsVerticalScrollIndicator:NO];
+        
     }
     
     return self;
@@ -307,6 +310,11 @@
     offset.y = MIN(self.contentSize.height-self.bounds.size.height, MAX(0, offset.y));
     
     [self setContentOffset:offset];
+}
+
+
+- (BOOL)isFollowingSprite{
+    return [self keyForFollowedSprite] != nil;
 }
 
 #pragma mark - Layer Accessor

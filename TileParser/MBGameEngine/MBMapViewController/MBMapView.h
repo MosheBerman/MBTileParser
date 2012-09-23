@@ -15,6 +15,7 @@
 @interface MBMapView : UIScrollView
 
 @property (nonatomic, strong) NSMutableDictionary *sprites;
+@property (readonly, nonatomic, assign) BOOL isFollowingSprite;
 
 - (id)init;
 - (void)loadMap:(MBMap *)map;

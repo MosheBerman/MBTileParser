@@ -10,6 +10,8 @@
 
 #import "MBSpriteMovementDelegate.h"
 
+#import "MBMapData.h"
+
 #define kDefaultMovementDuration 0.45
 
 typedef void(^MBMovementCompletionHandler)();
@@ -18,6 +20,7 @@ typedef void(^MBMovementCompletionHandler)();
 
 @property (nonatomic, assign) BOOL isMoving;
 @property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
+@property (nonatomic, assign) id<MBMapMetadata> movementDataSource;
 @property (nonatomic, assign) float movementTimeScaleFactor;    // Used to calculate how long animations and movements take
 
 //

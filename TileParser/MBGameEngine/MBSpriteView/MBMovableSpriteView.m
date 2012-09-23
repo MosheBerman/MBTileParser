@@ -40,12 +40,21 @@
 - (void)moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion{
     
     CGRect oldFrame = [self frame];
-    CGSize tileDimensions = [[self movementDelegate] tileSizeInPointsForSprite:self];
+    CGSize tileDimensions = CGSizeZero;
+    
+    tileDimensions = [[self movementDataSource] tileSizeInPoints];
+    
+    if (tileDimensions.height == 0 && tileDimensions.width == 0) {
+        
+        NSLog(@"The tile dimensions for the movement method are zero. Did you forget to set a data source?\nI can't do anything with this steaming pile of variables. I'm outta here!");
+        
+        return;
+    }
     
     CGPoint tileCoordinates = CGPointMake(oldFrame.origin.x/tileDimensions.width, oldFrame.origin.y/tileDimensions.height);
     
     //  Calculate the new position
-    if (direction == MBSpriteMovementDirectionHorizontal) {
+    if (direction == MBSpriteMovementDirectionLeft || direction == MBSpriteMovementDirectionRight) {
         oldFrame.origin.x += (tileDimensions.width * distanceInTiles);
         tileCoordinates.x += distanceInTiles;
     }else{
@@ -90,22 +99,22 @@
 
 - (void)moveUpWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"up"];
-    [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:-1 withCompletion:completion];
+    [self moveInDirection:MBSpriteMovementDirectionUp distanceInTiles:-1 withCompletion:completion];
 }
 
 - (void)moveDownWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"down"];
-    [self moveInDirection:MBSpriteMovementDirectionVertical distanceInTiles:1 withCompletion:completion];
+    [self moveInDirection:MBSpriteMovementDirectionDown distanceInTiles:1 withCompletion:completion];
 }
 
 - (void)moveLeftWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"left"];
-    [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:-1 withCompletion:completion];
+    [self moveInDirection:MBSpriteMovementDirectionLeft distanceInTiles:-1 withCompletion:completion];
 }
 
 - (void)moveRightWithCompletion:(void (^)()) completion{
     [self beginAnimationWithKey:@"right"];
-    [self moveInDirection:MBSpriteMovementDirectionHorizontal distanceInTiles:1 withCompletion:completion];
+    [self moveInDirection:MBSpriteMovementDirectionRight distanceInTiles:1 withCompletion:completion];
 }
 
 #pragma mark - Game Controller Support

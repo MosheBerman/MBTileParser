@@ -98,7 +98,7 @@
         
         CGRect frame = CGRectMake(object.x, object.y, object.width, object.height);
         
-        if (CGRectContainsPoint(frame, points)) {
+        if (CGRectContainsPoint(frame, point)) {
             return [object properties];
         }
     }

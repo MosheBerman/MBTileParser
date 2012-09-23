@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="8" height="8" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Checkers" tilewidth="32" tileheight="32">
+  <image source="checkers.png" width="64" height="64"/>
+ </tileset>
+ <layer name="Background" width="8" height="8">
+  <data encoding="csv">
+3,4,3,4,3,4,3,4,
+4,3,4,3,4,3,4,3,
+3,4,3,4,3,4,3,4,
+4,3,4,3,4,3,4,3,
+3,4,3,4,3,4,3,4,
+4,3,4,3,4,3,4,3,
+3,4,3,4,3,4,3,4,
+4,3,4,3,4,3,4,3
+</data>
+ </layer>
+ <layer name="Pieces" width="8" height="8">
+  <data encoding="csv">
+1,0,1,0,1,0,1,0,
+0,1,0,1,0,1,0,1,
+1,0,1,0,1,0,1,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,2,0,2,0,2,0,2,
+2,0,2,0,2,0,2,0,
+0,2,0,2,0,2,0,2
+</data>
+ </layer>
+</map>

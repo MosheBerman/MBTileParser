@@ -1,0 +1,161 @@
+/* Initial draft */
+"Tree" : {
+	"Dialog" : {
+		"Text" : "Are you sure?",	
+		"YesText" : "Sure",			
+		"NoText" : "No Thanks",		
+		"YesAction" : {},			
+		"NoAction" : {},			
+		"Payload" : {}				
+	}	
+}
+
+/* More Flexible - Use an array instead of yes/no, allows for dynamic response count */
+
+"Tree" : {
+	"Dialog" : {
+		"Text" : "Are you sure?",	
+		"Responses" : {
+			{
+				"Text" : "Sure",
+				"Action" : MyAffirmativeActionIdentifier,
+				"Payload" : {}
+			},
+			
+			{
+				"Text" : "No",
+				"Action" : MyActionIdentifier,
+				"Payload" : {}			
+			}
+		
+		}
+	}	
+}
+
+/* Improved - Eliminate extra wrapper object */
+
+"DialogTree" : {
+	"Text" : "Are you sure?",	
+	"Responses" : {
+		{
+			"Text" : "Sure",
+			"Action" : MyAffirmativeActionIdentifier,
+			"Payload" : {}
+		},
+		
+		{
+			"Text" : "No",
+			"Action" : MyActionIdentifier,
+			"Payload" : {}			
+		}
+	}
+}
+
+/* Sample of purchasing items in a shop.  */
+"Tree" : {
+	"Text" : "Welcome to Hyrule Emporium, how may I help you?",
+	"Responses" : {
+		{
+			"Text" : "Bomb",
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemBombIdentifier,
+				"Quantity" : 3,
+				"Price" : 135
+			}
+		},
+		{
+			"Text" : "Hearts",
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemHeartIdentifier,
+				"Quantity" : 3,
+				"Price" : 150
+			}
+		},
+		{
+			"Text" : "Shield",
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemShieldIdentifier,
+				"Quantity" : 1,
+				"Price" : 200
+			}
+		},	
+		{
+			"Text" : "Cancel",
+			"Action" : kDialogActionCancelIdentifier,
+			"Payload" : {}
+		},	
+							
+	}
+}
+
+/*
+
+ Aug 16, 2012 Brainstorming Revision
+
+
+ */
+
+"Tree" : {
+	"Dialog" : {
+		"Hey there!", "Welcome to Cocoa Camp. You look new here.",
+		"I know... this will help you get adjusted!"
+	},
+	"Responses" : {
+		{
+			"Action" : kDialogActionObtainItemIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kItemMalcolmsPhone,
+				"NextIdentifier" : -1
+			}
+		}
+	}
+}
+
+/* Andrew's edition */
+"Tree" : {
+	{
+		"Name" : "start",
+		"Dialog" : {
+			"Hey there!", "Welcome to Cocoa Camp. You look new here.",
+			"I know... this will help you get adjusted!"
+		},
+		"Action" : {
+			"Identifier" : kDialogActionObtainItemIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kItemMalcolmsPhone,
+				"NextDialog" : "aboutMenu"
+			}
+		}
+	},
+	{
+		"Name" : "aboutMenu",
+		"Dialog" : {
+			"There you go!", "Anything else you want to know about?"
+		},
+		"Responses" : {
+			
+		},
+		{"Action" :
+			"Action" : kDialogActionPurchaseIdentifier,
+			"Payload" : {
+				"ItemIdentifier" : kGameItemBombIdentifier,
+				"Quantity" : 3,
+				"Price" : 135
+			}
+		} 
+	},
+	{
+		"Name" : "aboutHim",
+		"Dialog" : {
+			"Glad you asked!", "Bla bla bla, stuffity stuff."
+		},
+		"Action" : {
+			
+		}
+	}
+}
+
+/*  */

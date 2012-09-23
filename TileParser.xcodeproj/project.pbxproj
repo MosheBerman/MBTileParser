@@ -30,11 +30,10 @@
 		4669E066160F02CE003BA9B9 /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */; };
 		4669E067160F02CE003BA9B9 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E041160F02CE003BA9B9 /* MBLayerView.m */; };
 		4669E068160F02CE003BA9B9 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E043160F02CE003BA9B9 /* MBMap.m */; };
-		4669E069160F02CE003BA9B9 /* MBMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E045160F02CE003BA9B9 /* MBMapObject.m */; };
+		4669E069160F02CE003BA9B9 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E045160F02CE003BA9B9 /* MBTileMapObject.m */; };
 		4669E06A160F02CE003BA9B9 /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */; };
 		4669E06B160F02CE003BA9B9 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E049160F02CE003BA9B9 /* MBMapView.m */; };
 		4669E06C160F02CE003BA9B9 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04B160F02CE003BA9B9 /* MBMapViewController.m */; };
-		4669E06D160F02CE003BA9B9 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04D160F02CE003BA9B9 /* MBTileMapObject.m */; };
 		4669E06E160F02CE003BA9B9 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04F160F02CE003BA9B9 /* MBTileSet.m */; };
 		4669E06F160F02CE003BA9B9 /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */; };
 		4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */; };
@@ -52,7 +51,7 @@
 		4669E0A9160F02F5003BA9B9 /* dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E080160F02F5003BA9B9 /* dude.png */; };
 		4669E0AA160F02F5003BA9B9 /* explorer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E082160F02F5003BA9B9 /* explorer.plist */; };
 		4669E0AB160F02F5003BA9B9 /* explorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E083160F02F5003BA9B9 /* explorer.png */; };
-		4669E0AC160F02F5003BA9B9 /* zack.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E084160F02F5003BA9B9 /* zack.tps */; };
+		4669E0AC160F02F5003BA9B9 /* explorer.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E084160F02F5003BA9B9 /* explorer.tps */; };
 		4669E0AD160F02F5003BA9B9 /* nikkie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E086160F02F5003BA9B9 /* nikkie.plist */; };
 		4669E0AE160F02F5003BA9B9 /* nikkie.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E087160F02F5003BA9B9 /* nikkie.png */; };
 		4669E0AF160F02F5003BA9B9 /* tuna_guy-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E089160F02F5003BA9B9 /* tuna_guy-hd.plist */; };
@@ -124,16 +123,14 @@
 		4669E041160F02CE003BA9B9 /* MBLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLayerView.m; sourceTree = "<group>"; };
 		4669E042160F02CE003BA9B9 /* MBMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMap.h; sourceTree = "<group>"; };
 		4669E043160F02CE003BA9B9 /* MBMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMap.m; sourceTree = "<group>"; };
-		4669E044160F02CE003BA9B9 /* MBMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapObject.h; sourceTree = "<group>"; };
-		4669E045160F02CE003BA9B9 /* MBMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapObject.m; sourceTree = "<group>"; };
+		4669E044160F02CE003BA9B9 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTileMapObject.h; sourceTree = "<group>"; };
+		4669E045160F02CE003BA9B9 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTileMapObject.m; sourceTree = "<group>"; };
 		4669E046160F02CE003BA9B9 /* MBMapObjectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapObjectGroup.h; sourceTree = "<group>"; };
 		4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapObjectGroup.m; sourceTree = "<group>"; };
 		4669E048160F02CE003BA9B9 /* MBMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapView.h; sourceTree = "<group>"; };
 		4669E049160F02CE003BA9B9 /* MBMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapView.m; sourceTree = "<group>"; };
 		4669E04A160F02CE003BA9B9 /* MBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMapViewController.h; sourceTree = "<group>"; };
 		4669E04B160F02CE003BA9B9 /* MBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMapViewController.m; sourceTree = "<group>"; };
-		4669E04C160F02CE003BA9B9 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTileMapObject.h; sourceTree = "<group>"; };
-		4669E04D160F02CE003BA9B9 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTileMapObject.m; sourceTree = "<group>"; };
 		4669E04E160F02CE003BA9B9 /* MBTileSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTileSet.h; sourceTree = "<group>"; };
 		4669E04F160F02CE003BA9B9 /* MBTileSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTileSet.m; sourceTree = "<group>"; };
 		4669E051160F02CE003BA9B9 /* MBMovableSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMovableSpriteView.h; sourceTree = "<group>"; };
@@ -157,7 +154,7 @@
 		4669E080160F02F5003BA9B9 /* dude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dude.png; sourceTree = "<group>"; };
 		4669E082160F02F5003BA9B9 /* explorer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = explorer.plist; sourceTree = "<group>"; };
 		4669E083160F02F5003BA9B9 /* explorer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explorer.png; sourceTree = "<group>"; };
-		4669E084160F02F5003BA9B9 /* zack.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = zack.tps; sourceTree = "<group>"; };
+		4669E084160F02F5003BA9B9 /* explorer.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = explorer.tps; sourceTree = "<group>"; };
 		4669E086160F02F5003BA9B9 /* nikkie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nikkie.plist; sourceTree = "<group>"; };
 		4669E087160F02F5003BA9B9 /* nikkie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nikkie.png; sourceTree = "<group>"; };
 		4669E089160F02F5003BA9B9 /* tuna_guy-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "tuna_guy-hd.plist"; sourceTree = "<group>"; };
@@ -181,6 +178,7 @@
 		4669E09D160F02F5003BA9B9 /* zack@2x.tps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zack@2x.tps"; sourceTree = "<group>"; };
 		4669E09E160F02F5003BA9B9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
 		4669E09F160F02F5003BA9B9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
+		4669E0D2160F0A8F003BA9B9 /* MBMapMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMapMetadata.h; sourceTree = "<group>"; };
 		469B754916019E5D00912D26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		469B754B16019EC700912D26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		469B754C16019EC700912D26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -342,18 +340,17 @@
 				4669E041160F02CE003BA9B9 /* MBLayerView.m */,
 				4669E042160F02CE003BA9B9 /* MBMap.h */,
 				4669E043160F02CE003BA9B9 /* MBMap.m */,
-				4669E044160F02CE003BA9B9 /* MBMapObject.h */,
-				4669E045160F02CE003BA9B9 /* MBMapObject.m */,
+				4669E044160F02CE003BA9B9 /* MBTileMapObject.h */,
+				4669E045160F02CE003BA9B9 /* MBTileMapObject.m */,
 				4669E046160F02CE003BA9B9 /* MBMapObjectGroup.h */,
 				4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */,
 				4669E048160F02CE003BA9B9 /* MBMapView.h */,
 				4669E049160F02CE003BA9B9 /* MBMapView.m */,
 				4669E04A160F02CE003BA9B9 /* MBMapViewController.h */,
 				4669E04B160F02CE003BA9B9 /* MBMapViewController.m */,
-				4669E04C160F02CE003BA9B9 /* MBTileMapObject.h */,
-				4669E04D160F02CE003BA9B9 /* MBTileMapObject.m */,
 				4669E04E160F02CE003BA9B9 /* MBTileSet.h */,
 				4669E04F160F02CE003BA9B9 /* MBTileSet.m */,
+				4669E0D2160F0A8F003BA9B9 /* MBMapMetadata.h */,
 			);
 			path = MBMapViewController;
 			sourceTree = "<group>";
@@ -445,7 +442,7 @@
 			children = (
 				4669E082160F02F5003BA9B9 /* explorer.plist */,
 				4669E083160F02F5003BA9B9 /* explorer.png */,
-				4669E084160F02F5003BA9B9 /* zack.tps */,
+				4669E084160F02F5003BA9B9 /* explorer.tps */,
 			);
 			path = Explorer;
 			sourceTree = "<group>";
@@ -574,7 +571,7 @@
 				4669E0A9160F02F5003BA9B9 /* dude.png in Resources */,
 				4669E0AA160F02F5003BA9B9 /* explorer.plist in Resources */,
 				4669E0AB160F02F5003BA9B9 /* explorer.png in Resources */,
-				4669E0AC160F02F5003BA9B9 /* zack.tps in Resources */,
+				4669E0AC160F02F5003BA9B9 /* explorer.tps in Resources */,
 				4669E0AD160F02F5003BA9B9 /* nikkie.plist in Resources */,
 				4669E0AE160F02F5003BA9B9 /* nikkie.png in Resources */,
 				4669E0AF160F02F5003BA9B9 /* tuna_guy-hd.plist in Resources */,
@@ -622,11 +619,10 @@
 				4669E066160F02CE003BA9B9 /* UIView+Diagnostics.m in Sources */,
 				4669E067160F02CE003BA9B9 /* MBLayerView.m in Sources */,
 				4669E068160F02CE003BA9B9 /* MBMap.m in Sources */,
-				4669E069160F02CE003BA9B9 /* MBMapObject.m in Sources */,
+				4669E069160F02CE003BA9B9 /* MBTileMapObject.m in Sources */,
 				4669E06A160F02CE003BA9B9 /* MBMapObjectGroup.m in Sources */,
 				4669E06B160F02CE003BA9B9 /* MBMapView.m in Sources */,
 				4669E06C160F02CE003BA9B9 /* MBMapViewController.m in Sources */,
-				4669E06D160F02CE003BA9B9 /* MBTileMapObject.m in Sources */,
 				4669E06E160F02CE003BA9B9 /* MBTileSet.m in Sources */,
 				4669E06F160F02CE003BA9B9 /* MBMovableSpriteView.m in Sources */,
 				4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */,

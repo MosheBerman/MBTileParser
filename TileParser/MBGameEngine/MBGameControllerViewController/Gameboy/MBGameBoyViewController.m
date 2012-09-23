@@ -8,8 +8,8 @@
 
 #import "MBGameBoyViewController.h"
 
-#define kJoystickDiameter 72 
-#define kMargin 32
+#define kJoystickDiameter 88 
+#define kMargin 44
 
 @interface MBGameBoyViewController ()
 
@@ -107,7 +107,6 @@
 
     MBJoystickView *joystick = [self joystick];
     [joystick setDeadRadius:10.0f];
-    [joystick setThumbRadius:44.0f];
     [[self view] addSubview:joystick];
     
     [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];

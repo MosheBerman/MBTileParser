@@ -29,4 +29,6 @@
 - (BOOL) hasNext;
 - (MBDialogTreeNode *)nextNode;
 
+- (void) rewindToFirstNode;
+
 @end

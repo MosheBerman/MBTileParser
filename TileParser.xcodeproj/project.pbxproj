@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958315F59EE5003EC5C6 /* MBControllerButton.m */; };
 		4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4600958715F59F46003EC5C6 /* UIColor+Extensions.m */; };
+		4601158115FA776200B5F87D /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601158015FA776200B5F87D /* MBMovableSpriteView.m */; };
+		4601158415FA816400B5F87D /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601158315FA816400B5F87D /* MBSelfMovingSpriteView.m */; };
+		4601158715FA8FD200B5F87D /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4601158615FA8FD200B5F87D /* UIView+Diagnostics.m */; };
 		460761A815F7A8530061EA09 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 460761A615F7A8530061EA09 /* dpad.png */; };
 		460761A915F7A8530061EA09 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 460761A715F7A8530061EA09 /* joystick.png */; };
 		4611130415EA72D900404504 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4611130315EA72D900404504 /* MBControllerViewController.m */; };
@@ -25,6 +28,8 @@
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
 		4646857D15DB6E6F008B3914 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646857C15DB6E6F008B3914 /* MBMapView.m */; };
 		4646858115DB7222008B3914 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4646858015DB7222008B3914 /* MBLayerView.m */; };
+		4669E012160EE0EE003BA9B9 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E011160EE0EE003BA9B9 /* MBDialogView.m */; };
+		4669E017160EE2AC003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E016160EE2AC003BA9B9 /* NSString+MBDialogString.m */; };
 		466B65AB15DD8060009CB7BF /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */; };
 		466B65B215DD817D009CB7BF /* MBMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65B115DD817D009CB7BF /* MBMapObject.m */; };
 		466B65B815DD84BE009CB7BF /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B65B715DD84BE009CB7BF /* UIImage+TileData.m */; };
@@ -38,6 +43,9 @@
 		468D924C15C6D77100F461F0 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 468D924915C6D77100F461F0 /* Checkers.psd */; };
 		468D924D15C6D77100F461F0 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 468D924A15C6D77100F461F0 /* checkers.tmx */; };
 		468E4CDA15C690E200A5E803 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 468E4CD915C690E200A5E803 /* MBTileParser.m */; };
+		469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754916019E5D00912D26 /* Default-568h@2x.png */; };
+		469B754D16019EC700912D26 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754B16019EC700912D26 /* Default.png */; };
+		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
 		469D673A15DCA0540031F7D3 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 469D673915DCA0540031F7D3 /* MBTileMapObject.m */; };
 		46F2BD2815DEDA9E006820D9 /* dude.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0715DEDA9E006820D9 /* dude.plist */; };
 		46F2BD2915DEDA9E006820D9 /* dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 46F2BD0815DEDA9E006820D9 /* dude.png */; };
@@ -63,6 +71,12 @@
 		4600958315F59EE5003EC5C6 /* MBControllerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBControllerButton.m; path = ControllerView/MBControllerButton.m; sourceTree = "<group>"; };
 		4600958615F59F46003EC5C6 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extensions.h"; path = "TileParser/Categories/UIColor+Extensions.h"; sourceTree = "<group>"; };
 		4600958715F59F46003EC5C6 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extensions.m"; path = "TileParser/Categories/UIColor+Extensions.m"; sourceTree = "<group>"; };
+		4601157F15FA776200B5F87D /* MBMovableSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMovableSpriteView.h; sourceTree = "<group>"; };
+		4601158015FA776200B5F87D /* MBMovableSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMovableSpriteView.m; sourceTree = "<group>"; };
+		4601158215FA816400B5F87D /* MBSelfMovingSpriteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBSelfMovingSpriteView.h; sourceTree = "<group>"; };
+		4601158315FA816400B5F87D /* MBSelfMovingSpriteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBSelfMovingSpriteView.m; sourceTree = "<group>"; };
+		4601158515FA8FD200B5F87D /* UIView+Diagnostics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Diagnostics.h"; path = "TileParser/Categories/UIView+Diagnostics.h"; sourceTree = "<group>"; };
+		4601158615FA8FD200B5F87D /* UIView+Diagnostics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Diagnostics.m"; path = "TileParser/Categories/UIView+Diagnostics.m"; sourceTree = "<group>"; };
 		460761A615F7A8530061EA09 /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
 		460761A715F7A8530061EA09 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
 		4611130215EA72D900404504 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBControllerViewController.h; path = ControllerView/MBControllerViewController.h; sourceTree = "<group>"; };
@@ -91,6 +105,10 @@
 		4646857C15DB6E6F008B3914 /* MBMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapView.m; path = MapView/MBMapView.m; sourceTree = "<group>"; };
 		4646857F15DB7222008B3914 /* MBLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBLayerView.h; path = MapView/MBLayerView.h; sourceTree = "<group>"; };
 		4646858015DB7222008B3914 /* MBLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBLayerView.m; path = MapView/MBLayerView.m; sourceTree = "<group>"; };
+		4669E010160EE0EE003BA9B9 /* MBDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDialogView.h; path = DialogView/MBDialogView.h; sourceTree = "<group>"; };
+		4669E011160EE0EE003BA9B9 /* MBDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDialogView.m; path = DialogView/MBDialogView.m; sourceTree = "<group>"; };
+		4669E015160EE2AC003BA9B9 /* NSString+MBDialogString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MBDialogString.h"; path = "DialogView/Categories/NSString+MBDialogString.h"; sourceTree = "<group>"; };
+		4669E016160EE2AC003BA9B9 /* NSString+MBDialogString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MBDialogString.m"; path = "DialogView/Categories/NSString+MBDialogString.m"; sourceTree = "<group>"; };
 		466B65A915DD8060009CB7BF /* MBMapObjectGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapObjectGroup.h; path = MapView/MBMapObjectGroup.h; sourceTree = "<group>"; };
 		466B65AA15DD8060009CB7BF /* MBMapObjectGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapObjectGroup.m; path = MapView/MBMapObjectGroup.m; sourceTree = "<group>"; };
 		466B65B015DD817D009CB7BF /* MBMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapObject.h; path = MapView/MBMapObject.h; sourceTree = "<group>"; };
@@ -109,6 +127,9 @@
 		468D924A15C6D77100F461F0 /* checkers.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = checkers.tmx; sourceTree = "<group>"; };
 		468E4CD815C690E200A5E803 /* MBTileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileParser.h; path = TileParser/MBTileParser.h; sourceTree = "<group>"; };
 		468E4CD915C690E200A5E803 /* MBTileParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileParser.m; path = TileParser/MBTileParser.m; sourceTree = "<group>"; };
+		469B754916019E5D00912D26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		469B754B16019EC700912D26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		469B754C16019EC700912D26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		469D673815DCA0540031F7D3 /* MBTileMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBTileMapObject.h; path = MapView/MBTileMapObject.h; sourceTree = "<group>"; };
 		469D673915DCA0540031F7D3 /* MBTileMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBTileMapObject.m; path = MapView/MBTileMapObject.m; sourceTree = "<group>"; };
 		46F2BD0715DEDA9E006820D9 /* dude.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dude.plist; sourceTree = "<group>"; };
@@ -151,6 +172,8 @@
 			children = (
 				4600958615F59F46003EC5C6 /* UIColor+Extensions.h */,
 				4600958715F59F46003EC5C6 /* UIColor+Extensions.m */,
+				4601158515FA8FD200B5F87D /* UIView+Diagnostics.h */,
+				4601158615FA8FD200B5F87D /* UIView+Diagnostics.m */,
 			);
 			name = Categories;
 			path = ..;
@@ -169,6 +192,9 @@
 		462AABEE15B3EDD20058E14C = {
 			isa = PBXGroup;
 			children = (
+				469B754916019E5D00912D26 /* Default-568h@2x.png */,
+				469B754B16019EC700912D26 /* Default.png */,
+				469B754C16019EC700912D26 /* Default@2x.png */,
 				462AAC0315B3EDD30058E14C /* TileParser */,
 				462AABFC15B3EDD30058E14C /* Frameworks */,
 				462AABFA15B3EDD30058E14C /* Products */,
@@ -202,11 +228,8 @@
 				462AAC1015B3EDD30058E14C /* MBViewController.m */,
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
-				469D672D15DC84C80031F7D3 /* Tiled Map Classes */,
-				493DA58715DD7CD900F435EF /* Sprite Classes */,
-				46F2BD6615DEDFDE006820D9 /* Controller Classes */,
-				468D924715C6D77100F461F0 /* Map Data */,
-				46F2BD0515DEDA9D006820D9 /* Sample Sprites */,
+				4669E01D160EFC6A003BA9B9 /* MBTileParser */,
+				4669E01C160EFC53003BA9B9 /* Sample Data */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
 			);
 			path = TileParser;
@@ -247,6 +270,37 @@
 			name = MBTileParser;
 			sourceTree = "<group>";
 		};
+		4669E014160EE282003BA9B9 /* Dialog View */ = {
+			isa = PBXGroup;
+			children = (
+				4669E010160EE0EE003BA9B9 /* MBDialogView.h */,
+				4669E011160EE0EE003BA9B9 /* MBDialogView.m */,
+				4669E015160EE2AC003BA9B9 /* NSString+MBDialogString.h */,
+				4669E016160EE2AC003BA9B9 /* NSString+MBDialogString.m */,
+			);
+			name = "Dialog View";
+			sourceTree = "<group>";
+		};
+		4669E01C160EFC53003BA9B9 /* Sample Data */ = {
+			isa = PBXGroup;
+			children = (
+				468D924715C6D77100F461F0 /* Maps */,
+				46F2BD0515DEDA9D006820D9 /* Sprites */,
+			);
+			name = "Sample Data";
+			sourceTree = "<group>";
+		};
+		4669E01D160EFC6A003BA9B9 /* MBTileParser */ = {
+			isa = PBXGroup;
+			children = (
+				469D672D15DC84C80031F7D3 /* Tiled Map Classes */,
+				493DA58715DD7CD900F435EF /* Sprite Classes */,
+				46F2BD6615DEDFDE006820D9 /* Controller Classes */,
+				4669E014160EE282003BA9B9 /* Dialog View */,
+			);
+			name = MBTileParser;
+			sourceTree = "<group>";
+		};
 		466B65AC15DD80EE009CB7BF /* Object Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +312,7 @@
 			name = "Object Layer";
 			sourceTree = "<group>";
 		};
-		468D924715C6D77100F461F0 /* Map Data */ = {
+		468D924715C6D77100F461F0 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
 				466F92F215DC378C00801802 /* SimpsonCity.tmx */,
@@ -270,7 +324,7 @@
 				468D924915C6D77100F461F0 /* Checkers.psd */,
 				468D924A15C6D77100F461F0 /* checkers.tmx */,
 			);
-			name = "Map Data";
+			name = Maps;
 			path = Map;
 			sourceTree = "<group>";
 		};
@@ -307,7 +361,7 @@
 			name = "Tiles and Objects";
 			sourceTree = "<group>";
 		};
-		46F2BD0515DEDA9D006820D9 /* Sample Sprites */ = {
+		46F2BD0515DEDA9D006820D9 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
 				46F2BD4415DEDAFD006820D9 /* Zack */,
@@ -316,7 +370,7 @@
 				46F2BD0D15DEDA9E006820D9 /* Nikkie */,
 				46F2BD1015DEDA9E006820D9 /* Tuna Guy */,
 			);
-			name = "Sample Sprites";
+			name = Sprites;
 			path = "Sprite View/Sprites";
 			sourceTree = "<group>";
 		};
@@ -391,6 +445,10 @@
 			children = (
 				493DA58915DD7D3700F435EF /* MBSpriteView.h */,
 				493DA58A15DD7D3700F435EF /* MBSpriteView.m */,
+				4601157F15FA776200B5F87D /* MBMovableSpriteView.h */,
+				4601158015FA776200B5F87D /* MBMovableSpriteView.m */,
+				4601158215FA816400B5F87D /* MBSelfMovingSpriteView.h */,
+				4601158315FA816400B5F87D /* MBSelfMovingSpriteView.m */,
 				4611130C15EAAC3400404504 /* MBSpriteMovementDelegate.h */,
 			);
 			name = "Sprite Classes";
@@ -474,6 +532,9 @@
 				46F2BD6515DEDAFD006820D9 /* zack.png in Resources */,
 				460761A815F7A8530061EA09 /* dpad.png in Resources */,
 				460761A915F7A8530061EA09 /* joystick.png in Resources */,
+				469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */,
+				469B754D16019EC700912D26 /* Default.png in Resources */,
+				469B754E16019EC700912D26 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +564,11 @@
 				4619C63F15EBFE3B009D095A /* MBJoystickView.m in Sources */,
 				4600958415F59EE5003EC5C6 /* MBControllerButton.m in Sources */,
 				4600958815F59F46003EC5C6 /* UIColor+Extensions.m in Sources */,
+				4601158115FA776200B5F87D /* MBMovableSpriteView.m in Sources */,
+				4601158415FA816400B5F87D /* MBSelfMovingSpriteView.m in Sources */,
+				4601158715FA8FD200B5F87D /* UIView+Diagnostics.m in Sources */,
+				4669E012160EE0EE003BA9B9 /* MBDialogView.m in Sources */,
+				4669E017160EE2AC003BA9B9 /* NSString+MBDialogString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,4 +59,10 @@
 
 - (NSString *) nextStringToDisplay;
 
+//
+//  Resets the state of the node.
+//
+
+- (void) rewind;
+
 @end

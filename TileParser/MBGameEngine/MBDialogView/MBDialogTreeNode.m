@@ -34,4 +34,8 @@
     return next;
 }
 
+- (void)rewind {
+    _currentDialogIndex = 0;
+}
+
 @end

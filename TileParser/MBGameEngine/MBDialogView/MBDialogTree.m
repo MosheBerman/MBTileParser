@@ -65,6 +65,10 @@
 
 - (void) rewindToFirstNode{
     [self setActiveNode:[self firstNode]];
+    
+    for (MBDialogTreeNode *node in [self nodes]) {
+        [node rewind];
+    }
 }
 
 @end

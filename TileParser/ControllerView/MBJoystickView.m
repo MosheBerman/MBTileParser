@@ -115,6 +115,7 @@
         return;
     }
 
+    //TODO: See if this angle is incorrect.
     float angle = atan2f(dy, dx);   //In radians
     
     if(angle < 0){

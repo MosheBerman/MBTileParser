@@ -70,30 +70,49 @@
     bounds.size.width = parentBounds.size.width - (_horizontalMarginWidth/2);
     bounds.size.height = parentBounds.size.height/3.5;
     
-    [self setBounds:bounds];
-    
     //
     //  Position onscreen...
     //
     
-    bounds.origin.x = parentBounds.size.width/2 - self.bounds.size.width/2;
+    bounds.origin.x = parentBounds.size.width/2 - bounds.size.width/2;
     bounds.origin.y = _verticalMarginHeight;
     
+    [self setBounds:bounds];    
     [self setFrame:bounds];
     
     [view addSubview:self];
-    
-    //
-    //  Pull out the text we want to render
-    //
+
+    [self cycleText];
+}
+
+//
+//  First, check if we have a previous node. If so
+//  see if there's more text to show. If there is,
+//  show it.
+//
+//  If there is no new text, check for responses and
+//  offer them.
+//
+//  If there's no responses, run the selector if it exists.
+//
+//  Pull out the node we want.
+//
+
+- (void) cycleText{
     
     MBDialogTreeNode *node = [[self dialogTree] activeNode];
     
     if ([node hasNext]) {
         NSString *textToRender = [node nextStringToDisplay];
         [self renderText:textToRender];
+    }else{
+        [self removeFromSuperview];
     }
 }
+
+//
+//  Takes a given string and sticks it into a UILabel onscreen
+//
 
 - (void) renderText:(NSString *)text{
     

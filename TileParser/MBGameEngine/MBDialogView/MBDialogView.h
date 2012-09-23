@@ -18,6 +18,8 @@
 
 - (id) initWithText:(NSString *)text;
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree;
+
 - (void) showInView:(UIView *)view;
+- (void) cycleText;
 
 @end

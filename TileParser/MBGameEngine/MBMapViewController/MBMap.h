@@ -15,4 +15,5 @@
 @property (nonatomic, strong) NSMutableArray *tileCache;
 @property (nonatomic, strong) NSMutableDictionary *objectGroups;
 
+@property (nonatomic, readonly) CGSize dimensionsInTiles;
 @end

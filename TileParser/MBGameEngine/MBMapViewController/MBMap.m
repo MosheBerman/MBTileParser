@@ -28,4 +28,12 @@
     return self;
 }
 
+- (CGSize)dimensionsInTiles{
+    NSDictionary *layerData = [self layers][0];
+    NSUInteger height = [layerData[@"width"] integerValue];
+    NSUInteger width  = [layerData[@"width"] integerValue];
+    
+    return CGSizeMake(width, height);
+}
+
 @end

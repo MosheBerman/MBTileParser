@@ -70,7 +70,7 @@
 
 
 - (void)repeatVelocity{
-    [self updateVelocity:[self lastPoint]];   
+    [self updateVelocity:[self lastPoint]];
 }
 
 - (void)updateVelocity:(CGPoint)point{
@@ -82,7 +82,7 @@
     }else{
         
         CGPoint thumbCenter = point;
-
+        
         thumbCenter.x = MIN(MAX(0, thumbCenter.x), self.bounds.size.width);
         thumbCenter.y = MIN(MAX(0, thumbCenter.y), self.bounds.size.height);
         
@@ -98,7 +98,7 @@
     float dy = point.y;
     
     float distanceSquared = dx * dx + dy * dy;
-
+    
     
     if(distanceSquared <= _deadRadiusSquared){
         
@@ -114,14 +114,14 @@
         
         return;
     }
-
+    
     //TODO: See if this angle is incorrect.
     float angle = atan2f(dy, dx);   //In radians
     
     if(angle < 0){
         angle += kJoystickPIx2;
     }
-
+    
     float cosAngle;
     float sinAngle;
     
@@ -132,19 +132,19 @@
     
     cosAngle = cosf(angle);
     sinAngle = sinf(angle);
-
+    
     //NOTE: Velocity goes from -1.0 to 1.0
     if(distanceSquared > _joystickRadiusSquared || _isDPad){
         dx = cosAngle * _joystickRadius;
         dy = sinAngle * _joystickRadius;
     }
-
+    
     [self willChangeValueForKey:@"velocity"];
     _velocity = CGPointMake(dx/_joystickRadius, dy/_joystickRadius);
     [self didChangeValueForKey:@"velocity"];
     
     _degrees = angle * kJoystickRadiansToDegrees;
-
+    
     [self willChangeValueForKey:@"stickPosition"];
     _stickPosition = CGPointMake(dx, dy);
     [self didChangeValueForKey:@"stickPosition"];
@@ -181,17 +181,21 @@
     CGPoint location = [[touches anyObject] locationInView:self];
     
     
-    BOOL joystickContainsTouch = CGRectContainsPoint(self.frame, location);
-
-    if (joystickContainsTouch) {
-        float dSq = location.x * location.x + location.y * location.y;
-        
-        if (_joystickRadiusSquared > dSq) {
-            [self updateVelocity:location];
-        }
-    }
+    //  This check may be entirely unnecessary and it breaks d-pad mode, so
+    //  we won't use it.
     
-    //  Set up a repeat dispatch while 
+    //
+    //    BOOL joystickContainsTouch = CGRectContainsPoint(self.frame, location);
+    //
+    //   if (joystickContainsTouch) {
+    float dSq = location.x * location.x + location.y * location.y;
+    
+    if (_joystickRadiusSquared > dSq || [self isDPad]) {
+        [self updateVelocity:location];
+    }
+    //    }
+    
+    //  Set up a repeat dispatch while
     
     if ([self shouldRepeat] && (![self repeatTimer] || ![[self repeatTimer] isValid])) {
         NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[self repeatInterval] target:self selector:@selector(repeatVelocity) userInfo:nil repeats:YES];
@@ -230,7 +234,7 @@
     }
 }
 
-#pragma mark - Set Color 
+#pragma mark - Set Color
 
 - (void)setColor:(UIColor*)color{
     self.layer.borderColor = color.CGColor;

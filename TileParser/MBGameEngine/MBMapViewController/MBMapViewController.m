@@ -118,6 +118,10 @@
     return size;
 }
 
+- (CGSize) mapSizeInTiles{
+    return [[self map] dimensionsInTiles];
+}
+
 #pragma mark - Frame Resize
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{

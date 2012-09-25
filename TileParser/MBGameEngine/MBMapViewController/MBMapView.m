@@ -23,6 +23,7 @@
 @property (nonatomic, strong) MBMap *map;
 @property (nonatomic, strong) UIView *zoomWrapper;
 @property (nonatomic, copy) NSString *keyForFollowedSprite;
+@property (nonatomic, strong) NSMutableArray *layers;
 
 @end
 
@@ -39,6 +40,12 @@
         //
         
         _sprites = [@{} mutableCopy];
+        
+        //
+        //  Keep an array around for our layers
+        //
+        
+        _layers = [@[] mutableCopy];
         
         //
         //  Add zoom support
@@ -176,7 +183,7 @@
                 }
                 
                 [[self zoomWrapper] addSubview:layer];
-                [[self.map layers] replaceObjectAtIndex:i withObject:layer];
+                [[self layers] addObject:layer];
             }
         }
     }
@@ -190,7 +197,7 @@
     //  it's a waste of time, as is this comment.
     //
     
-    MBLayerView * layer = [[self.map layers] objectAtIndex:0];
+    MBLayerView * layer = [[self layers] objectAtIndex:0];
     
     [[self zoomWrapper] setFrame: layer.frame];
     
@@ -329,7 +336,7 @@
 
 - (MBLayerView *)layerNamed:(NSString *)name{
     
-    for (MBLayerView *layer in self.map.layers) {
+    for (MBLayerView *layer in [self layers]) {
         if ([[layer name] isEqualToString:name]) {
             return layer;
         }

@@ -13,6 +13,7 @@
 - (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *)groupName atPoint:(CGPoint)point;
 - (NSDictionary *)propertiesForTileInLayer:(NSString *)layerName atCoordinates:(CGPoint)coordinates;
 - (CGSize)tileSizeInPoints;
+- (CGSize)mapSizeInTiles;
 
 
 @end

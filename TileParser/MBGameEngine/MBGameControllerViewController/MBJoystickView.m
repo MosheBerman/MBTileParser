@@ -180,7 +180,10 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     CGPoint location = [[touches anyObject] locationInView:self];
     
-    if (CGRectContainsPoint(self.frame, location)) {
+    
+    BOOL joystickContainsTouch = CGRectContainsPoint(self.frame, location);
+
+    if (joystickContainsTouch) {
         float dSq = location.x * location.x + location.y * location.y;
         
         if (_joystickRadiusSquared > dSq) {

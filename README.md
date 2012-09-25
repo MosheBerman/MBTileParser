@@ -12,7 +12,7 @@ MBTileParser began as a small library that allows you to parse TMX files and the
  
 **A word on the TMX format**
 
-The TMX file format is used by Tiled, a tool which helps you make world maps for games. (You can download Tiled [here](http://mapeditor.org). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format).
+The TMX file format is used by Tiled, a tool which helps you make world maps for games. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format).
 
 **License**
 

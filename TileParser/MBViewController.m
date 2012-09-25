@@ -59,7 +59,7 @@
     
     //  Add the sprite to the map and follow it
     
-    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(8,7) beneathLayerNamed:@"TreeTops"];
+    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(18,30) beneathLayerNamed:@"TreeTops"];
     [[mapViewController mapView] beginFollowingSpriteForKey:@"player"];
     
     //
@@ -184,6 +184,7 @@
     CGSize mapDimensions = [[self mapViewController] mapSizeInTiles];
     
     if (coordinates.y >= mapDimensions.height || coordinates.x >= mapDimensions.width) {
+        
         return NO;
     }
     

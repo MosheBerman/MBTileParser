@@ -179,6 +179,15 @@
         return NO;
     }
     
+    //  Disallow movement off the bottom and right edges.
+    
+    CGSize mapDimensions = [[self mapViewController] mapSizeInTiles];
+    
+    if (coordinates.y >= mapDimensions.height || coordinates.x >= mapDimensions.width) {
+        return NO;
+    }
+    
+    
     //  Freeze movement during dialog.
     
     if ([self isShowingDialog]) {

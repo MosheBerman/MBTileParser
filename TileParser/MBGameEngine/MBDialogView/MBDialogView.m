@@ -53,6 +53,11 @@
 }
 
 - (void) showInView:(UIView *)view{
+    [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle];
+    
+}
+
+- (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition{
     
     //
     //  Prep the rectangle...
@@ -71,11 +76,34 @@
     bounds.size.height = parentBounds.size.height/3.5;
     
     //
+    //  Calculate a position, depending on the value of position
+    //
+    
+    CGFloat top = 0;
+    CGFloat left = 0;
+    
+    if (verticalPosition == MBPositionTop) {
+        top = [self verticalMarginHeight];
+    }else if(verticalPosition == MBPositionMiddle){
+        top = parentBounds.size.height/2 - bounds.size.height/2;
+    }else if(verticalPosition == MBPositionBottom){
+        top = parentBounds.size.height - bounds.size.height - [self verticalMarginHeight];
+    }
+    
+    if (horizontalPosition == MBPositionLeft) {
+        left = [self horizontalMarginWidth];
+    }else if(verticalPosition == MBPositionMiddle){
+        left = parentBounds.size.width/2 - bounds.size.width/2;
+    }else if(verticalPosition == MBPositionRight){
+        left = parentBounds.size.width - bounds.size.width - [self horizontalMarginWidth];
+    }
+    
+    //
     //  Position onscreen...
     //
     
-    bounds.origin.x = parentBounds.size.width/2 - bounds.size.width/2;
-    bounds.origin.y = _verticalMarginHeight;
+    bounds.origin.x = left;
+    bounds.origin.y = top;
     
     [self setBounds:bounds];    
     [self setFrame:bounds];

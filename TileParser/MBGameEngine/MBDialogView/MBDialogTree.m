@@ -37,6 +37,9 @@
 
 - (id) initWithContentsOfURL:(NSURL *)url{
     NSArray *dialogNodes = [NSArray arrayWithContentsOfURL:url];
+    
+    //  TODO: Process the nodes.
+    
     return [self initWithContentsOfArray:dialogNodes];
 }
 

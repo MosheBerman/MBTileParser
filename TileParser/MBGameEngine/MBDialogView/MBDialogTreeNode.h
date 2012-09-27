@@ -28,6 +28,12 @@
 @property (nonatomic, strong) NSArray *dialog;
 
 //
+//  The display name for the node, used in menus
+//
+
+@property (nonatomic, strong) NSString *displayName;
+
+//
 //  The action to run after the dialog is all displayed, unless
 //  there's no dialog. In that case the end action is ignored.
 //
@@ -42,7 +48,7 @@
 
 //
 //  The responses to the dialog. Valid responses values include
-//  other DialogTreeNode objects and display names for them.
+//  other DialogTreeNode objects.
 //
 
 @property (nonatomic, strong) NSDictionary *responses;

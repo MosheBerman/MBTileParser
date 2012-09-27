@@ -37,6 +37,9 @@
 //  The action to run after the dialog is all displayed, unless
 //  there's no dialog. In that case the end action is ignored.
 //
+//  What if instead of endActions we had a notification string to dispatch?
+//  Then any object that was registered can run the action.
+//
 
 @property (nonatomic, assign) SEL endAction;
 

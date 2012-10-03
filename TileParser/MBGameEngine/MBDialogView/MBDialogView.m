@@ -92,9 +92,9 @@
     
     if (horizontalPosition == MBPositionLeft) {
         left = [self horizontalMarginWidth];
-    }else if(verticalPosition == MBPositionMiddle){
+    }else if(horizontalPosition == MBPositionMiddle){
         left = parentBounds.size.width/2 - bounds.size.width/2;
-    }else if(verticalPosition == MBPositionRight){
+    }else if(horizontalPosition == MBPositionRight){
         left = parentBounds.size.width - bounds.size.width - [self horizontalMarginWidth];
     }
     

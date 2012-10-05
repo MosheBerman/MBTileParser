@@ -34,7 +34,7 @@
     
     if (self) {
         
-        _dialogTree = [[MBDialogTree alloc] initWithMessage:@"A dialog tree appeared."];
+        _dialogTree = [[MBDialogTree alloc] initWithMessage:text];
         
     }
     

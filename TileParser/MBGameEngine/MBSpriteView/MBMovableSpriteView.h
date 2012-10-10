@@ -12,7 +12,7 @@
 
 #import "MBMapMetadata.h"
 
-#define kDefaultMovementDuration 0.45
+#define kDefaultMovementDuration 0.4
 
 typedef void(^MBMovementCompletionHandler)();
 

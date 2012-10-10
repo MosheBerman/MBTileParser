@@ -22,6 +22,8 @@
         _movementTimeScaleFactor = kDefaultMovementDuration;
         self.animationDuration = 1.0 * _movementTimeScaleFactor;
         _isMoving = NO;
+
+        [self setContentMode:UIViewContentModeCenter];
     }
     
     return self;

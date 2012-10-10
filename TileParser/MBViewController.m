@@ -56,11 +56,9 @@
     [sprite setMovementDelegate:self];
     [sprite setMovementDataSource:[self mapViewController]];
     
-    
     //  Add the sprite to the map and follow it
     
     [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(18,30) beneathLayerNamed:@"TreeTops"];
-    [[mapViewController mapView] beginFollowingSpriteForKey:@"player"];
     
     //
     //  Add and configure a self-moving sprite
@@ -88,7 +86,6 @@
     //
     
     [movingSprite moveInRandomDirection];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -96,6 +93,8 @@
     
     //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.view];
     //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.gameboyControls.view];
+    
+    [[[self mapViewController] mapView] beginFollowingSpriteForKey:@"player"];
     
 }
 
@@ -121,7 +120,6 @@
         return UIInterfaceOrientationMaskAll;
     }
 }
-
 
 #pragma mark - Controller Delegate
 

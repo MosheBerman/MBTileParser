@@ -16,6 +16,8 @@
 		462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC1015B3EDD30058E14C /* MBViewController.m */; };
 		462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */; };
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
+		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
+		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
 		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
 		4669E05C160F02CE003BA9B9 /* DialogSamples.json in Resources */ = {isa = PBXBuildFile; fileRef = 4669E025160F02CE003BA9B9 /* DialogSamples.json */; };
 		4669E05D160F02CE003BA9B9 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E027160F02CE003BA9B9 /* MBDialogView.m */; };
@@ -95,6 +97,10 @@
 		462AAC1015B3EDD30058E14C /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		462AAC1315B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPhone.xib; sourceTree = "<group>"; };
 		462AAC1615B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
+		46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTreeNode.h; sourceTree = "<group>"; };
+		46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTreeNode.m; sourceTree = "<group>"; };
+		46669B08160F758C00CD1197 /* MBDialogTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTree.h; sourceTree = "<group>"; };
+		46669B09160F758C00CD1197 /* MBDialogTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTree.m; sourceTree = "<group>"; };
 		4669E022160F02CE003BA9B9 /* NSString+MBDialogString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MBDialogString.h"; sourceTree = "<group>"; };
 		4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MBDialogString.m"; sourceTree = "<group>"; };
 		4669E025160F02CE003BA9B9 /* DialogSamples.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DialogSamples.json; sourceTree = "<group>"; };
@@ -256,15 +262,29 @@
 			path = TileParser;
 			sourceTree = "<group>";
 		};
+		46669B0B160F99A300CD1197 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4669E033160F02CE003BA9B9 /* MBControllerViewController.h */,
+				4669E034160F02CE003BA9B9 /* MBControllerViewController.m */,
+				4669E02F160F02CE003BA9B9 /* MBControllerButton.h */,
+				4669E030160F02CE003BA9B9 /* MBControllerButton.m */,
+				4669E035160F02CE003BA9B9 /* MBJoystickView.h */,
+				4669E036160F02CE003BA9B9 /* MBJoystickView.m */,
+				4669E031160F02CE003BA9B9 /* MBControllerEvent.h */,
+				4669E032160F02CE003BA9B9 /* MBControllerToggling.h */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
 		4669E01F160F02CE003BA9B9 /* MBGameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				4669E037160F02CE003BA9B9 /* MBGameEngine.h */,
 				4669E020160F02CE003BA9B9 /* MBDialogView */,
 				4669E028160F02CE003BA9B9 /* MBGameControllerViewController */,
-				4669E037160F02CE003BA9B9 /* MBGameEngine.h */,
 				4669E038160F02CE003BA9B9 /* MBMapViewController */,
 				4669E050160F02CE003BA9B9 /* MBSpriteView */,
-				4669E058160F02CE003BA9B9 /* MBTileParser */,
 			);
 			path = MBGameEngine;
 			sourceTree = "<group>";
@@ -276,6 +296,10 @@
 				4669E024160F02CE003BA9B9 /* Dialog */,
 				4669E026160F02CE003BA9B9 /* MBDialogView.h */,
 				4669E027160F02CE003BA9B9 /* MBDialogView.m */,
+				46669B08160F758C00CD1197 /* MBDialogTree.h */,
+				46669B09160F758C00CD1197 /* MBDialogTree.m */,
+				46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */,
+				46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */,
 			);
 			path = MBDialogView;
 			sourceTree = "<group>";
@@ -301,15 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				4669E029160F02CE003BA9B9 /* Gameboy */,
-				4669E02C160F02CE003BA9B9 /* Joystick */,
-				4669E02F160F02CE003BA9B9 /* MBControllerButton.h */,
-				4669E030160F02CE003BA9B9 /* MBControllerButton.m */,
-				4669E031160F02CE003BA9B9 /* MBControllerEvent.h */,
-				4669E032160F02CE003BA9B9 /* MBControllerToggling.h */,
-				4669E033160F02CE003BA9B9 /* MBControllerViewController.h */,
-				4669E034160F02CE003BA9B9 /* MBControllerViewController.m */,
-				4669E035160F02CE003BA9B9 /* MBJoystickView.h */,
-				4669E036160F02CE003BA9B9 /* MBJoystickView.m */,
+				4669E02C160F02CE003BA9B9 /* Images */,
+				46669B0B160F99A300CD1197 /* Base Classes */,
 			);
 			path = MBGameControllerViewController;
 			sourceTree = "<group>";
@@ -323,18 +340,20 @@
 			path = Gameboy;
 			sourceTree = "<group>";
 		};
-		4669E02C160F02CE003BA9B9 /* Joystick */ = {
+		4669E02C160F02CE003BA9B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				4669E02D160F02CE003BA9B9 /* dpad.png */,
 				4669E02E160F02CE003BA9B9 /* joystick.png */,
 			);
+			name = Images;
 			path = Joystick;
 			sourceTree = "<group>";
 		};
 		4669E038160F02CE003BA9B9 /* MBMapViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4669E058160F02CE003BA9B9 /* MBTileParser */,
 				4669E039160F02CE003BA9B9 /* Categories */,
 				4669E040160F02CE003BA9B9 /* MBLayerView.h */,
 				4669E041160F02CE003BA9B9 /* MBLayerView.m */,
@@ -388,7 +407,8 @@
 				4669E059160F02CE003BA9B9 /* MBTileParser.h */,
 				4669E05A160F02CE003BA9B9 /* MBTileParser.m */,
 			);
-			path = MBTileParser;
+			name = MBTileParser;
+			path = ../MBTileParser;
 			sourceTree = "<group>";
 		};
 		4669E073160F02F5003BA9B9 /* Sample Data */ = {
@@ -646,6 +666,8 @@
 				4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */,
 				4669E071160F02CE003BA9B9 /* MBSpriteView.m in Sources */,
 				4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */,
+				46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */,
+				46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +730,7 @@
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6BB4FDC-B2F2-43BA-AEA9-69470176495B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3A10B50-EE3E-4DFF-8665-F51D8FB4FC6E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";

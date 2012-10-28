@@ -60,7 +60,7 @@
         return nil;
     }
 
-    NSUInteger indexOfNext =[self currentNode] +1;
+    NSUInteger indexOfNext = [self currentNode] +1;
     MBDialogTreeNode *newNext = [self nodes][indexOfNext];
     [self setActiveNode:newNext];
     return newNext;

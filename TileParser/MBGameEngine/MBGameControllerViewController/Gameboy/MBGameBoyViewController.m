@@ -105,6 +105,7 @@
 - (void)displayControls{
 
     MBJoystickView *joystick = [self joystick];
+    [joystick setThumbRadius:44];
     [joystick setDeadRadius:10.0f];
     [[self view] addSubview:joystick];
     

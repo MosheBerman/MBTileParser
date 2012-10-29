@@ -11,7 +11,7 @@
 #import "MBDialogTree.h"
 
 typedef NSUInteger MBDialogPosition;
-typedef NSUInteger MBDialogViewAnimation;
+typedef NSUInteger MBDialogAnimation;
 
 enum MBDialogViewPosition {
     MBPositionTop = 0,
@@ -45,8 +45,9 @@ enum MBDialogViewAnimation {
 
 //  Calls showInView:atPosition: and passes in MBPositionTop
 - (void) showInView:(UIView *)view;
+- (void) showInView:(UIView *)view withAnimation:(MBDialogAnimation)animation;
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition;
-- (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogViewAnimation)animation;
+- (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation;
 
 - (void) cycleText;
 

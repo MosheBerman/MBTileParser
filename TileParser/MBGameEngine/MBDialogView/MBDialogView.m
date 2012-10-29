@@ -64,7 +64,7 @@
     [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle];
 }
 
-- (void) showInView:(UIView *)view withAnimation:(id)animation{
+- (void) showInView:(UIView *)view withAnimation:(MBDialogAnimation)animation{
     [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle withAnimation:animation];
 }
 

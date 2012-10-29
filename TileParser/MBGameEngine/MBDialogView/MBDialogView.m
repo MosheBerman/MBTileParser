@@ -26,6 +26,19 @@
 - (BOOL)hasNextInCache;
 - (NSString *)nextStringFromCache;
 
+//
+//  The label displays text, naturally.
+//
+
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic) CGRect finalFrame;
+
+//
+//  What kind of animation did we present with?
+//
+
+@property (nonatomic) MBDialogAnimation animationType;
+
 @end
 
 @implementation MBDialogView
@@ -60,6 +73,8 @@
     return self;
 }
 
+#pragma mark - Show MBDialogView in a UIView
+
 - (void) showInView:(UIView *)view{
     [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle];
 }
@@ -73,6 +88,12 @@
 }
 
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation{
+    
+    //
+    //  Remember the animation type for later
+    //
+    
+    [self setAnimationType:animation];
     
     //
     //  Prep the rectangle...
@@ -89,6 +110,14 @@
     
     bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
     bounds.size.height = parentBounds.size.height/3.5;
+    
+    //
+    //  Keep a reference to the final bounds so
+    //  we can size the label before actually displaying
+    //  the containing frame.
+    //
+    
+    [self setFinalFrame:bounds];
     
     //
     //  Calculate a position, depending on the value of position
@@ -132,6 +161,8 @@
     if(animation == MBDialogViewAnimationSlideDown){
         
         startingBounds.origin.y -= startingBounds.size.height;
+        startingBounds.origin.x = bounds.origin.x;
+        
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
         
@@ -139,24 +170,30 @@
     else if(animation == MBDialogViewAnimationSlideUp){
         
         startingBounds.origin.y = view.frame.size.height;
+        startingBounds.origin.x = bounds.origin.x;
+        
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
         
     }
     else if(animation == MBDialogViewAnimationSlideLeft){
         
-        startingBounds.origin.x = view.frame.size.width;
+        startingBounds.origin.x = -view.frame.size.width;
+        startingBounds.origin.y = bounds.origin.y;
+        
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
         
     }
     else if(animation == MBDialogViewAnimationSlideRight){
         
-        startingBounds.origin.x = -startingBounds.size.width;
+        startingBounds.origin.x = startingBounds.size.width;
+        startingBounds.origin.y = bounds.origin.y;
+        
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
     }
-    else if (animation == MBDialogViewanimationFade) {
+    else if (animation == MBDialogViewAnimationFade) {
         [self setAlpha:0];
     }
     else if (animation == MBDialogViewAnimationPop){
@@ -179,37 +216,175 @@
     //  Animation support for after addSubview
     //
     
-    if(animation <= MBDialogViewAnimationSlideDown && animation <= MBDialogViewAnimationSlideRight){
+    if(animation >= MBDialogViewAnimationSlideDown && animation <= MBDialogViewAnimationSlideRight){
         
         [UIView animateWithDuration:0.3 animations:^{
             [self setBounds:bounds];
             [self setFrame:bounds];
         }];
     }
-    else if (animation == MBDialogViewanimationFade) {
+    else if (animation == MBDialogViewAnimationFade) {
         [UIView animateWithDuration:0.3 animations:^{
             [self setAlpha:1];
         }];
     }
     else if (animation == MBDialogViewAnimationPop){
+
+        [self setAlpha:0.6];
+        
         [UIView animateWithDuration:0.2 animations:^{
-            [self setAlpha:1];
             
-            CGRect intermediateBounds = startingBounds;
+            CGRect intermediateBounds = bounds;
             
-            intermediateBounds.size.width += 10;
-            intermediateBounds.size.height += 10;
+            intermediateBounds.size.width *= 1.05;
+            intermediateBounds.size.height *= 1.05;
             
             [self setBounds:intermediateBounds];
             [self setFrame:intermediateBounds];
             
+            [self setAlpha:0.8];
+            
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.1 animations:^{
-                [self setBounds:bounds];
-                [self setFrame:bounds];
+            [UIView animateWithDuration:1/15.0 animations:^{
+                CGRect intermediateBounds = bounds;
+                
+                intermediateBounds.size.width *= 0.9;
+                intermediateBounds.size.height *= 0.9;
+                
+                [self setBounds:intermediateBounds];
+                [self setFrame:intermediateBounds];
+                [self setAlpha:0.9];
+                
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:1/7.5 animations:^{
+                    
+                    CGRect intermediateBounds = bounds;
+                    
+                    [self setBounds:intermediateBounds];
+                    [self setFrame:intermediateBounds];
+                    
+                    [self setAlpha:1.0];
+                }];
             }];
         }];
     }
+}
+
+#pragma mark - Hide MBDialogView
+
+- (void) hideWithAnimation:(MBDialogAnimation)animation{
+    
+    
+    CGRect startingBounds = [self bounds];
+    UIView *view = [self superview];
+    
+    if(animation == MBDialogViewAnimationSlideDown){
+        
+        startingBounds.origin.y -= startingBounds.size.height;
+        
+    }
+    else if(animation == MBDialogViewAnimationSlideUp){
+        
+        startingBounds.origin.y = view.frame.size.height;
+    }
+    else if(animation == MBDialogViewAnimationSlideLeft){
+        startingBounds.origin.x = -self.frame.size.width;
+    }
+    else if(animation == MBDialogViewAnimationSlideRight){
+        
+        startingBounds.origin.x = self.frame.size.width;
+    }
+    else if (animation == MBDialogViewAnimationFade) {
+        [self setAlpha:0];
+    }
+    else if (animation == MBDialogViewAnimationPop){
+        startingBounds.origin.x = startingBounds.size.width/2;
+        startingBounds.origin.y = startingBounds.size.height/2;
+        startingBounds.size.width = 0;
+        startingBounds.size.height = 0;
+        [self setAlpha:0];
+    }
+    
+    if (animation == MBDialogViewAnimationNone) {
+        [self setBounds:startingBounds];
+        [self setFrame:startingBounds];
+        [self removeFromSuperview];
+        [[self label] setText:nil];
+    }
+    else if(animation == MBDialogViewAnimationFade){
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             [self setAlpha:0];
+                         }
+                         completion:^(BOOL finished) {
+                             [self removeFromSuperview];
+                             [[self label] setText:nil];
+                         }];
+    }
+    else if(animation == MBDialogViewAnimationPop){
+        [UIView animateWithDuration:0.2 animations:^{
+            
+            CGRect intermediateBounds = startingBounds;
+            
+            intermediateBounds.size.width *= 0.9;
+            intermediateBounds.size.height *= 0.9;
+            
+            [self setBounds:intermediateBounds];
+            [self setFrame:intermediateBounds];
+            
+            [self setAlpha:0.9];
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:1/15.0 animations:^{
+                CGRect intermediateBounds = startingBounds;
+                
+                intermediateBounds.size.width *= 1.05;
+                intermediateBounds.size.height *= 1.05;
+                
+                [self setBounds:intermediateBounds];
+                [self setFrame:intermediateBounds];
+                [self setAlpha:0.8];
+                
+            } completion:^(BOOL finished) {
+                
+            [UIView animateWithDuration:1/15.0 animations:^{
+                CGRect intermediateBounds = startingBounds;
+                
+                intermediateBounds.size.width = 0;
+                intermediateBounds.size.height = 0;
+                
+                [self setBounds:intermediateBounds];
+                [self setFrame:intermediateBounds];
+                
+                [self setAlpha:0];
+            } completion:^(BOOL finished) {
+                [self removeFromSuperview];
+                [[self label] setText:nil];
+            }];
+            }];
+        }];
+    }
+    else{
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             [self setBounds:startingBounds];
+                             [self setFrame:startingBounds];
+                         }
+        completion:^(BOOL finished) {
+            [self removeFromSuperview];
+            [[self label] setText:nil];
+        }];
+    }
+    
+}
+
+#pragma mark - Text loading and caching
+
+//
+//  Cache the text and show the first part of it.
+//
+
+- (void) loadFirstText{
     
     //
     //  Prepare our text...
@@ -222,6 +397,7 @@
     //
     
     [self cycleText];
+    
 }
 
 //
@@ -265,12 +441,10 @@
         [self renderText:textToRender];
     }
     else{
-        [self removeFromSuperview];
+        [self hideWithAnimation:[self animationType]];
         [[self dialogTree] rewindToFirstNode];
         
         //  TODO: End action
-        
-        [self cacheText];
     }
 }
 
@@ -301,16 +475,17 @@
     [label setTextColor:[UIColor blackColor]];
     [label setNumberOfLines:0];
     [label setLineBreakMode:NSLineBreakByClipping];
-    [self addSubview:label];
+    [self setLabel:label];
+    [self addSubview:[self label]];
     
-    [label setText:text];
+    [[self label] setText:text];
 }
 
 #pragma mark - Frame
 
 - (CGRect) labelFrame{
     
-    CGRect frame = [self frame];
+    CGRect frame = [self finalFrame];
     
     frame.origin.y +=  [self verticalMarginHeight];
     frame.origin.x += [self horizontalMarginWidth];

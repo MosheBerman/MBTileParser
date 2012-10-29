@@ -28,7 +28,7 @@ enum MBDialogViewAnimation {
     MBDialogViewAnimationSlideLeft,
     MBDialogViewAnimationSlideRight,
     MBDialogViewAnimationPop,
-    MBDialogViewanimationFade,
+    MBDialogViewAnimationFade,
     };
 
 @interface MBDialogView : UIView

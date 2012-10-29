@@ -165,6 +165,7 @@
         
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
+        [[self label] setCenter:[self center]];
         
     }
     else if(animation == MBDialogViewAnimationSlideUp){
@@ -174,6 +175,7 @@
         
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
+                    [[self label] setCenter:[self center]];
         
     }
     else if(animation == MBDialogViewAnimationSlideLeft){
@@ -183,7 +185,7 @@
         
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
-        
+        [[self label] setCenter:[self center]];
     }
     else if(animation == MBDialogViewAnimationSlideRight){
         
@@ -192,6 +194,7 @@
         
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
+        [[self label] setCenter:[self center]];
     }
     else if (animation == MBDialogViewAnimationFade) {
         [self setAlpha:0];
@@ -210,6 +213,7 @@
     //  Add subview
     //
     
+    [self loadFirstText];
     [view addSubview:self];
     
     //
@@ -221,11 +225,13 @@
         [UIView animateWithDuration:0.3 animations:^{
             [self setBounds:bounds];
             [self setFrame:bounds];
+            [[self label] setCenter:[self center]];
         }];
     }
     else if (animation == MBDialogViewAnimationFade) {
         [UIView animateWithDuration:0.3 animations:^{
             [self setAlpha:1];
+            [[self label] setAlpha:1];
         }];
     }
     else if (animation == MBDialogViewAnimationPop){
@@ -264,6 +270,10 @@
                     [self setFrame:intermediateBounds];
                     
                     [self setAlpha:1.0];
+                    
+                    [UIView animateWithDuration:1/7.5 animations:^{
+                        [[self label] setAlpha:1.0];
+                    }];
                 }];
             }];
         }];
@@ -279,9 +289,7 @@
     UIView *view = [self superview];
     
     if(animation == MBDialogViewAnimationSlideDown){
-        
         startingBounds.origin.y -= startingBounds.size.height;
-        
     }
     else if(animation == MBDialogViewAnimationSlideUp){
         
@@ -293,9 +301,6 @@
     else if(animation == MBDialogViewAnimationSlideRight){
         
         startingBounds.origin.x = self.frame.size.width;
-    }
-    else if (animation == MBDialogViewAnimationFade) {
-        [self setAlpha:0];
     }
     else if (animation == MBDialogViewAnimationPop){
         startingBounds.origin.x = startingBounds.size.width/2;
@@ -331,8 +336,15 @@
             
             [self setBounds:intermediateBounds];
             [self setFrame:intermediateBounds];
-            
             [self setAlpha:0.9];
+            
+            //
+            //  Hide the label at this point
+            //  so it doesn't look funny as
+            //  we pop the dialog away
+            //
+            
+            [[self label] setAlpha:0];
             
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:1/15.0 animations:^{
@@ -356,7 +368,6 @@
                 [self setBounds:intermediateBounds];
                 [self setFrame:intermediateBounds];
                 
-                [self setAlpha:0];
             } completion:^(BOOL finished) {
                 [self removeFromSuperview];
                 [[self label] setText:nil];
@@ -369,6 +380,7 @@
                          animations:^{
                              [self setBounds:startingBounds];
                              [self setFrame:startingBounds];
+                            [[self label] setCenter:[self center]];                             
                          }
         completion:^(BOOL finished) {
             [self removeFromSuperview];
@@ -468,7 +480,9 @@
     //  Prepare our label...
     //
     
-    UILabel *label = [[UILabel alloc] initWithFrame:[self labelFrame]];
+    CGRect frame = [self labelFrame];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
     [label setCenter:[self center]];
     [label setFont:[self font]];
     [label setBackgroundColor:[UIColor clearColor]];
@@ -481,12 +495,22 @@
     [[self label] setText:text];
 }
 
-#pragma mark - Frame
+
+//
+//  Calculates a frame for the UILabel
+//  based on the frame of the dialog view
+//
 
 - (CGRect) labelFrame{
-    
     CGRect frame = [self finalFrame];
-    
+    return [self labelFrameFromWrapperFrame:frame];
+}
+
+//
+//
+//
+
+- (CGRect) labelFrameFromWrapperFrame:(CGRect) frame{
     frame.origin.y +=  [self verticalMarginHeight];
     frame.origin.x += [self horizontalMarginWidth];
     

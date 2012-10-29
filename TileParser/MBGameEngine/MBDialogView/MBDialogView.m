@@ -62,10 +62,17 @@
 
 - (void) showInView:(UIView *)view{
     [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle];
-    
+}
+
+- (void) showInView:(UIView *)view withAnimation:(id)animation{
+    [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle withAnimation:animation];
 }
 
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition{
+    [self showInView:view atVerticalPosition:verticalPosition andHorizontalPosition:horizontalPosition withAnimation:MBDialogViewAnimationNone];
+}
+
+- (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation{
     
     //
     //  Prep the rectangle...
@@ -116,7 +123,93 @@
     [self setBounds:bounds];
     [self setFrame:bounds];
     
+    //
+    //  Animation Support before addSubview...
+    //
+    
+    CGRect startingBounds = bounds;
+    
+    if(animation == MBDialogViewAnimationSlideDown){
+        
+        startingBounds.origin.y -= startingBounds.size.height;
+        [self setBounds:startingBounds];
+        [self setFrame:startingBounds];
+        
+    }
+    else if(animation == MBDialogViewAnimationSlideUp){
+        
+        startingBounds.origin.y = view.frame.size.height;
+        [self setBounds:startingBounds];
+        [self setFrame:startingBounds];
+        
+    }
+    else if(animation == MBDialogViewAnimationSlideLeft){
+        
+        startingBounds.origin.x = view.frame.size.width;
+        [self setBounds:startingBounds];
+        [self setFrame:startingBounds];
+        
+    }
+    else if(animation == MBDialogViewAnimationSlideRight){
+        
+        startingBounds.origin.x = -startingBounds.size.width;
+        [self setBounds:startingBounds];
+        [self setFrame:startingBounds];
+    }
+    else if (animation == MBDialogViewanimationFade) {
+        [self setAlpha:0];
+    }
+    else if (animation == MBDialogViewAnimationPop){
+        startingBounds.size.width = 0;
+        startingBounds.size.height = 0;
+        startingBounds.origin.x = bounds.size.width/2;
+        startingBounds.origin.y = bounds.size.height/2;
+        [self setAlpha:0];
+        [self setBounds:startingBounds];
+        [self setFrame:startingBounds];
+    }
+    
+    //
+    //  Add subview
+    //
+    
     [view addSubview:self];
+    
+    //
+    //  Animation support for after addSubview
+    //
+    
+    if(animation <= MBDialogViewAnimationSlideDown && animation <= MBDialogViewAnimationSlideRight){
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            [self setBounds:bounds];
+            [self setFrame:bounds];
+        }];
+    }
+    else if (animation == MBDialogViewanimationFade) {
+        [UIView animateWithDuration:0.3 animations:^{
+            [self setAlpha:1];
+        }];
+    }
+    else if (animation == MBDialogViewAnimationPop){
+        [UIView animateWithDuration:0.2 animations:^{
+            [self setAlpha:1];
+            
+            CGRect intermediateBounds = startingBounds;
+            
+            intermediateBounds.size.width += 10;
+            intermediateBounds.size.height += 10;
+            
+            [self setBounds:intermediateBounds];
+            [self setFrame:intermediateBounds];
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.1 animations:^{
+                [self setBounds:bounds];
+                [self setFrame:bounds];
+            }];
+        }];
+    }
     
     //
     //  Prepare our text...

@@ -214,7 +214,9 @@
     //
     
     [self setClipsToBounds:YES];
-    [self loadFirstText];
+    if(animation != MBDialogViewAnimationPop){
+        [self loadFirstText];
+    }
     [view addSubview:self];
     
     //
@@ -277,8 +279,9 @@
                     [self setFrame:intermediateBounds];
                     
                     [self setAlpha:1.0];
-                    
+
                     [UIView animateWithDuration:1/7.5 animations:^{
+                        [self loadFirstText];
                         [[self label] setAlpha:1.0];
                     }];
                 }];

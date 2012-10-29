@@ -9,7 +9,7 @@
 #import "MBGameBoyViewController.h"
 
 #define kJoystickDiameter 88 
-#define kJoystickMargin 40
+#define kJoystickMargin 25
 #define kButtonMargin 32
 
 @interface MBGameBoyViewController ()

@@ -57,11 +57,6 @@
     return self;
 }
 
-- (id) initWithText:(NSString *)text{
-    MBDialogTree *tree = [[MBDialogTree alloc] initWithMessage:text];
-    return [self initWithDialogTree:tree];
-}
-
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree{
     
     self = [self init];
@@ -71,6 +66,17 @@
     }
     
     return self;
+}
+
+- (id) initWithText:(NSString *)text{
+    MBDialogTree *tree = [[MBDialogTree alloc] initWithMessage:text];
+    return [self initWithDialogTree:tree];
+}
+
+
+- (id) initWithArrayOfText:(NSArray *)text{
+    MBDialogTree *tree = [[MBDialogTree alloc] initWithContentsOfArrayOfStrings:text];
+    return [self initWithDialogTree:tree];
 }
 
 #pragma mark - Show MBDialogView in a UIView
@@ -442,6 +448,8 @@
         
         [self setCacheOfCurrentNode:newDialog];
         [self setCacheIndex:0];
+    }else {
+        [self setCacheOfCurrentNode:nil];
     }
 }
 
@@ -464,11 +472,17 @@
         NSString *textToRender = [self nextStringFromCache];
         [self renderText:textToRender];
     }
-    else{
-        [self hideWithAnimation:[self animationType]];
-        [[self dialogTree] rewindToFirstNode];
-        
-        //  TODO: End action
+    else {
+        [self cacheText];
+        if ([self cacheOfCurrentNode]) {
+            [self cycleText];
+        }
+        else{
+            [self hideWithAnimation:[self animationType]];
+            [[self dialogTree] rewindToFirstNode];
+            
+            //  TODO: End action
+        }
     }
 }
 
@@ -484,14 +498,17 @@
     
     CGRect frame = [self labelFrame];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    [label setCenter:[self center]];
-    [label setFont:[self font]];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor blackColor]];
-    [label setNumberOfLines:0];
-    [label setLineBreakMode:NSLineBreakByClipping];
-    [self setLabel:label];
+    if(![self label]){
+        UILabel *label = [[UILabel alloc] initWithFrame:frame];
+        [label setCenter:[self center]];
+        [label setFont:[self font]];
+        [label setBackgroundColor:[UIColor clearColor]];
+        [label setTextColor:[UIColor blackColor]];
+        [label setNumberOfLines:0];
+        [label setLineBreakMode:NSLineBreakByClipping];
+        [self setLabel:label];
+    }
+    
     [self addSubview:[self label]];
     
     [[self label] setText:text];

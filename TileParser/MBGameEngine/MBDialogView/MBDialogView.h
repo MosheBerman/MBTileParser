@@ -41,7 +41,9 @@ enum MBDialogViewAnimation {
 @property (nonatomic, strong) UIFont *font;
 
 - (id) initWithText:(NSString *)text;
+- (id) initWithArrayOfText:(NSArray *)text;
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree;
+
 
 //  Calls showInView:atPosition: and passes in MBPositionTop
 - (void) showInView:(UIView *)view;

@@ -143,7 +143,7 @@
             [[self dialogView] cycleText];
         }else{
             MBDialogView *aDialogView = [self dialogView];
-            [aDialogView showInView:[self view] withAnimation:MBDialogViewAnimationSlideDown];
+            [aDialogView showInView:[self view] withAnimation:MBDialogViewAnimationPop];
         }
     }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
         

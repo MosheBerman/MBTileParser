@@ -10,7 +10,7 @@
 
 @implementation MBDialogTree
 
-- (id) initWithContentsOfArray:(NSArray *)array{
+- (id) initWithContentsOfArrayOfNodes:(NSArray *)array{
  
     self = [super init];
     
@@ -23,16 +23,25 @@
     return self;
 }
 
+- (id) initWithContentsOfArrayOfStrings:(NSArray *)array{
+    
+    MBDialogTreeNode *node = [[MBDialogTreeNode alloc] init];
+        
+    [node setDialog:array];
+        
+    return [self initWithContentsOfArrayOfNodes:@[node]];
+}
+
 - (id) initWithMessage:(NSString *)dialogText{
     
     MBDialogTreeNode *node = [[MBDialogTreeNode alloc] init];
     [node setDialog:@[dialogText]];
-    return [self initWithContentsOfArray:@[node]];
+    return [self initWithContentsOfArrayOfNodes:@[node]];
 }
 
 - (id) initWithContentsOfFile:(NSString *)path{
     NSArray *dialogNodes = [NSArray arrayWithContentsOfFile:path];
-    return [self initWithContentsOfArray:dialogNodes];
+    return [self initWithContentsOfArrayOfNodes:dialogNodes];
 }
 
 - (id) initWithContentsOfURL:(NSURL *)url{
@@ -40,7 +49,7 @@
     
     //  TODO: Process the nodes.
     
-    return [self initWithContentsOfArray:dialogNodes];
+    return [self initWithContentsOfArrayOfNodes:dialogNodes];
 }
 
 - (NSUInteger) currentNode{

@@ -17,12 +17,13 @@
 @property (nonatomic, strong) MBDialogTreeNode *activeNode;
 
 //  Designated initializer
-- (id) initWithContentsOfArray:(NSArray *)array;
+- (id) initWithContentsOfArrayOfNodes:(NSArray *)array;
 
 //Convenience initializers
 - (id) initWithMessage:(NSString *)dialogText;
 - (id) initWithContentsOfFile:(NSString *)path;
 - (id) initWithContentsOfURL:(NSURL *)url;
+- (id) initWithContentsOfArrayOfStrings:(NSArray *)array;   //  Converts an array of strings to a single node.
 
 // Accessing nodes
 

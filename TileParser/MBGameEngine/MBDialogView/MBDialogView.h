@@ -27,6 +27,8 @@ enum MBDialogViewPosition {
 @property (nonatomic, assign) CGFloat horizontalMarginWidth;
 @property (nonatomic, assign) CGFloat verticalMarginHeight;
 
+@property (nonatomic, strong) UIFont *font;
+
 - (id) initWithText:(NSString *)text;
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree;
 

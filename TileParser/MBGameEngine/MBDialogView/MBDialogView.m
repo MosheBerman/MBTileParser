@@ -8,9 +8,23 @@
 
 #import "MBDialogView.h"
 
+#import "NSString+MBDialogString.h"
+
 @interface MBDialogView ()
 
 @property (nonatomic, strong) MBDialogTree *dialogTree;
+
+//
+//  Keep our own text cache, independent of the
+//  MBDialogTree data structure, so that we can
+//  break up the text to fit, as necessary.
+//
+
+@property (nonatomic, strong) NSArray * cacheOfCurrentNode;
+@property (nonatomic) NSUInteger cacheIndex;
+
+- (BOOL)hasNextInCache;
+- (NSString *)nextStringFromCache;
 
 @end
 
@@ -105,12 +119,43 @@
     bounds.origin.x = left;
     bounds.origin.y = top;
     
-    [self setBounds:bounds];    
+    [self setBounds:bounds];
     [self setFrame:bounds];
     
     [view addSubview:self];
-
+    
+    //
+    //  Prepare our text...
+    //
+    
+    [self cacheText];
+    
+    //
+    //  Show the first substring that fits
+    //
+    
     [self cycleText];
+}
+
+//
+//  Take the dialog tree, grab the current node,
+//  then break it up so that we can see the entire
+//  message, one part at a time, without it being
+//  truncated by the UILabel.
+//
+
+
+- (void) cacheText{
+    MBDialogTreeNode *node = [[self dialogTree] activeNode];
+    
+    if ([node hasNext]) {
+        NSString *textToCache = [node nextStringToDisplay];
+        
+        NSArray *newDialog = [textToCache dialogArrayForFrame:[self labelFrame] andFont:[self font]];
+        
+        [self setCacheOfCurrentNode:newDialog];
+        [self setCacheIndex:0];
+    }
 }
 
 //
@@ -128,14 +173,17 @@
 
 - (void) cycleText{
     
-    MBDialogTreeNode *node = [[self dialogTree] activeNode];
-    
-    if ([node hasNext]) {
-        NSString *textToRender = [node nextStringToDisplay];
+    if ([self hasNextInCache]) {
+        NSString *textToRender = [self nextStringFromCache];
         [self renderText:textToRender];
-    }else{
+    }
+    else{
         [self removeFromSuperview];
         [[self dialogTree] rewindToFirstNode];
+        
+        //  TODO: End action
+        
+        [self cacheText];
     }
 }
 
@@ -145,14 +193,9 @@
 
 - (void) renderText:(NSString *)text{
     
-    CGRect frame = [self frame];
-    CGRect selfFrame = frame;
-    
-    frame.size.width -= _horizontalMarginWidth;
-    frame.size.height -= _verticalMarginHeight;
-    
-    frame.origin.x = selfFrame.size.width/2 - frame.size.width/2;
-    frame.origin.y = selfFrame.size.height/2 - frame.size.height/2;
+    //
+    //  Remove any previous labels from the view hierarchy
+    //
     
     for(id view in [self subviews]) {
         if([[view class] isSubclassOfClass:[UILabel class]]){
@@ -160,24 +203,60 @@
         }
     }
     
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    [label setFont:[UIFont systemFontOfSize:16]];
+    //
+    //  Prepare our label...
+    //
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:[self labelFrame]];
+    [label setCenter:[self center]];
+    [label setFont:[self font]];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextColor:[UIColor blackColor]];
     [label setNumberOfLines:0];
+    [label setLineBreakMode:NSLineBreakByClipping];
     [self addSubview:label];
     
     [label setText:text];
 }
 
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- 
- NSLog(@"%@", NSStringFromCGRect(rect));
- }
- */
+#pragma mark - Frame
+
+- (CGRect) labelFrame{
+    
+    CGRect frame = [self frame];
+    
+    frame.origin.y +=  [self verticalMarginHeight];
+    frame.origin.x += [self horizontalMarginWidth];
+    
+    frame.size.height -= [self verticalMarginHeight];
+    frame.size.width -= [self horizontalMarginWidth];
+    
+    return frame;
+}
+
+#pragma mark - Cycle Current Node
+
+//
+//  Check if our temporary dialog tree has more text,
+//  if not we check the actual dialog tree.
+//
+
+- (BOOL)hasNextInCache{
+    return [self cacheIndex] < [[self cacheOfCurrentNode] count];
+}
+
+//
+//  Load the next string out of the cache
+//
+
+- (NSString *)nextStringFromCache{
+
+    NSUInteger index = [self cacheIndex];
+    NSString *string = [self cacheOfCurrentNode][index];
+    index++;
+    [self setCacheIndex:index];
+    return string;
+}
+
+
 @end

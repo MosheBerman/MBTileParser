@@ -147,7 +147,7 @@
         }
     }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
         
-        if ([self dialogView]) {
+        if ([self isShowingDialog]) {
             [[self dialogView] cycleText];
         }
         

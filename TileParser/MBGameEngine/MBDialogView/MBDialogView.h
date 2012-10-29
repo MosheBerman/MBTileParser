@@ -23,6 +23,7 @@ enum MBDialogViewPosition {
 @interface MBDialogView : UIView
 
 @property (nonatomic, assign) CGFloat maxWidth;
+@property (nonatomic, assign) CGFloat maxHeight;
 @property (nonatomic, assign) CGFloat horizontalMarginWidth;
 @property (nonatomic, assign) CGFloat verticalMarginHeight;
 

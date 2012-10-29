@@ -175,7 +175,7 @@
         
         [self setBounds:startingBounds];
         [self setFrame:startingBounds];
-                    [[self label] setCenter:[self center]];
+        [[self label] setCenter:[self center]];
         
     }
     else if(animation == MBDialogViewAnimationSlideLeft){
@@ -213,6 +213,7 @@
     //  Add subview
     //
     
+    [self setClipsToBounds:YES];
     [self loadFirstText];
     [view addSubview:self];
     
@@ -225,6 +226,12 @@
         [UIView animateWithDuration:0.3 animations:^{
             [self setBounds:bounds];
             [self setFrame:bounds];
+            
+            //
+            //  We need to keep the label centered
+            //  throughout the animation.
+            //
+            
             [[self label] setCenter:[self center]];
         }];
     }
@@ -498,7 +505,7 @@
 
 //
 //  Calculates a frame for the UILabel
-//  based on the frame of the dialog view
+//  based on the frame of the dialog view.
 //
 
 - (CGRect) labelFrame{
@@ -507,7 +514,8 @@
 }
 
 //
-//
+//  Calculates a frame for the UILabel
+//  based on a given frame
 //
 
 - (CGRect) labelFrameFromWrapperFrame:(CGRect) frame{
@@ -518,6 +526,20 @@
     frame.size.width -= [self horizontalMarginWidth];
     
     return frame;
+}
+
+//
+//  Ensure that we have the correct center,
+//  even before animation, so that the label
+//  will be correctly positioned after running
+//  the MBDialogViewAnimationPop animation.
+//
+//
+
+- (CGPoint)center{
+ 
+    CGPoint centerValue = CGPointMake([self finalFrame].size.width/2+[self horizontalMarginWidth]/2, [self finalFrame].size.height/2 + [self verticalMarginHeight]/2);
+    return centerValue;
 }
 
 #pragma mark - Cycle Current Node

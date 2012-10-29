@@ -378,6 +378,8 @@
                 [self setBounds:intermediateBounds];
                 [self setFrame:intermediateBounds];
                 
+                [self setAlpha:0];
+                
             } completion:^(BOOL finished) {
                 [self removeFromSuperview];
                 [[self label] setText:nil];

@@ -34,9 +34,11 @@
     self = [super init];
     
     if (self) {
-        _maxWidth = 300;
+        _maxWidth = 460;
+        _maxHeight = 100;
         _horizontalMarginWidth = 20;
         _verticalMarginHeight = 5;
+        _font = [UIFont systemFontOfSize:16];
     }
     
     return self;

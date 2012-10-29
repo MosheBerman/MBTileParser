@@ -80,7 +80,7 @@
     
     CGRect bounds = parentBounds;
     
-    bounds.size.width = parentBounds.size.width - (_horizontalMarginWidth/2);
+    bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
     bounds.size.height = parentBounds.size.height/3.5;
     
     //

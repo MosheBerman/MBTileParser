@@ -10,6 +10,10 @@
 
 @interface NSString (MBDialogString)
 
-- (NSString *)reducedToFrame:(CGRect)frame withFont:(UIFont *)font inSize:(CGSize)size;
+//
+//  Returns an array of dialog string that fits in a given frame for a given font
+//
+
+- (NSArray *)dialogArrayForFrame:(CGRect)frame andFont:(UIFont*)font;
 
 @end

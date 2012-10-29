@@ -10,23 +10,52 @@
 
 @implementation NSString (MBDialogString)
 
-- (NSString *)reducedToFrame:(CGRect)frame withFont:(UIFont *)font inSize:(CGSize)size{
-     
-     if ([self sizeWithFont:font].width <= frame.size.width || [self length] == 1) {
-         return self;
-     }
-     NSMutableString *string = [NSMutableString string];
-     for (NSInteger i = 0; i < [self length]; i++) {
-         [string appendString:[self substringWithRange:NSMakeRange(i, 1)]];
-         
-         CGSize sizeThatFitsString = [string sizeWithFont:font constrainedToSize:size];
-         if (sizeThatFitsString.width > frame.size.width || sizeThatFitsString.height) {
-             [string deleteCharactersInRange:NSMakeRange(i, 1)];
-             break;
-         }
-     }
-     
-     return string;
- }
+//
+//  Calculates the substring that fits in a frame
+//
+
+- (NSString *) substringThatFitsFrame:(CGRect)frame withFont:(UIFont *)font{
+    
+    NSString *truncatedString = self;
+    
+    CGSize clippingSize = CGSizeMake(frame.size.width, CGFLOAT_MAX);
+    
+    CGSize size = [truncatedString sizeWithFont:font constrainedToSize:clippingSize lineBreakMode:NSLineBreakByClipping];
+
+    
+    NSMutableArray *components = [[truncatedString componentsSeparatedByString:@" "] mutableCopy];
+    
+    while (frame.size.width <= size.width || frame.size.height <= size.height) {
+
+        [components removeLastObject];
+        
+        truncatedString = [components componentsJoinedByString:@" "];
+        
+        size = [truncatedString sizeWithFont:font constrainedToSize:clippingSize lineBreakMode:NSLineBreakByClipping];
+        
+    }
+
+    return truncatedString;
+}
+
+//
+//  Returns an array of dialog string that fits in a given frame for a given font
+//
+
+- (NSArray *)dialogArrayForFrame:(CGRect)frame andFont:(UIFont*)font{
+    
+    NSMutableArray *newDialog = [@[] mutableCopy];
+    
+    NSMutableString *textToCache = [self mutableCopy];
+    
+    while (![textToCache isEqualToString:@""]) {
+        NSString *substringThatFits = [textToCache substringThatFitsFrame:frame withFont:font];
+        [newDialog addObject:substringThatFits];
+        textToCache = [[textToCache stringByReplacingOccurrencesOfString:substringThatFits withString:@""] mutableCopy];
+    }
+    
+    return newDialog;
+
+}
 
 @end

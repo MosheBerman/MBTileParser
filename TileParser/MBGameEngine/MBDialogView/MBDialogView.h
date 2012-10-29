@@ -20,6 +20,16 @@ enum MBDialogViewPosition {
     MBPositionRight,
     };
 
+enum MBDialogViewAnimation {
+    MBDialogViewAnimationNone = 0,
+    MBDialogViewAnimationSlideDown = 1,
+    MBDialogViewAnimationSlideUp,
+    MBDialogViewAnimationSlideLeft,
+    MBDialogViewAnimationSlideRight,
+    MBDialogViewAnimationPop,
+    MBDialogViewanimationFade,
+    };
+
 @interface MBDialogView : UIView
 
 @property (nonatomic, assign) CGFloat maxWidth;

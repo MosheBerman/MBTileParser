@@ -477,16 +477,6 @@
 - (void) renderText:(NSString *)text{
     
     //
-    //  Remove any previous labels from the view hierarchy
-    //
-    
-    for(id view in [self subviews]) {
-        if([[view class] isSubclassOfClass:[UILabel class]]){
-            [(UIView *)view removeFromSuperview];
-        }
-    }
-    
-    //
     //  Prepare our label...
     //
     
@@ -529,20 +519,6 @@
     frame.size.width -= [self horizontalMarginWidth];
     
     return frame;
-}
-
-//
-//  Ensure that we have the correct center,
-//  even before animation, so that the label
-//  will be correctly positioned after running
-//  the MBDialogViewAnimationPop animation.
-//
-//
-
-- (CGPoint)center{
- 
-    CGPoint centerValue = CGPointMake([self finalFrame].size.width/2+[self horizontalMarginWidth]/2, [self finalFrame].size.height/2 + [self verticalMarginHeight]/2);
-    return centerValue;
 }
 
 #pragma mark - Cycle Current Node

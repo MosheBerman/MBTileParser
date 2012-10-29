@@ -45,16 +45,8 @@
 }
 
 - (id) initWithText:(NSString *)text{
-    
-    self  = [self init];
-    
-    if (self) {
-        
-        _dialogTree = [[MBDialogTree alloc] initWithMessage:text];
-        
-    }
-    
-    return self;
+    MBDialogTree *tree = [[MBDialogTree alloc] initWithMessage:text];
+    return [self initWithDialogTree:tree];
 }
 
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree{

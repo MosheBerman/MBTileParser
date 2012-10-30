@@ -8,8 +8,10 @@
 
 #import "MBGameBoyViewController.h"
 
-#define kJoystickDiameter 88 
+#define kJoystickDiameter 125
 #define kJoystickMargin 25
+
+#define kButtonDiameter 44
 #define kButtonMargin 32
 
 @interface MBGameBoyViewController ()
@@ -113,11 +115,11 @@
     [joystick setThumbImage:[UIImage imageNamed:@"joystick"]];
 
     [[self view] addSubview:[self buttonA]];
-    [[self buttonA] setRadius:22];
+    [[self buttonA] setRadius:kButtonDiameter/2];
     [[self buttonA] setTitle:@"A" forState:UIControlStateNormal];
     
     [[self view] addSubview:[self buttonB]];
-    [[self buttonB] setRadius:22];
+    [[self buttonB] setRadius:kButtonDiameter/2];
     [[self buttonB] setTitle:@"B" forState:UIControlStateNormal];
     
     /*

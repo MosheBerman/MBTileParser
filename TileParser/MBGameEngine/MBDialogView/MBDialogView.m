@@ -31,7 +31,6 @@
 //
 
 @property (nonatomic, strong) UILabel *label;
-@property (nonatomic) CGRect finalFrame;
 
 //
 //  What kind of animation did we present with?
@@ -106,7 +105,7 @@
     //
     
     [[self layer] setCornerRadius:4.0];
-    [[self layer] setBackgroundColor:[[UIColor colorWithWhite:1.0 alpha:0.65] CGColor]];
+    [[self layer] setBackgroundColor:[[UIColor colorWithWhite:1.0 alpha:0.9] CGColor]];
     [[self layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
     [[self layer] setBorderWidth:1];
     
@@ -116,14 +115,6 @@
     
     bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
     bounds.size.height = parentBounds.size.height/3.5;
-    
-    //
-    //  Keep a reference to the final bounds so
-    //  we can size the label before actually displaying
-    //  the containing frame.
-    //
-    
-    [self setFinalFrame:bounds];
     
     //
     //  Calculate a position, depending on the value of position
@@ -509,6 +500,9 @@
         [self setLabel:label];
     }
     
+    [[self label] setFrame:frame];
+    [[self label] setBounds:frame];
+    
     [self addSubview:[self label]];
     
     [[self label] setText:text];
@@ -521,7 +515,7 @@
 //
 
 - (CGRect) labelFrame{
-    CGRect frame = [self finalFrame];
+    CGRect frame = [self bounds];
     return [self labelFrameFromWrapperFrame:frame];
 }
 
@@ -534,8 +528,8 @@
     frame.origin.y +=  [self verticalMarginHeight];
     frame.origin.x += [self horizontalMarginWidth];
     
-    frame.size.height -= [self verticalMarginHeight];
-    frame.size.width -= [self horizontalMarginWidth];
+    frame.size.height -= [self verticalMarginHeight]*2;
+    frame.size.width -= [self horizontalMarginWidth]*2;
     
     return frame;
 }

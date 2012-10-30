@@ -26,7 +26,7 @@
     NSMutableArray *components = [[truncatedString componentsSeparatedByString:@" "] mutableCopy];
     
     while (frame.size.width <= size.width || frame.size.height <= size.height) {
-
+        
         [components removeLastObject];
         
         truncatedString = [components componentsJoinedByString:@" "];
@@ -43,6 +43,11 @@
 //
 
 - (NSArray *)dialogArrayForFrame:(CGRect)frame andFont:(UIFont*)font{
+    
+    if (frame.size.height <= 0 || frame.size.width <= 0) {
+        NSLog(@"Zero or negative frame dimensions, returning. Frame is %@", NSStringFromCGRect(frame));
+        return nil;
+    }
     
     NSMutableArray *newDialog = [@[] mutableCopy];
     

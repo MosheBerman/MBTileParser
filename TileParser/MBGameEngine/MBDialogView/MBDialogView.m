@@ -101,7 +101,7 @@
     [self setAnimationType:animation];
     
     //
-    //  Prep the rectangle...
+    //  Prep the view...
     //
     
     [[self layer] setCornerRadius:4.0];
@@ -109,12 +109,22 @@
     [[self layer] setBorderColor:[[UIColor darkGrayColor] CGColor]];
     [[self layer] setBorderWidth:1];
     
+    //
+    //  Ensure the correct behavior occurs when resizing
+    //
+    
+    [self setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
+    
+    //
+    //  Calculate the size we want
+    //
+    
     CGRect parentBounds = [view bounds];
     
     CGRect bounds = parentBounds;
     
     bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
-    bounds.size.height = parentBounds.size.height/3.5;
+    bounds.size.height = MIN(parentBounds.size.height/3.5-(_verticalMarginHeight/2), [self maxHeight]);
     
     //
     //  Calculate a position, depending on the value of position
@@ -477,6 +487,8 @@
     }
 }
 
+#pragma mark - Rendering and Layout
+
 //
 //  Takes a given string and sticks it into a UILabel onscreen
 //
@@ -521,7 +533,7 @@
 
 //
 //  Calculates a frame for the UILabel
-//  based on a given frame
+//  based on a given frame.
 //
 
 - (CGRect) labelFrameFromWrapperFrame:(CGRect) frame{

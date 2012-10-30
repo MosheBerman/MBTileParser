@@ -45,7 +45,7 @@
 - (NSArray *)dialogArrayForFrame:(CGRect)frame andFont:(UIFont*)font{
     
     if (frame.size.height <= 0 || frame.size.width <= 0) {
-        NSLog(@"Zero or negative frame dimensions, returning. Frame is %@", NSStringFromCGRect(frame));
+//        NSLog(@"Zero or negative frame dimensions, returning. Frame is %@", NSStringFromCGRect(frame));
         return nil;
     }
     

@@ -25,7 +25,7 @@
 }
 
 - (BOOL) hasNext{
-    return _currentDialogIndex < [[self dialog] count];
+    return _currentDialogIndex < [[self dialog] count]-1;
 }
 
 - (NSString *)nextStringToDisplay {

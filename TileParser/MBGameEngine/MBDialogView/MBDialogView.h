@@ -13,6 +13,11 @@
 typedef NSUInteger MBDialogPosition;
 typedef NSUInteger MBDialogAnimation;
 
+//
+//  Used for positioning dialog
+//  and menu views.
+//
+
 enum MBDialogViewPosition {
     MBPositionTop = 0,
     MBPositionMiddle = 1,
@@ -20,6 +25,11 @@ enum MBDialogViewPosition {
     MBPositionLeft,
     MBPositionRight,
     };
+
+//
+//  Used to hide/show dialog and
+//  menu views.
+//
 
 enum MBDialogViewAnimation {
     MBDialogViewAnimationNone = 0,

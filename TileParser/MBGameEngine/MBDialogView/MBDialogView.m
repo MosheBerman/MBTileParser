@@ -479,10 +479,34 @@
             [self cycleText];
         }
         else{
-            [self hideWithAnimation:[self animationType]];
-            [[self dialogTree] rewindToFirstNode];
             
-            //  TODO: End action
+            //
+            //  Store the end action
+            //
+            
+            SEL endAction = [[[self dialogTree] activeNode] endAction];
+    
+            //
+            //  If there's no next node, we want to hide.
+            //
+            
+            if([[self dialogTree] rewindAndProceedToNextNode]){
+                [self hideWithAnimation:[self animationType]];
+            }else{
+                
+                //
+                //  Cache the new text
+                //
+                
+                [self cacheText];
+            }
+            
+            //
+            //  Perform the end action
+            //
+            
+            [[UIApplication sharedApplication] sendAction:endAction to:nil from:nil forEvent:nil];
+            
         }
     }
 }

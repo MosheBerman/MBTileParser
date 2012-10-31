@@ -60,7 +60,7 @@
     if (![self activeNode] || ![[self nodes] count]) {
         return NO;
     }
-    return [self currentNode] < [[self nodes] count];
+    return [self currentNode] < [[self nodes] count]-1;
 }
 
 - (MBDialogTreeNode *)nextNode{

@@ -14,12 +14,6 @@
 @interface MBDialogTreeNode : NSObject
 
 //
-//  The delegate who will execute the endAction if necessary.
-//
-
-//@property (nonatomic, assign) id<MBDialogTreeDelegate> delegate;
-
-//
 //  An array of NSStrings. The strings are displayed by the MBDialogView
 //  class. Each string is broken up to fit in the MBDialogView. You can
 //  force a break by seperating strings into different items in the array.

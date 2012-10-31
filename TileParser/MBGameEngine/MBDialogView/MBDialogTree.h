@@ -30,6 +30,16 @@
 - (BOOL) hasNext;
 - (MBDialogTreeNode *)nextNode;
 
+//
+//  Rewind the current node. Then, if we
+//  have a nextNode, proceed to the next node
+//  and return YES.
+//
+//  Returns NO and rewinds to the first node
+//  if there's no next node.
+//
+
+- (BOOL) rewindAndProceedToNextNode;
 - (void) rewindToFirstNode;
 
 @end

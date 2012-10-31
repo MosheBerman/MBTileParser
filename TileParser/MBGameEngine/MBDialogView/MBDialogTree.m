@@ -75,6 +75,27 @@
     return newNext;
 }
 
+//
+//  Rewind the current node. Then, if we
+//  have a nextNode, proceed to the next node
+//  and return YES.
+//
+//  Returns NO and rewinds to the first node
+//  if there's no next node.
+//
+
+- (BOOL) rewindAndProceedToNextNode{
+    if (![self hasNext]) {
+        [self rewindToFirstNode];
+        return NO;
+    }
+    
+    [[self activeNode] rewind];
+    [self setActiveNode:[self nextNode]];
+    
+    return YES;
+}
+
 - (void) rewindToFirstNode{
     [self setActiveNode:[self firstNode]];
     

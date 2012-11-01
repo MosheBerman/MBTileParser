@@ -111,4 +111,11 @@ enum MBDialogDimensions {
 
 - (void) cycleText;
 
+//
+//  Calculates a frame for the dialog's content
+//  area based on the frame of the dialog view.
+//
+
+- (CGRect) labelFrame;
+
 @end

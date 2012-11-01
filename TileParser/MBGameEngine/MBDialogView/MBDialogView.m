@@ -531,8 +531,7 @@
 - (void) cycleText{
     
     if ([self hasNextInCache]) {
-        NSString *textToRender = [self nextStringFromCache];
-        [self renderText:textToRender];
+        [self render];
     }
     else {
         [self cacheText];
@@ -579,6 +578,19 @@
 }
 
 #pragma mark - Rendering and Layout
+
+//
+//  Renders the dialog view.
+//  In this class, we pull out some text to
+//  render and pass it to the renderText: method.
+//  In other classes, such as the menu, we may
+//  want to render several labels instead.
+//
+
+- (void) render{
+    NSString *textToRender = [self nextStringFromCache];
+    [self renderText:textToRender];
+}
 
 //
 //  Takes a given string and sticks it into a UILabel onscreen.

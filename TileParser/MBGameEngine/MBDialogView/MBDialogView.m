@@ -527,6 +527,7 @@
 //  Pull out the node we want.
 //
 
+
 - (void) cycleText{
     
     if ([self hasNextInCache]) {
@@ -612,8 +613,9 @@
 
 
 //
-//  Calculates a frame for the UILabel
-//  based on the frame of the dialog view.
+//  Calculates a frame for the dialog's
+//  content area based on the frame of
+//  the dialog view.
 //
 
 - (CGRect) labelFrame{

@@ -133,10 +133,37 @@
     [[self layer] setBorderWidth:1];
     
     //
-    //  Ensure the correct behavior occurs when resizing
+    //  Ensure the correct behavior occurs when rotating the device.
+    //  To do so, pick out the correct autoresizing masks.
     //
     
-    [self setAutoresizingMask:UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin];
+    NSUInteger resizingMask = UIViewAutoresizingNone;
+    
+    //  Configure the vertical resizing mask
+    
+    if (verticalPosition == MBPositionMiddle) {
+        resizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    }
+    else if(verticalPosition == MBPositionTop){
+        resizingMask = UIViewAutoresizingFlexibleBottomMargin;
+    }
+    else if(verticalPosition == MBPositionBottom){
+        resizingMask = UIViewAutoresizingFlexibleTopMargin;
+    }
+    
+    //  Configure the horizontal resizing mask
+    
+    if (horizontalPosition == MBPositionMiddle) {
+        resizingMask += UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+    }
+    else if(horizontalPosition == MBPositionLeft){
+        resizingMask += UIViewAutoresizingFlexibleRightMargin;
+    }
+    else if(horizontalPosition == MBPositionRight){
+        resizingMask += UIViewAutoresizingFlexibleRightMargin;
+    }
+    
+    [self setAutoresizingMask:resizingMask];
     
     //
     //  Calculate the size we want

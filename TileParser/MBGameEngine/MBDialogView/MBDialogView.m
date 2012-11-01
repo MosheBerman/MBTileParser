@@ -81,17 +81,39 @@
 
 #pragma mark - Show MBDialogView in a UIView
 
+//
+//  Calls showInView:withAnimation: passing
+//  in a value of MBDialogViewAnimationNone.
+//
+
 - (void) showInView:(UIView *)view{
-    [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle];
+    [self showInView:view withAnimation:MBDialogViewAnimationNone];
 }
+
+//
+//  Calls showInView:atVerticalPosition:andHorizontalPosition:
+//  passing in MBPositionTop and MBPositionMiddle respectively.
+//  The animation value is passed through, naturally.
+//
 
 - (void) showInView:(UIView *)view withAnimation:(MBDialogAnimation)animation{
     [self showInView:view atVerticalPosition:MBPositionTop andHorizontalPosition:MBPositionMiddle withAnimation:animation];
 }
 
+//
+//  Calls the designated presentation method with
+//  an animation type of MBDialogViewAnimationNone.
+//
+
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition{
     [self showInView:view atVerticalPosition:verticalPosition andHorizontalPosition:horizontalPosition withAnimation:MBDialogViewAnimationNone];
 }
+
+//
+//  The "designated" presentation method.
+//  All showInView: related calls ultimately call this method.
+//
+//
 
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation{
     

@@ -70,11 +70,40 @@ enum MBDialogDimensions {
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree;
 
 
-//  Calls showInView:atPosition: and passes in MBPositionTop
+//
+//  Calls showInView:withAnimation: passing
+//  in a value of MBDialogViewAnimationNone.
+//
+
 - (void) showInView:(UIView *)view;
+
+//
+//  Calls showInView:atVerticalPosition:andHorizontalPosition:
+//  passing in MBPositionTop and MBPositionMiddle respectively.
+//  The animation value is passed through, naturally.
+//
+
 - (void) showInView:(UIView *)view withAnimation:(MBDialogAnimation)animation;
+
+//
+//  Calls the designated presentation method with
+//  an animation type of MBDialogViewAnimationNone.
+//
+
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition;
+
+//
+//  The "designated" presentation method.
+//  All showInView: related calls ultimately call this method.
+//  It calculates the correct dimensions for the dialog view,
+//  styles it up, and shows it.
+//
+
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation;
+
+//
+//
+//
 
 - (void) cycleText;
 

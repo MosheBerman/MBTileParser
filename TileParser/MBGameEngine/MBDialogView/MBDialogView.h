@@ -118,4 +118,14 @@ enum MBDialogDimensions {
 
 - (CGRect) labelFrame;
 
+//
+//  Renders the dialog view.
+//  In this class, we pull out some text to
+//  render and pass it to the renderText: method.
+//  In other classes, such as the menu, we may
+//  want to render several labels instead.
+//
+
+- (void) render;
+
 @end

@@ -160,7 +160,7 @@
         resizingMask += UIViewAutoresizingFlexibleRightMargin;
     }
     else if(horizontalPosition == MBPositionRight){
-        resizingMask += UIViewAutoresizingFlexibleRightMargin;
+        resizingMask += UIViewAutoresizingFlexibleLeftMargin;
     }
     
     [self setAutoresizingMask:resizingMask];
@@ -256,7 +256,7 @@
     }
     else if(animation == MBDialogViewAnimationSlideRight){
         
-        startingBounds.origin.x = startingBounds.size.width;
+        startingBounds.origin.x = view.frame.size.width;
         startingBounds.origin.y = bounds.origin.y;
         
         [self setBounds:startingBounds];
@@ -282,8 +282,9 @@
     
     [self setClipsToBounds:YES];
     if(animation != MBDialogViewAnimationPop){
-        [self loadFirstText];
+        [self render];
     }
+    
     [view addSubview:self];
     
     //
@@ -348,7 +349,7 @@
                     [self setAlpha:1.0];
                     
                     [UIView animateWithDuration:1/7.5 animations:^{
-                        [self loadFirstText];
+                        [self render];
                         [[self label] setAlpha:1.0];
                     }];
                 }];
@@ -474,8 +475,16 @@
 //
 //  Cache the text and show the first part of it.
 //
+//  Dialog caching only works in the base class.
+//  Subclasses of the dialog class do not
+//  support caching.
+//
 
-- (void) loadFirstText{
+- (void) prepareCache{
+    
+    if (![self isMemberOfClass:[MBDialogView class]]) {
+        return;
+    }
     
     //
     //  Prepare our text...
@@ -505,9 +514,12 @@
     if ([node hasNext]) {
         NSString *textToCache = [node nextStringToDisplay];
         
-        NSArray *newDialog = [textToCache dialogArrayForFrame:[self labelFrame] andFont:[self font]];
+        //  Only cache if we actually want to cache stuff.
+        if(textToCache != nil){
+            NSArray *newDialog = [textToCache dialogArrayForFrame:[self labelFrame] andFont:[self font]];
+            [self setCacheOfCurrentNode:newDialog];
+        }
         
-        [self setCacheOfCurrentNode:newDialog];
         [self setCacheIndex:0];
     }else {
         [self setCacheOfCurrentNode:nil];
@@ -531,50 +543,40 @@
 - (void) cycleText{
     
     if ([self hasNextInCache]) {
-        [self render];
+        NSString *textToRender = [self nextStringFromCache];
+        [self renderText:textToRender];
     }
     else {
-        [self cacheText];
-        if ([self cacheOfCurrentNode]) {
-            [self cycleText];
-        }
-        else{
+        
+        //
+        //  Store the end action
+        //
+        
+        SEL endAction = [[[self dialogTree] activeNode] endAction];
+        
+        //
+        //  Hide the dialog tree
+        //
+        
+        [self hideWithAnimation:[self animationType]];
+
+        //
+        //  Rewind and proceed to the next node.
+        //
+        
+        [[[self dialogTree] activeNode] rewind];
+        
+        //
+        //  Perform the end action if there is one.
+        //
+        
+        if(endAction){
             
-            //
-            //  Store the end action
-            //
+            [[UIApplication sharedApplication] sendAction:endAction to:nil from:self forEvent:nil];
             
-            SEL endAction = [[[self dialogTree] activeNode] endAction];
-            
-            //
-            //  If there's no next node, we want to hide.
-            //
-            
-            if(![[self dialogTree] rewindAndProceedToNextNode]){
-                [self hideWithAnimation:[self animationType]];
-            }else{
-                
-                //
-                //  Perform the end action if there is one.
-                //
-                
-                if(endAction){
-                    
-                    [[UIApplication sharedApplication] sendAction:endAction to:nil from:self forEvent:nil];
-                    
-                }else{
-                    
-                    //
-                    //  Otherwise, cache the new text and show it.
-                    //
-                    
-                    [self cacheText];
-                    [self cycleText];
-                    
-                }
-            }
         }
     }
+    
 }
 
 #pragma mark - Rendering and Layout
@@ -588,8 +590,13 @@
 //
 
 - (void) render{
-    NSString *textToRender = [self nextStringFromCache];
-    [self renderText:textToRender];
+
+    if (![self hasNextInCache]) {
+        [self cacheText];
+    }
+    
+    [self cycleText];
+
 }
 
 //
@@ -666,11 +673,12 @@
 //
 
 - (NSString *)nextStringFromCache{
-    
     NSUInteger index = [self cacheIndex];
     NSString *string = [self cacheOfCurrentNode][index];
-    index++;
-    [self setCacheIndex:index];
+    if ([self hasNextInCache]) {
+        index++;
+        [self setCacheIndex:index];
+    }
     return string;
 }
 

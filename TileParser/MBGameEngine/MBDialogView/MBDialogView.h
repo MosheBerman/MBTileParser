@@ -101,6 +101,13 @@ enum MBDialogDimensions {
 
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation;
 
+
+//
+//  Hides the dialog view with a given animation.
+//
+
+- (void) hideWithAnimation:(MBDialogAnimation)animation;
+
 //
 //  Cycles through the current dialog item's text.
 //  If it hits the end of the dialog, then either

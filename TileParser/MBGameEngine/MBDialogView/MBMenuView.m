@@ -91,6 +91,10 @@
         
         UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
         
+        NSString *title = [[self nodes][i] name];
+
+        [label setText:title];
+        
         [[self scrollView] addSubview:label];
     }
     

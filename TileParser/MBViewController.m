@@ -18,6 +18,7 @@
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
 @property (nonatomic, strong) MBDialogView *dialogView;
+@property (nonatomic, strong) MBMenuView *menuView;
 
 @end
 
@@ -187,9 +188,9 @@
     }
     
     
-    //  Freeze movement during dialog.
+    //  Freeze movement during dialog & menu.
     
-    if ([self isShowingDialog]) {
+    if ([self isShowingDialog] || [self isShowingMenu]) {
         return NO;
     }
     
@@ -232,7 +233,7 @@
 //
 
 - (BOOL)spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction{
-    return ![self isShowingDialog];
+    return ![self isShowingDialog] && ![self isShowingMenu];
 }
 
 - (void)sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates{
@@ -260,34 +261,50 @@
     //  Prepare the dialog nodes
     //
     
-    NSArray *dialog = @[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss.", @"In this build, you can walk around, but you can't talk to anyone just yet. If you want to see another character, there's a guy holding a fish hanging out at the top left of the map. The new stuff is pretty much the dialog changes. You might have noticed that the dialog box has this nice animation going on. the dialog view can slide in and out in any of 4 directions, fade, or pop. It also automatically handles text that's too long for it to show at once.", @"Up next: Map connections and dialog actions. This way, the game becomes more interesting."];
+    NSArray *aboutDialog = @[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss."];
     
-    SEL endAction = NSSelectorFromString(@"showAlert");
+    SEL aboutEndAction = NSSelectorFromString(@"showMenu");
+    
+    NSArray *cancelDialog = nil;
+    SEL cancelAction = NSSelectorFromString(@"hideMenu");
     
     //
     //  Create and set up the nodes.
     //
     
-    MBDialogTreeNode *node = [[MBDialogTreeNode alloc] init];
+    MBDialogTreeNode *aboutNode = [[MBDialogTreeNode alloc] init];
     
-    [node setDialog:dialog];
-    [node setEndAction:endAction];
+    [aboutNode setDialog:aboutDialog];
+    [aboutNode setEndAction:aboutEndAction];
+    [aboutNode setDisplayName:@"About"];
+    
+    MBDialogTreeNode *cancelNode = [[MBDialogTreeNode alloc] init];
+    [cancelNode setEndAction:cancelAction];
+    [cancelNode setDisplayName:@"Cancel"];
+    [cancelNode setDialog:nil];
     
     //
     //  Create and return the tree
     //
     
-    MBDialogTree *tree = [[MBDialogTree alloc] initWithContentsOfArrayOfNodes:@[node]];
+    MBDialogTree *tree = [[MBDialogTree alloc] initWithContentsOfArrayOfNodes:@[aboutNode, cancelNode]];
     
     return tree;
 }
 
-#pragma mark - Dialog Detection
+#pragma mark - Dialog/Menu Detection
 
 - (BOOL) isShowingDialog{
     
     UIView *dialogView = [self dialogView];
     BOOL isShowing = [[[self view] subviews] containsObject:dialogView];
+    return isShowing;
+}
+
+
+- (BOOL) isShowingMenu{
+    UIView *menuView = [self menuView];
+    BOOL isShowing = [[[self view] subviews] containsObject:menuView];
     return isShowing;
 }
 
@@ -300,9 +317,18 @@
     
 }
 
-- (void) showNextDialog{
+- (void) showMenu{
     
     
+    if(![self menuView]){
+        MBMenuView *menu = [[MBMenuView alloc] initWithDialogTree:[self dialogTreeWithIdentifier:0]];
+        [self setMenuView:menu];
+    }
     
+    if (![self isShowingMenu]) {
+        [[self menuView] showInView:[self view]];
+    }
+
 }
+
 @end

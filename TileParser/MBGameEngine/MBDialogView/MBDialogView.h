@@ -102,7 +102,11 @@ enum MBDialogDimensions {
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation;
 
 //
-//
+//  Cycles through the current dialog item's text.
+//  If it hits the end of the dialog, then either
+//  queue up the next one, display a menu, or perform
+//  some selector via the UIApplication method
+//  sendAction:to:from:forEvent:
 //
 
 - (void) cycleText;

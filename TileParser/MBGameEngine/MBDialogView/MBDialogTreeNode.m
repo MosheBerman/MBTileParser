@@ -19,16 +19,20 @@
     
     if (self) {
         _currentDialogIndex = 0;
+        _dialog = nil;
     }
     
     return self;
 }
 
 - (BOOL) hasNext{
-    return _currentDialogIndex < [[self dialog] count]-1;
+    return _currentDialogIndex < [[self dialog] count];
 }
 
 - (NSString *)nextStringToDisplay {
+    if (![self hasNext]) {
+        return nil;
+    }
     NSString *next = [self dialog][_currentDialogIndex];
     _currentDialogIndex++;
     return next;

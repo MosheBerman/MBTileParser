@@ -51,6 +51,7 @@
         _horizontalMarginWidth = 20;
         _verticalMarginHeight = 5;
         _font = [UIFont systemFontOfSize:16];
+        _dimensionStyle = MBDialogDimensionsWide;
     }
     
     return self;
@@ -123,8 +124,18 @@
     
     CGRect bounds = parentBounds;
     
-    bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
-    bounds.size.height = MIN(parentBounds.size.height/3.5-(_verticalMarginHeight/2), [self maxHeight]);
+    if ([self dimensionStyle] == MBDialogDimensionsWide) {
+        bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
+        bounds.size.height = MIN(parentBounds.size.height/3.5-(_verticalMarginHeight/2), [self maxHeight]);
+    }
+    else if([self dimensionStyle] == MBDialogDimensionsNarrowShort){
+        bounds.size.width = MIN(parentBounds.size.width/3.5 - (_horizontalMarginWidth/2), [self maxWidth]);
+        bounds.size.height = MIN(parentBounds.size.height/2-(_verticalMarginHeight/2), [self maxHeight]);
+    }
+    else if([self dimensionStyle] == MBDialogDimensionsNarrowTall){
+        bounds.size.width = MIN(parentBounds.size.width/3.5 - (_horizontalMarginWidth/2), [self maxWidth]);
+        bounds.size.height = MIN(parentBounds.size.height-(_verticalMarginHeight/2), [self maxHeight]);
+    }
     
     //
     //  Calculate a position, depending on the value of position
@@ -251,7 +262,7 @@
         }];
     }
     else if (animation == MBDialogViewAnimationPop){
-
+        
         [self setAlpha:0.6];
         
         [UIView animateWithDuration:0.2 animations:^{
@@ -286,7 +297,7 @@
                     [self setFrame:intermediateBounds];
                     
                     [self setAlpha:1.0];
-
+                    
                     [UIView animateWithDuration:1/7.5 animations:^{
                         [self loadFirstText];
                         [[self label] setAlpha:1.0];
@@ -376,21 +387,21 @@
                 
             } completion:^(BOOL finished) {
                 
-            [UIView animateWithDuration:1/15.0 animations:^{
-                CGRect intermediateBounds = startingBounds;
-                
-                intermediateBounds.size.width = 0;
-                intermediateBounds.size.height = 0;
-                
-                [self setBounds:intermediateBounds];
-                [self setFrame:intermediateBounds];
-                
-                [self setAlpha:0];
-                
-            } completion:^(BOOL finished) {
-                [self removeFromSuperview];
-                [[self label] setText:nil];
-            }];
+                [UIView animateWithDuration:1/15.0 animations:^{
+                    CGRect intermediateBounds = startingBounds;
+                    
+                    intermediateBounds.size.width = 0;
+                    intermediateBounds.size.height = 0;
+                    
+                    [self setBounds:intermediateBounds];
+                    [self setFrame:intermediateBounds];
+                    
+                    [self setAlpha:0];
+                    
+                } completion:^(BOOL finished) {
+                    [self removeFromSuperview];
+                    [[self label] setText:nil];
+                }];
             }];
         }];
     }
@@ -399,12 +410,12 @@
                          animations:^{
                              [self setBounds:startingBounds];
                              [self setFrame:startingBounds];
-                            [[self label] setCenter:[self center]];                             
+                             [[self label] setCenter:[self center]];
                          }
-        completion:^(BOOL finished) {
-            [self removeFromSuperview];
-            [[self label] setText:nil];
-        }];
+                         completion:^(BOOL finished) {
+                             [self removeFromSuperview];
+                             [[self label] setText:nil];
+                         }];
     }
     
 }
@@ -485,28 +496,34 @@
             //
             
             SEL endAction = [[[self dialogTree] activeNode] endAction];
-    
+            
             //
             //  If there's no next node, we want to hide.
             //
             
-            if([[self dialogTree] rewindAndProceedToNextNode]){
+            if(![[self dialogTree] rewindAndProceedToNextNode]){
                 [self hideWithAnimation:[self animationType]];
             }else{
                 
                 //
-                //  Cache the new text
+                //  Perform the end action if there is one.
                 //
                 
-                [self cacheText];
+                if(endAction){
+                    
+                    [[UIApplication sharedApplication] sendAction:endAction to:nil from:self forEvent:nil];
+                    
+                }else{
+                    
+                    //
+                    //  Otherwise, cache the new text and show it.
+                    //
+                    
+                    [self cacheText];
+                    [self cycleText];
+                    
+                }
             }
-            
-            //
-            //  Perform the end action
-            //
-            
-            [[UIApplication sharedApplication] sendAction:endAction to:nil from:nil forEvent:nil];
-            
         }
     }
 }
@@ -514,7 +531,7 @@
 #pragma mark - Rendering and Layout
 
 //
-//  Takes a given string and sticks it into a UILabel onscreen
+//  Takes a given string and sticks it into a UILabel onscreen.
 //
 
 - (void) renderText:(NSString *)text{
@@ -586,7 +603,7 @@
 //
 
 - (NSString *)nextStringFromCache{
-
+    
     NSUInteger index = [self cacheIndex];
     NSString *string = [self cacheOfCurrentNode][index];
     index++;

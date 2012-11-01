@@ -77,13 +77,15 @@
     
     [self renderCarat];
 
-    const float margin = 22;
-    
     //
     //  Render out the labels
     //
     
-    for (NSUInteger i = 0; i < [[self nodes] count]; i++) {
+    const float margin = 22;
+    
+    NSUInteger numberOfNodes = [[self nodes] count];
+    
+    for (NSUInteger i = 0; i < numberOfNodes; i++) {
     
         CGRect labelFrame = CGRectMake(margin, margin/2, [[self scrollView] frame].size.width-margin*2, margin);
         
@@ -92,7 +94,7 @@
         [[self scrollView] addSubview:label];
     }
     
-    CGSize size = CGSizeMake([self scrollView].frame.size.width, i * margin * 2);
+    CGSize size = CGSizeMake([self scrollView].frame.size.width, numberOfNodes * margin * 2);
     [[self scrollView] setContentSize:size];
     
 }

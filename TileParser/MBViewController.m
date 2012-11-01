@@ -135,7 +135,8 @@
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
         
         if(![self dialogView]){
-            MBDialogView *dialogView = [[MBDialogView alloc] initWithArrayOfText:@[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss.", @"In this build, you can walk around, but you can't talk to anyone just yet. If you want to see another character, there's a guy holding a fish hanging out at the top left of the map. The new stuff is pretty much the dialog changes. You might have noticed that the dialog box has this nice animation going on. the dialog view can slide in and out in any of 4 directions, fade, or pop. It also automatically handles text that's too long for it to show at once.", @"Up next: Map connections and dialog actions. This way, the game becomes more interesting."]];
+            MBDialogTree *tree = [self dialogTreeWithIdentifier:0];
+            MBDialogView *dialogView = [[MBDialogView alloc] initWithDialogTree:tree];
             [self setDialogView:dialogView];
         }
         
@@ -247,8 +248,39 @@
 
 
 
-#pragma mark - Dialog Delegate
+#pragma mark - Dialog Tree Setup
 
+//
+//  This method loads up a dialog tree for a supplied identifier
+//
+
+- (MBDialogTree *) dialogTreeWithIdentifier:(NSUInteger)identifier{
+    
+    //
+    //  Prepare the dialog nodes
+    //
+    
+    NSArray *dialog = @[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss.", @"In this build, you can walk around, but you can't talk to anyone just yet. If you want to see another character, there's a guy holding a fish hanging out at the top left of the map. The new stuff is pretty much the dialog changes. You might have noticed that the dialog box has this nice animation going on. the dialog view can slide in and out in any of 4 directions, fade, or pop. It also automatically handles text that's too long for it to show at once.", @"Up next: Map connections and dialog actions. This way, the game becomes more interesting."];
+    
+    SEL endAction = NSSelectorFromString(@"showAlert");
+    
+    //
+    //  Create and set up the nodes.
+    //
+    
+    MBDialogTreeNode *node = [[MBDialogTreeNode alloc] init];
+    
+    [node setDialog:dialog];
+    [node setEndAction:endAction];
+    
+    //
+    //  Create and return the tree
+    //
+    
+    MBDialogTree *tree = [[MBDialogTree alloc] initWithContentsOfArrayOfNodes:@[node]];
+    
+    return tree;
+}
 
 #pragma mark - Dialog Detection
 
@@ -257,5 +289,20 @@
     UIView *dialogView = [self dialogView];
     BOOL isShowing = [[[self view] subviews] containsObject:dialogView];
     return isShowing;
+}
+
+#pragma mark - Actions 
+
+- (void) showAlert{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+    
+}
+
+- (void) showNextDialog{
+    
+    
+    
 }
 @end

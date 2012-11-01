@@ -17,6 +17,8 @@
 
 #import "MBMapViewController.h"
 
+#import "MBMenuView.h"
+
 #import "MBMovableSpriteView.h"
 
 #import "MBSelfMovingSpriteView.h"

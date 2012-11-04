@@ -77,9 +77,14 @@
 		4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09D160F02F5003BA9B9 /* zack@2x.tps */; };
 		4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09E160F02F5003BA9B9 /* zack.plist */; };
 		4669E0C3160F02F5003BA9B9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09F160F02F5003BA9B9 /* zack.png */; };
+		4670F5FA162DCA1400660FC9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4670F5F9162DCA1400660FC9 /* AVFoundation.framework */; };
+		46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46745CC91642FDFB007F59B2 /* MBAnimatableView.m */; };
 		469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754916019E5D00912D26 /* Default-568h@2x.png */; };
 		469B754D16019EC700912D26 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754B16019EC700912D26 /* Default.png */; };
 		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
+		46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A000281642CB4800EBC2EE /* MBDialogViewController.m */; };
+		46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */; };
+		46DCB5CA16420A4800A60331 /* MBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DCB5C916420A4800A60331 /* MBMenuView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -185,9 +190,18 @@
 		4669E09E160F02F5003BA9B9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
 		4669E09F160F02F5003BA9B9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 		4669E0D2160F0A8F003BA9B9 /* MBMapMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMapMetadata.h; sourceTree = "<group>"; };
+		4670F5F9162DCA1400660FC9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		46745CC81642FDFB007F59B2 /* MBAnimatableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAnimatableView.h; sourceTree = "<group>"; };
+		46745CC91642FDFB007F59B2 /* MBAnimatableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAnimatableView.m; sourceTree = "<group>"; };
 		469B754916019E5D00912D26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		469B754B16019EC700912D26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		469B754C16019EC700912D26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		46A000271642CB4800EBC2EE /* MBDialogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogViewController.h; sourceTree = "<group>"; };
+		46A000281642CB4800EBC2EE /* MBDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogViewController.m; sourceTree = "<group>"; };
+		46A0002B1642D76800EBC2EE /* UIApplication+MBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+MBDialog.h"; sourceTree = "<group>"; };
+		46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+MBDialog.m"; sourceTree = "<group>"; };
+		46DCB5C816420A4800A60331 /* MBMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMenuView.h; sourceTree = "<group>"; };
+		46DCB5C916420A4800A60331 /* MBMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMenuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4670F5FA162DCA1400660FC9 /* AVFoundation.framework in Frameworks */,
 				462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */,
 				462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */,
 				462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */,
@@ -229,6 +244,7 @@
 		462AABFC15B3EDD30058E14C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4670F5F9162DCA1400660FC9 /* AVFoundation.framework */,
 				462AABFD15B3EDD30058E14C /* UIKit.framework */,
 				462AABFF15B3EDD30058E14C /* Foundation.framework */,
 				462AAC0115B3EDD30058E14C /* CoreGraphics.framework */,
@@ -260,6 +276,19 @@
 			);
 			name = "Supporting Files";
 			path = TileParser;
+			sourceTree = "<group>";
+		};
+		463FC88716464267007D203C /* Additional dialog */ = {
+			isa = PBXGroup;
+			children = (
+				46A000271642CB4800EBC2EE /* MBDialogViewController.h */,
+				46A000281642CB4800EBC2EE /* MBDialogViewController.m */,
+				46745CC81642FDFB007F59B2 /* MBAnimatableView.h */,
+				46745CC91642FDFB007F59B2 /* MBAnimatableView.m */,
+				46DCB5C816420A4800A60331 /* MBMenuView.h */,
+				46DCB5C916420A4800A60331 /* MBMenuView.m */,
+			);
+			name = "Additional dialog";
 			sourceTree = "<group>";
 		};
 		46669B0B160F99A300CD1197 /* Base Classes */ = {
@@ -294,6 +323,7 @@
 			children = (
 				4669E021160F02CE003BA9B9 /* Categories */,
 				4669E024160F02CE003BA9B9 /* Dialog */,
+				463FC88716464267007D203C /* Additional dialog */,
 				4669E026160F02CE003BA9B9 /* MBDialogView.h */,
 				4669E027160F02CE003BA9B9 /* MBDialogView.m */,
 				46669B08160F758C00CD1197 /* MBDialogTree.h */,
@@ -309,6 +339,8 @@
 			children = (
 				4669E022160F02CE003BA9B9 /* NSString+MBDialogString.h */,
 				4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */,
+				46A0002B1642D76800EBC2EE /* UIApplication+MBDialog.h */,
+				46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -668,6 +700,10 @@
 				4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */,
 				46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */,
 				46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */,
+				46DCB5CA16420A4800A60331 /* MBMenuView.m in Sources */,
+				46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */,
+				46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */,
+				46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

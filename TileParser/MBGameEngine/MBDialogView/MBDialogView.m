@@ -173,15 +173,15 @@
     
     CGRect bounds = parentBounds;
     
-    if ([self dimensionStyle] == MBDialogDimensionsWide) {
+    if ([self dimensionStyle] == MBDialogFormFactorWide) {
         bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
         bounds.size.height = MIN(parentBounds.size.height/3.5-(_verticalMarginHeight/2), [self maxHeight]);
     }
-    else if([self dimensionStyle] == MBDialogDimensionsNarrowShort){
+    else if([self dimensionStyle] ==  MBDialogFormFactorNarrowShort){
         bounds.size.width = MIN(parentBounds.size.width/3.5 - (_horizontalMarginWidth/2), [self maxWidth]);
         bounds.size.height = MIN(parentBounds.size.height/2-(_verticalMarginHeight/2), [self maxHeight]);
     }
-    else if([self dimensionStyle] == MBDialogDimensionsNarrowTall){
+    else if([self dimensionStyle] == MBDialogFormFactorNarrowTall){
         bounds.size.width = MIN(parentBounds.size.width/3.5 - (_horizontalMarginWidth/2), [self maxWidth]);
         bounds.size.height = MIN(parentBounds.size.height-(_verticalMarginHeight/2), [self maxHeight]);
     }

@@ -12,7 +12,7 @@
 
 typedef NSUInteger MBDialogPosition;
 typedef NSUInteger MBDialogAnimation;
-typedef NSUInteger MBDialogDimensions;
+typedef NSUInteger MBDialogFormFactor;
 
 //
 //  Used for positioning dialog
@@ -48,10 +48,10 @@ enum MBDialogViewAnimation {
 //  side.)
 //
 
-enum MBDialogDimensions {
-    MBDialogDimensionsWide = 0,
-    MBDialogDimensionsNarrowTall = 1,
-    MBDialogDimensionsNarrowShort
+enum MBDialogFormFactor {
+    MBDialogFormFactorWide = 0,
+    MBDialogFormFactorNarrowTall = 1,
+    MBDialogFormFactorNarrowShort
     };
 
 @interface MBDialogView : UIView
@@ -60,7 +60,7 @@ enum MBDialogDimensions {
 @property (nonatomic, assign) CGFloat maxHeight;
 @property (nonatomic, assign) CGFloat horizontalMarginWidth;
 @property (nonatomic, assign) CGFloat verticalMarginHeight;
-@property (nonatomic, assign) MBDialogDimensions dimensionStyle;
+@property (nonatomic, assign) MBDialogFormFactor dimensionStyle;
 
 @property (nonatomic, strong) UIFont *font;
 

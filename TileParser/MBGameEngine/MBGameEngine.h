@@ -11,7 +11,7 @@
 
 #import "MBControllerEvent.h"
 
-#import "MBDialogView.h"
+#import "MBDialogViewController.h"
 
 #import "MBGameBoyViewController.h"
 

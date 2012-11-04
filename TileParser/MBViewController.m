@@ -127,7 +127,8 @@
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
         
-    }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
+    }
+    else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
         
     }
 }
@@ -135,24 +136,26 @@
 - (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender{
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
         
-        if(![self dialogView]){
+        if(![[self dialogView] isShowing] && ![self isShowingMenu]){
             MBDialogTree *tree = [self dialogTreeWithIdentifier:0];
             MBDialogView *dialogView = [[MBDialogView alloc] initWithDialogTree:tree];
             [self setDialogView:dialogView];
+            
+            [[self dialogView] show];
         }
-        
-        if ([self isShowingDialog]) {
-            [[self dialogView] cycleText];
-        }else{
-            MBDialogView *aDialogView = [self dialogView];
-            [aDialogView showInView:[self view] withAnimation:MBDialogViewAnimationPop];
-        }
-    }else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
-        
-        if ([self isShowingDialog]) {
+        else if ([[self dialogView] isShowing]) {
             [[self dialogView] cycleText];
         }
+        else{
+            [[self dialogView] show];
+        }
+    }
+    else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
         
+        if ([[self dialogView] isShowing]) {
+            [[self dialogView] cycleText];
+        }
+
     }
 }
 
@@ -190,7 +193,7 @@
     
     //  Freeze movement during dialog & menu.
     
-    if ([self isShowingDialog] || [self isShowingMenu]) {
+    if ([[self dialogView] isShowing] || [self isShowingMenu]) {
         return NO;
     }
     
@@ -233,7 +236,7 @@
 //
 
 - (BOOL)spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction{
-    return ![self isShowingDialog] && ![self isShowingMenu];
+    return ![[self dialogView] isShowing] && ![self isShowingMenu];
 }
 
 - (void)sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates{
@@ -261,7 +264,7 @@
     //  Prepare the dialog nodes
     //
     
-    NSArray *aboutDialog = @[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss."];
+    NSArray *aboutDialog = @[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss.", @"More text."];
     
     SEL aboutEndAction = NSSelectorFromString(@"showMenu");
     
@@ -294,14 +297,6 @@
 
 #pragma mark - Dialog/Menu Detection
 
-- (BOOL) isShowingDialog{
-    
-    UIView *dialogView = [self dialogView];
-    BOOL isShowing = [[[self view] subviews] containsObject:dialogView];
-    return isShowing;
-}
-
-
 - (BOOL) isShowingMenu{
     UIView *menuView = [self menuView];
     BOOL isShowing = [[[self view] subviews] containsObject:menuView];
@@ -321,7 +316,7 @@
     
     
     if(![self menuView]){
-        MBMenuView *menu = [[MBMenuView alloc] initWithDialogTree:[self dialogTreeWithIdentifier:0]];
+        MBMenuView *menu = [[MBMenuView alloc] init];
         [self setMenuView:menu];
     }
     

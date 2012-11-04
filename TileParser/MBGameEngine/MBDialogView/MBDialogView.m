@@ -374,6 +374,19 @@
 
 #pragma mark - Hide MBDialogView
 
+//
+//  Hides the dialog view with the animation
+//  type initially used to show it.
+//
+
+- (void) hide{
+    [self hideWithAnimation:[self animationType]];
+}
+
+//
+//  Hides the view with a given animation
+//
+
 - (void) hideWithAnimation:(MBDialogAnimation)animation{
     
     
@@ -694,6 +707,23 @@
         [self setCacheIndex:index];
     }
     return string;
+}
+
+
+//
+//  Determines if the dialog view is visible in the root view of the keyWindow.
+//
+
+- (BOOL) isShowing{
+    return [self isShowingInView:[UIApplication rootView]];
+}
+
+//
+//  Determines if the dialog view is visible in a given view.
+//
+
+- (BOOL) isShowingInView:(UIView *)view{
+    return [[view subviews] containsObject:self];
 }
 
 

@@ -109,6 +109,12 @@ enum MBDialogFormFactor {
 
 - (void) showInView:(UIView *)view atVerticalPosition:(MBDialogPosition)verticalPosition andHorizontalPosition:(MBDialogPosition)horizontalPosition withAnimation:(MBDialogAnimation)animation;
 
+//
+//  Hides the dialog view with the animation
+//  type initially used to show it.
+//
+
+- (void) hide;
 
 //
 //  Hides the dialog view with a given animation.
@@ -142,5 +148,17 @@ enum MBDialogFormFactor {
 //
 
 - (void) render;
+
+//
+//  Determines if the dialog view is visible in the root view of the keyWindow.
+//
+
+- (BOOL) isShowing;
+
+//
+//  Determines if the dialog view is visible in a given view.
+//
+
+- (BOOL) isShowingInView:(UIView *)view;
 
 @end

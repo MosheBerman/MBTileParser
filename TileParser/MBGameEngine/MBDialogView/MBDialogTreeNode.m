@@ -29,10 +29,7 @@
     return _currentDialogIndex < [[self dialog] count];
 }
 
-- (NSString *)nextStringToDisplay {
-    if (![self hasNext]) {
-        return nil;
-    }
+- (NSString *)nextStringToDisplay{
     NSString *next = [self dialog][_currentDialogIndex];
     _currentDialogIndex++;
     return next;

@@ -64,6 +64,8 @@ enum MBDialogFormFactor {
 
 @property (nonatomic, strong) UIFont *font;
 
+@property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) UIView *contentView;
 
 - (id) initWithText:(NSString *)text;
 - (id) initWithArrayOfText:(NSArray *)text;

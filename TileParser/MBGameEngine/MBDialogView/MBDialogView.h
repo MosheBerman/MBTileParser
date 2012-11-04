@@ -71,6 +71,12 @@ enum MBDialogFormFactor {
 - (id) initWithArrayOfText:(NSArray *)text;
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree;
 
+//
+//  Shows the dialog in the top level view
+//  of the keyWindow.
+//
+
+- (void) show;
 
 //
 //  Calls showInView:withAnimation: passing

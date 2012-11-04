@@ -10,6 +10,8 @@
 
 #import "NSString+MBDialogString.h"
 
+#import "UIApplication+MBDialog.h"
+
 @interface MBDialogView ()
 
 @property (nonatomic, strong) MBDialogTree *dialogTree;
@@ -80,6 +82,18 @@
 }
 
 #pragma mark - Show MBDialogView in a UIView
+
+//
+//  Shows the dialog in the top level view
+//  of the keyWindow.
+//
+
+- (void) show{
+    
+    UIView *rootView = [UIApplication rootView];
+    
+    [self showInView:rootView withAnimation:MBDialogViewAnimationPop];
+}
 
 //
 //  Calls showInView:withAnimation: passing

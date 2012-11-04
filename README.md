@@ -7,7 +7,7 @@ MBTileParser began as a small library that allows you to parse TMX files and the
 
  - **Load maps:** MBTileParser is actually the name of a class in the engine. You can load TMX files. Use the `MBMapViewController` class for this.
  - **Load sprites:** You can load sprites using `MBSpriteView`. `MBMovableSpriteView` supports movement too.
- - **Display Dialog:** Load and parse dialog trees, using `MBDialogTree`. (Support for actions is unimplemented, but basic display of text works.)
+ - **Display Dialog:** Load and parse dialog trees, using `MBDialogTree`. (Support for end actions is now implemented.)
  - **Take Input:** Create custom virtual game controls, using the `MBJoystick` and `MBControllerButton` classes. You can also use the included layout.
 
 

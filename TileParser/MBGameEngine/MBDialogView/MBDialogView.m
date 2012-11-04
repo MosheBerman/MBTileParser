@@ -53,7 +53,7 @@
         _horizontalMarginWidth = 20;
         _verticalMarginHeight = 5;
         _font = [UIFont systemFontOfSize:16];
-        _dimensionStyle = MBDialogDimensionsWide;
+        _dimensionStyle = MBDialogFormFactorWide;
     }
     
     return self;

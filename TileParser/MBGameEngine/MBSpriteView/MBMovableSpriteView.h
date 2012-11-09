@@ -22,6 +22,7 @@ typedef void(^MBMovementCompletionHandler)();
 @property (nonatomic, assign) id<MBSpriteMovementDelegate> movementDelegate;
 @property (nonatomic, assign) id<MBMapMetadata> movementDataSource;
 @property (nonatomic, assign) float movementTimeScaleFactor;    // Used to calculate how long animations and movements take
+@property (nonatomic, assign) MBSpriteMovementDirection direction;
 
 //
 //  Move N tiles in a given direction.

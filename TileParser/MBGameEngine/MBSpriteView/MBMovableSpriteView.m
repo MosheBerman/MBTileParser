@@ -141,48 +141,38 @@
     
     CGPoint velocity = [joystick velocity];
     
+    MBSpriteMovementDirection direction = [self directionFromVelocity:velocity];
+    
     MBMovementCompletionHandler handler = ^(){
         [[self movementDelegate] sprite:self interactWithTileAtCoordinates:[self frame].origin];
     };
     
+    BOOL canTurn = [[self movementDelegate] sprite:self canTurnToFaceDirection:direction];
+    
+    if (!canTurn) {
+        return;
+    }
+
+    [self setDirection:direction];
+    
     if (velocity.x == 1) {
-        
-        [self setDirection:MBSpriteMovementDirectionRight];
         [self moveRightWithCompletion:handler];
     }
     
     if(velocity.y == 1){
-        
-        [self setDirection:MBSpriteMovementDirectionUp];
         [self moveUpWithCompletion:handler];
     }
     
     if (velocity.x == -1) {
-        
-        [self setDirection:MBSpriteMovementDirectionLeft];
         [self moveLeftWithCompletion:handler];
     }
     
     if(velocity.y == -1){
-        
-        [self setDirection:MBSpriteMovementDirectionDown];
         [self moveDownWithCompletion:handler];
     }
 }
 
 - (void) setDirection:(MBSpriteMovementDirection)direction{
-    
-    //
-    //  Now we can check that turning is allowed. If not,
-    //  then return here. Otherwise, proceed to set
-    //  the animation to the desired value.
-    //
-    
-    BOOL canTurn = [[self movementDelegate] sprite:self canTurnToFaceDirection:direction];
-    
-    if (!canTurn && [self movementDelegate] != nil) {
-        return;
-    }
     
     _direction = direction;
     
@@ -203,6 +193,26 @@
 }
 
 //
+//  Converts a velocity into a direction enum value.
+//
+
+- (MBSpriteMovementDirection) directionFromVelocity:(CGPoint)velocity{
+    
+    if (velocity.x == 1) {
+        return MBSpriteMovementDirectionRight;
+    }
+    else if (velocity.y == 1) {
+        return MBSpriteMovementDirectionUp;
+    }
+    else if(velocity.x == -1){
+        return MBSpriteMovementDirectionLeft;
+    }
+    else{
+        return MBSpriteMovementDirectionDown;
+    }
+}
+
+//
 //  A readonly version of the animationKeyForDirection:
 //  method that's publically exposed.
 //
@@ -210,6 +220,5 @@
 - (NSString *)directionKey{
     return [self animationKeyForDirection:[self direction]];
 }
-
 
 @end

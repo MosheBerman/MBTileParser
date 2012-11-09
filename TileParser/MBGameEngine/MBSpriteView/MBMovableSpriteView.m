@@ -39,7 +39,7 @@
 #pragma mark - Movement Methods
 
 //  Move in a direction
-- (void)moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion{
+- (void)moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(MBMovementCompletionHandler)completion{
     
     CGRect oldFrame = [self frame];
     CGSize tileDimensions = CGSizeZero;
@@ -141,28 +141,32 @@
     
     CGPoint velocity = [joystick velocity];
     
+    MBMovementCompletionHandler handler = ^(){
+        [[self movementDelegate] sprite:self interactWithTileAtCoordinates:[self bounds].origin];
+    };
+    
     if (velocity.x == 1) {
         
         [self setActiveAnimation:@"right"];
-        [self moveRightWithCompletion:nil];
+        [self moveRightWithCompletion:handler];
     }
     
     if(velocity.y == 1){
         
         [self setActiveAnimation:@"up"];
-        [self moveUpWithCompletion:nil];
+        [self moveUpWithCompletion:handler];
     }
     
     if (velocity.x == -1) {
         
         [self setActiveAnimation:@"left"];
-        [self moveLeftWithCompletion:nil];
+        [self moveLeftWithCompletion:handler];
     }
     
     if(velocity.y == -1){
         
         [self setActiveAnimation:@"down"];
-        [self moveDownWithCompletion:nil];
+        [self moveDownWithCompletion:handler];
     }
 }
 

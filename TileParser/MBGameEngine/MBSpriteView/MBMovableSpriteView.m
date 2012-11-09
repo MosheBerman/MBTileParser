@@ -133,9 +133,17 @@
 
 - (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
     
+    //
+    //  If we're mid-move, don't do anything.
+    //
+    
     if (_isMoving) {
         return;
     }
+    
+    //
+    //  Setup...
+    //
     
     MBJoystickView *joystick = value;
     
@@ -147,13 +155,25 @@
         [[self movementDelegate] sprite:self interactWithTileAtCoordinates:[self frame].origin];
     };
     
+    //
+    //  Check for ability to turn
+    //
+    
     BOOL canTurn = [[self movementDelegate] sprite:self canTurnToFaceDirection:direction];
     
     if (!canTurn) {
         return;
     }
 
+    //
+    //  Set the direction
+    //
+    
     [self setDirection:direction];
+    
+    //
+    //  Move
+    //
     
     if (velocity.x == 1) {
         [self moveRightWithCompletion:handler];

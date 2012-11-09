@@ -241,12 +241,52 @@
 
 - (void)sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates{
     
-    if (coordinates.x < 0 || coordinates.y < 0)  {
+    //
+    //  Avoid interactions with the tiles outside the map's bounderies
+    //
+    
+    CGSize mapDimensions = [[self mapViewController] mapSizeInTiles];
+    CGSize tileDimensions = [[self mapViewController] tileSizeInPoints];
+    
+    CGPoint coordinatesInTiles = coordinates;
+    coordinatesInTiles.x /= tileDimensions.width;
+    coordinatesInTiles.y /= tileDimensions.height;
+    
+    if (coordinatesInTiles.x < 0 || coordinatesInTiles.y < 0)  {
+        return;
+    }
+    else if (coordinatesInTiles.y > mapDimensions.height || coordinatesInTiles.x > mapDimensions.width) {
         return;
     }
     
     //  Get a rect covering the target tile
-    //CGRect targetLocation = CGRectMake(coordinates.x * tileSize.width, coordinates.y * tileSize.height, (coordinates.x+1) * tileSize.width, (coordinates.y+1) * tileSize.height);
+    CGRect targetLocation = CGRectMake(coordinates.x, coordinates.y, coordinates.x + tileDimensions.width, coordinates.y+ tileDimensions.height);
+    
+    CGPoint tileCenter = targetLocation.origin;
+    tileCenter.x += tileDimensions.width/2;
+    tileCenter.y += tileDimensions.height/2;
+    
+    NSDictionary *connectionProperties = [[self mapViewController] propertiesForObjectInGroupNamed:@"Connections" atPoint:tileCenter];
+    
+    if (connectionProperties != nil) {
+        
+        NSString *directionName = connectionProperties[@"name"];
+        NSString *mapName = connectionProperties[@"value"];
+        
+        if([[[self player] directionKey] isEqualToString:directionName]){
+            
+            //
+            //  We want to load a new map here...
+            //
+            
+    
+            //[[self mapViewController] loadMap:mapName];
+            
+            
+        }
+        
+        
+    }
     
 }
 
@@ -296,6 +336,11 @@
 }
 
 #pragma mark - Dialog/Menu Detection
+
+//
+//  Check if the menu is being shown in the
+//  main view controller's view hierarchy.
+//
 
 - (BOOL) isShowingMenu{
     UIView *menuView = [self menuView];

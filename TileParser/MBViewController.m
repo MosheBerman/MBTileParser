@@ -59,7 +59,7 @@
     
     //  Add the sprite to the map and follow it
     
-    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(18,30) beneathLayerNamed:@"TreeTops"];
+    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,6) beneathLayerNamed:@"TreeTops"];
     
     //
     //  Add and configure a self-moving sprite

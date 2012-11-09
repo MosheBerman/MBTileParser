@@ -147,47 +147,30 @@
     
     if (velocity.x == 1) {
         
-        [self setActiveAnimation:@"right"];
+        [self setDirection:MBSpriteMovementDirectionRight];
         [self moveRightWithCompletion:handler];
     }
     
     if(velocity.y == 1){
         
-        [self setActiveAnimation:@"up"];
+        [self setDirection:MBSpriteMovementDirectionUp];
         [self moveUpWithCompletion:handler];
     }
     
     if (velocity.x == -1) {
         
-        [self setActiveAnimation:@"left"];
+        [self setDirection:MBSpriteMovementDirectionLeft];
         [self moveLeftWithCompletion:handler];
     }
     
     if(velocity.y == -1){
         
-        [self setActiveAnimation:@"down"];
+        [self setDirection:MBSpriteMovementDirectionDown];
         [self moveDownWithCompletion:handler];
     }
 }
 
-#pragma mark - Additional MBMSpriteMovementDelegate support
-
-- (void)setActiveAnimation:(NSString *)direction{
-    
-    //
-    //  Convert animation string into a direction
-    //  so we can pass it to the delegate.
-    //
-    
-    NSArray *directionStrings = @[@"up", @"right", @"down", @"left"];
-    
-    NSUInteger directionIndex = 0;
-    
-    for (NSUInteger i = 0; i < [directionStrings count]; i++) {
-        if ([directionStrings[i] isEqualToString:direction]) {
-            directionIndex = i;
-        }
-    }
+- (void) setDirection:(MBSpriteMovementDirection)direction{
     
     //
     //  Now we can check that turning is allowed. If not,
@@ -195,11 +178,28 @@
     //  the animation to the desired value.
     //
     
-    if (![[self movementDelegate] sprite:self canTurnToFaceDirection:directionIndex]) {
+    BOOL canTurn = [[self movementDelegate] sprite:self canTurnToFaceDirection:direction];
+    
+    if (!canTurn && [self movementDelegate] != nil) {
         return;
     }
     
-    [super setActiveAnimation:direction];
+    _direction = direction;
+    
+    [self setActiveAnimation:[self animationKeyForDirection:direction]];
+}
+
+//
+//  This method converts an MBSpriteMovementDirection into a
+//  related string. These strings are used as animation keys.
+//
+
+- (NSString *) animationKeyForDirection:(MBSpriteMovementDirection)direction{
+ 
+    NSArray *directionStrings = @[@"up", @"right", @"down", @"left"];
+    
+    return directionStrings[direction];
+    
 }
 
 @end

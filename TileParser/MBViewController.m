@@ -14,7 +14,7 @@
 
 @interface MBViewController () <MBControllerEvent, MBSpriteMovementDelegate>
 
-@property (nonatomic, strong) MBSpriteView *player;
+@property (nonatomic, strong) MBMovableSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
 @property (nonatomic, strong) MBDialogView *dialogView;

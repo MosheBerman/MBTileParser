@@ -12,6 +12,8 @@
 
 #import "MBMapMetadata.h"
 
+#import "MBMapObjectGroup.h"
+
 @interface MBMapViewController : UIViewController <MBMapMetadata>
 
 @property (nonatomic, strong) MBMapView *mapView;

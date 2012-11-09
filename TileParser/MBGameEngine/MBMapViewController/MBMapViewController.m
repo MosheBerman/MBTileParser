@@ -92,9 +92,9 @@
 #pragma mark - MBMapMetadata Protocol
 
 - (NSDictionary *)propertiesForObjectInGroupNamed:(NSString *)groupName atPoint:(CGPoint)point{
-    NSArray *group = [[self map] objectGroups][groupName];
+    MBMapObjectGroup *group = [[self map] objectGroups][groupName];
     
-    for (MBTileMapObject *object in group) {
+    for (MBTileMapObject *object in [group mapObjects]) {
         
         CGRect frame = CGRectMake(object.x, object.y, object.width, object.height);
         

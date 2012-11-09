@@ -202,4 +202,14 @@
     
 }
 
+//
+//  A readonly version of the animationKeyForDirection:
+//  method that's publically exposed.
+//
+
+- (NSString *)directionKey{
+    return [self animationKeyForDirection:[self direction]];
+}
+
+
 @end

@@ -235,7 +235,7 @@
 //  For example, to freeze characters if dialog is thrown onscreen.
 //
 
-- (BOOL)spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction{
+- (BOOL)sprite:(MBSpriteView *)sprite canTurnToFaceDirection:(MBSpriteMovementDirection)direction{
     return ![[self dialogView] isShowing] && ![self isShowingMenu];
 }
 

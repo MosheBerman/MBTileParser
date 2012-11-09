@@ -191,7 +191,7 @@
     //  the animation to the desired value.
     //
     
-    if (![[self movementDelegate] spriteCanTurn:self toFaceDirection:directionIndex]) {
+    if (![[self movementDelegate] sprite:self canTurnToFaceDirection:directionIndex]) {
         return;
     }
     

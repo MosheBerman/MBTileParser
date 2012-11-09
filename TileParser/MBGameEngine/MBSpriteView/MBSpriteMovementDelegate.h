@@ -23,7 +23,7 @@ enum MBSpriteMovementDirection {
 
 - (BOOL) sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates;
 - (void) sprite:(MBSpriteView *)sprite didMoveToCoordinates:(CGPoint)coordinates;
-- (BOOL) spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction;
+- (BOOL) sprite:(MBSpriteView *)sprite canTurnToFaceDirection:(MBSpriteMovementDirection)direction;
 
 - (void) sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates;
 

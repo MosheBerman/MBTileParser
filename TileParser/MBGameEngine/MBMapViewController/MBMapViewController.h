@@ -20,4 +20,5 @@
 
 - (id)initWithMapName:(NSString *)name;
 
+- (void) loadMap:(NSString *)mapName;
 @end

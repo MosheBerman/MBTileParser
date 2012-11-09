@@ -166,4 +166,36 @@
     }
 }
 
+#pragma mark - Additional MBMSpriteMovementDelegate support
+
+- (void)setActiveAnimation:(NSString *)direction{
+    
+    //
+    //  Convert animation string into a direction
+    //  so we can pass it to the delegate.
+    //
+    
+    NSArray *directionStrings = @[@"up", @"right", @"down", @"left"];
+    
+    NSUInteger directionIndex = 0;
+    
+    for (NSUInteger i = 0; i < [directionStrings count]; i++) {
+        if ([directionStrings[i] isEqualToString:direction]) {
+            directionIndex = i;
+        }
+    }
+    
+    //
+    //  Now we can check that turning is allowed. If not,
+    //  then return here. Otherwise, proceed to set
+    //  the animation to the desired value.
+    //
+    
+    if (![[self movementDelegate] spriteCanTurn:self toFaceDirection:directionIndex]) {
+        return;
+    }
+    
+    [super setActiveAnimation:direction];
+}
+
 @end

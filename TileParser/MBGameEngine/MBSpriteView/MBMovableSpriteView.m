@@ -142,7 +142,7 @@
     CGPoint velocity = [joystick velocity];
     
     MBMovementCompletionHandler handler = ^(){
-        [[self movementDelegate] sprite:self interactWithTileAtCoordinates:[self bounds].origin];
+        [[self movementDelegate] sprite:self interactWithTileAtCoordinates:[self frame].origin];
     };
     
     if (velocity.x == 1) {

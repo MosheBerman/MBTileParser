@@ -22,6 +22,7 @@ enum MBSpriteMovementDirection {
 @protocol MBSpriteMovementDelegate <NSObject>
 
 - (BOOL) sprite:(MBSpriteView *)sprite canMoveToCoordinates:(CGPoint)coordinates;
+- (BOOL) sprite:(MBSpriteView *)sprite didMoveToCoordinates:(CGPoint)coordinates;
 - (BOOL) spriteCanTurn:(MBSpriteView *)sprite toFaceDirection:(MBSpriteMovementDirection)direction;
 
 - (void) sprite:(MBSpriteView *)sprite interactWithTileAtCoordinates:(CGPoint)coordinates;

@@ -29,6 +29,13 @@
         [strongSelf performSelector:@selector(moveInRandomDirection) withObject:nil afterDelay:delay];
     };
     
+    if (![[self movementDelegate] sprite:self canTurnToFaceDirection:direction]) {
+        if (completion) {
+            completion();
+        }
+        return;
+    }
+    
     if (direction == 0) {
         [self moveUpWithCompletion:completion];
     }else if(direction == 1){

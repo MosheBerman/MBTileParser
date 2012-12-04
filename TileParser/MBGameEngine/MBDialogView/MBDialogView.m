@@ -53,7 +53,7 @@
         _horizontalMarginWidth = 20;
         _verticalMarginHeight = 5;
         _font = [UIFont systemFontOfSize:16];
-        _dimensionStyle = MBDialogFormFactorWide;
+        _formFactor = MBDialogFormFactorWide;
     }
     
     return self;
@@ -187,15 +187,15 @@
     
     CGRect bounds = parentBounds;
     
-    if ([self dimensionStyle] == MBDialogFormFactorWide) {
+    if ([self formFactor] == MBDialogFormFactorWide) {
         bounds.size.width = MIN(parentBounds.size.width - (_horizontalMarginWidth/2), [self maxWidth]);
         bounds.size.height = MIN(parentBounds.size.height/3.5-(_verticalMarginHeight/2), [self maxHeight]);
     }
-    else if([self dimensionStyle] ==  MBDialogFormFactorNarrowShort){
+    else if([self formFactor] ==  MBDialogFormFactorNarrowShort){
         bounds.size.width = MIN(parentBounds.size.width/3.5 - (_horizontalMarginWidth/2), [self maxWidth]);
         bounds.size.height = MIN(parentBounds.size.height/2-(_verticalMarginHeight/2), [self maxHeight]);
     }
-    else if([self dimensionStyle] == MBDialogFormFactorNarrowTall){
+    else if([self formFactor] == MBDialogFormFactorNarrowTall){
         bounds.size.width = MIN(parentBounds.size.width/3.5 - (_horizontalMarginWidth/2), [self maxWidth]);
         bounds.size.height = MIN(parentBounds.size.height-(_verticalMarginHeight/2), [self maxHeight]);
     }

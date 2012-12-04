@@ -60,7 +60,7 @@ enum MBDialogFormFactor {
 @property (nonatomic, assign) CGFloat maxHeight;
 @property (nonatomic, assign) CGFloat horizontalMarginWidth;
 @property (nonatomic, assign) CGFloat verticalMarginHeight;
-@property (nonatomic, assign) MBDialogFormFactor dimensionStyle;
+@property (nonatomic, assign) MBDialogFormFactor formFactor;
 
 @property (nonatomic, strong) UIFont *font;
 

@@ -422,15 +422,15 @@
          Action      Scale   Duration
          
          Shrink      0.9     0.2
-         Shrink      1.05    1/15.0
+         Shrink      1.05    0.9/15.0
          Grow        0.0     1/7.5
          
          */
         
         
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:1/15.0 animations:^{
             
-            CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 1.05, 1.05);
+            CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, .9, .9);
             [self setTransform:t];
             
             [self setAlpha:0.8];
@@ -438,14 +438,14 @@
         }
                          completion:^(BOOL finished) {
                              
-                             [UIView animateWithDuration:1/15.0 animations:^{
+                             [UIView animateWithDuration:1/7.5 animations:^{
                                  
-                                 CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
+                                 CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 1.05, 1.05);
                                  [self setTransform:t];
                                  
                                  [self setAlpha:0.6];
                                  
-                                  [UIView animateWithDuration:1/15.0 animations:^{
+                                  [UIView animateWithDuration:.2 animations:^{
                                       CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0);
                                       [self setTransform:t];
                                       [self setAlpha:0];

@@ -9,7 +9,6 @@
 //
 //  This class handles tilesets
 //
-//
 
 #import <Foundation/Foundation.h>
 

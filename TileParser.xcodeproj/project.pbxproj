@@ -16,6 +16,7 @@
 		462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC1015B3EDD30058E14C /* MBViewController.m */; };
 		462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */; };
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
+		463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
 		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
 		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
 		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
@@ -102,6 +103,8 @@
 		462AAC1015B3EDD30058E14C /* MBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBViewController.m; sourceTree = "<group>"; };
 		462AAC1315B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPhone.xib; sourceTree = "<group>"; };
 		462AAC1615B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
+		463C65B616D5E85300C4EC51 /* MBGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGameState.h; path = MBGameEngine/MBGameState/MBGameState.h; sourceTree = "<group>"; };
+		463C65B716D5E85300C4EC51 /* MBGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGameState.m; path = MBGameEngine/MBGameState/MBGameState.m; sourceTree = "<group>"; };
 		46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTreeNode.h; sourceTree = "<group>"; };
 		46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTreeNode.m; sourceTree = "<group>"; };
 		46669B08160F758C00CD1197 /* MBDialogTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTree.h; sourceTree = "<group>"; };
@@ -278,6 +281,16 @@
 			path = TileParser;
 			sourceTree = "<group>";
 		};
+		463C65B516D5E81E00C4EC51 /* MBGameState */ = {
+			isa = PBXGroup;
+			children = (
+				463C65B616D5E85300C4EC51 /* MBGameState.h */,
+				463C65B716D5E85300C4EC51 /* MBGameState.m */,
+			);
+			name = MBGameState;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		463FC88716464267007D203C /* Additional dialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +322,7 @@
 		4669E01F160F02CE003BA9B9 /* MBGameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				463C65B516D5E81E00C4EC51 /* MBGameState */,
 				4669E037160F02CE003BA9B9 /* MBGameEngine.h */,
 				4669E020160F02CE003BA9B9 /* MBDialogView */,
 				4669E028160F02CE003BA9B9 /* MBGameControllerViewController */,
@@ -704,6 +718,7 @@
 				46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */,
 				46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */,
 				46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */,
+				463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

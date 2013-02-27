@@ -190,7 +190,6 @@
         return NO;
     }
     
-    
     //  Freeze movement during dialog & menu.
     
     if ([[self dialogView] isShowing] || [self isShowingMenu]) {
@@ -228,6 +227,14 @@
     }
     
     return YES;
+}
+
+//
+//  Act after a sprite moves to given coordinates
+//
+
+- (void) sprite:(MBSpriteView *)sprite didMoveToCoordinates:(CGPoint)coordinates{
+    
 }
 
 //
@@ -276,11 +283,11 @@
         if([[[self player] directionKey] isEqualToString:directionName]){
             
             //
-            //  We want to load a new map here...
+            //  We want to load the new map state here...
             //
             
-    
-            //[[self mapViewController] loadMap:mapName];
+            [[self mapViewController] loadMap:mapName];
+
             
             
         }
@@ -308,7 +315,6 @@
     
     SEL aboutEndAction = NSSelectorFromString(@"showMenu");
     
-    NSArray *cancelDialog = nil;
     SEL cancelAction = NSSelectorFromString(@"hideMenu");
     
     //

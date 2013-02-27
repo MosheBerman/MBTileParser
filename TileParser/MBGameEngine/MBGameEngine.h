@@ -23,4 +23,6 @@
 
 #import "MBSelfMovingSpriteView.h"
 
+#import "MBGameState.h"
+
 #endif

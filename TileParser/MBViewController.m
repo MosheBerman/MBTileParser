@@ -86,7 +86,7 @@
     //  Trigger automatic motion
     //
     
-    [movingSprite moveInRandomDirection];
+    [movingSprite faceInRandomDirection];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

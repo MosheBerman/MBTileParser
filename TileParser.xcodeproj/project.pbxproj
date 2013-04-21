@@ -17,8 +17,9 @@
 		462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */; };
 		462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */; };
 		463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
-		463C65BB16D5E8C000C4EC51 /* MBSpriteState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBSpriteState.m */; };
+		463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
 		463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
+		4642FC5E16E2FFB100C7CFAD /* MBGameStateLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */; };
 		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
 		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
 		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
@@ -45,7 +46,6 @@
 		4669E071160F02CE003BA9B9 /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E057160F02CE003BA9B9 /* MBSpriteView.m */; };
 		4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E05A160F02CE003BA9B9 /* MBTileParser.m */; };
 		4669E0A0160F02F5003BA9B9 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E075160F02F5003BA9B9 /* checkers.png */; };
-		4669E0A1160F02F5003BA9B9 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4669E076160F02F5003BA9B9 /* Checkers.psd */; };
 		4669E0A2160F02F5003BA9B9 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E077160F02F5003BA9B9 /* checkers.tmx */; };
 		4669E0A3160F02F5003BA9B9 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E078160F02F5003BA9B9 /* meta.png */; };
 		4669E0A4160F02F5003BA9B9 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E079160F02F5003BA9B9 /* PearTown.tmx */; };
@@ -87,6 +87,8 @@
 		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
 		46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A000281642CB4800EBC2EE /* MBDialogViewController.m */; };
 		46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */; };
+		46CD08B717247B58009882D2 /* MBMapState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08B617247B58009882D2 /* MBMapState.m */; };
+		46CD08BC17247D16009882D2 /* MBPlayableCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */; };
 		46DCB5CA16420A4800A60331 /* MBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DCB5C916420A4800A60331 /* MBMenuView.m */; };
 /* End PBXBuildFile section */
 
@@ -107,10 +109,12 @@
 		462AAC1615B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MBViewController_iPad.xib; sourceTree = "<group>"; };
 		463C65B616D5E85300C4EC51 /* MBGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGameState.h; path = MBGameEngine/MBGameState/MBGameState.h; sourceTree = "<group>"; };
 		463C65B716D5E85300C4EC51 /* MBGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGameState.m; path = MBGameEngine/MBGameState/MBGameState.m; sourceTree = "<group>"; };
-		463C65B916D5E8C000C4EC51 /* MBSpriteState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBSpriteState.h; path = MBGameEngine/MBGameState/MBSpriteState.h; sourceTree = "<group>"; };
-		463C65BA16D5E8C000C4EC51 /* MBSpriteState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBSpriteState.m; path = MBGameEngine/MBGameState/MBSpriteState.m; sourceTree = "<group>"; };
+		463C65B916D5E8C000C4EC51 /* MBCharacterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCharacterState.h; path = MBGameEngine/MBGameState/MBCharacterState.h; sourceTree = "<group>"; };
+		463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCharacterState.m; path = MBGameEngine/MBGameState/MBCharacterState.m; sourceTree = "<group>"; };
 		463C65BC16D5E8CC00C4EC51 /* MBItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItemState.h; path = MBGameEngine/MBGameState/MBItemState.h; sourceTree = "<group>"; };
 		463C65BD16D5E8CC00C4EC51 /* MBItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItemState.m; path = MBGameEngine/MBGameState/MBItemState.m; sourceTree = "<group>"; };
+		4642FC5C16E2FFB100C7CFAD /* MBGameStateLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGameStateLoader.h; path = MBGameEngine/MBGameState/MBGameStateLoader.h; sourceTree = "<group>"; };
+		4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGameStateLoader.m; path = MBGameEngine/MBGameState/MBGameStateLoader.m; sourceTree = "<group>"; };
 		46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTreeNode.h; sourceTree = "<group>"; };
 		46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTreeNode.m; sourceTree = "<group>"; };
 		46669B08160F758C00CD1197 /* MBDialogTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTree.h; sourceTree = "<group>"; };
@@ -209,6 +213,10 @@
 		46A000281642CB4800EBC2EE /* MBDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogViewController.m; sourceTree = "<group>"; };
 		46A0002B1642D76800EBC2EE /* UIApplication+MBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+MBDialog.h"; sourceTree = "<group>"; };
 		46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+MBDialog.m"; sourceTree = "<group>"; };
+		46CD08B517247B58009882D2 /* MBMapState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapState.h; path = MBGameEngine/MBGameState/MBMapState.h; sourceTree = "<group>"; };
+		46CD08B617247B58009882D2 /* MBMapState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapState.m; path = MBGameEngine/MBGameState/MBMapState.m; sourceTree = "<group>"; };
+		46CD08BA17247D15009882D2 /* MBPlayableCharacterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBPlayableCharacterState.h; path = MBGameEngine/MBGameState/MBPlayableCharacterState.h; sourceTree = "<group>"; };
+		46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBPlayableCharacterState.m; path = MBGameEngine/MBGameState/MBPlayableCharacterState.m; sourceTree = "<group>"; };
 		46DCB5C816420A4800A60331 /* MBMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMenuView.h; sourceTree = "<group>"; };
 		46DCB5C916420A4800A60331 /* MBMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMenuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,12 +298,8 @@
 		463C65B516D5E81E00C4EC51 /* MBGameState */ = {
 			isa = PBXGroup;
 			children = (
-				463C65B616D5E85300C4EC51 /* MBGameState.h */,
-				463C65B716D5E85300C4EC51 /* MBGameState.m */,
-				463C65B916D5E8C000C4EC51 /* MBSpriteState.h */,
-				463C65BA16D5E8C000C4EC51 /* MBSpriteState.m */,
-				463C65BC16D5E8CC00C4EC51 /* MBItemState.h */,
-				463C65BD16D5E8CC00C4EC51 /* MBItemState.m */,
+				46CD08B817247B9F009882D2 /* Game States */,
+				46CD08B917247BA8009882D2 /* State Serialization */,
 			);
 			name = MBGameState;
 			path = ..;
@@ -332,10 +336,10 @@
 		4669E01F160F02CE003BA9B9 /* MBGameEngine */ = {
 			isa = PBXGroup;
 			children = (
-				463C65B516D5E81E00C4EC51 /* MBGameState */,
 				4669E037160F02CE003BA9B9 /* MBGameEngine.h */,
 				4669E020160F02CE003BA9B9 /* MBDialogView */,
 				4669E028160F02CE003BA9B9 /* MBGameControllerViewController */,
+				463C65B516D5E81E00C4EC51 /* MBGameState */,
 				4669E038160F02CE003BA9B9 /* MBMapViewController */,
 				4669E050160F02CE003BA9B9 /* MBSpriteView */,
 			);
@@ -575,6 +579,32 @@
 			path = "Zack-cutups";
 			sourceTree = "<group>";
 		};
+		46CD08B817247B9F009882D2 /* Game States */ = {
+			isa = PBXGroup;
+			children = (
+				463C65B616D5E85300C4EC51 /* MBGameState.h */,
+				463C65B716D5E85300C4EC51 /* MBGameState.m */,
+				46CD08B517247B58009882D2 /* MBMapState.h */,
+				46CD08B617247B58009882D2 /* MBMapState.m */,
+				463C65B916D5E8C000C4EC51 /* MBCharacterState.h */,
+				463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */,
+				46CD08BA17247D15009882D2 /* MBPlayableCharacterState.h */,
+				46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */,
+				463C65BC16D5E8CC00C4EC51 /* MBItemState.h */,
+				463C65BD16D5E8CC00C4EC51 /* MBItemState.m */,
+			);
+			name = "Game States";
+			sourceTree = "<group>";
+		};
+		46CD08B917247BA8009882D2 /* State Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				4642FC5C16E2FFB100C7CFAD /* MBGameStateLoader.h */,
+				4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */,
+			);
+			name = "State Serialization";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -637,7 +667,6 @@
 				4669E05F160F02CE003BA9B9 /* dpad.png in Resources */,
 				4669E060160F02CE003BA9B9 /* joystick.png in Resources */,
 				4669E0A0160F02F5003BA9B9 /* checkers.png in Resources */,
-				4669E0A1160F02F5003BA9B9 /* Checkers.psd in Resources */,
 				4669E0A2160F02F5003BA9B9 /* checkers.tmx in Resources */,
 				4669E0A3160F02F5003BA9B9 /* meta.png in Resources */,
 				4669E0A4160F02F5003BA9B9 /* PearTown.tmx in Resources */,
@@ -729,8 +758,11 @@
 				46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */,
 				46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */,
 				463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */,
-				463C65BB16D5E8C000C4EC51 /* MBSpriteState.m in Sources */,
+				463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */,
 				463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */,
+				4642FC5E16E2FFB100C7CFAD /* MBGameStateLoader.m in Sources */,
+				46CD08B717247B58009882D2 /* MBMapState.m in Sources */,
+				46CD08BC17247D16009882D2 /* MBPlayableCharacterState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,12 +820,12 @@
 		46019BDB160F56BB00EA8917 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Moshe Berman";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Moshe Berman (JFYZ2Q7278)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C3A10B50-EE3E-4DFF-8665-F51D8FB4FC6E";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AE803BC-3E12-4ABF-92BD-2C954A81D187";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";
@@ -848,10 +880,14 @@
 		462AAC1B15B3EDD30058E14C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Moshe Berman (JFYZ2Q7278)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9AE803BC-3E12-4ABF-92BD-2C954A81D187";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25709992-CD7F-4F80-8291-7990961DA09C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -859,10 +895,12 @@
 		462AAC1C15B3EDD30058E14C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Erol Dusi (NEBV962VN4)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FC7C883B-84EC-4200-8D92-D0A05AB5611E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

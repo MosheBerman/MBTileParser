@@ -15,13 +15,8 @@
     self = [super init];
     if (self) {
         
-        //
-        //  Initialize the empty arrays and default values
-        //
+        _sideQuestIdentifers = [NSMutableArray new];
         
-        _spriteStates = [@[] mutableCopy];
-        _itemStates = [@[] mutableCopy];
-        _mapName = nil;
     }
     return self;
 }

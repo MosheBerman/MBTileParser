@@ -3,6 +3,3 @@
 *.ipa
 
 ./builds
-
-/TileParser.xcodeproj/project.xcworkspace/xcuserdata/sneakyness.xcuserdatad/UserInterfaceState.xcuserstate
-/TileParser.xcodeproj/xcuserdata/sneakyness.xcuserdatad/xcdebugger/

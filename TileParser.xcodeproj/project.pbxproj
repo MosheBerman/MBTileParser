@@ -584,14 +584,7 @@
 			children = (
 				463C65B616D5E85300C4EC51 /* MBGameState.h */,
 				463C65B716D5E85300C4EC51 /* MBGameState.m */,
-				46CD08B517247B58009882D2 /* MBMapState.h */,
-				46CD08B617247B58009882D2 /* MBMapState.m */,
-				463C65B916D5E8C000C4EC51 /* MBCharacterState.h */,
-				463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */,
-				46CD08BA17247D15009882D2 /* MBPlayableCharacterState.h */,
-				46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */,
-				463C65BC16D5E8CC00C4EC51 /* MBItemState.h */,
-				463C65BD16D5E8CC00C4EC51 /* MBItemState.m */,
+				46CD08BD1724837D009882D2 /* Map State */,
 			);
 			name = "Game States";
 			sourceTree = "<group>";
@@ -603,6 +596,21 @@
 				4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */,
 			);
 			name = "State Serialization";
+			sourceTree = "<group>";
+		};
+		46CD08BD1724837D009882D2 /* Map State */ = {
+			isa = PBXGroup;
+			children = (
+				46CD08B517247B58009882D2 /* MBMapState.h */,
+				46CD08B617247B58009882D2 /* MBMapState.m */,
+				463C65B916D5E8C000C4EC51 /* MBCharacterState.h */,
+				463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */,
+				46CD08BA17247D15009882D2 /* MBPlayableCharacterState.h */,
+				46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */,
+				463C65BC16D5E8CC00C4EC51 /* MBItemState.h */,
+				463C65BD16D5E8CC00C4EC51 /* MBItemState.m */,
+			);
+			name = "Map State";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

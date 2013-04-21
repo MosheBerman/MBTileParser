@@ -10,4 +10,17 @@
 
 @implementation MBItemState
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _identifier = @(0);
+        _itemName = @"Malcolm's iPhone";
+        _spriteName = @"item";
+        _quantity = @(1);
+        _isCollected = @NO;
+    }
+    return self;
+}
+
 @end

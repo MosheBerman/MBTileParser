@@ -16,11 +16,13 @@ MBTileParser began as a small library that allows you to parse TMX files and the
 
 **Technical Requirements:**
 
-MBTileParser requires the iOS 6 SDK because it uses the new `NSUUID` class. `NSUUID` was introduced in iOS 6 as an alternative to the then-deprecated `uniqueIdentifier` property of `UIDevice`. 
+MBTileParser requires the iOS 6 SDK and ARC.
 
-Specifically, the game state files use `NSUUID` for tracking save files. If you want to support iOS 5, you can probably roll your own unique identifier code.
+To support versions of iOS prior to version 6, you'll need to  replace `NSUUID`, used in the `MBGameState` class.
 
-If you're stuck on Xcode 4.4, you can [hack subscripting support](http://petersteinberger.com/blog/2012/using-subscripting-with-Xcode-4_4-and-iOS-4_3) into Xcode 4.4, but I'm not supporting this. Seriously, upgrade Xcode to the latest version.
+If you're stuck on Xcode 4.4, you can [hack subscripting support](http://petersteinberger.com/blog/2012/using-subscripting-with-Xcode-4_4-and-iOS-4_3) into Xcode, but I'm not supporting this. Seriously, upgrade Xcode to the latest version.
+
+To run MBTileParser without ARC, use the `-fobjc-no-arc` compiler flag.
 
 **Demo:**
 

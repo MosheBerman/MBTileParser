@@ -121,6 +121,40 @@
     [self moveInDirection:MBSpriteMovementDirectionRight distanceInTiles:1 withCompletion:completion];
 }
 
+#pragma mark - Rotation Only Convenience Methods
+
+- (void)faceUpWithCompletion:(void (^)()) completion {
+    [self beginAnimationWithKey:@"up"];
+    [self resetMovementState];
+    if(completion){
+        completion();
+    }
+}
+
+- (void)faceDownWithCompletion:(void (^)()) completion {
+    [self beginAnimationWithKey:@"down"];
+    [self resetMovementState];
+    if(completion){
+        completion();
+    }
+}
+
+- (void)faceLeftWithCompletion:(void (^)()) completion {
+    [self beginAnimationWithKey:@"left"];
+    [self resetMovementState];
+    if(completion){
+        completion();
+    }
+}
+
+- (void)faceRightWithCompletion:(void (^)()) completion {
+    [self beginAnimationWithKey:@"right"];
+    [self resetMovementState];
+    if(completion){
+        completion();
+    }
+}
+
 #pragma mark - Game Controller Support
 
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{

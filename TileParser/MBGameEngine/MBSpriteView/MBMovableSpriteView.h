@@ -42,4 +42,9 @@ typedef void(^MBMovementCompletionHandler)();
 - (void)moveLeftWithCompletion:(MBMovementCompletionHandler)completion;
 - (void)moveRightWithCompletion:(MBMovementCompletionHandler)completion;
 
+- (void)faceUpWithCompletion:(void (^)()) completion;
+- (void)faceDownWithCompletion:(void (^)()) completion;
+- (void)faceLeftWithCompletion:(void (^)()) completion;
+- (void)faceRightWithCompletion:(void (^)()) completion;
+
 @end

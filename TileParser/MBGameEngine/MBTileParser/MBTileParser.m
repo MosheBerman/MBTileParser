@@ -27,6 +27,11 @@
         
         NSString *fullPath = [[NSBundle mainBundle] pathForResource:map ofType:@"tmx"];
         
+        if (fullPath == nil) {
+            NSLog(@"Failed to load map at path: %@", fullPath);
+            return nil;
+        }
+        
         NSURL *URL = [NSURL fileURLWithPath:fullPath];
         
         _parser = [[NSXMLParser alloc] initWithContentsOfURL:URL];

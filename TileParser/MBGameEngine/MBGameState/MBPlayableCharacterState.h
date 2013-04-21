@@ -10,7 +10,7 @@
 
 @interface MBPlayableCharacterState : MBCharacterState
 
-@property (nonatomic, strong) NSMutableArray *party;            //  The members of your party.
+@property (nonatomic, strong) NSMutableArray *party;            //  The members of your party, contains instances of MBCharacterState.
 @property (nonatomic, strong) NSMutableArray *inventory;        //  The items in your inventory.
 
 @property (nonatomic, strong) NSDecimalNumber *stamina;

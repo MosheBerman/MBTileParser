@@ -16,9 +16,11 @@
     if (self) {
         _identifier = @(0);
         _itemName = @"Malcolm's iPhone";
+        _originInMapTiles = CGPointZero;
         _spriteName = @"item";
+        _alternateSpriteName = @"menuItem";
         _quantity = @(1);
-        _isCollected = @NO;
+        _isCollected = NO;
     }
     return self;
 }

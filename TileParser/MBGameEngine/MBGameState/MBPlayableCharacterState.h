@@ -1,5 +1,5 @@
 //
-//  MBPlayerState.h
+//  MBPlayableCharacterState.h
 //  TileParser
 //
 //  Created by Moshe Berman on 4/21/13.
@@ -15,5 +15,12 @@
 
 @property (nonatomic, strong) NSDecimalNumber *stamina;
 @property (nonatomic, strong) NSDecimalNumber *maxStamina;
+
+@property (nonatomic, strong) NSNumber *level;
+@property (nonatomic, strong) NSNumber *experience;
+@property (nonatomic, strong) NSNumber *experienceForNextLevel;
+
++ (MBPlayableCharacterState *)playableCharacterStateWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)asDictionary;
 
 @end

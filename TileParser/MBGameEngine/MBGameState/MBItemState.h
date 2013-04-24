@@ -19,4 +19,7 @@
 @property (nonatomic, strong) NSNumber *quantity;       //  How many units the given item is worth
 @property (nonatomic, assign) BOOL isCollected;         //  Has the item been collected?
 
++ (MBItemState *)itemStateWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)asDictionary;
+
 @end

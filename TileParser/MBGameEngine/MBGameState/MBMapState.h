@@ -12,7 +12,10 @@
 
 @property (nonatomic, strong) NSString *mapName;        // The name of the map.
 @property (nonatomic, strong) NSString *displayName;    // The display name of the map.
-@property (nonatomic, strong) NSArray *characterStates; // An array of MBCharacterState objects.
-@property (nonatomic, strong) NSArray *itemStates;      // An array of MBItemState objects.
+@property (nonatomic, strong) NSMutableArray *characterStates; // An array of MBCharacterState objects.
+@property (nonatomic, strong) NSMutableArray *itemStates;      // An array of MBItemState objects.
+
++ (MBMapState *)mapStateWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)asDictionary;
 
 @end

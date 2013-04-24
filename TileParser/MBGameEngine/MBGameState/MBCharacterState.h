@@ -1,5 +1,5 @@
 //
-//  MBSpriteState.h
+//  MBCharacterState.h
 //  TileParser
 //
 //  Created by Moshe Berman on 2/21/13.
@@ -19,5 +19,8 @@
 @property (nonatomic, strong) NSString *name;                       //  What is the sprite name?
 
 @property (nonatomic, strong) MBDialogTree *dialog;
+
++ (MBCharacterState *)characterStateWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)asDictionary;
 
 @end

@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>UUID</key>
+	<string>0</string>
+	<key>fileName</key>
+	<string></string>
+	<key>mainQuestStageIdentifier</key>
+	<integer>0</integer>
+	<key>sideQuestIdentifiers</key>
+	<array/>
+	<key>currentMapName</key>
+	<string></string>
+	<key>mapStates</key>
+	<array/>
+	<key>playerState</key>
+	<dict>
+		<key>direction</key>
+		<integer>0</integer>
+		<key>dialog</key>
+		<dict/>
+		<key>originInTiles</key>
+		<string></string>
+		<key>name</key>
+		<string></string>
+		<key>party</key>
+		<array/>
+		<key>inventory</key>
+		<array>
+			<dict>
+				<key>identifier</key>
+				<integer>0</integer>
+				<key>itemName</key>
+				<string>Malcolm&apos;s iPhone</string>
+				<key>spriteName</key>
+				<string>item.png</string>
+				<key>alternateSpriteName</key>
+				<string>menuItem.png</string>
+				<key>originInMapTiles</key>
+				<string></string>
+				<key>quantity</key>
+				<integer>0</integer>
+				<key>isCollected</key>
+				<real>0</real>
+			</dict>
+		</array>
+		<key>stamina</key>
+		<integer>0</integer>
+		<key>maxStamina</key>
+		<integer>0</integer>
+	</dict>
+	<key>score</key>
+	<string>0</string>
+</dict>
 </plist>

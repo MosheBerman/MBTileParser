@@ -59,7 +59,7 @@
     [aCoder encodeObject:[self sideQuestIdentifers] forKey:@"sideQuestIdentifiers"];
     [aCoder encodeObject:[self currentMapName] forKey:[self currentMapName]];
     [aCoder encodeObject:[self mapStates] forKey:@"mapStates"];
-    [aCoder encodeObject:[[self playerState] asDictionary] forKey:@"playerState"];
+    [aCoder encodeObject:[self playerState] forKey:@"playerState"];
     [aCoder encodeObject:[[self score]stringValue] forKey:@"score"];
 }
 

@@ -24,16 +24,6 @@
 
 @implementation MBViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder{
-    
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -92,9 +82,6 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.view];
-    //    [self.view displayBorderOfColor:[UIColor redColor] onSubviewsOfView:self.gameboyControls.view];
-    
     [[[self mapViewController] mapView] beginFollowingSpriteForKey:@"player"];
     
 }
@@ -104,6 +91,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+
+#pragma mark - Rotation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -283,16 +272,12 @@
         if([[[self player] directionKey] isEqualToString:directionName]){
             
             //
-            //  We want to load the new map state here...
+            //  TODO: We want to load the new map state here...
             //
             
             [[self mapViewController] loadMap:mapName];
-
-            
             
         }
-        
-        
     }
     
 }
@@ -336,7 +321,7 @@
     //  Create and return the tree
     //
     
-    MBDialogTree *tree = [[MBDialogTree alloc] initWithContentsOfArrayOfNodes:@[aboutNode, cancelNode]];
+    MBDialogTree *tree = [[MBDialogTree alloc] initWithNodes:@[aboutNode, cancelNode]];
     
     return tree;
 }
@@ -364,7 +349,6 @@
 }
 
 - (void) showMenu{
-    
     
     if(![self menuView]){
         MBMenuView *menu = [[MBMenuView alloc] init];

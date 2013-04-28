@@ -25,36 +25,34 @@
     return self;
 }
 
-+ (MBItemState *)itemStateWithDictionary:(NSDictionary *)dictionary
+#pragma mark - NSCoding
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
+    self = [super init];
     
-    MBItemState *state = [MBItemState new];
-    
-    [state setIdentifier:dictionary[@"identifier"]];
-    [state setItemName:dictionary[@"itemName"]];
-    CGPoint origin = CGPointFromString(dictionary[@"originInMapTiles"]);
-    [state setOriginInMapTiles:origin];
-    [state setSpriteName:dictionary[@"spriteName"]];
-    [state setAlternateSpriteName:dictionary[@"alternateSpriteName"]];
-    [state setQuantity:dictionary[@"quantity"]];
-    [state setIsCollected:[dictionary[@"isCollected"] boolValue]];
-    
-    return state;
+    if (self) {
+        _identifier = [aDecoder decodeObjectForKey:@"identifier"];
+        _itemName = [aDecoder decodeObjectForKey:@"itemName"];
+        _originInMapTiles = [aDecoder decodeCGPointForKey:@"originInMapTiles"];
+        _spriteName = [aDecoder decodeObjectForKey:@"spriteName"];
+        _alternateSpriteName = [aDecoder decodeObjectForKey:@"alternateSpriteName"];
+        _quantity = [aDecoder decodeObjectForKey:@"quantity"];
+        _isCollected = [aDecoder decodeBoolForKey:@"isCollected"];
+    }
+    return self;
 }
 
-- (NSDictionary *)asDictionary
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    
-    [dictionary setObject:[self identifier] forKey:@"identifier"];
-    [dictionary setObject:[self itemName] forKey:@"itemName"];
-    [dictionary setObject:NSStringFromCGPoint([self originInMapTiles]) forKey:@"originInMapTiles"];
-    [dictionary setObject:[self spriteName] forKey:@"spriteName"];
-    [dictionary setObject:[self alternateSpriteName] forKey:@"alternateSpriteName"];
-    [dictionary setObject:[self quantity] forKey:@"quantity"];
-    [dictionary setObject:@([self isCollected]) forKey:@"isCollected"];
-    
-    return dictionary;
+    [aCoder encodeObject:[self identifier] forKey:@"identifier"];
+    [aCoder encodeObject:[self itemName] forKey:@"itemName"];
+    [aCoder encodeCGPoint:[self originInMapTiles] forKey:@"originInMapTiles"];
+    [aCoder encodeObject:[self spriteName] forKey:@"spriteName"];
+    [aCoder encodeObject:[self alternateSpriteName] forKey:@"alternateSpriteName"];
+    [aCoder encodeObject:[self quantity] forKey:@"quantity"];
+    [aCoder encodeBool:[self isCollected] forKey:@"isCollected"];
 }
+
 
 @end

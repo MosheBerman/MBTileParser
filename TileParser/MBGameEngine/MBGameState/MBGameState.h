@@ -17,8 +17,7 @@
 #import "MBMapState.h"
 
 
-@interface MBGameState : NSObject
-
+@interface MBGameState : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *saveFileName;          //  The name of the save file
 @property (nonatomic, strong) NSUUID *saveIdentifier;          //  The unique ID of the save file
@@ -32,8 +31,5 @@
 @property (nonatomic, strong) MBPlayableCharacterState *playerState;  //  Player name, stamina, superpowers, etc.
 
 @property (nonatomic, strong) NSDecimalNumber *score;                 //  An arbitrary numeric value for the player's score.
-
-- (NSDictionary *)asDictionary;
-+ (MBGameState *)gameStateFromDictionary:(NSDictionary *)dictionary;
 
 @end

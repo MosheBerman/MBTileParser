@@ -26,48 +26,26 @@
     return self;
 }
 
-#pragma mark - Deserialization
+#pragma mark - NSCoding
 
-- (NSDictionary *)asDictionary
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    [dictionary setObject:[self mapName] forKey:@"mapName"];
-    [dictionary setObject:[NSMutableArray new] forKey:@"characterStates"];
-    [dictionary setObject:[NSMutableArray new] forKey:@"itemStates"];
-    
-    for (MBCharacterState *state in [self characterStates]) {
-        [dictionary[@"characterStates"] addObject:[state asDictionary]];
+    self = [super init];
+    if (self) {
+        _mapName = [aDecoder decodeObjectForKey:@"mapName"];
+        _displayName = [aDecoder decodeObjectForKey:@"displayName"];
+        _characterStates = [aDecoder decodeObjectForKey:@"characterStates"];
+        _itemStates = [aDecoder decodeObjectForKey:@"itemStates"];
     }
-    
-    for (MBItemState *state in [self itemStates]) {
-        [dictionary[@"itemStates"] addObject:[state asDictionary]];
-    }
-    
-    return dictionary;
+    return self;
 }
 
-#pragma mark - Serialization
-
-+ (MBMapState *)mapStateWithDictionary:(NSDictionary *)dictionary
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    MBMapState *state = [MBMapState new];
-    
-    [state setMapName:dictionary[@"mapName"]];
-    [state setDisplayName:dictionary[@"displayName"]];
-    [state setCharacterStates:[NSMutableArray new]];
-    [state setItemStates:[NSMutableArray new]];
-    
-    for (NSDictionary *characterStateData in dictionary[@"characterStates"]) {
-        MBPlayableCharacterState *characterState = [MBPlayableCharacterState playableCharacterStateWithDictionary:characterStateData];
-        [[state characterStates] addObject:characterState];
-    }
-    
-    for (NSDictionary *itemStateData in dictionary[@"itemStates"]) {
-        MBItemState *itemState = [MBItemState itemStateWithDictionary:itemStateData];
-        [[state itemStates] addObject:itemState];
-    }
-    
-    return state;
+    [aCoder encodeObject:[self mapName] forKey:@"mapName"];
+    [aCoder encodeObject:[self displayName] forKey:@"displayName"];
+    [aCoder encodeObject:[self characterStates] forKey:@"characterStates"];
+    [aCoder encodeObject:[self itemStates] forKey:@"itemStates"];
 }
 
 @end

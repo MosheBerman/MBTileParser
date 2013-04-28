@@ -31,57 +31,36 @@
     return self;
 }
 
-#pragma mark - Deserialization
+#pragma mark - NSCoding
 
-- (NSDictionary *)asDictionary
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    self = [self init];
     
-    [dictionary setObject:[self saveFileName] forKey:@"saveFileName"];
-    [dictionary setObject:[[self saveIdentifier] UUIDString] forKey:@"saveIdentifier"];
-    [dictionary setObject:[self mainQuestStageIdentifier] forKey:@"mainQuestStageIdentifier"];
-    [dictionary setObject:[self sideQuestIdentifers] forKey:@"sideQuestIdentifiers"];
-    [dictionary setObject:[self currentMapName] forKey:[self currentMapName]];
-    [dictionary setObject:[NSMutableArray new] forKey:@"mapStates"];
-
-    for (MBMapState *mapState in [self mapStates]) {
-        [dictionary[@"mapStates"] addObject:[mapState asDictionary]];
+    if (self) {
+        _saveFileName = [aDecoder decodeObjectForKey:@"saveFileName"];
+        _saveIdentifier = [aDecoder decodeObjectForKey:@"saveIdentifier"];
+        _mainQuestStageIdentifier = [aDecoder decodeObjectForKey:@"mainQuestStageIdentifier"];
+        _sideQuestIdentifers = [aDecoder decodeObjectForKey:@"sideQuestIdentifiers"];
+        _currentMapName = [aDecoder decodeObjectForKey:@"currentMapName"];
+        _playerState = [aDecoder decodeObjectForKey:@"playerState"];
+        _score = [aDecoder decodeObjectForKey:@"score"];
     }
     
-    [dictionary setObject:[[self playerState] asDictionary] forKey:@"playerState"];
-    [dictionary setObject:[[self score]stringValue] forKey:@"score"];
-    
-    return dictionary;
+    return self;
 }
 
-#pragma mark Serialization
-
-//
-//  This method returns a fully configured game
-//  state from a given dictionary.
-//
-
-+ (MBGameState *)gameStateFromDictionary:(NSDictionary *)dictionary
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    MBGameState *state = [MBGameState new];
+    [aCoder encodeObject:[self saveFileName] forKey:@"saveFileName"];
     
-    [state setSaveFileName:dictionary[@"fileName"]];
-    [state setSaveIdentifier:[[NSUUID alloc] initWithUUIDString:dictionary[@"UUID"]]];
-    [state setMainQuestStageIdentifier:dictionary[@"mainQuestStageIdentifier"]];
-    [state setSideQuestIdentifers:[dictionary[@"sideQuestIdentifiers"] mutableCopy]];
-    [state setCurrentMapName:dictionary[@"currentMapName"]];
-    [state setMapStates:[NSMutableDictionary new]];
-    
-    for (NSDictionary *mapStateData in dictionary[@"mapStates"]) {
-        MBMapState *mapState = [MBMapState mapStateWithDictionary:mapStateData];
-        [[state mapStates] setObject:mapState forKey:mapStateData[@"mapName"]];
-    }
-    
-    [state setPlayerState:[MBPlayableCharacterState playableCharacterStateWithDictionary:dictionary[@"playerState"]]];
-    
-    [state setScore:[NSDecimalNumber decimalNumberWithString:dictionary[@"score"]]];
-    
-    return state;
+    [aCoder encodeObject:[[self saveIdentifier] UUIDString] forKey:@"saveIdentifier"];
+    [aCoder encodeObject:[self mainQuestStageIdentifier] forKey:@"mainQuestStageIdentifier"];
+    [aCoder encodeObject:[self sideQuestIdentifers] forKey:@"sideQuestIdentifiers"];
+    [aCoder encodeObject:[self currentMapName] forKey:[self currentMapName]];
+    [aCoder encodeObject:[self mapStates] forKey:@"mapStates"];
+    [aCoder encodeObject:[[self playerState] asDictionary] forKey:@"playerState"];
+    [aCoder encodeObject:[[self score]stringValue] forKey:@"score"];
 }
 
 @end

@@ -8,10 +8,6 @@
 
 #import "MBCharacterState.h"
 
-@interface MBCharacterState ()
-
-@end
-
 @implementation MBCharacterState
 
 - (id)init
@@ -26,30 +22,28 @@
     return self;
 }
 
-+ (MBCharacterState *)characterStateWithDictionary:(NSDictionary *)dictionary
+#pragma mark - NSCoding
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    MBCharacterState *state = [MBCharacterState new];
     
-    [state setDirection:[dictionary[@"direction"] integerValue]];
-    [state setOriginInTiles:CGPointFromString(dictionary[@"originInTiles"])];
-    [state setName:dictionary[@"name"]];
-    [state setDialog:dictionary[@"dialog"]];
-    
-    //  TODO: Dialog dict?
-    
-    return state;
-    
+    self = [super init];
+    if(self){
+        _direction = [aDecoder decodeIntegerForKey:@"direction"];
+        _originInTiles = [aDecoder decodeCGPointForKey:@"originInTiles"];
+        _name = [aDecoder decodeObjectForKey:@"name"];
+        _dialog = [aDecoder decodeObjectForKey:@"dialog"];
+ 
+    }
+    return self;
 }
 
-- (NSDictionary *)asDictionary
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    
-    [dictionary setObject:@([self direction]) forKey:@"direction"];
-    [dictionary setObject:NSStringFromCGPoint([self originInTiles]) forKey:@"originInTiles"];
-    [dictionary setObject:[self name] forKey:@"name"];
-    [dictionary setObject:[self dialog] forKey:@"dialog"];
-    return dictionary;
+    [aCoder encodeInteger:[self direction] forKey:@"direction"];
+    [aCoder encodeCGPoint:[self originInTiles] forKey:@"originInTiles"];
+    [aCoder encodeObject:[self name] forKey:@"name"];
+    [aCoder encodeObject:[self dialog] forKey:@"dialog"];
 }
 
 @end

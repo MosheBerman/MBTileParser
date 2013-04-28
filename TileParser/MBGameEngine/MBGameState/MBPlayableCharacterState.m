@@ -32,47 +32,41 @@
     return self;
 }
 
-+ (MBPlayableCharacterState *)playableCharacterStateWithDictionary:(NSDictionary *)dictionary
+#pragma mark - NSCoding
+
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
+    self = [super initWithCoder:aDecoder];
     
-    MBPlayableCharacterState *state = (MBPlayableCharacterState *)[MBCharacterState characterStateWithDictionary:dictionary];
-    
-    // Party State
-    for (NSDictionary *partyStateData in dictionary[@"party"]) {
-        MBPlayableCharacterState *partyState = [MBPlayableCharacterState playableCharacterStateWithDictionary:partyStateData];
-        [[state party] addObject:partyState];
+    if (self) {
+        _party = [aDecoder decodeObjectForKey:@"party"];
+        _inventory = [aDecoder decodeObjectForKey:@"inventory"];
+        
+        _maxStamina = [aDecoder decodeObjectForKey:@"maxStamina"];
+        _stamina = [aDecoder decodeObjectForKey:@"stamina"];
+        
+        _level = [aDecoder decodeObjectForKey:@"level"];
+        _experience = [aDecoder decodeObjectForKey:@"experience"];
+        _experienceForNextLevel = [aDecoder decodeObjectForKey:@"experienceForNextLevel"];
     }
     
-    //  Item State
-    for (NSDictionary *itemStateData in dictionary[@"inventory"]) {
-        MBItemState *itemState = [MBItemState itemStateWithDictionary:itemStateData];
-        [[state inventory] addObject:itemState];
-    }
-    
-    [state setStamina:[NSDecimalNumber decimalNumberWithString:dictionary[@"stamina"]]];
-    [state setMaxStamina:[NSDecimalNumber decimalNumberWithString:dictionary[@"maxStamina"]]];
-    
-    return state;
+    return self;
 }
 
-- (NSDictionary *)asDictionary
+- (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
     
-    [dictionary setObject:[NSMutableDictionary new] forKey:@"party"];
-    [dictionary setObject:[NSMutableDictionary new] forKey:@"inventory"];
-    [dictionary setObject:[[self stamina] stringValue] forKey:@"stamina"];
-    [dictionary setObject:[[self maxStamina] stringValue] forKey:@"maxStamina"];
+    [super encodeWithCoder:aCoder];
     
-    for (MBPlayableCharacterState *state in [self party]) {
-        [dictionary[@"party"] addObject:[state asDictionary]];
-    }
+    [aCoder encodeObject:[self party] forKey:@"party"];
+    [aCoder encodeObject:[self inventory] forKey:@"inventory"];
     
-    for (MBItemState *state in [self inventory]) {
-        [dictionary[@"inventory"] addObject:[state asDictionary]];
-    }
+    [aCoder encodeObject:[self maxStamina] forKey:@"maxStamina"];
+    [aCoder encodeObject:[self stamina] forKey:@"stamina"];
     
-    return dictionary;
+    [aCoder encodeObject:[self level] forKey:@"level"];
+    [aCoder encodeObject:[self experience] forKey:@"experience"];
+    [aCoder encodeObject:[self experienceForNextLevel] forKey:@"experienceForNextLevel"];
 }
 
 @end

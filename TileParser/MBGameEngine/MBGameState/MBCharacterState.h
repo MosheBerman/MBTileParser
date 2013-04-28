@@ -12,7 +12,7 @@
 
 #import "MBDialogTree.h"
 
-@interface MBCharacterState : NSObject
+@interface MBCharacterState : NSObject <NSCoding>
 
 @property (nonatomic, assign) MBSpriteMovementDirection direction;  //  What direction is the sprite facing
 @property (nonatomic, assign) CGPoint originInTiles;                //  Where is the sprite located?
@@ -20,7 +20,5 @@
 
 @property (nonatomic, strong) MBDialogTree *dialog;
 
-+ (MBCharacterState *)characterStateWithDictionary:(NSDictionary *)dictionary;
-- (NSDictionary *)asDictionary;
 
 @end

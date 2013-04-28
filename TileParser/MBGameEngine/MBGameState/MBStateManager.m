@@ -24,19 +24,20 @@
 
 - (void)loadStateFromURL:(NSURL *)fileURL
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfURL:fileURL];
-
-    [self setState:[MBGameState gameStateFromDictionary:dictionary]];
+    
+    NSData *data = [NSData dataWithContentsOfURL:fileURL];
+    [self setState:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
 }
 
 - (void)saveStateToURL:(NSURL *)fileURL
 {
-    NSDictionary *dictionary = [[self state] asDictionary];
-    [dictionary writeToURL:fileURL atomically:NO];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[self state]];
+    [data writeToURL:fileURL atomically:NO];
 }
 
 - (void)loadFreshState
 {
+    
     [self setState:[MBGameState new]];
 }
 

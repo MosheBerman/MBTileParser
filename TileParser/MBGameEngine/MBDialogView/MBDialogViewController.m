@@ -18,7 +18,6 @@
 
 @property (nonatomic, strong) MBDialogTree *dialogTree;
 
-
 //
 //  Keep our own text cache, independent of the
 //  MBDialogTree data structure, so that we can
@@ -35,7 +34,8 @@
 
 @implementation MBDialogViewController
 
-- (id)initWithDialogTree:(MBDialogTree *)tree{
+- (id)initWithDialogTree:(MBDialogTree *)tree
+{
     self = [super init];
     
     if (self) {
@@ -47,7 +47,8 @@
 }
 
 
-- (void)loadView{
+- (void)loadView
+{
     
     MBDialogView *d = [[MBDialogView alloc] init];
     
@@ -74,8 +75,9 @@
 //  with a pop animation type.
 //
 
-- (void) show{
-//    [self showWithAnimation:ViewAnimationPop];
+- (void)show
+{
+    [self showWithAnimation:MBDialogViewAnimationPop];
 }
 
 //
@@ -83,7 +85,9 @@
 //  with a supplies animation type.
 //
 
-- (void) showWithAnimation:(MBDialogAnimation)animationType{
+
+- (void)showWithAnimation:(MBDialogAnimation)animationType
+{
     
     UIView *parentView = [UIApplication rootView];
     
@@ -94,7 +98,8 @@
     [self prepareCache];
 }
 
-- (BOOL) isShowing{
+- (BOOL) isShowing
+{
     return [[[UIApplication rootView] subviews] containsObject:[self view]];
 }
 
@@ -108,7 +113,8 @@
 //  support caching.
 //
 
-- (void) prepareCache{
+- (void) prepareCache
+{
     
     //
     //  Prepare our text...
@@ -131,12 +137,14 @@
 //  truncated by the UILabel.
 //
 
-- (void) cacheText{
+- (void) cacheText
+{
     MBDialogTreeNode *node = [[self dialogTree] activeNode];
     
     NSString *textToCache = [node nextStringToDisplay];
 
-    if(textToCache){
+    if(textToCache)
+    {
         //  Only cache if we actually want to cache stuff.
         
         CGRect frame = [[[self dialogView] contentView] frame];
@@ -146,7 +154,9 @@
         [self setCacheOfCurrentNode:newDialog];
         
         [self setCacheIndex:0];
-    }else {
+    }
+    else
+    {
         [self setCacheOfCurrentNode:nil];
     }
 }
@@ -164,15 +174,18 @@
 //  Pull out the node we want.
 //
 
-- (void) cycleText{
+- (void) cycleText
+{
     
     NSString *textToRender = [self nextStringFromCache];
     
-    if (textToRender) {
+    if (textToRender)
+    {
         [[self dialogView] setText:textToRender];
         [[self dialogView] render];
     }
-    else {
+    else
+    {
         
         //
         //  Store the end action
@@ -212,7 +225,8 @@
 //  if not we check the actual dialog tree.
 //
 
-- (BOOL)hasNextInCache{
+- (BOOL)hasNextInCache
+{
     return [self cacheIndex] < [[self cacheOfCurrentNode] count];
 }
 
@@ -220,7 +234,8 @@
 //  Load the next string out of the cache
 //
 
-- (NSString *)nextStringFromCache{
+- (NSString *)nextStringFromCache
+{
     NSUInteger index = [self cacheIndex];
     NSString *string = [self cacheOfCurrentNode][index];
     if ([self hasNextInCache]) {

@@ -67,8 +67,6 @@ enum MBDialogFormFactor {
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) UIView *contentView;
 
-- (id) initWithText:(NSString *)text;
-- (id) initWithArrayOfText:(NSArray *)text;
 - (id) initWithDialogTree:(MBDialogTree *)dialogTree;
 
 //

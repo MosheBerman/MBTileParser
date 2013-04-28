@@ -8,7 +8,7 @@
 
 #import "MBDialogTreeNode.h"
 
-@interface MBDialogTreeNode ()
+@interface MBDialogTreeNode () <NSCoding>
 @property (nonatomic, assign) NSUInteger currentDialogIndex;
 @end
 
@@ -20,6 +20,21 @@
     if (self) {
         _currentDialogIndex = 0;
         _dialog = nil;
+        _displayName = @"New Dialog";
+        _endAction = nil;
+        
+    }
+    
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    if (self) {
+        _currentDialogIndex = [aDecoder decodeIntegerForKey:@"currentDialogIndex"];
+        _dialog = [aDecoder decodeObjectForKey:@"dialog"];
     }
     
     return self;
@@ -38,5 +53,13 @@
 - (void)rewind {
     _currentDialogIndex = 0;
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeInteger:[self currentDialogIndex] forKey:@"currentDialogIndex"];
+    [aCoder encodeObject:[self dialog] forKey:@"dialog"];
+}
+
+
 
 @end

@@ -10,24 +10,20 @@
 
 #import "MBDialogTreeNode.h"
 
-@interface MBDialogTree : NSObject
+@interface MBDialogTree : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSArray *nodes;
 @property (nonatomic, strong) MBDialogTreeNode *firstNode;
 @property (nonatomic, strong) MBDialogTreeNode *activeNode;
 
 //  Designated initializer
-- (id) initWithContentsOfArrayOfNodes:(NSArray *)array;
+- (id) initWithNodes:(NSArray *)array;
 
-//Convenience initializers
-- (id) initWithMessage:(NSString *)dialogText;
-- (id) initWithContentsOfFile:(NSString *)path;
-- (id) initWithContentsOfURL:(NSURL *)url;
-- (id) initWithContentsOfArrayOfStrings:(NSArray *)array;   //  Converts an array of strings to a single node.
++ (MBDialogTree *)dialogTreeWithDictionary:(NSDictionary *)dictionary;
 
 // Accessing nodes
 
-- (BOOL) hasNext;
+- (BOOL)hasNext;
 - (MBDialogTreeNode *)nextNode;
 
 //
@@ -39,7 +35,7 @@
 //  if there's no next node.
 //
 
-- (BOOL) rewindAndProceedToNextNode;
-- (void) rewindToFirstNode;
+- (BOOL)rewindAndProceedToNextNode;
+- (void)rewindToFirstNode;
 
 @end

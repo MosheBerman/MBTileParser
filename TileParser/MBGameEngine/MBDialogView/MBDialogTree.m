@@ -10,7 +10,8 @@
 
 @implementation MBDialogTree
 
-- (id) initWithContentsOfArrayOfNodes:(NSArray *)array{
+- (id)initWithNodes:(NSArray *)array
+{
  
     self = [super init];
     
@@ -23,25 +24,18 @@
     return self;
 }
 
-- (id) initWithContentsOfArrayOfStrings:(NSArray *)array{
-    
-    MBDialogTreeNode *node = [[MBDialogTreeNode alloc] init];
-        
-    [node setDialog:array];
-        
-    return [self initWithContentsOfArrayOfNodes:@[node]];
-}
-
-- (id) initWithMessage:(NSString *)dialogText{
+- (id)initWithMessage:(NSString *)dialogText
+{
     
     MBDialogTreeNode *node = [[MBDialogTreeNode alloc] init];
     [node setDialog:@[dialogText]];
-    return [self initWithContentsOfArrayOfNodes:@[node]];
+    return [self initWithNodes:@[node]];
 }
 
-- (id) initWithContentsOfFile:(NSString *)path{
+- (id) initWithContentsOfFile:(NSString *)path
+{
     NSArray *dialogNodes = [NSArray arrayWithContentsOfFile:path];
-    return [self initWithContentsOfArrayOfNodes:dialogNodes];
+    return [self initWithNodes:dialogNodes];
 }
 
 - (id) initWithContentsOfURL:(NSURL *)url{
@@ -49,14 +43,29 @@
     
     //  TODO: Process the nodes.
     
-    return [self initWithContentsOfArrayOfNodes:dialogNodes];
+    return [self initWithNodes:dialogNodes];
 }
 
-- (NSUInteger) currentNode{
++ (MBDialogTree *)dialogTreeWithDictionary:(NSDictionary *)dictionary
+{
+    for (NSDictionary *treeNodeData in dictionary[@"nodes"]) {
+//        MBDialogTreeNode *node = [MBDialogTreeNode nodeWithDictionary:dictionary];
+    }
+    
+    MBDialogTree *tree = [MBDialogTree new];
+    
+    // TODO: Load dialog
+    
+    return tree;
+}
+
+#pragma mark -
+
+- (NSUInteger)currentNode{
     return [[self nodes] indexOfObject:[self activeNode]];
 }
 
-- (BOOL) hasNext{
+- (BOOL)hasNext{
     if (![self activeNode] || ![[self nodes] count]) {
         return NO;
     }
@@ -84,7 +93,7 @@
 //  if there's no next node.
 //
 
-- (BOOL) rewindAndProceedToNextNode{
+- (BOOL)rewindAndProceedToNextNode{
     if (![self hasNext]) {
         [self rewindToFirstNode];
         return NO;
@@ -96,7 +105,7 @@
     return YES;
 }
 
-- (void) rewindToFirstNode{
+- (void)rewindToFirstNode{
     [self setActiveNode:[self firstNode]];
     
     for (MBDialogTreeNode *node in [self nodes]) {

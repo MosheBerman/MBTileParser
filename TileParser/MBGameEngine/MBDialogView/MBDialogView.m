@@ -70,17 +70,6 @@
     return self;
 }
 
-- (id) initWithText:(NSString *)text{
-    MBDialogTree *tree = [[MBDialogTree alloc] initWithMessage:text];
-    return [self initWithDialogTree:tree];
-}
-
-
-- (id) initWithArrayOfText:(NSArray *)text{
-    MBDialogTree *tree = [[MBDialogTree alloc] initWithContentsOfArrayOfStrings:text];
-    return [self initWithDialogTree:tree];
-}
-
 #pragma mark - Show MBDialogView in a UIView
 
 //
@@ -445,301 +434,301 @@
                                  
                                  [self setAlpha:0.6];
                                  
-                                  [UIView animateWithDuration:.2 animations:^{
-                                      CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0);
-                                      [self setTransform:t];
-                                      [self setAlpha:0];
-                                  }
-                                completion:^(BOOL finished) {
-                                    [self removeFromSuperview];
-                                }];
+                                 [UIView animateWithDuration:.2 animations:^{
+                                     CGAffineTransform t = CGAffineTransformScale(CGAffineTransformIdentity, 0, 0);
+                                     [self setTransform:t];
+                                     [self setAlpha:0];
+                                 }
+                                                  completion:^(BOOL finished) {
+                                                      [self removeFromSuperview];
+                                                  }];
                              }];
                              
                              
                          }];
     }
 }
-         /* else if(animation == MBDialogViewAnimationPop){
-          [UIView animateWithDuration:0.2 animations:^{
-          
-          CGRect intermediateBounds = startingBounds;
-          
-          intermediateBounds.size.width *= 0.9;
-          intermediateBounds.size.height *= 0.9;
-          
-          [self setBounds:intermediateBounds];
-          [self setFrame:intermediateBounds];
-          [self setAlpha:0.9];
-          
-          //
-          //  Hide the label at this point
-          //  so it doesn't look funny as
-          //  we pop the dialog away
-          //
-          
-          [[self label] setAlpha:0];
-          
-          } completion:^(BOOL finished) {
-          [UIView animateWithDuration:1/15.0 animations:^{
-          CGRect intermediateBounds = startingBounds;
-          
-          intermediateBounds.size.width *= 1.05;
-          intermediateBounds.size.height *= 1.05;
-          
-          [self setBounds:intermediateBounds];
-          [self setFrame:intermediateBounds];
-          [self setAlpha:0.8];
-          
-          } completion:^(BOOL finished) {
-          
-          [UIView animateWithDuration:1/15.0 animations:^{
-          CGRect intermediateBounds = startingBounds;
-          
-          intermediateBounds.size.width = 0;
-          intermediateBounds.size.height = 0;
-          
-          [self setBounds:intermediateBounds];
-          [self setFrame:intermediateBounds];
-          
-          [self setAlpha:0];
-          
-          } completion:^(BOOL finished) {
-          [self removeFromSuperview];
-          [[self label] setText:nil];
-          }];
-          }];
-          }];
-          }    */
+/* else if(animation == MBDialogViewAnimationPop){
+ [UIView animateWithDuration:0.2 animations:^{
+ 
+ CGRect intermediateBounds = startingBounds;
+ 
+ intermediateBounds.size.width *= 0.9;
+ intermediateBounds.size.height *= 0.9;
+ 
+ [self setBounds:intermediateBounds];
+ [self setFrame:intermediateBounds];
+ [self setAlpha:0.9];
+ 
+ //
+ //  Hide the label at this point
+ //  so it doesn't look funny as
+ //  we pop the dialog away
+ //
+ 
+ [[self label] setAlpha:0];
+ 
+ } completion:^(BOOL finished) {
+ [UIView animateWithDuration:1/15.0 animations:^{
+ CGRect intermediateBounds = startingBounds;
+ 
+ intermediateBounds.size.width *= 1.05;
+ intermediateBounds.size.height *= 1.05;
+ 
+ [self setBounds:intermediateBounds];
+ [self setFrame:intermediateBounds];
+ [self setAlpha:0.8];
+ 
+ } completion:^(BOOL finished) {
+ 
+ [UIView animateWithDuration:1/15.0 animations:^{
+ CGRect intermediateBounds = startingBounds;
+ 
+ intermediateBounds.size.width = 0;
+ intermediateBounds.size.height = 0;
+ 
+ [self setBounds:intermediateBounds];
+ [self setFrame:intermediateBounds];
+ 
+ [self setAlpha:0];
+ 
+ } completion:^(BOOL finished) {
+ [self removeFromSuperview];
+ [[self label] setText:nil];
+ }];
+ }];
+ }];
+ }    */
 
-         
+
 #pragma mark - Text loading and caching
-         
-         //
-         //  Cache the text and show the first part of it.
-         //
-         //  Dialog caching only works in the base class.
-         //  Subclasses of the dialog class do not
-         //  support caching.
-         //
-         
-         - (void) prepareCache{
-             
-             if (![self isMemberOfClass:[MBDialogView class]]) {
-                 return;
-             }
-             
-             //
-             //  Prepare our text...
-             //
-             
-             [self cacheText];
-             
-             //
-             //  Show the first substring that fits
-             //
-             
-             [self cycleText];
-             
-         }
-         
-         //
-         //  Take the dialog tree, grab the current node,
-         //  then break it up so that we can see the entire
-         //  message, one part at a time, without it being
-         //  truncated by the UILabel.
-         //
-         
-         
-         - (void) cacheText{
-             MBDialogTreeNode *node = [[self dialogTree] activeNode];
-             
-             if ([node hasNext]) {
-                 NSString *textToCache = [node nextStringToDisplay];
-                 
-                 //  Only cache if we actually want to cache stuff.
-                 if(textToCache != nil){
-                     NSArray *newDialog = [textToCache dialogArrayForFrame:[self labelFrame] andFont:[self font]];
-                     [self setCacheOfCurrentNode:newDialog];
-                 }
-                 
-                 [self setCacheIndex:0];
-             }else {
-                 [self setCacheOfCurrentNode:nil];
-             }
-         }
-         
-         //
-         //  First, check if we have a previous node. If so
-         //  see if there's more text to show. If there is,
-         //  show it.
-         //
-         //  If there is no new text, check for responses and
-         //  offer them.
-         //
-         //  If there's no responses, run the selector if it exists.
-         //
-         //  Pull out the node we want.
-         //
-         
-         
-         - (void) cycleText{
-             
-             if ([self hasNextInCache]) {
-                 NSString *textToRender = [self nextStringFromCache];
-                 [self renderText:textToRender];
-             }
-             else {
-                 
-                 //
-                 //  Store the end action
-                 //
-                 
-                 SEL endAction = [[[self dialogTree] activeNode] endAction];
-                 
-                 //
-                 //  Hide the dialog tree
-                 //
-                 
-                 [self hideWithAnimation:[self animationType]];
-                 
-                 //
-                 //  Rewind and proceed to the next node.
-                 //
-                 
-                 [[[self dialogTree] activeNode] rewind];
-                 
-                 //
-                 //  Perform the end action if there is one.
-                 //
-                 
-                 if(endAction){
-                     
-                     [[UIApplication sharedApplication] sendAction:endAction to:nil from:self forEvent:nil];
-                     
-                 }
-             }
-             
-         }
-         
+
+//
+//  Cache the text and show the first part of it.
+//
+//  Dialog caching only works in the base class.
+//  Subclasses of the dialog class do not
+//  support caching.
+//
+
+- (void) prepareCache{
+    
+    if (![self isMemberOfClass:[MBDialogView class]]) {
+        return;
+    }
+    
+    //
+    //  Prepare our text...
+    //
+    
+    [self cacheText];
+    
+    //
+    //  Show the first substring that fits
+    //
+    
+    [self cycleText];
+    
+}
+
+//
+//  Take the dialog tree, grab the current node,
+//  then break it up so that we can see the entire
+//  message, one part at a time, without it being
+//  truncated by the UILabel.
+//
+
+
+- (void) cacheText{
+    MBDialogTreeNode *node = [[self dialogTree] activeNode];
+    
+    if ([node hasNext]) {
+        NSString *textToCache = [node nextStringToDisplay];
+        
+        //  Only cache if we actually want to cache stuff.
+        if(textToCache != nil){
+            NSArray *newDialog = [textToCache dialogArrayForFrame:[self labelFrame] andFont:[self font]];
+            [self setCacheOfCurrentNode:newDialog];
+        }
+        
+        [self setCacheIndex:0];
+    }else {
+        [self setCacheOfCurrentNode:nil];
+    }
+}
+
+//
+//  First, check if we have a previous node. If so
+//  see if there's more text to show. If there is,
+//  show it.
+//
+//  If there is no new text, check for responses and
+//  offer them.
+//
+//  If there's no responses, run the selector if it exists.
+//
+//  Pull out the node we want.
+//
+
+
+- (void) cycleText{
+    
+    if ([self hasNextInCache]) {
+        NSString *textToRender = [self nextStringFromCache];
+        [self renderText:textToRender];
+    }
+    else {
+        
+        //
+        //  Store the end action
+        //
+        
+        SEL endAction = [[[self dialogTree] activeNode] endAction];
+        
+        //
+        //  Hide the dialog tree
+        //
+        
+        [self hideWithAnimation:[self animationType]];
+        
+        //
+        //  Rewind and proceed to the next node.
+        //
+        
+        [[[self dialogTree] activeNode] rewind];
+        
+        //
+        //  Perform the end action if there is one.
+        //
+        
+        if(endAction){
+            
+            [[UIApplication sharedApplication] sendAction:endAction to:nil from:self forEvent:nil];
+            
+        }
+    }
+    
+}
+
 #pragma mark - Rendering and Layout
-         
-         //
-         //  Renders the dialog view.
-         //  In this class, we pull out some text to
-         //  render and pass it to the renderText: method.
-         //  In other classes, such as the menu, we may
-         //  want to render several labels instead.
-         //
-         
-         - (void) render{
-             
-             if (![self hasNextInCache]) {
-                 [self cacheText];
-             }
-             
-             [self cycleText];
-             
-         }
-         
-         //
-         //  Takes a given string and sticks it into a UILabel onscreen.
-         //
-         
-         - (void) renderText:(NSString *)text{
-             
-             //
-             //  Prepare our label...
-             //
-             
-             CGRect frame = [self labelFrame];
-             
-             if(![self label]){
-                 UILabel *label = [[UILabel alloc] initWithFrame:frame];
-                 [label setCenter:[self center]];
-                 [label setFont:[self font]];
-                 [label setBackgroundColor:[UIColor clearColor]];
-                 [label setTextColor:[UIColor blackColor]];
-                 [label setNumberOfLines:0];
-                 [label setLineBreakMode:NSLineBreakByClipping];
-                 [self setLabel:label];
-             }
-             
-             [[self label] setFrame:frame];
-             [[self label] setBounds:frame];
-             
-             [self addSubview:[self label]];
-             
-             [[self label] setText:text];
-         }
-         
-         
-         //
-         //  Calculates a frame for the dialog's
-         //  content area based on the frame of
-         //  the dialog view.
-         //
-         
-         - (CGRect) labelFrame{
-             CGRect frame = [self bounds];
-             return [self labelFrameFromWrapperFrame:frame];
-         }
-         
-         //
-         //  Calculates a frame for the UILabel
-         //  based on a given frame.
-         //
-         
-         - (CGRect) labelFrameFromWrapperFrame:(CGRect) frame{
-             frame.origin.y +=  [self verticalMarginHeight];
-             frame.origin.x += [self horizontalMarginWidth];
-             
-             frame.size.height -= [self verticalMarginHeight]*2;
-             frame.size.width -= [self horizontalMarginWidth]*2;
-             
-             return frame;
-         }
-         
+
+//
+//  Renders the dialog view.
+//  In this class, we pull out some text to
+//  render and pass it to the renderText: method.
+//  In other classes, such as the menu, we may
+//  want to render several labels instead.
+//
+
+- (void) render{
+    
+    if (![self hasNextInCache]) {
+        [self cacheText];
+    }
+    
+    [self cycleText];
+    
+}
+
+//
+//  Takes a given string and sticks it into a UILabel onscreen.
+//
+
+- (void) renderText:(NSString *)text{
+    
+    //
+    //  Prepare our label...
+    //
+    
+    CGRect frame = [self labelFrame];
+    
+    if(![self label]){
+        UILabel *label = [[UILabel alloc] initWithFrame:frame];
+        [label setCenter:[self center]];
+        [label setFont:[self font]];
+        [label setBackgroundColor:[UIColor clearColor]];
+        [label setTextColor:[UIColor blackColor]];
+        [label setNumberOfLines:0];
+        [label setLineBreakMode:NSLineBreakByClipping];
+        [self setLabel:label];
+    }
+    
+    [[self label] setFrame:frame];
+    [[self label] setBounds:frame];
+    
+    [self addSubview:[self label]];
+    
+    [[self label] setText:text];
+}
+
+
+//
+//  Calculates a frame for the dialog's
+//  content area based on the frame of
+//  the dialog view.
+//
+
+- (CGRect) labelFrame{
+    CGRect frame = [self bounds];
+    return [self labelFrameFromWrapperFrame:frame];
+}
+
+//
+//  Calculates a frame for the UILabel
+//  based on a given frame.
+//
+
+- (CGRect) labelFrameFromWrapperFrame:(CGRect) frame{
+    frame.origin.y +=  [self verticalMarginHeight];
+    frame.origin.x += [self horizontalMarginWidth];
+    
+    frame.size.height -= [self verticalMarginHeight]*2;
+    frame.size.width -= [self horizontalMarginWidth]*2;
+    
+    return frame;
+}
+
 #pragma mark - Cycle Current Node
-         
-         //
-         //  Check if our temporary dialog tree has more text,
-         //  if not we check the actual dialog tree.
-         //
-         
-         - (BOOL)hasNextInCache{
-             return [self cacheIndex] < [[self cacheOfCurrentNode] count];
-         }
-         
-         //
-         //  Load the next string out of the cache
-         //
-         
-         - (NSString *)nextStringFromCache{
-             NSUInteger index = [self cacheIndex];
-             NSString *string = [self cacheOfCurrentNode][index];
-             if ([self hasNextInCache]) {
-                 index++;
-                 [self setCacheIndex:index];
-             }
-             return string;
-         }
-         
-         
-         //
-         //  Determines if the dialog view is visible in the root view of the keyWindow.
-         //
-         
-         - (BOOL) isShowing{
-             return [self isShowingInView:[UIApplication rootView]];
-         }
-         
-         //
-         //  Determines if the dialog view is visible in a given view.
-         //
-         
-         - (BOOL) isShowingInView:(UIView *)view{
-             return [[view subviews] containsObject:self];
-         }
-         
-         
-         @end
+
+//
+//  Check if our temporary dialog tree has more text,
+//  if not we check the actual dialog tree.
+//
+
+- (BOOL)hasNextInCache{
+    return [self cacheIndex] < [[self cacheOfCurrentNode] count];
+}
+
+//
+//  Load the next string out of the cache
+//
+
+- (NSString *)nextStringFromCache{
+    NSUInteger index = [self cacheIndex];
+    NSString *string = [self cacheOfCurrentNode][index];
+    if ([self hasNextInCache]) {
+        index++;
+        [self setCacheIndex:index];
+    }
+    return string;
+}
+
+
+//
+//  Determines if the dialog view is visible in the root view of the keyWindow.
+//
+
+- (BOOL) isShowing{
+    return [self isShowingInView:[UIApplication rootView]];
+}
+
+//
+//  Determines if the dialog view is visible in a given view.
+//
+
+- (BOOL) isShowingInView:(UIView *)view{
+    return [[view subviews] containsObject:self];
+}
+
+
+@end

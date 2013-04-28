@@ -34,6 +34,9 @@
 //  What if instead of endActions we had a notification string to dispatch?
 //  Then any object that was registered can run the action.
 //
+//  Another option would be to turn this into a FIFO queue of blocks.
+//  Mmm, blocks... Tasty...
+//
 
 @property (nonatomic, assign) SEL endAction;
 

@@ -19,7 +19,6 @@
 		463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
 		463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
 		463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
-		4642FC5E16E2FFB100C7CFAD /* MBGameStateLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */; };
 		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
 		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
 		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
@@ -87,8 +86,10 @@
 		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
 		46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A000281642CB4800EBC2EE /* MBDialogViewController.m */; };
 		46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */; };
+		46ABB36F1724A5D500E4D75F /* MBStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ABB36E1724A5D500E4D75F /* MBStateManager.m */; };
 		46CD08B717247B58009882D2 /* MBMapState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08B617247B58009882D2 /* MBMapState.m */; };
 		46CD08BC17247D16009882D2 /* MBPlayableCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */; };
+		46CD08C01724899B009882D2 /* Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46CD08BF1724899B009882D2 /* Sample.plist */; };
 		46DCB5CA16420A4800A60331 /* MBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DCB5C916420A4800A60331 /* MBMenuView.m */; };
 /* End PBXBuildFile section */
 
@@ -113,8 +114,6 @@
 		463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCharacterState.m; path = MBGameEngine/MBGameState/MBCharacterState.m; sourceTree = "<group>"; };
 		463C65BC16D5E8CC00C4EC51 /* MBItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItemState.h; path = MBGameEngine/MBGameState/MBItemState.h; sourceTree = "<group>"; };
 		463C65BD16D5E8CC00C4EC51 /* MBItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItemState.m; path = MBGameEngine/MBGameState/MBItemState.m; sourceTree = "<group>"; };
-		4642FC5C16E2FFB100C7CFAD /* MBGameStateLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBGameStateLoader.h; path = MBGameEngine/MBGameState/MBGameStateLoader.h; sourceTree = "<group>"; };
-		4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBGameStateLoader.m; path = MBGameEngine/MBGameState/MBGameStateLoader.m; sourceTree = "<group>"; };
 		46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTreeNode.h; sourceTree = "<group>"; };
 		46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTreeNode.m; sourceTree = "<group>"; };
 		46669B08160F758C00CD1197 /* MBDialogTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTree.h; sourceTree = "<group>"; };
@@ -213,10 +212,13 @@
 		46A000281642CB4800EBC2EE /* MBDialogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogViewController.m; sourceTree = "<group>"; };
 		46A0002B1642D76800EBC2EE /* UIApplication+MBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+MBDialog.h"; sourceTree = "<group>"; };
 		46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+MBDialog.m"; sourceTree = "<group>"; };
+		46ABB36D1724A5D500E4D75F /* MBStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBStateManager.h; path = MBGameEngine/MBGameState/MBStateManager.h; sourceTree = "<group>"; };
+		46ABB36E1724A5D500E4D75F /* MBStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBStateManager.m; path = MBGameEngine/MBGameState/MBStateManager.m; sourceTree = "<group>"; };
 		46CD08B517247B58009882D2 /* MBMapState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMapState.h; path = MBGameEngine/MBGameState/MBMapState.h; sourceTree = "<group>"; };
 		46CD08B617247B58009882D2 /* MBMapState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMapState.m; path = MBGameEngine/MBGameState/MBMapState.m; sourceTree = "<group>"; };
 		46CD08BA17247D15009882D2 /* MBPlayableCharacterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBPlayableCharacterState.h; path = MBGameEngine/MBGameState/MBPlayableCharacterState.h; sourceTree = "<group>"; };
 		46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBPlayableCharacterState.m; path = MBGameEngine/MBGameState/MBPlayableCharacterState.m; sourceTree = "<group>"; };
+		46CD08BF1724899B009882D2 /* Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sample.plist; path = "Save Files/Sample.plist"; sourceTree = "<group>"; };
 		46DCB5C816420A4800A60331 /* MBMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMenuView.h; sourceTree = "<group>"; };
 		46DCB5C916420A4800A60331 /* MBMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMenuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,8 +300,9 @@
 		463C65B516D5E81E00C4EC51 /* MBGameState */ = {
 			isa = PBXGroup;
 			children = (
-				46CD08B817247B9F009882D2 /* Game States */,
-				46CD08B917247BA8009882D2 /* State Serialization */,
+				46CD08B817247B9F009882D2 /* State Objects */,
+				46ABB36D1724A5D500E4D75F /* MBStateManager.h */,
+				46ABB36E1724A5D500E4D75F /* MBStateManager.m */,
 			);
 			name = MBGameState;
 			path = ..;
@@ -474,6 +477,7 @@
 		4669E073160F02F5003BA9B9 /* Sample Data */ = {
 			isa = PBXGroup;
 			children = (
+				46CD08BE17248982009882D2 /* Save Files */,
 				4669E074160F02F5003BA9B9 /* Maps */,
 				4669E07D160F02F5003BA9B9 /* Sprites */,
 			);
@@ -579,23 +583,14 @@
 			path = "Zack-cutups";
 			sourceTree = "<group>";
 		};
-		46CD08B817247B9F009882D2 /* Game States */ = {
+		46CD08B817247B9F009882D2 /* State Objects */ = {
 			isa = PBXGroup;
 			children = (
 				463C65B616D5E85300C4EC51 /* MBGameState.h */,
 				463C65B716D5E85300C4EC51 /* MBGameState.m */,
 				46CD08BD1724837D009882D2 /* Map State */,
 			);
-			name = "Game States";
-			sourceTree = "<group>";
-		};
-		46CD08B917247BA8009882D2 /* State Serialization */ = {
-			isa = PBXGroup;
-			children = (
-				4642FC5C16E2FFB100C7CFAD /* MBGameStateLoader.h */,
-				4642FC5D16E2FFB100C7CFAD /* MBGameStateLoader.m */,
-			);
-			name = "State Serialization";
+			name = "State Objects";
 			sourceTree = "<group>";
 		};
 		46CD08BD1724837D009882D2 /* Map State */ = {
@@ -611,6 +606,14 @@
 				463C65BD16D5E8CC00C4EC51 /* MBItemState.m */,
 			);
 			name = "Map State";
+			sourceTree = "<group>";
+		};
+		46CD08BE17248982009882D2 /* Save Files */ = {
+			isa = PBXGroup;
+			children = (
+				46CD08BF1724899B009882D2 /* Sample.plist */,
+			);
+			name = "Save Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -709,6 +712,7 @@
 				4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */,
 				4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */,
 				4669E0C3160F02F5003BA9B9 /* zack.png in Resources */,
+				46CD08C01724899B009882D2 /* Sample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,9 +772,9 @@
 				463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */,
 				463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */,
 				463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */,
-				4642FC5E16E2FFB100C7CFAD /* MBGameStateLoader.m in Sources */,
 				46CD08B717247B58009882D2 /* MBMapState.m in Sources */,
 				46CD08BC17247D16009882D2 /* MBPlayableCharacterState.m in Sources */,
+				46ABB36F1724A5D500E4D75F /* MBStateManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

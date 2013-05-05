@@ -15,7 +15,6 @@ Here's what the game engine looks like in action:
 ![Walking Around](screenshots/walking.png)
 ![Some Dialog](screenshots/with-dialog.png)
 
-
 Features:
 ---
 
@@ -26,8 +25,14 @@ MBTileParser can do five things right now. Load maps, load sprites, display dial
  - **Display Dialog:** Load and parse dialog trees, using `MBDialogTree`. (Support for end actions is now implemented.)
  - **Take Input:** Create custom virtual game controls, using the `MBJoystick` and `MBControllerButton` classes. You can also use the included layout.
  - **Manage Games State:** The latest update includes state support (in progress) which allows you to track levels, stamina, score, items, dialog, and more.
+ 
+Setting it Up:
+---
 
-**Technical Requirements:**
+Clone into, or download, the repository. Copy the folder called `MBGameEngine` and import `MBGameEngine.h`.
+
+Technical Requirements:
+---
 
 MBTileParser requires the iOS 6 SDK and ARC.
 
@@ -36,22 +41,6 @@ To support versions of iOS prior to version 6, you'll need to  replace `NSUUID`,
 If you're stuck on Xcode 4.4, you can [hack subscripting support](http://petersteinberger.com/blog/2012/using-subscripting-with-Xcode-4_4-and-iOS-4_3) into Xcode, but I'm not supporting this. Seriously, upgrade Xcode to the latest version.
 
 Even if your project doesn't use ARC, you'll want to compile MBTileParser with ARC. Use the `-fobjc-arc` compiler flag for that.
-
-**Demo:**
-
-Clone or download the repository. The code is thoroughly commented and serves as its own demo. (Just remember that selling the demo is a violation of the license.) 
-
-**How to use:**
-
-Copy the GameEngine folder out and just use it, The classes are all in there.
-
-
-**A word on the TMX format, Tiled, and TexturePacker:**
-
-The TMX file format is used by Tiled, a tool which helps you make world maps for games. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format). The developer of TexturePacker, Andreas Löw, was kind enough to give me a license a while back. Thanks Andreas! You can [get TexturePacker from his website](http://www.codeandweb.com/texturepacker).
-
-
-**License:**
 
 License:
 ========
@@ -71,7 +60,17 @@ The "non-code", graphics and audio, may not be used except to build and run the 
 
 The artwork is copyrighted by [Allan Simpson](http://www.allansimpson.com). He has created it for a project we are working on. You may not use it for anything except to play with the game engine on your own machine(s). Sorry, it's not mine to let you give out. 
 
-**Closing:**
+Finally, if you make any awesome games with this, please let me know!
+
+ 
+Notes:
+---
+
+**A word on the TMX format, Tiled, and TexturePacker:**
+
+The TMX file format is used by Tiled, a tool which helps you make world maps for games. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format). The developer of TexturePacker, Andreas Löw, was kind enough to give me a license a while back. Thanks Andreas! You can [get TexturePacker from his website](http://www.codeandweb.com/texturepacker).
+
+**Parting Words:**
 
 Please take a moment to star this repository and pass it along to anyone who you think might enjoy it.
 Have fun, because game engines are fun.

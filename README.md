@@ -1,9 +1,7 @@
 MBTileParser
 =============
 
-**Look Ma, a game engine! Running on UIKit!**
-
-MBTileParser is a small game engine that supports loading TMX files and TexturePacker files directly into UIKit.
+*Look Ma, a game engine! Running on UIKit!* MBTileParser is a small game engine that supports loading TMX files and TexturePacker files directly into UIKit.
 
 
 Screenshots & Demo:
@@ -42,8 +40,18 @@ If you're stuck on Xcode 4.4, you can [hack subscripting support](http://peterst
 
 Even if your project doesn't use ARC, you'll want to compile MBTileParser with ARC. Use the `-fobjc-arc` compiler flag for that.
 
+ 
+Notes:
+---
+
+**About the TMX format, Tiled, and TexturePacker:** The TMX file format is used by Tiled, a tool which helps you make world maps for games by tiling images. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format). The developer of TexturePacker, Andreas Löw, was kind enough to give me a license a while back. Thanks Andreas! You can [get TexturePacker from his website](http://www.codeandweb.com/texturepacker).
+
+**Parting Words:** Please take a moment to star this repository and pass it along to anyone who you think might enjoy it. I also encourage you to look at my other repositories. You might find something you like.
+
+Always have fun, because game engines are fun.
+
 License:
-========
+---
 
 MBTileParser is hereby released under the following modified MIT License. 
 
@@ -61,13 +69,3 @@ The "non-code", graphics and audio, may not be used except to build and run the 
 The artwork is copyrighted by [Allan Simpson](http://www.allansimpson.com). He has created it for a project we are working on. You may not use it for anything except to play with the game engine on your own machine(s). Sorry, it's not mine to let you give out. 
 
 Finally, if you make any awesome games with this, please let me know!
-
- 
-Notes:
----
-
-**A word on the TMX format, Tiled, and TexturePacker:** The TMX file format is used by Tiled, a tool which helps you make world maps for games by tiling images. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format). The developer of TexturePacker, Andreas Löw, was kind enough to give me a license a while back. Thanks Andreas! You can [get TexturePacker from his website](http://www.codeandweb.com/texturepacker).
-
-**Parting Words:** Please take a moment to star this repository and pass it along to anyone who you think might enjoy it. I also encourage you to look at my other repositories. You might find something you like.
-
-Always have fun, because game engines are fun.

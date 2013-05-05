@@ -3,10 +3,23 @@ MBTileParser
 
 **Look Ma, a game engine! Running on UIKit!**
 
-MBTileParser began as a small library that allows you to parse TMX files and then display them  using pure UIKit. (You don't need to learn OpenGL and you don't have to use a game engine. ) Now, MBTileParser is more of a game engine, in that it supports loading TMX files, cocos2d spritesheets created with TexturePacker, and more.   
+MBTileParser is a small game engine that supports loading TMX files and TexturePacker files directly into UIKit.
 
 
-**What it can do:** MBTileParser can do four things right now. Load maps, load sprites, display dialog, and take input via virtual controls.
+Screenshots & Demo:
+---
+I've uploaded [a demo video](http://www.youtube.com/watch?v=o88YOnmzj44) to YouTube.
+
+Here's what the game engine looks like in action:
+
+![Walking Around](screenshots/walking.png)
+![Some Dialog](screenshots/with-dialog.png)
+
+
+Features:
+---
+
+MBTileParser can do five things right now. Load maps, load sprites, display dialog, take input via virtual controls, and retain game state.
 
  - **Load maps:** MBTileParser is actually the name of a class in the engine. You can load TMX files. Use the `MBMapViewController` class for this.
  - **Load sprites:** You can load sprites using `MBSpriteView`. `MBMovableSpriteView` supports movement too.
@@ -26,7 +39,7 @@ Even if your project doesn't use ARC, you'll want to compile MBTileParser with A
 
 **Demo:**
 
-Clone or download the repository. The code is thoroughly commented and serves as its own demo. 
+Clone or download the repository. The code is thoroughly commented and serves as its own demo. (Just remember that selling the demo is a violation of the license.) 
 
 **How to use:**
 

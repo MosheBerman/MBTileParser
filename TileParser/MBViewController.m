@@ -296,7 +296,7 @@
     //  Prepare the dialog nodes
     //
     
-    NSArray *aboutDialog = @[@"Welcome to Moflotz. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss.", @"More text."];
+    NSArray *aboutDialog = @[@"Welcome to MBTileParser. You can walk around with the D pad in the bottom left corner. Press A to show this again, press B to dismiss.", @"More text."];
     
     SEL aboutEndAction = NSSelectorFromString(@"showMenu");
     

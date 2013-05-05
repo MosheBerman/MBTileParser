@@ -66,11 +66,8 @@ Finally, if you make any awesome games with this, please let me know!
 Notes:
 ---
 
-**A word on the TMX format, Tiled, and TexturePacker:**
+**A word on the TMX format, Tiled, and TexturePacker:** The TMX file format is used by Tiled, a tool which helps you make world maps for games by tiling images. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format). The developer of TexturePacker, Andreas Löw, was kind enough to give me a license a while back. Thanks Andreas! You can [get TexturePacker from his website](http://www.codeandweb.com/texturepacker).
 
-The TMX file format is used by Tiled, a tool which helps you make world maps for games. (You can download Tiled [here](http://mapeditor.org)). The TMX format is explained in detail on the [tiled GitHub repository wiki](https://github.com/bjorn/tiled/wiki/TMX-Map-Format). The developer of TexturePacker, Andreas Löw, was kind enough to give me a license a while back. Thanks Andreas! You can [get TexturePacker from his website](http://www.codeandweb.com/texturepacker).
+**Parting Words:** Please take a moment to star this repository and pass it along to anyone who you think might enjoy it. I also encourage you to look at my other repositories. You might find something you like.
 
-**Parting Words:**
-
-Please take a moment to star this repository and pass it along to anyone who you think might enjoy it.
-Have fun, because game engines are fun.
+Always have fun, because game engines are fun.

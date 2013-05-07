@@ -138,6 +138,9 @@
                     
                     UIImage *tile = [UIImage imageWithCGImage:image scale:1.0 orientation:tilesheet.imageOrientation];
                     
+                    //  ARC doesn't handle Core Graphics allocation functions except in special circumstances. This isn't one of them.
+                    CGImageRelease(image);
+                    
                     //
                     //  TODO: Load properties into the images from the tileset
                     //

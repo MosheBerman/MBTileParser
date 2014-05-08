@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFD15B3EDD30058E14C /* UIKit.framework */; };
-		462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AABFF15B3EDD30058E14C /* Foundation.framework */; };
-		462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462AAC0115B3EDD30058E14C /* CoreGraphics.framework */; };
 		462AAC0815B3EDD30058E14C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 462AAC0615B3EDD30058E14C /* InfoPlist.strings */; };
 		462AAC0A15B3EDD30058E14C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC0915B3EDD30058E14C /* main.m */; };
 		462AAC0E15B3EDD30058E14C /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */; };
@@ -79,8 +76,8 @@
 		4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09D160F02F5003BA9B9 /* zack@2x.tps */; };
 		4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09E160F02F5003BA9B9 /* zack.plist */; };
 		4669E0C3160F02F5003BA9B9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09F160F02F5003BA9B9 /* zack.png */; };
-		4670F5FA162DCA1400660FC9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4670F5F9162DCA1400660FC9 /* AVFoundation.framework */; };
 		46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46745CC91642FDFB007F59B2 /* MBAnimatableView.m */; };
+		468B9AD4191B1BD50035B8CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B9AD3191B1BD50035B8CC /* Images.xcassets */; };
 		469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754916019E5D00912D26 /* Default-568h@2x.png */; };
 		469B754D16019EC700912D26 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754B16019EC700912D26 /* Default.png */; };
 		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
@@ -95,9 +92,6 @@
 
 /* Begin PBXFileReference section */
 		462AABF915B3EDD30058E14C /* TileParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		462AABFD15B3EDD30058E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		462AABFF15B3EDD30058E14C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		462AAC0115B3EDD30058E14C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		462AAC0515B3EDD30058E14C /* TileParser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TileParser-Info.plist"; sourceTree = "<group>"; };
 		462AAC0715B3EDD30058E14C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		462AAC0915B3EDD30058E14C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -202,9 +196,9 @@
 		4669E09E160F02F5003BA9B9 /* zack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = zack.plist; sourceTree = "<group>"; };
 		4669E09F160F02F5003BA9B9 /* zack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zack.png; sourceTree = "<group>"; };
 		4669E0D2160F0A8F003BA9B9 /* MBMapMetadata.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMapMetadata.h; sourceTree = "<group>"; };
-		4670F5F9162DCA1400660FC9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		46745CC81642FDFB007F59B2 /* MBAnimatableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAnimatableView.h; sourceTree = "<group>"; };
 		46745CC91642FDFB007F59B2 /* MBAnimatableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAnimatableView.m; sourceTree = "<group>"; };
+		468B9AD3191B1BD50035B8CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		469B754916019E5D00912D26 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		469B754B16019EC700912D26 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		469B754C16019EC700912D26 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -228,10 +222,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4670F5FA162DCA1400660FC9 /* AVFoundation.framework in Frameworks */,
-				462AABFE15B3EDD30058E14C /* UIKit.framework in Frameworks */,
-				462AAC0015B3EDD30058E14C /* Foundation.framework in Frameworks */,
-				462AAC0215B3EDD30058E14C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +237,6 @@
 				462AAC0315B3EDD30058E14C /* TileParser */,
 				4669E073160F02F5003BA9B9 /* Sample Data */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
-				462AABFC15B3EDD30058E14C /* Frameworks */,
 				462AABFA15B3EDD30058E14C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -260,17 +249,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		462AABFC15B3EDD30058E14C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4670F5F9162DCA1400660FC9 /* AVFoundation.framework */,
-				462AABFD15B3EDD30058E14C /* UIKit.framework */,
-				462AABFF15B3EDD30058E14C /* Foundation.framework */,
-				462AAC0115B3EDD30058E14C /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		462AAC0315B3EDD30058E14C /* TileParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +259,7 @@
 				462AAC1215B3EDD30058E14C /* MBViewController_iPhone.xib */,
 				462AAC1515B3EDD30058E14C /* MBViewController_iPad.xib */,
 				4669E01F160F02CE003BA9B9 /* MBGameEngine */,
+				468B9AD3191B1BD50035B8CC /* Images.xcassets */,
 			);
 			path = TileParser;
 			sourceTree = "<group>";
@@ -645,6 +624,11 @@
 			attributes = {
 				CLASSPREFIX = MB;
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					462AABF815B3EDD30058E14C = {
+						DevelopmentTeam = HK64RUWW3P;
+					};
+				};
 			};
 			buildConfigurationList = 462AABF315B3EDD20058E14C /* Build configuration list for PBXProject "TileParser" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -669,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				462AAC0815B3EDD30058E14C /* InfoPlist.strings in Resources */,
+				468B9AD4191B1BD50035B8CC /* Images.xcassets in Resources */,
 				462AAC1415B3EDD30058E14C /* MBViewController_iPhone.xib in Resources */,
 				462AAC1715B3EDD30058E14C /* MBViewController_iPad.xib in Resources */,
 				469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */,
@@ -836,11 +821,17 @@
 		46019BDB160F56BB00EA8917 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Moshe Berman (JFYZ2Q7278)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AE803BC-3E12-4ABF-92BD-2C954A81D187";
 				WRAPPER_EXTENSION = app;
 			};
@@ -904,14 +895,18 @@
 		462AAC1B15B3EDD30058E14C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Moshe Berman (JFYZ2Q7278)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9AE803BC-3E12-4ABF-92BD-2C954A81D187";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25709992-CD7F-4F80-8291-7990961DA09C";
+				PROVISIONING_PROFILE = "19C34308-BC65-4C67-9732-06C19B6C4B72";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "19C34308-BC65-4C67-9732-06C19B6C4B72";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -919,12 +914,17 @@
 		462AAC1C15B3EDD30058E14C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Erol Dusi (NEBV962VN4)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FC7C883B-84EC-4200-8D92-D0A05AB5611E";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

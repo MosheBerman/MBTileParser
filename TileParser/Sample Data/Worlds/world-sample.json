@@ -1,0 +1,165 @@
+/* This is the format for game worlds. */
+{
+    /**
+     * The version of the format.
+     */
+    
+    "version" : "1",
+    
+    /**
+     *  A canonical name of the world that can be displayed elsewhere.
+     *  You can use this name as a key when localizing your game.
+     */
+    
+    "display-name" : "New York City",
+    
+    /**
+     *  A string identifying your map. This could be anything, but reverse domain is the recommended style.
+     */
+    
+    "identifier" : "com.mosheberman.nyc",
+    
+    /**
+     *  The maps that make up your game world.
+     *  Each map as an implied numeric identifier, which is its position in the array.
+     *  The first map is referred to in other maps as 0, the second as 1, etc.
+     */
+    
+    "maps" : [
+              
+              /**
+               *    Each map describes a portion of your game world.
+               */
+              {
+              
+              /**
+               *    The name that players of your game will see.
+               */
+              
+              "display-name" : "Simpson City",
+              
+              /**
+               *    The name of the file that represents your map.
+               */
+              
+              "data-file" : "SimpsonCity",
+              
+              /**
+               *    In version 1, the data format is TMX, produced by Tiled. If you have a custom loader, you can change this.
+               */
+              
+              "file-type" : "tmx",
+              
+              /**
+               *    A list of connections in your map. These generally don't change, but may if your game logic dictates.
+               */
+              
+              "connections" : [
+                               
+                               /**
+                                *   Each connection describes where a user should go when it is triggered.
+                                *   The intrinsic ID of a connection is where it appears in the list, but
+                                *   there is an explicit ID as well.
+                                */
+                               
+                               {
+                               
+                               /**
+                                *   A convenience identifier that can be used in the TMX files instead of numeric IDs
+                                */
+                               
+                               "id" : "upper-street",
+                               
+                               /**
+                                *   optional world-identifier. If none is specified, use the current map.
+                                */
+                               
+                               "target-world" : "nyc"
+                               
+                               /**
+                                *   A spawn point says where, in tile coordinates, a player will appear on
+                                *   the next map, and what direction they will be facing. 
+                                *
+                                *   For your reference, in TMX maps, the top left is 0,0.
+                                */
+                               
+                               "spawn-point" : {
+                               
+                               /**
+                                *  Units in tiles. Either an integer, or the string "max" which calculates this automatically.
+                                */
+                               
+                               "x" : 10,
+                               
+                               /**
+                                *  Units in tiles. Either an integer, or the string "max" which calculates this automatically.
+                                */
+                               
+                               "y" : "max",
+                               
+                               /**
+                                *  The direction that the player will face on the next map.
+                                *  Valid values are up, down, left, right, and "auto" Auto keeps previous direction.
+                                */
+                               
+                               "direction" : "up"
+                               } /* end spawn-point */
+                               } /* end connection */
+                               ] /* end connections */
+              }, /* end map */
+              
+              /**
+               *    The characters (commonly called NPCs) that spawn by default on your map. Your game state may override this.
+               */
+              
+              "characters" : [
+              {
+                              /**
+                               *    The display name of the character.
+                               */
+                              
+                              "display-name" : "Fish Man",
+                              
+                              /**
+                               *    A property list generated by Texture Packer that contains the frames 
+                               *    that compose the character animation.
+                               */
+                              
+                              "image-plist" : "tuna_guy",
+                              
+                              /**
+                               *    The dialog that the player should use.
+                               */
+                              
+                              "dialog-file" : "fish-man-dialog",
+                              
+                              /**
+                               *    The rules for moving the character around. Either a JSON file, or "random".
+                               */
+                              
+                              "character-paths" : "fish-man-path",
+                              
+                              /**
+                               *    Defines wether the player can turn on his own.
+                               */
+                              
+                              "can-turn" : "true",
+                              
+                              /**
+                               *    Defines whether the player can walk.
+                               */
+                            
+                              "can-walk" : "true"
+              }
+              ],
+              
+              /**
+               *    The items that appear on your map by default. Like characters, your game state may override this.
+               */
+              
+              "items" : [
+              
+              ]
+              
+              ] /* end maps */
+}

@@ -16,6 +16,7 @@
 		463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
 		463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
 		463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
+		464AB006192110E80031DA32 /* world-sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 464AB005192110E80031DA32 /* world-sample.json */; };
 		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
 		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
 		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
@@ -108,6 +109,7 @@
 		463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCharacterState.m; path = MBGameEngine/MBGameState/MBCharacterState.m; sourceTree = "<group>"; };
 		463C65BC16D5E8CC00C4EC51 /* MBItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItemState.h; path = MBGameEngine/MBGameState/MBItemState.h; sourceTree = "<group>"; };
 		463C65BD16D5E8CC00C4EC51 /* MBItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItemState.m; path = MBGameEngine/MBGameState/MBItemState.m; sourceTree = "<group>"; };
+		464AB005192110E80031DA32 /* world-sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "world-sample.json"; path = "TileParser/Sample Data/Worlds/world-sample.json"; sourceTree = SOURCE_ROOT; };
 		46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTreeNode.h; sourceTree = "<group>"; };
 		46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTreeNode.m; sourceTree = "<group>"; };
 		46669B08160F758C00CD1197 /* MBDialogTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTree.h; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				4669E07A160F02F5003BA9B9 /* SimpsonCity.tmx */,
 				4669E07B160F02F5003BA9B9 /* standard_tileset.png */,
 				4669E07C160F02F5003BA9B9 /* tilescitytextured.png */,
+				464AB005192110E80031DA32 /* world-sample.json */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				4669E0A9160F02F5003BA9B9 /* dude.png in Resources */,
 				4669E0AA160F02F5003BA9B9 /* explorer.plist in Resources */,
 				4669E0AB160F02F5003BA9B9 /* explorer.png in Resources */,
+				464AB006192110E80031DA32 /* world-sample.json in Resources */,
 				4669E0AC160F02F5003BA9B9 /* explorer.tps in Resources */,
 				4669E0AD160F02F5003BA9B9 /* nikkie.plist in Resources */,
 				4669E0AE160F02F5003BA9B9 /* nikkie.png in Resources */,

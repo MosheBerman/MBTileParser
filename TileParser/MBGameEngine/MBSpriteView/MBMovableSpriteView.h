@@ -27,7 +27,7 @@ typedef void(^MBMovementCompletionHandler)();
 
 //
 //  Move N tiles in a given direction.
-//  The size of a tile is determined by the movementDelegate.
+//  The size of a tile is determined by the movementDataSource.
 //
 
 - (void)moveInDirection:(MBSpriteMovementDirection)direction distanceInTiles:(NSInteger)distanceInTiles withCompletion:(void (^)())completion;

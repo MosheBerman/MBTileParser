@@ -1,0 +1,109 @@
+/* A sample save file. */
+{
+    
+    /**
+     *  The version of the file format
+     */
+    "version" : 1,
+    
+    /**
+     *  Custom flags that define the game state.
+     *
+     *  Flags should follow reverse domain style.
+     */
+    
+    "flags"  : [
+                
+                /**
+                 *  Enable a secret map.
+                 */
+                
+                "com.mosheberman.flags.promo-map",
+                
+                /**
+                 *  Enable multiplayer battles.
+                 */
+                
+                "com.mosheberman.flags.multiplayer-unlocked",
+                
+                /**
+                 *  Enable trading between players.
+                 */
+                
+                "com.mmosheberman.flags.trading-unlocked",
+                
+                /**
+                 *  Enable the player to swim where possible.
+                 */
+                
+                "com.mosheberman.flags.swimming-unlocked"
+                
+                /**
+                 *  Enable ghost mode, where the player can walk through walls...
+                 */
+                
+                "com.mosheberman.flags.ghost-mode"
+                
+                /**
+                 *  Indicates that the first quest has been completed.
+                 */
+                
+                "com.mosheberman.flags.first-quest-complete"
+                
+                ],
+    
+    /**
+     *  The items in your inventory
+     */
+    
+    "items" : [
+               {
+               
+               /**
+                *   The item identifier
+                */
+               
+               "identifier" : "com.mosheberman.item.potion",
+               
+               /**
+                *   The item's display name.
+                */
+               
+               "display-name" : "Potion",
+               
+               /**
+                *   The item's description.
+                */
+               
+               "description" : "Improves player health by 20 points.",
+               
+               /**
+                *
+                */
+               
+               "images" {
+               
+               /**
+                *  The image for the item on the map.
+                */
+               
+               "small-icon" : "potion-small.png",
+               
+               /**
+                *   The iage for the item in the player's pack.
+                */
+               
+               "large-icon" : "potion-large"
+               
+               }, /* end images */
+               
+               /**
+                *   How many the player has.
+                */
+               
+               "quantity" : 1
+               } /* end item */
+               ] /* end items */
+    
+    
+}

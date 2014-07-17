@@ -28,61 +28,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    //
-    //  Create a map view controller and display the map
-    //
-    
-    MBMapViewController *mapViewController = [[MBMapViewController alloc] initWithMapName:@"SimpsonCity"];
-    [[mapViewController mapView] setMaximumZoomScale:2.0];
-    [self setMapViewController:mapViewController];
-    [self.view addSubview:[mapViewController view]];
-    
-    //
-    //  Create a sprite for the game world.
-    //
-    
-    MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
-    [self setPlayer:sprite];
-    [sprite setMovementDelegate:self];
-    [sprite setMovementDataSource:[self mapViewController]];
-    
-    //  Add the sprite to the map and follow it
-    
-    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,6) beneathLayerNamed:@"TreeTops"];
-    
-    //
-    //  Add and configure a self-moving sprite
-    //
-    
-    MBSelfMovingSpriteView *movingSprite = [[MBSelfMovingSpriteView alloc] initWithSpriteName:@"tuna_guy"];
-    [[mapViewController mapView] addSprite:movingSprite forKey:@"movingSprite" atTileCoordinates:CGPointMake(7, 7) beneathLayerNamed:@"TreeTops"];
-    
-    //  Attach the map to the sprite as the movement delegate
-    [movingSprite setMovementDelegate:self];
-    [movingSprite setMovementDataSource:[self mapViewController]];
-    
-    //
-    //  Set up the game controls
-    //
-    
-    MBGameBoyViewController *controller = [[MBGameBoyViewController alloc] init];
-    [self setGameboyControls:controller];
-    [controller addObserver:[self player]];
-    [controller addObserver:self];
-    [[self view] addSubview:[controller view]];
-    
-    //
-    //  Trigger automatic motion
-    //
-    
-    [movingSprite faceInRandomDirection];
+ 
+    [self setupGame];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [[[self mapViewController] mapView] beginFollowingSpriteForKey:@"player"];
+
     
 }
 
@@ -111,37 +64,43 @@
     }
 }
 
-#pragma mark - Controller Delegate
+#pragma mark - Game Controller Delegate
 
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
-    if ([sender isEqual:[[self gameboyControls] buttonA]]) {
+    if ([sender isEqual:[[self gameboyControls] buttonA]])
+    {
         
     }
-    else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
+    else if ([sender isEqual:[[self gameboyControls] buttonB]])
+    {
         
     }
 }
 
-- (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender{
+- (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender
+{
     if ([sender isEqual:[[self gameboyControls] buttonA]]) {
         
-        if(![[self dialogView] isShowing] && ![self isShowingMenu]){
+        if(![[self dialogView] isShowing] && ![self isShowingMenu])
+        {
             MBDialogTree *tree = [self dialogTreeWithIdentifier:0];
             MBDialogView *dialogView = [[MBDialogView alloc] initWithDialogTree:tree];
             [self setDialogView:dialogView];
             
             [[self dialogView] show];
         }
-        else if ([[self dialogView] isShowing]) {
+        else if ([[self dialogView] isShowing])
+        {
             [[self dialogView] cycleText];
         }
         else{
             [[self dialogView] show];
         }
     }
-    else if ([sender isEqual:[[self gameboyControls] buttonB]]) {
-        
-        if ([[self dialogView] isShowing]) {
+    else if ([sender isEqual:[[self gameboyControls] buttonB]])
+    {
+        if ([[self dialogView] isShowing])
+        {
             [[self dialogView] cycleText];
         }
 
@@ -248,10 +207,12 @@
     coordinatesInTiles.x /= tileDimensions.width;
     coordinatesInTiles.y /= tileDimensions.height;
     
-    if (coordinatesInTiles.x < 0 || coordinatesInTiles.y < 0)  {
+    if (coordinatesInTiles.x < 0 || coordinatesInTiles.y < 0)
+    {
         return;
     }
-    else if (coordinatesInTiles.y > mapDimensions.height || coordinatesInTiles.x > mapDimensions.width) {
+    else if (coordinatesInTiles.y > mapDimensions.height || coordinatesInTiles.x > mapDimensions.width)
+    {
         return;
     }
     
@@ -264,13 +225,14 @@
     
     NSDictionary *connectionProperties = [[self mapViewController] propertiesForObjectInGroupNamed:@"Connections" atPoint:tileCenter];
     
-    if (connectionProperties != nil) {
+    if (connectionProperties != nil)
+    {
         
         NSString *directionName = connectionProperties[@"name"];
         NSString *mapName = connectionProperties[@"value"];
         
-        if([[[self player] directionKey] isEqualToString:directionName]){
-            
+        if([[[self player] directionKey] isEqualToString:directionName])
+        {
             //
             //  TODO: We want to load the new map state here...
             //
@@ -290,7 +252,8 @@
 //  This method loads up a dialog tree for a supplied identifier
 //
 
-- (MBDialogTree *) dialogTreeWithIdentifier:(NSUInteger)identifier{
+- (MBDialogTree *)dialogTreeWithIdentifier:(NSUInteger)identifier
+{
     
     //
     //  Prepare the dialog nodes
@@ -326,6 +289,66 @@
     return tree;
 }
 
+#pragma mark - Game Setup
+
+- (void)setupGame
+{
+    //
+    //  Create a map view controller and display the map
+    //
+    
+    MBMapViewController *mapViewController = [[MBMapViewController alloc] initWithMapName:@"SimpsonCity"];
+    [[mapViewController mapView] setMaximumZoomScale:2.0];
+    [self setMapViewController:mapViewController];
+    [self.view addSubview:[mapViewController view]];
+    
+    //
+    //  Create a sprite for the game world.
+    //
+    
+    MBMovableSpriteView *sprite = [[MBMovableSpriteView alloc] initWithSpriteName:@"explorer"];
+    [self setPlayer:sprite];
+    [sprite setMovementDelegate:self];
+    [sprite setMovementDataSource:[self mapViewController]];
+    
+    //  Add the sprite to the map and follow it
+    
+    [mapViewController.mapView addSprite:sprite forKey:@"player" atTileCoordinates:CGPointMake(6,6) beneathLayerNamed:@"TreeTops"];
+    
+    //
+    //  Add and configure a self-moving sprite
+    //
+    
+    MBSelfMovingSpriteView *movingSprite = [[MBSelfMovingSpriteView alloc] initWithSpriteName:@"tuna_guy"];
+    [[mapViewController mapView] addSprite:movingSprite forKey:@"movingSprite" atTileCoordinates:CGPointMake(7, 7) beneathLayerNamed:@"TreeTops"];
+    
+    //  Attach the map to the sprite as the movement delegate
+    [movingSprite setMovementDelegate:self];
+    [movingSprite setMovementDataSource:[self mapViewController]];
+    
+    //
+    //  Set up the game controls
+    //
+    
+    MBGameBoyViewController *controller = [[MBGameBoyViewController alloc] init];
+    [self setGameboyControls:controller];
+    [controller addObserver:[self player]];
+    [controller addObserver:self];
+    [[self view] addSubview:[controller view]];
+    
+    //
+    //  Trigger automatic motion
+    //
+    
+    [movingSprite faceInRandomDirection];
+    
+    //
+    //  Stalk the player
+    //
+    
+    [[[self mapViewController] mapView] beginFollowingSpriteForKey:@"player"];
+}
+
 #pragma mark - Dialog/Menu Detection
 
 //
@@ -333,7 +356,8 @@
 //  main view controller's view hierarchy.
 //
 
-- (BOOL) isShowingMenu{
+- (BOOL)isShowingMenu
+{
     UIView *menuView = [self menuView];
     BOOL isShowing = [[[self view] subviews] containsObject:menuView];
     return isShowing;
@@ -341,21 +365,25 @@
 
 #pragma mark - Actions 
 
-- (void) showAlert{
+- (void)showAlert
+{
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alert show];
     
 }
 
-- (void) showMenu{
+- (void)showMenu
+{
     
-    if(![self menuView]){
+    if(![self menuView])
+    {
         MBMenuView *menu = [[MBMenuView alloc] init];
         [self setMenuView:menu];
     }
     
-    if (![self isShowingMenu]) {
+    if (![self isShowingMenu])
+    {
         [[self menuView] showInView:[self view]];
     }
 

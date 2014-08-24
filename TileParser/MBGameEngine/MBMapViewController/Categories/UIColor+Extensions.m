@@ -15,7 +15,7 @@
 	// oldComponents is the array INSIDE the original color
 	// changing these changes the original, so we copy it
 	CGFloat *oldComponents = (CGFloat *)CGColorGetComponents([self CGColor]);
-	int numComponents = CGColorGetNumberOfComponents([self CGColor]);
+	NSInteger numComponents = CGColorGetNumberOfComponents([self CGColor]);
 	CGFloat newComponents[4];
     
 	switch (numComponents){

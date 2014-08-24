@@ -72,17 +72,17 @@
     NSString * tileSize = NSStringFromCGSize(self.tileSize);
     
     NSString *_description = [NSString stringWithFormat:@""
-                              "firstgid = %i, "
-                              "height = %i, "
-                              "tileHeight = %i, "
-                              "tileWidth = %i, "
-                              "width = %i, "
+                              "firstgid = %li, "
+                              "height = %li, "
+                              "tileHeight = %li, "
+                              "tileWidth = %li, "
+                              "width = %li, "
                               "name = %@, "
                               "source = %@, "
                               "mapSize = %@, "
                               "tileSize = %@, "
                               "tileProperties = %@"
-                              "", _firstgid, _height, _tileHeight, _tileWidth, _width, _name, _source, mapSize, tileSize, _tileProperties];
+                              "", (long)_firstgid, (long)_height, (long)_tileHeight, (long)_tileWidth, (long)_width, _name, _source, mapSize, tileSize, _tileProperties];
     
     return _description;
     

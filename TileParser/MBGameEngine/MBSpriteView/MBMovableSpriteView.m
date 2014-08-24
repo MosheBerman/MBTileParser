@@ -74,7 +74,7 @@
     
     [self startMoving];
     
-    CGFloat duration = abs(distanceInTiles)*[self movementTimeScaleFactor];
+    CGFloat duration = abs((int)distanceInTiles)*[self movementTimeScaleFactor];
     
     [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
         

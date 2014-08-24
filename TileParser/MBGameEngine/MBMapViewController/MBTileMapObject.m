@@ -24,7 +24,7 @@
 }
 
 - (NSString *)description{
-    return [NSString stringWithFormat:@"X: %i Y: %i Width: %i Height: %i Properties: %@", self.x, self.y, self.width, self.height, self.properties];
+    return [NSString stringWithFormat:@"X: %li Y: %li Width: %li Height: %li Properties: %@", (long)self.x, (long)self.y, (long)self.width, (long)self.height, self.properties];
 }
 
 @end

@@ -10,29 +10,29 @@
 	<string>TileParser</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>74A54814-E99C-4329-A407-C6445C77EFAB</key>
+		<key>BB1221D335D8F909C4F87A4A64A2EBC94D8442BA</key>
 		<string>https://github.com/MosheBerman/MBTileParser.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>TileParser.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>74A54814-E99C-4329-A407-C6445C77EFAB</key>
+		<key>BB1221D335D8F909C4F87A4A64A2EBC94D8442BA</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/MosheBerman/MBTileParser.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>74A54814-E99C-4329-A407-C6445C77EFAB</string>
+	<string>BB1221D335D8F909C4F87A4A64A2EBC94D8442BA</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>74A54814-E99C-4329-A407-C6445C77EFAB</string>
+			<string>BB1221D335D8F909C4F87A4A64A2EBC94D8442BA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MBTileParser</string>
 		</dict>

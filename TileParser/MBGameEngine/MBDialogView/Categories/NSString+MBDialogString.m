@@ -20,8 +20,9 @@
     
     CGSize clippingSize = CGSizeMake(frame.size.width, CGFLOAT_MAX);
     
-    CGSize size = [truncatedString sizeWithFont:font constrainedToSize:clippingSize lineBreakMode:NSLineBreakByClipping];
+    NSStringDrawingContext *context = nil;
 
+    CGSize size = [truncatedString boundingRectWithSize:clippingSize options:NSStringDrawingUsesLineFragmentOrigin attributes:nil context:context].size;
     
     NSMutableArray *components = [[truncatedString componentsSeparatedByString:@" "] mutableCopy];
     
@@ -31,7 +32,7 @@
         
         truncatedString = [components componentsJoinedByString:@" "];
         
-        size = [truncatedString sizeWithFont:font constrainedToSize:clippingSize lineBreakMode:NSLineBreakByClipping];
+        size = [truncatedString boundingRectWithSize:clippingSize options:NSStringDrawingUsesLineFragmentOrigin attributes:nil context:context].size;
         
     }
 

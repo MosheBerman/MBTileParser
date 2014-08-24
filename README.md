@@ -29,6 +29,10 @@ Setting it Up:
 
 Clone into, or download, the repository. Copy the folder called `MBGameEngine` and import `MBGameEngine.h`.
 
+You can also use cocoapods: 
+
+	pod 'MBTileParser'
+
 Technical Requirements:
 ---
 

@@ -36,11 +36,7 @@ You can also use cocoapods:
 Technical Requirements:
 ---
 
-MBTileParser requires the iOS 6 SDK and ARC.
-
-To support versions of iOS prior to version 6, you'll need to  replace `NSUUID`, used in the `MBGameState` class.
-
-If you're stuck on Xcode 4.4, you can [hack subscripting support](http://petersteinberger.com/blog/2012/using-subscripting-with-Xcode-4_4-and-iOS-4_3) into Xcode, but I'm not supporting this. Seriously, upgrade Xcode to the latest version.
+MBTileParser requires the iOS 7 SDK and ARC.
 
 Even if your project doesn't use ARC, you'll want to compile MBTileParser with ARC. Use the `-fobjc-arc` compiler flag for that.
 

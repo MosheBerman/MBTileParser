@@ -25,7 +25,14 @@
     
     if (self) {
         
-        NSString *fullPath = [[NSBundle mainBundle] pathForResource:map ofType:@"tmx"];
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        
+        if (!bundle)
+        {
+            bundle = [NSBundle mainBundle];
+        }
+        
+        NSString *fullPath = [bundle pathForResource:map ofType:@"tmx"];
         
         if (fullPath == nil) {
             NSLog(@"Failed to load map at path: %@", fullPath);

@@ -12,35 +12,10 @@
 		462AAC0A15B3EDD30058E14C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC0915B3EDD30058E14C /* main.m */; };
 		462AAC0E15B3EDD30058E14C /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC0D15B3EDD30058E14C /* MBAppDelegate.m */; };
 		462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC1015B3EDD30058E14C /* MBViewController.m */; };
-		463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
-		463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
-		463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
 		464AB006192110E80031DA32 /* world-sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 464AB005192110E80031DA32 /* world-sample.json */; };
-		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
-		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
-		4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
 		4669E05C160F02CE003BA9B9 /* DialogSamples.json in Resources */ = {isa = PBXBuildFile; fileRef = 4669E025160F02CE003BA9B9 /* DialogSamples.json */; };
-		4669E05D160F02CE003BA9B9 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E027160F02CE003BA9B9 /* MBDialogView.m */; };
-		4669E05E160F02CE003BA9B9 /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E02B160F02CE003BA9B9 /* MBGameBoyViewController.m */; };
 		4669E05F160F02CE003BA9B9 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02D160F02CE003BA9B9 /* dpad.png */; };
 		4669E060160F02CE003BA9B9 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02E160F02CE003BA9B9 /* joystick.png */; };
-		4669E061160F02CE003BA9B9 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E030160F02CE003BA9B9 /* MBControllerButton.m */; };
-		4669E062160F02CE003BA9B9 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E034160F02CE003BA9B9 /* MBControllerViewController.m */; };
-		4669E063160F02CE003BA9B9 /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E036160F02CE003BA9B9 /* MBJoystickView.m */; };
-		4669E064160F02CE003BA9B9 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03B160F02CE003BA9B9 /* UIColor+Extensions.m */; };
-		4669E065160F02CE003BA9B9 /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03D160F02CE003BA9B9 /* UIImage+TileData.m */; };
-		4669E066160F02CE003BA9B9 /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */; };
-		4669E067160F02CE003BA9B9 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E041160F02CE003BA9B9 /* MBLayerView.m */; };
-		4669E068160F02CE003BA9B9 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E043160F02CE003BA9B9 /* MBMap.m */; };
-		4669E069160F02CE003BA9B9 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E045160F02CE003BA9B9 /* MBTileMapObject.m */; };
-		4669E06A160F02CE003BA9B9 /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */; };
-		4669E06B160F02CE003BA9B9 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E049160F02CE003BA9B9 /* MBMapView.m */; };
-		4669E06C160F02CE003BA9B9 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04B160F02CE003BA9B9 /* MBMapViewController.m */; };
-		4669E06E160F02CE003BA9B9 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04F160F02CE003BA9B9 /* MBTileSet.m */; };
-		4669E06F160F02CE003BA9B9 /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */; };
-		4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */; };
-		4669E071160F02CE003BA9B9 /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E057160F02CE003BA9B9 /* MBSpriteView.m */; };
-		4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E05A160F02CE003BA9B9 /* MBTileParser.m */; };
 		4669E0A0160F02F5003BA9B9 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E075160F02F5003BA9B9 /* checkers.png */; };
 		4669E0A2160F02F5003BA9B9 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E077160F02F5003BA9B9 /* checkers.tmx */; };
 		4669E0A3160F02F5003BA9B9 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E078160F02F5003BA9B9 /* meta.png */; };
@@ -76,19 +51,218 @@
 		4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09D160F02F5003BA9B9 /* zack@2x.tps */; };
 		4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09E160F02F5003BA9B9 /* zack.plist */; };
 		4669E0C3160F02F5003BA9B9 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09F160F02F5003BA9B9 /* zack.png */; };
-		46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46745CC91642FDFB007F59B2 /* MBAnimatableView.m */; };
 		468B9AD4191B1BD50035B8CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 468B9AD3191B1BD50035B8CC /* Images.xcassets */; };
 		469B754A16019E5D00912D26 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754916019E5D00912D26 /* Default-568h@2x.png */; };
 		469B754D16019EC700912D26 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754B16019EC700912D26 /* Default.png */; };
 		469B754E16019EC700912D26 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 469B754C16019EC700912D26 /* Default@2x.png */; };
-		46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A000281642CB4800EBC2EE /* MBDialogViewController.m */; };
-		46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */; };
-		46ABB36F1724A5D500E4D75F /* MBStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ABB36E1724A5D500E4D75F /* MBStateManager.m */; };
-		46CD08B717247B58009882D2 /* MBMapState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08B617247B58009882D2 /* MBMapState.m */; };
-		46CD08BC17247D16009882D2 /* MBPlayableCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */; };
 		46CD08C01724899B009882D2 /* Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46CD08BF1724899B009882D2 /* Sample.plist */; };
-		46DCB5CA16420A4800A60331 /* MBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DCB5C916420A4800A60331 /* MBMenuView.m */; };
+		46EB1FAE1EBF981B0093CD25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB1FAD1EBF981B0093CD25 /* main.m */; };
+		46EB1FB11EBF981B0093CD25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB1FB01EBF981B0093CD25 /* AppDelegate.m */; };
+		46EB1FB41EBF981B0093CD25 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB1FB31EBF981B0093CD25 /* ViewController.m */; };
+		46EB1FB71EBF981B0093CD25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46EB1FB51EBF981B0093CD25 /* Main.storyboard */; };
+		46EB1FB91EBF981B0093CD25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46EB1FB81EBF981B0093CD25 /* Assets.xcassets */; };
+		46EB1FC41EBF981B0093CD25 /* TileTVTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB1FC31EBF981B0093CD25 /* TileTVTests.m */; };
+		46EB1FCF1EBF981C0093CD25 /* TileTVUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB1FCE1EBF981C0093CD25 /* TileTVUITests.m */; };
+		46EB1FEC1EBF99120093CD25 /* TileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB1FE31EBF99120093CD25 /* TileKit.framework */; };
+		46EB1FF31EBF99120093CD25 /* TileKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB1FF21EBF99120093CD25 /* TileKitTests.m */; };
+		46EB1FF51EBF99120093CD25 /* TileKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB1FE51EBF99120093CD25 /* TileKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB1FF81EBF99120093CD25 /* TileKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB1FE31EBF99120093CD25 /* TileKit.framework */; };
+		46EB1FF91EBF99120093CD25 /* TileKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB1FE31EBF99120093CD25 /* TileKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46EB20031EBF99380093CD25 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
+		46EB20041EBF99380093CD25 /* UIApplication+MBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */; };
+		46EB20051EBF99380093CD25 /* MBDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A000281642CB4800EBC2EE /* MBDialogViewController.m */; };
+		46EB20061EBF99380093CD25 /* MBAnimatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46745CC91642FDFB007F59B2 /* MBAnimatableView.m */; };
+		46EB20071EBF99380093CD25 /* MBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DCB5C916420A4800A60331 /* MBMenuView.m */; };
+		46EB20081EBF99380093CD25 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E027160F02CE003BA9B9 /* MBDialogView.m */; };
+		46EB20091EBF99380093CD25 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
+		46EB200A1EBF99380093CD25 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
+		46EB200B1EBF99380093CD25 /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E02B160F02CE003BA9B9 /* MBGameBoyViewController.m */; };
+		46EB200C1EBF99380093CD25 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E034160F02CE003BA9B9 /* MBControllerViewController.m */; };
+		46EB200D1EBF99380093CD25 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E030160F02CE003BA9B9 /* MBControllerButton.m */; };
+		46EB200E1EBF99380093CD25 /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E036160F02CE003BA9B9 /* MBJoystickView.m */; };
+		46EB200F1EBF99380093CD25 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
+		46EB20101EBF99380093CD25 /* MBMapState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08B617247B58009882D2 /* MBMapState.m */; };
+		46EB20111EBF99380093CD25 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
+		46EB20121EBF99380093CD25 /* MBPlayableCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */; };
+		46EB20131EBF99380093CD25 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
+		46EB20141EBF99380093CD25 /* MBStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ABB36E1724A5D500E4D75F /* MBStateManager.m */; };
+		46EB20151EBF99380093CD25 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E05A160F02CE003BA9B9 /* MBTileParser.m */; };
+		46EB20161EBF99380093CD25 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03B160F02CE003BA9B9 /* UIColor+Extensions.m */; };
+		46EB20171EBF99380093CD25 /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03D160F02CE003BA9B9 /* UIImage+TileData.m */; };
+		46EB20181EBF99380093CD25 /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */; };
+		46EB20191EBF99380093CD25 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E041160F02CE003BA9B9 /* MBLayerView.m */; };
+		46EB201A1EBF99380093CD25 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E043160F02CE003BA9B9 /* MBMap.m */; };
+		46EB201B1EBF99380093CD25 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E045160F02CE003BA9B9 /* MBTileMapObject.m */; };
+		46EB201C1EBF99380093CD25 /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */; };
+		46EB201D1EBF99380093CD25 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E049160F02CE003BA9B9 /* MBMapView.m */; };
+		46EB201E1EBF99380093CD25 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04B160F02CE003BA9B9 /* MBMapViewController.m */; };
+		46EB201F1EBF99380093CD25 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04F160F02CE003BA9B9 /* MBTileSet.m */; };
+		46EB20201EBF99380093CD25 /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */; };
+		46EB20211EBF99380093CD25 /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */; };
+		46EB20221EBF99380093CD25 /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E057160F02CE003BA9B9 /* MBSpriteView.m */; };
+		46EB20231EBF994B0093CD25 /* NSString+MBDialogString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E023160F02CE003BA9B9 /* NSString+MBDialogString.m */; };
+		46EB20241EBF994B0093CD25 /* UIApplication+MBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A0002C1642D76800EBC2EE /* UIApplication+MBDialog.m */; };
+		46EB20251EBF994B0093CD25 /* MBDialogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A000281642CB4800EBC2EE /* MBDialogViewController.m */; };
+		46EB20261EBF994B0093CD25 /* MBAnimatableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46745CC91642FDFB007F59B2 /* MBAnimatableView.m */; };
+		46EB20271EBF994B0093CD25 /* MBMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46DCB5C916420A4800A60331 /* MBMenuView.m */; };
+		46EB20281EBF994B0093CD25 /* MBDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E027160F02CE003BA9B9 /* MBDialogView.m */; };
+		46EB20291EBF994B0093CD25 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
+		46EB202A1EBF994B0093CD25 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
+		46EB202B1EBF994B0093CD25 /* MBGameBoyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E02B160F02CE003BA9B9 /* MBGameBoyViewController.m */; };
+		46EB202C1EBF994B0093CD25 /* MBControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E034160F02CE003BA9B9 /* MBControllerViewController.m */; };
+		46EB202D1EBF994B0093CD25 /* MBControllerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E030160F02CE003BA9B9 /* MBControllerButton.m */; };
+		46EB202E1EBF994B0093CD25 /* MBJoystickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E036160F02CE003BA9B9 /* MBJoystickView.m */; };
+		46EB202F1EBF994B0093CD25 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
+		46EB20301EBF994B0093CD25 /* MBMapState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08B617247B58009882D2 /* MBMapState.m */; };
+		46EB20311EBF994B0093CD25 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
+		46EB20321EBF994B0093CD25 /* MBPlayableCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CD08BB17247D15009882D2 /* MBPlayableCharacterState.m */; };
+		46EB20331EBF994B0093CD25 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
+		46EB20341EBF994B0093CD25 /* MBStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 46ABB36E1724A5D500E4D75F /* MBStateManager.m */; };
+		46EB20351EBF994B0093CD25 /* MBTileParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E05A160F02CE003BA9B9 /* MBTileParser.m */; };
+		46EB20361EBF994B0093CD25 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03B160F02CE003BA9B9 /* UIColor+Extensions.m */; };
+		46EB20371EBF994B0093CD25 /* UIImage+TileData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03D160F02CE003BA9B9 /* UIImage+TileData.m */; };
+		46EB20381EBF994B0093CD25 /* UIView+Diagnostics.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E03F160F02CE003BA9B9 /* UIView+Diagnostics.m */; };
+		46EB20391EBF994B0093CD25 /* MBLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E041160F02CE003BA9B9 /* MBLayerView.m */; };
+		46EB203A1EBF994B0093CD25 /* MBMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E043160F02CE003BA9B9 /* MBMap.m */; };
+		46EB203B1EBF994B0093CD25 /* MBTileMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E045160F02CE003BA9B9 /* MBTileMapObject.m */; };
+		46EB203C1EBF994B0093CD25 /* MBMapObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E047160F02CE003BA9B9 /* MBMapObjectGroup.m */; };
+		46EB203D1EBF994B0093CD25 /* MBMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E049160F02CE003BA9B9 /* MBMapView.m */; };
+		46EB203E1EBF994B0093CD25 /* MBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04B160F02CE003BA9B9 /* MBMapViewController.m */; };
+		46EB203F1EBF994B0093CD25 /* MBTileSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E04F160F02CE003BA9B9 /* MBTileSet.m */; };
+		46EB20401EBF994B0093CD25 /* MBMovableSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E052160F02CE003BA9B9 /* MBMovableSpriteView.m */; };
+		46EB20411EBF994B0093CD25 /* MBSelfMovingSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E054160F02CE003BA9B9 /* MBSelfMovingSpriteView.m */; };
+		46EB20421EBF994B0093CD25 /* MBSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4669E057160F02CE003BA9B9 /* MBSpriteView.m */; };
+		46EB20431EBF9AFF0093CD25 /* MBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 462AAC0F15B3EDD30058E14C /* MBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20441EBF9AFF0093CD25 /* MBGameEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E037160F02CE003BA9B9 /* MBGameEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20451EBF9AFF0093CD25 /* NSString+MBDialogString.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E022160F02CE003BA9B9 /* NSString+MBDialogString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20461EBF9AFF0093CD25 /* UIApplication+MBDialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A0002B1642D76800EBC2EE /* UIApplication+MBDialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20471EBF9AFF0093CD25 /* MBDialogViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A000271642CB4800EBC2EE /* MBDialogViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20481EBF9AFF0093CD25 /* MBAnimatableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 46745CC81642FDFB007F59B2 /* MBAnimatableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20491EBF9AFF0093CD25 /* MBMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = 46DCB5C816420A4800A60331 /* MBMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB204A1EBF9AFF0093CD25 /* MBDialogView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E026160F02CE003BA9B9 /* MBDialogView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB204B1EBF9AFF0093CD25 /* MBDialogTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 46669B08160F758C00CD1197 /* MBDialogTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB204C1EBF9AFF0093CD25 /* MBDialogTreeNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB204D1EBF9AFF0093CD25 /* MBGameBoyViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E02A160F02CE003BA9B9 /* MBGameBoyViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB204E1EBF9AFF0093CD25 /* MBControllerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E033160F02CE003BA9B9 /* MBControllerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB204F1EBF9AFF0093CD25 /* MBControllerButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E02F160F02CE003BA9B9 /* MBControllerButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20501EBF9AFF0093CD25 /* MBJoystickView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E035160F02CE003BA9B9 /* MBJoystickView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20511EBF9AFF0093CD25 /* MBControllerEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E031160F02CE003BA9B9 /* MBControllerEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20521EBF9AFF0093CD25 /* MBControllerToggling.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E032160F02CE003BA9B9 /* MBControllerToggling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20531EBF9AFF0093CD25 /* MBGameState.h in Headers */ = {isa = PBXBuildFile; fileRef = 463C65B616D5E85300C4EC51 /* MBGameState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20541EBF9AFF0093CD25 /* MBMapState.h in Headers */ = {isa = PBXBuildFile; fileRef = 46CD08B517247B58009882D2 /* MBMapState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20551EBF9AFF0093CD25 /* MBCharacterState.h in Headers */ = {isa = PBXBuildFile; fileRef = 463C65B916D5E8C000C4EC51 /* MBCharacterState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20561EBF9AFF0093CD25 /* MBPlayableCharacterState.h in Headers */ = {isa = PBXBuildFile; fileRef = 46CD08BA17247D15009882D2 /* MBPlayableCharacterState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20571EBF9AFF0093CD25 /* MBItemState.h in Headers */ = {isa = PBXBuildFile; fileRef = 463C65BC16D5E8CC00C4EC51 /* MBItemState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20581EBF9AFF0093CD25 /* MBStateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 46ABB36D1724A5D500E4D75F /* MBStateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20591EBF9AFF0093CD25 /* MBTileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E059160F02CE003BA9B9 /* MBTileParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB205A1EBF9AFF0093CD25 /* UIColor+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E03A160F02CE003BA9B9 /* UIColor+Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB205B1EBF9AFF0093CD25 /* UIImage+TileData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E03C160F02CE003BA9B9 /* UIImage+TileData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB205C1EBF9AFF0093CD25 /* UIView+Diagnostics.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E03E160F02CE003BA9B9 /* UIView+Diagnostics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB205D1EBF9AFF0093CD25 /* MBLayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E040160F02CE003BA9B9 /* MBLayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB205E1EBF9AFF0093CD25 /* MBMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E042160F02CE003BA9B9 /* MBMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB205F1EBF9AFF0093CD25 /* MBTileMapObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E044160F02CE003BA9B9 /* MBTileMapObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20601EBF9AFF0093CD25 /* MBMapObjectGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E046160F02CE003BA9B9 /* MBMapObjectGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20611EBF9AFF0093CD25 /* MBMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E048160F02CE003BA9B9 /* MBMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20621EBF9AFF0093CD25 /* MBMapViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E04A160F02CE003BA9B9 /* MBMapViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20631EBF9AFF0093CD25 /* MBTileSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E04E160F02CE003BA9B9 /* MBTileSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20641EBF9AFF0093CD25 /* MBMapMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E0D2160F0A8F003BA9B9 /* MBMapMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20651EBF9AFF0093CD25 /* MBMovableSpriteView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E051160F02CE003BA9B9 /* MBMovableSpriteView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20661EBF9AFF0093CD25 /* MBSelfMovingSpriteView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E053160F02CE003BA9B9 /* MBSelfMovingSpriteView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20671EBF9AFF0093CD25 /* MBSpriteMovementDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E055160F02CE003BA9B9 /* MBSpriteMovementDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20681EBF9AFF0093CD25 /* MBSpriteView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E056160F02CE003BA9B9 /* MBSpriteView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20691EBF9BD80093CD25 /* MBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462AAC1015B3EDD30058E14C /* MBViewController.m */; };
+		46EB206A1EBF9C450093CD25 /* checkers.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E075160F02F5003BA9B9 /* checkers.png */; };
+		46EB206B1EBF9C450093CD25 /* Checkers.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4669E076160F02F5003BA9B9 /* Checkers.psd */; };
+		46EB206C1EBF9C450093CD25 /* checkers.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E077160F02F5003BA9B9 /* checkers.tmx */; };
+		46EB206D1EBF9C450093CD25 /* meta.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E078160F02F5003BA9B9 /* meta.png */; };
+		46EB206E1EBF9C450093CD25 /* PearTown.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E079160F02F5003BA9B9 /* PearTown.tmx */; };
+		46EB206F1EBF9C450093CD25 /* SimpsonCity.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07A160F02F5003BA9B9 /* SimpsonCity.tmx */; };
+		46EB20701EBF9C450093CD25 /* standard_tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07B160F02F5003BA9B9 /* standard_tileset.png */; };
+		46EB20711EBF9C450093CD25 /* tilescitytextured.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07C160F02F5003BA9B9 /* tilescitytextured.png */; };
+		46EB20721EBF9C5A0093CD25 /* world-sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 464AB005192110E80031DA32 /* world-sample.json */; };
+		46EB20731EBF9C5A0093CD25 /* save-file.json in Resources */ = {isa = PBXBuildFile; fileRef = 46111C18192AC1FC001EA86F /* save-file.json */; };
+		46EB20741EBF9C790093CD25 /* dude.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E07F160F02F5003BA9B9 /* dude.plist */; };
+		46EB20751EBF9C790093CD25 /* dude.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E080160F02F5003BA9B9 /* dude.png */; };
+		46EB20761EBF9C790093CD25 /* explorer.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E082160F02F5003BA9B9 /* explorer.plist */; };
+		46EB20771EBF9C790093CD25 /* explorer.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E083160F02F5003BA9B9 /* explorer.png */; };
+		46EB20781EBF9C790093CD25 /* explorer.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E084160F02F5003BA9B9 /* explorer.tps */; };
+		46EB20791EBF9C790093CD25 /* nikkie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E086160F02F5003BA9B9 /* nikkie.plist */; };
+		46EB207A1EBF9C790093CD25 /* nikkie.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E087160F02F5003BA9B9 /* nikkie.png */; };
+		46EB207B1EBF9C790093CD25 /* tuna_guy-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E089160F02F5003BA9B9 /* tuna_guy-hd.plist */; };
+		46EB207C1EBF9C790093CD25 /* tuna_guy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08A160F02F5003BA9B9 /* tuna_guy-hd.png */; };
+		46EB207D1EBF9C790093CD25 /* tuna_guy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08B160F02F5003BA9B9 /* tuna_guy.plist */; };
+		46EB207E1EBF9C790093CD25 /* tuna_guy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08C160F02F5003BA9B9 /* tuna_guy.png */; };
+		46EB207F1EBF9C790093CD25 /* tuna_guy.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E08D160F02F5003BA9B9 /* tuna_guy.tps */; };
+		46EB20801EBF9C790093CD25 /* zack-down-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E090160F02F5003BA9B9 /* zack-down-1.png */; };
+		46EB20811EBF9C790093CD25 /* zack-down-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E091160F02F5003BA9B9 /* zack-down-2.png */; };
+		46EB20821EBF9C790093CD25 /* zack-down-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E092160F02F5003BA9B9 /* zack-down-3.png */; };
+		46EB20831EBF9C790093CD25 /* zack-left-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E093160F02F5003BA9B9 /* zack-left-1.png */; };
+		46EB20841EBF9C790093CD25 /* zack-left-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E094160F02F5003BA9B9 /* zack-left-2.png */; };
+		46EB20851EBF9C790093CD25 /* zack-left-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E095160F02F5003BA9B9 /* zack-left-3.png */; };
+		46EB20861EBF9C790093CD25 /* zack-right-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E096160F02F5003BA9B9 /* zack-right-1.png */; };
+		46EB20871EBF9C790093CD25 /* zack-right-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E097160F02F5003BA9B9 /* zack-right-2.png */; };
+		46EB20881EBF9C790093CD25 /* zack-right-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E098160F02F5003BA9B9 /* zack-right-3.png */; };
+		46EB20891EBF9C790093CD25 /* zack-up-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E099160F02F5003BA9B9 /* zack-up-1.png */; };
+		46EB208A1EBF9C790093CD25 /* zack-up-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09A160F02F5003BA9B9 /* zack-up-2.png */; };
+		46EB208B1EBF9C790093CD25 /* zack-up-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09B160F02F5003BA9B9 /* zack-up-3.png */; };
+		46EB208C1EBF9C790093CD25 /* zack.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09C160F02F5003BA9B9 /* zack.tps */; };
+		46EB208D1EBF9C790093CD25 /* zack@2x.tps in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09D160F02F5003BA9B9 /* zack@2x.tps */; };
+		46EB208E1EBF9C790093CD25 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09E160F02F5003BA9B9 /* zack.plist */; };
+		46EB208F1EBF9C790093CD25 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09F160F02F5003BA9B9 /* zack.png */; };
+		46EB20901EBF9C830093CD25 /* Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46CD08BF1724899B009882D2 /* Sample.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		46EB1FC01EBF981B0093CD25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 462AABF015B3EDD20058E14C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46EB1FA91EBF981B0093CD25;
+			remoteInfo = TileTV;
+		};
+		46EB1FCB1EBF981C0093CD25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 462AABF015B3EDD20058E14C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46EB1FA91EBF981B0093CD25;
+			remoteInfo = TileTV;
+		};
+		46EB1FED1EBF99120093CD25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 462AABF015B3EDD20058E14C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46EB1FE21EBF99120093CD25;
+			remoteInfo = TileKit;
+		};
+		46EB1FEF1EBF99120093CD25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 462AABF015B3EDD20058E14C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46EB1FA91EBF981B0093CD25;
+			remoteInfo = TileTV;
+		};
+		46EB1FF61EBF99120093CD25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 462AABF015B3EDD20058E14C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46EB1FE21EBF99120093CD25;
+			remoteInfo = TileKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46EB1FFE1EBF99120093CD25 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				46EB1FF91EBF99120093CD25 /* TileKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46111C18192AC1FC001EA86F /* save-file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "save-file.json"; path = "Save Files/save-file.json"; sourceTree = "<group>"; };
@@ -215,6 +389,27 @@
 		46CD08BF1724899B009882D2 /* Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sample.plist; path = "Save Files/Sample.plist"; sourceTree = "<group>"; };
 		46DCB5C816420A4800A60331 /* MBMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMenuView.h; sourceTree = "<group>"; };
 		46DCB5C916420A4800A60331 /* MBMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMenuView.m; sourceTree = "<group>"; };
+		46EB1FAA1EBF981B0093CD25 /* TileTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB1FAD1EBF981B0093CD25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		46EB1FAF1EBF981B0093CD25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		46EB1FB01EBF981B0093CD25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		46EB1FB21EBF981B0093CD25 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		46EB1FB31EBF981B0093CD25 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		46EB1FB61EBF981B0093CD25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		46EB1FB81EBF981B0093CD25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46EB1FBA1EBF981B0093CD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EB1FBF1EBF981B0093CD25 /* TileTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB1FC31EBF981B0093CD25 /* TileTVTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileTVTests.m; sourceTree = "<group>"; };
+		46EB1FC51EBF981B0093CD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EB1FCA1EBF981B0093CD25 /* TileTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB1FCE1EBF981C0093CD25 /* TileTVUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileTVUITests.m; sourceTree = "<group>"; };
+		46EB1FD01EBF981C0093CD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EB1FE31EBF99120093CD25 /* TileKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TileKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB1FE51EBF99120093CD25 /* TileKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TileKit.h; sourceTree = "<group>"; };
+		46EB1FE61EBF99120093CD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EB1FEB1EBF99120093CD25 /* TileKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46EB1FF21EBF99120093CD25 /* TileKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileKitTests.m; sourceTree = "<group>"; };
+		46EB1FF41EBF99120093CD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +417,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FA71EBF981B0093CD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FF81EBF99120093CD25 /* TileKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FBC1EBF981B0093CD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FC71EBF981B0093CD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FDF1EBF99120093CD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FE81EBF99120093CD25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FEC1EBF99120093CD25 /* TileKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +478,9 @@
 				462AAC0315B3EDD30058E14C /* TileParser */,
 				4669E073160F02F5003BA9B9 /* Sample Data */,
 				462AAC0415B3EDD30058E14C /* Supporting Files */,
+				46EB1FDD1EBF982F0093CD25 /* tvOS */,
+				46EB1FE41EBF99120093CD25 /* TileKit */,
+				46EB1FF11EBF99120093CD25 /* TileKitTests */,
 				462AABFA15B3EDD30058E14C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -254,6 +489,11 @@
 			isa = PBXGroup;
 			children = (
 				462AABF915B3EDD30058E14C /* TileParser.app */,
+				46EB1FAA1EBF981B0093CD25 /* TileTV.app */,
+				46EB1FBF1EBF981B0093CD25 /* TileTVTests.xctest */,
+				46EB1FCA1EBF981B0093CD25 /* TileTVUITests.xctest */,
+				46EB1FE31EBF99120093CD25 /* TileKit.framework */,
+				46EB1FEB1EBF99120093CD25 /* TileKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -603,7 +843,125 @@
 			name = "Save Files";
 			sourceTree = "<group>";
 		};
+		46EB1FAB1EBF981B0093CD25 /* TileTV */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FAF1EBF981B0093CD25 /* AppDelegate.h */,
+				46EB1FB01EBF981B0093CD25 /* AppDelegate.m */,
+				46EB1FB21EBF981B0093CD25 /* ViewController.h */,
+				46EB1FB31EBF981B0093CD25 /* ViewController.m */,
+				46EB1FB51EBF981B0093CD25 /* Main.storyboard */,
+				46EB1FB81EBF981B0093CD25 /* Assets.xcassets */,
+				46EB1FBA1EBF981B0093CD25 /* Info.plist */,
+				46EB1FAC1EBF981B0093CD25 /* Supporting Files */,
+			);
+			path = TileTV;
+			sourceTree = "<group>";
+		};
+		46EB1FAC1EBF981B0093CD25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FAD1EBF981B0093CD25 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46EB1FC21EBF981B0093CD25 /* TileTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FC31EBF981B0093CD25 /* TileTVTests.m */,
+				46EB1FC51EBF981B0093CD25 /* Info.plist */,
+			);
+			path = TileTVTests;
+			sourceTree = "<group>";
+		};
+		46EB1FCD1EBF981C0093CD25 /* TileTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FCE1EBF981C0093CD25 /* TileTVUITests.m */,
+				46EB1FD01EBF981C0093CD25 /* Info.plist */,
+			);
+			path = TileTVUITests;
+			sourceTree = "<group>";
+		};
+		46EB1FDD1EBF982F0093CD25 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FAB1EBF981B0093CD25 /* TileTV */,
+				46EB1FC21EBF981B0093CD25 /* TileTVTests */,
+				46EB1FCD1EBF981C0093CD25 /* TileTVUITests */,
+			);
+			name = tvOS;
+			sourceTree = "<group>";
+		};
+		46EB1FE41EBF99120093CD25 /* TileKit */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FE51EBF99120093CD25 /* TileKit.h */,
+				46EB1FE61EBF99120093CD25 /* Info.plist */,
+			);
+			path = TileKit;
+			sourceTree = "<group>";
+		};
+		46EB1FF11EBF99120093CD25 /* TileKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				46EB1FF21EBF99120093CD25 /* TileKitTests.m */,
+				46EB1FF41EBF99120093CD25 /* Info.plist */,
+			);
+			path = TileKitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		46EB1FE01EBF99120093CD25 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FF51EBF99120093CD25 /* TileKit.h in Headers */,
+				46EB20431EBF9AFF0093CD25 /* MBViewController.h in Headers */,
+				46EB20441EBF9AFF0093CD25 /* MBGameEngine.h in Headers */,
+				46EB20451EBF9AFF0093CD25 /* NSString+MBDialogString.h in Headers */,
+				46EB20461EBF9AFF0093CD25 /* UIApplication+MBDialog.h in Headers */,
+				46EB20471EBF9AFF0093CD25 /* MBDialogViewController.h in Headers */,
+				46EB20481EBF9AFF0093CD25 /* MBAnimatableView.h in Headers */,
+				46EB20491EBF9AFF0093CD25 /* MBMenuView.h in Headers */,
+				46EB204A1EBF9AFF0093CD25 /* MBDialogView.h in Headers */,
+				46EB204B1EBF9AFF0093CD25 /* MBDialogTree.h in Headers */,
+				46EB204C1EBF9AFF0093CD25 /* MBDialogTreeNode.h in Headers */,
+				46EB204D1EBF9AFF0093CD25 /* MBGameBoyViewController.h in Headers */,
+				46EB204E1EBF9AFF0093CD25 /* MBControllerViewController.h in Headers */,
+				46EB204F1EBF9AFF0093CD25 /* MBControllerButton.h in Headers */,
+				46EB20501EBF9AFF0093CD25 /* MBJoystickView.h in Headers */,
+				46EB20511EBF9AFF0093CD25 /* MBControllerEvent.h in Headers */,
+				46EB20521EBF9AFF0093CD25 /* MBControllerToggling.h in Headers */,
+				46EB20531EBF9AFF0093CD25 /* MBGameState.h in Headers */,
+				46EB20541EBF9AFF0093CD25 /* MBMapState.h in Headers */,
+				46EB20551EBF9AFF0093CD25 /* MBCharacterState.h in Headers */,
+				46EB20561EBF9AFF0093CD25 /* MBPlayableCharacterState.h in Headers */,
+				46EB20571EBF9AFF0093CD25 /* MBItemState.h in Headers */,
+				46EB20581EBF9AFF0093CD25 /* MBStateManager.h in Headers */,
+				46EB20591EBF9AFF0093CD25 /* MBTileParser.h in Headers */,
+				46EB205A1EBF9AFF0093CD25 /* UIColor+Extensions.h in Headers */,
+				46EB205B1EBF9AFF0093CD25 /* UIImage+TileData.h in Headers */,
+				46EB205C1EBF9AFF0093CD25 /* UIView+Diagnostics.h in Headers */,
+				46EB205D1EBF9AFF0093CD25 /* MBLayerView.h in Headers */,
+				46EB205E1EBF9AFF0093CD25 /* MBMap.h in Headers */,
+				46EB205F1EBF9AFF0093CD25 /* MBTileMapObject.h in Headers */,
+				46EB20601EBF9AFF0093CD25 /* MBMapObjectGroup.h in Headers */,
+				46EB20611EBF9AFF0093CD25 /* MBMapView.h in Headers */,
+				46EB20621EBF9AFF0093CD25 /* MBMapViewController.h in Headers */,
+				46EB20631EBF9AFF0093CD25 /* MBTileSet.h in Headers */,
+				46EB20641EBF9AFF0093CD25 /* MBMapMetadata.h in Headers */,
+				46EB20651EBF9AFF0093CD25 /* MBMovableSpriteView.h in Headers */,
+				46EB20661EBF9AFF0093CD25 /* MBSelfMovingSpriteView.h in Headers */,
+				46EB20671EBF9AFF0093CD25 /* MBSpriteMovementDelegate.h in Headers */,
+				46EB20681EBF9AFF0093CD25 /* MBSpriteView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		462AABF815B3EDD30058E14C /* TileParser */ = {
@@ -624,6 +982,98 @@
 			productReference = 462AABF915B3EDD30058E14C /* TileParser.app */;
 			productType = "com.apple.product-type.application";
 		};
+		46EB1FA91EBF981B0093CD25 /* TileTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EB1FDA1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTV" */;
+			buildPhases = (
+				46EB1FA61EBF981B0093CD25 /* Sources */,
+				46EB1FA71EBF981B0093CD25 /* Frameworks */,
+				46EB1FA81EBF981B0093CD25 /* Resources */,
+				46EB1FFE1EBF99120093CD25 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46EB1FF71EBF99120093CD25 /* PBXTargetDependency */,
+			);
+			name = TileTV;
+			productName = TileTV;
+			productReference = 46EB1FAA1EBF981B0093CD25 /* TileTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		46EB1FBE1EBF981B0093CD25 /* TileTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EB1FDB1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTVTests" */;
+			buildPhases = (
+				46EB1FBB1EBF981B0093CD25 /* Sources */,
+				46EB1FBC1EBF981B0093CD25 /* Frameworks */,
+				46EB1FBD1EBF981B0093CD25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46EB1FC11EBF981B0093CD25 /* PBXTargetDependency */,
+			);
+			name = TileTVTests;
+			productName = TileTVTests;
+			productReference = 46EB1FBF1EBF981B0093CD25 /* TileTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		46EB1FC91EBF981B0093CD25 /* TileTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EB1FDC1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTVUITests" */;
+			buildPhases = (
+				46EB1FC61EBF981B0093CD25 /* Sources */,
+				46EB1FC71EBF981B0093CD25 /* Frameworks */,
+				46EB1FC81EBF981B0093CD25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46EB1FCC1EBF981C0093CD25 /* PBXTargetDependency */,
+			);
+			name = TileTVUITests;
+			productName = TileTVUITests;
+			productReference = 46EB1FCA1EBF981B0093CD25 /* TileTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		46EB1FE21EBF99120093CD25 /* TileKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EB1FFA1EBF99120093CD25 /* Build configuration list for PBXNativeTarget "TileKit" */;
+			buildPhases = (
+				46EB1FDE1EBF99120093CD25 /* Sources */,
+				46EB1FDF1EBF99120093CD25 /* Frameworks */,
+				46EB1FE01EBF99120093CD25 /* Headers */,
+				46EB1FE11EBF99120093CD25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TileKit;
+			productName = TileKit;
+			productReference = 46EB1FE31EBF99120093CD25 /* TileKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		46EB1FEA1EBF99120093CD25 /* TileKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46EB1FFF1EBF99120093CD25 /* Build configuration list for PBXNativeTarget "TileKitTests" */;
+			buildPhases = (
+				46EB1FE71EBF99120093CD25 /* Sources */,
+				46EB1FE81EBF99120093CD25 /* Frameworks */,
+				46EB1FE91EBF99120093CD25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46EB1FEE1EBF99120093CD25 /* PBXTargetDependency */,
+				46EB1FF01EBF99120093CD25 /* PBXTargetDependency */,
+			);
+			name = TileKitTests;
+			productName = TileKitTests;
+			productReference = 46EB1FEB1EBF99120093CD25 /* TileKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -631,10 +1081,38 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MB;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0830;
 				TargetAttributes = {
 					462AABF815B3EDD30058E14C = {
 						DevelopmentTeam = HK64RUWW3P;
+					};
+					46EB1FA91EBF981B0093CD25 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HK64RUWW3P;
+						ProvisioningStyle = Automatic;
+					};
+					46EB1FBE1EBF981B0093CD25 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HK64RUWW3P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 46EB1FA91EBF981B0093CD25;
+					};
+					46EB1FC91EBF981B0093CD25 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HK64RUWW3P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 46EB1FA91EBF981B0093CD25;
+					};
+					46EB1FE21EBF99120093CD25 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HK64RUWW3P;
+						ProvisioningStyle = Automatic;
+					};
+					46EB1FEA1EBF99120093CD25 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = HK64RUWW3P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 46EB1FA91EBF981B0093CD25;
 					};
 				};
 			};
@@ -644,6 +1122,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 462AABEE15B3EDD20058E14C;
 			productRefGroup = 462AABFA15B3EDD30058E14C /* Products */;
@@ -651,6 +1130,11 @@
 			projectRoot = "";
 			targets = (
 				462AABF815B3EDD30058E14C /* TileParser */,
+				46EB1FA91EBF981B0093CD25 /* TileTV */,
+				46EB1FBE1EBF981B0093CD25 /* TileTVTests */,
+				46EB1FC91EBF981B0093CD25 /* TileTVUITests */,
+				46EB1FE21EBF99120093CD25 /* TileKit */,
+				46EB1FEA1EBF99120093CD25 /* TileKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -709,6 +1193,82 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46EB1FA81EBF981B0093CD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FB91EBF981B0093CD25 /* Assets.xcassets in Resources */,
+				46EB1FB71EBF981B0093CD25 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FBD1EBF981B0093CD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FC81EBF981B0093CD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FE11EBF99120093CD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB208C1EBF9C790093CD25 /* zack.tps in Resources */,
+				46EB207D1EBF9C790093CD25 /* tuna_guy.plist in Resources */,
+				46EB206F1EBF9C450093CD25 /* SimpsonCity.tmx in Resources */,
+				46EB20791EBF9C790093CD25 /* nikkie.plist in Resources */,
+				46EB208A1EBF9C790093CD25 /* zack-up-2.png in Resources */,
+				46EB207C1EBF9C790093CD25 /* tuna_guy-hd.png in Resources */,
+				46EB208B1EBF9C790093CD25 /* zack-up-3.png in Resources */,
+				46EB206E1EBF9C450093CD25 /* PearTown.tmx in Resources */,
+				46EB20781EBF9C790093CD25 /* explorer.tps in Resources */,
+				46EB207B1EBF9C790093CD25 /* tuna_guy-hd.plist in Resources */,
+				46EB20811EBF9C790093CD25 /* zack-down-2.png in Resources */,
+				46EB206A1EBF9C450093CD25 /* checkers.png in Resources */,
+				46EB208F1EBF9C790093CD25 /* zack.png in Resources */,
+				46EB20701EBF9C450093CD25 /* standard_tileset.png in Resources */,
+				46EB20841EBF9C790093CD25 /* zack-left-2.png in Resources */,
+				46EB207A1EBF9C790093CD25 /* nikkie.png in Resources */,
+				46EB20731EBF9C5A0093CD25 /* save-file.json in Resources */,
+				46EB20751EBF9C790093CD25 /* dude.png in Resources */,
+				46EB206C1EBF9C450093CD25 /* checkers.tmx in Resources */,
+				46EB207F1EBF9C790093CD25 /* tuna_guy.tps in Resources */,
+				46EB20741EBF9C790093CD25 /* dude.plist in Resources */,
+				46EB206D1EBF9C450093CD25 /* meta.png in Resources */,
+				46EB20801EBF9C790093CD25 /* zack-down-1.png in Resources */,
+				46EB208E1EBF9C790093CD25 /* zack.plist in Resources */,
+				46EB20761EBF9C790093CD25 /* explorer.plist in Resources */,
+				46EB20861EBF9C790093CD25 /* zack-right-1.png in Resources */,
+				46EB20831EBF9C790093CD25 /* zack-left-1.png in Resources */,
+				46EB206B1EBF9C450093CD25 /* Checkers.psd in Resources */,
+				46EB207E1EBF9C790093CD25 /* tuna_guy.png in Resources */,
+				46EB20711EBF9C450093CD25 /* tilescitytextured.png in Resources */,
+				46EB20901EBF9C830093CD25 /* Sample.plist in Resources */,
+				46EB20891EBF9C790093CD25 /* zack-up-1.png in Resources */,
+				46EB20881EBF9C790093CD25 /* zack-right-3.png in Resources */,
+				46EB20821EBF9C790093CD25 /* zack-down-3.png in Resources */,
+				46EB208D1EBF9C790093CD25 /* zack@2x.tps in Resources */,
+				46EB20871EBF9C790093CD25 /* zack-right-2.png in Resources */,
+				46EB20771EBF9C790093CD25 /* explorer.png in Resources */,
+				46EB20721EBF9C5A0093CD25 /* world-sample.json in Resources */,
+				46EB20851EBF9C790093CD25 /* zack-left-3.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FE91EBF99120093CD25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -733,45 +1293,147 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46EB20411EBF994B0093CD25 /* MBSelfMovingSpriteView.m in Sources */,
+				46EB202D1EBF994B0093CD25 /* MBControllerButton.m in Sources */,
+				46EB20241EBF994B0093CD25 /* UIApplication+MBDialog.m in Sources */,
+				46EB203C1EBF994B0093CD25 /* MBMapObjectGroup.m in Sources */,
+				46EB20321EBF994B0093CD25 /* MBPlayableCharacterState.m in Sources */,
+				46EB203A1EBF994B0093CD25 /* MBMap.m in Sources */,
+				46EB20421EBF994B0093CD25 /* MBSpriteView.m in Sources */,
+				46EB20301EBF994B0093CD25 /* MBMapState.m in Sources */,
+				46EB202F1EBF994B0093CD25 /* MBGameState.m in Sources */,
+				46EB20251EBF994B0093CD25 /* MBDialogViewController.m in Sources */,
+				46EB202B1EBF994B0093CD25 /* MBGameBoyViewController.m in Sources */,
+				46EB20391EBF994B0093CD25 /* MBLayerView.m in Sources */,
+				46EB202C1EBF994B0093CD25 /* MBControllerViewController.m in Sources */,
+				46EB20341EBF994B0093CD25 /* MBStateManager.m in Sources */,
+				46EB20371EBF994B0093CD25 /* UIImage+TileData.m in Sources */,
+				46EB20381EBF994B0093CD25 /* UIView+Diagnostics.m in Sources */,
 				462AAC0A15B3EDD30058E14C /* main.m in Sources */,
+				46EB203F1EBF994B0093CD25 /* MBTileSet.m in Sources */,
+				46EB20231EBF994B0093CD25 /* NSString+MBDialogString.m in Sources */,
+				46EB203E1EBF994B0093CD25 /* MBMapViewController.m in Sources */,
+				46EB20291EBF994B0093CD25 /* MBDialogTree.m in Sources */,
+				46EB20261EBF994B0093CD25 /* MBAnimatableView.m in Sources */,
 				462AAC0E15B3EDD30058E14C /* MBAppDelegate.m in Sources */,
+				46EB203B1EBF994B0093CD25 /* MBTileMapObject.m in Sources */,
+				46EB20281EBF994B0093CD25 /* MBDialogView.m in Sources */,
+				46EB20361EBF994B0093CD25 /* UIColor+Extensions.m in Sources */,
+				46EB20271EBF994B0093CD25 /* MBMenuView.m in Sources */,
+				46EB20331EBF994B0093CD25 /* MBItemState.m in Sources */,
+				46EB202A1EBF994B0093CD25 /* MBDialogTreeNode.m in Sources */,
 				462AAC1115B3EDD30058E14C /* MBViewController.m in Sources */,
-				4669E05B160F02CE003BA9B9 /* NSString+MBDialogString.m in Sources */,
-				4669E05D160F02CE003BA9B9 /* MBDialogView.m in Sources */,
-				4669E05E160F02CE003BA9B9 /* MBGameBoyViewController.m in Sources */,
-				4669E061160F02CE003BA9B9 /* MBControllerButton.m in Sources */,
-				4669E062160F02CE003BA9B9 /* MBControllerViewController.m in Sources */,
-				4669E063160F02CE003BA9B9 /* MBJoystickView.m in Sources */,
-				4669E064160F02CE003BA9B9 /* UIColor+Extensions.m in Sources */,
-				4669E065160F02CE003BA9B9 /* UIImage+TileData.m in Sources */,
-				4669E066160F02CE003BA9B9 /* UIView+Diagnostics.m in Sources */,
-				4669E067160F02CE003BA9B9 /* MBLayerView.m in Sources */,
-				4669E068160F02CE003BA9B9 /* MBMap.m in Sources */,
-				4669E069160F02CE003BA9B9 /* MBTileMapObject.m in Sources */,
-				4669E06A160F02CE003BA9B9 /* MBMapObjectGroup.m in Sources */,
-				4669E06B160F02CE003BA9B9 /* MBMapView.m in Sources */,
-				4669E06C160F02CE003BA9B9 /* MBMapViewController.m in Sources */,
-				4669E06E160F02CE003BA9B9 /* MBTileSet.m in Sources */,
-				4669E06F160F02CE003BA9B9 /* MBMovableSpriteView.m in Sources */,
-				4669E070160F02CE003BA9B9 /* MBSelfMovingSpriteView.m in Sources */,
-				4669E071160F02CE003BA9B9 /* MBSpriteView.m in Sources */,
-				4669E072160F02CE003BA9B9 /* MBTileParser.m in Sources */,
-				46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */,
-				46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */,
-				46DCB5CA16420A4800A60331 /* MBMenuView.m in Sources */,
-				46A000291642CB4800EBC2EE /* MBDialogViewController.m in Sources */,
-				46A0002D1642D76800EBC2EE /* UIApplication+MBDialog.m in Sources */,
-				46745CCA1642FDFB007F59B2 /* MBAnimatableView.m in Sources */,
-				463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */,
-				463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */,
-				463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */,
-				46CD08B717247B58009882D2 /* MBMapState.m in Sources */,
-				46CD08BC17247D16009882D2 /* MBPlayableCharacterState.m in Sources */,
-				46ABB36F1724A5D500E4D75F /* MBStateManager.m in Sources */,
+				46EB20351EBF994B0093CD25 /* MBTileParser.m in Sources */,
+				46EB20311EBF994B0093CD25 /* MBCharacterState.m in Sources */,
+				46EB203D1EBF994B0093CD25 /* MBMapView.m in Sources */,
+				46EB20401EBF994B0093CD25 /* MBMovableSpriteView.m in Sources */,
+				46EB202E1EBF994B0093CD25 /* MBJoystickView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FA61EBF981B0093CD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FB41EBF981B0093CD25 /* ViewController.m in Sources */,
+				46EB1FB11EBF981B0093CD25 /* AppDelegate.m in Sources */,
+				46EB1FAE1EBF981B0093CD25 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FBB1EBF981B0093CD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FC41EBF981B0093CD25 /* TileTVTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FC61EBF981B0093CD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FCF1EBF981C0093CD25 /* TileTVUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FDE1EBF99120093CD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB20151EBF99380093CD25 /* MBTileParser.m in Sources */,
+				46EB20071EBF99380093CD25 /* MBMenuView.m in Sources */,
+				46EB20101EBF99380093CD25 /* MBMapState.m in Sources */,
+				46EB20181EBF99380093CD25 /* UIView+Diagnostics.m in Sources */,
+				46EB20031EBF99380093CD25 /* NSString+MBDialogString.m in Sources */,
+				46EB200A1EBF99380093CD25 /* MBDialogTreeNode.m in Sources */,
+				46EB20061EBF99380093CD25 /* MBAnimatableView.m in Sources */,
+				46EB200D1EBF99380093CD25 /* MBControllerButton.m in Sources */,
+				46EB201E1EBF99380093CD25 /* MBMapViewController.m in Sources */,
+				46EB201F1EBF99380093CD25 /* MBTileSet.m in Sources */,
+				46EB20221EBF99380093CD25 /* MBSpriteView.m in Sources */,
+				46EB20131EBF99380093CD25 /* MBItemState.m in Sources */,
+				46EB200E1EBF99380093CD25 /* MBJoystickView.m in Sources */,
+				46EB20081EBF99380093CD25 /* MBDialogView.m in Sources */,
+				46EB200C1EBF99380093CD25 /* MBControllerViewController.m in Sources */,
+				46EB200B1EBF99380093CD25 /* MBGameBoyViewController.m in Sources */,
+				46EB20691EBF9BD80093CD25 /* MBViewController.m in Sources */,
+				46EB20091EBF99380093CD25 /* MBDialogTree.m in Sources */,
+				46EB20051EBF99380093CD25 /* MBDialogViewController.m in Sources */,
+				46EB201A1EBF99380093CD25 /* MBMap.m in Sources */,
+				46EB20121EBF99380093CD25 /* MBPlayableCharacterState.m in Sources */,
+				46EB20201EBF99380093CD25 /* MBMovableSpriteView.m in Sources */,
+				46EB201B1EBF99380093CD25 /* MBTileMapObject.m in Sources */,
+				46EB201C1EBF99380093CD25 /* MBMapObjectGroup.m in Sources */,
+				46EB20141EBF99380093CD25 /* MBStateManager.m in Sources */,
+				46EB20041EBF99380093CD25 /* UIApplication+MBDialog.m in Sources */,
+				46EB20191EBF99380093CD25 /* MBLayerView.m in Sources */,
+				46EB20111EBF99380093CD25 /* MBCharacterState.m in Sources */,
+				46EB20211EBF99380093CD25 /* MBSelfMovingSpriteView.m in Sources */,
+				46EB20171EBF99380093CD25 /* UIImage+TileData.m in Sources */,
+				46EB200F1EBF99380093CD25 /* MBGameState.m in Sources */,
+				46EB201D1EBF99380093CD25 /* MBMapView.m in Sources */,
+				46EB20161EBF99380093CD25 /* UIColor+Extensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46EB1FE71EBF99120093CD25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46EB1FF31EBF99120093CD25 /* TileKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		46EB1FC11EBF981B0093CD25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46EB1FA91EBF981B0093CD25 /* TileTV */;
+			targetProxy = 46EB1FC01EBF981B0093CD25 /* PBXContainerItemProxy */;
+		};
+		46EB1FCC1EBF981C0093CD25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46EB1FA91EBF981B0093CD25 /* TileTV */;
+			targetProxy = 46EB1FCB1EBF981C0093CD25 /* PBXContainerItemProxy */;
+		};
+		46EB1FEE1EBF99120093CD25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46EB1FE21EBF99120093CD25 /* TileKit */;
+			targetProxy = 46EB1FED1EBF99120093CD25 /* PBXContainerItemProxy */;
+		};
+		46EB1FF01EBF99120093CD25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46EB1FA91EBF981B0093CD25 /* TileTV */;
+			targetProxy = 46EB1FEF1EBF99120093CD25 /* PBXContainerItemProxy */;
+		};
+		46EB1FF71EBF99120093CD25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46EB1FE21EBF99120093CD25 /* TileKit */;
+			targetProxy = 46EB1FF61EBF99120093CD25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		462AAC0615B3EDD30058E14C /* InfoPlist.strings */ = {
@@ -780,6 +1442,14 @@
 				462AAC0715B3EDD30058E14C /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		46EB1FB51EBF981B0093CD25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46EB1FB61EBF981B0093CD25 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -794,13 +1464,16 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -808,7 +1481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -827,7 +1500,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yetanotheriphoneapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AE803BC-3E12-4ABF-92BD-2C954A81D187";
@@ -844,14 +1518,18 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -865,7 +1543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -881,13 +1559,16 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -895,7 +1576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -914,7 +1595,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yetanotheriphoneapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "19C34308-BC65-4C67-9732-06C19B6C4B72";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "19C34308-BC65-4C67-9732-06C19B6C4B72";
@@ -933,12 +1615,512 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yetanotheriphoneapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
+		};
+		46EB1FD11EBF981C0093CD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		46EB1FD21EBF981C0093CD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		46EB1FD31EBF981C0093CD25 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = "Ad Hoc";
+		};
+		46EB1FD41EBF981C0093CD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TileTV.app/TileTV";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		46EB1FD51EBF981C0093CD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TileTV.app/TileTV";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		46EB1FD61EBF981C0093CD25 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TileTV.app/TileTV";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = "Ad Hoc";
+		};
+		46EB1FD71EBF981C0093CD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_TARGET_NAME = TileTV;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		46EB1FD81EBF981C0093CD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_TARGET_NAME = TileTV;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		46EB1FD91EBF981C0093CD25 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_TARGET_NAME = TileTV;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = "Ad Hoc";
+		};
+		46EB1FFB1EBF99120093CD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		46EB1FFC1EBF99120093CD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		46EB1FFD1EBF99120093CD25 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Ad Hoc";
+		};
+		46EB20001EBF99120093CD25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TileTV.app/TileTV";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		46EB20011EBF99120093CD25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TileTV.app/TileTV";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		46EB20021EBF99120093CD25 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = HK64RUWW3P;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = TileKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TileTV.app/TileTV";
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = "Ad Hoc";
 		};
 /* End XCBuildConfiguration section */
 
@@ -962,6 +2144,51 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		46EB1FDA1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EB1FD11EBF981C0093CD25 /* Debug */,
+				46EB1FD21EBF981C0093CD25 /* Release */,
+				46EB1FD31EBF981C0093CD25 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46EB1FDB1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EB1FD41EBF981C0093CD25 /* Debug */,
+				46EB1FD51EBF981C0093CD25 /* Release */,
+				46EB1FD61EBF981C0093CD25 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46EB1FDC1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EB1FD71EBF981C0093CD25 /* Debug */,
+				46EB1FD81EBF981C0093CD25 /* Release */,
+				46EB1FD91EBF981C0093CD25 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46EB1FFA1EBF99120093CD25 /* Build configuration list for PBXNativeTarget "TileKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EB1FFB1EBF99120093CD25 /* Debug */,
+				46EB1FFC1EBF99120093CD25 /* Release */,
+				46EB1FFD1EBF99120093CD25 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		46EB1FFF1EBF99120093CD25 /* Build configuration list for PBXNativeTarget "TileKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46EB20001EBF99120093CD25 /* Debug */,
+				46EB20011EBF99120093CD25 /* Release */,
+				46EB20021EBF99120093CD25 /* Ad Hoc */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

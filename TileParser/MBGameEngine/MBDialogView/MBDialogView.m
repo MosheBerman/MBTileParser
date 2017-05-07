@@ -349,7 +349,7 @@
     //  Prepare a transform for the slide animations
     //
     
-    CGAffineTransform t;
+    CGAffineTransform t = CGAffineTransformIdentity;
     
     if(animation == MBDialogViewAnimationSlideDown){
         t = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -[self frame].size.height);

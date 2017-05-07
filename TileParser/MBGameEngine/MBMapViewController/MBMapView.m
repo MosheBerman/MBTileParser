@@ -101,7 +101,9 @@
         
         NSString *source = [workingSet source];
         
-        UIImage *tilesheet = [UIImage imageNamed:source];
+        NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+        
+        UIImage *tilesheet = [UIImage imageNamed:source inBundle:bundle compatibleWithTraitCollection:self.traitCollection];
         
         //
         //  Get the dimensions and tilesize of the tilesheet
@@ -156,8 +158,13 @@
                         [tile setTileData:tileProperties[key]];
                     }
                     
+                    if (!tile)
+                    {
+                        NSLog(@"Tile is nil, we're about to crash.");
+                    }
                     
                     [cache addObject:tile];
+                    
                 }
             }
         }

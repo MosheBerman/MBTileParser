@@ -10,7 +10,9 @@
 //  This class handles tilesets
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreGraphics;
+@import UIKit;
 
 @interface MBTileSet : NSObject
 

@@ -6,7 +6,8 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+@import CoreGraphics;
 
 #import "MBSpriteView.h"
 

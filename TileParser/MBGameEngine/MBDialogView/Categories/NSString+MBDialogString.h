@@ -6,7 +6,9 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import UIKit;
+@import CoreGraphics;
 
 @interface NSString (MBDialogString)
 

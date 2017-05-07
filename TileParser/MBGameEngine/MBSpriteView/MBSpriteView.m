@@ -40,7 +40,8 @@
 
 - (NSDictionary *)animationsDictionaryFromFile:(NSString *)name{
 	
-    NSURL *url = [[NSBundle mainBundle] URLForResource:name withExtension:@"plist"];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSURL *url = [bundle URLForResource:name withExtension:@"plist"];
 	NSError *error = nil;
     
 	NSDictionary *serialization = [NSPropertyListSerialization propertyListWithData:[NSData dataWithContentsOfURL:url] options:NSPropertyListImmutable format:NULL error:&error];
@@ -53,7 +54,7 @@
 	NSDictionary *metadata = [serialization objectForKey:@"metadata"];
 	NSString *imageName = [metadata objectForKey:@"textureFileName"];
 	
-    UIImage *sourceImage = [UIImage imageNamed:imageName];
+    UIImage *sourceImage = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:self.traitCollection];
 	
     if (!sourceImage) {
         NSLog(@"Can't load image, returning nil");

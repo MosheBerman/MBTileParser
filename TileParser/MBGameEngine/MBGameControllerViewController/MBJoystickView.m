@@ -59,8 +59,9 @@
         _lastPoint = _stickPosition;
         _shouldRepeat = YES;
         
+#if !TARGET_OS_TV
         [self setMultipleTouchEnabled:NO];
-        
+#endif
         self.layer.cornerRadius = _joystickRadius;
         [self setColor:[UIColor lightGrayColor]];
     }

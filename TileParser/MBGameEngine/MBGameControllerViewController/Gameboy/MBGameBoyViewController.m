@@ -78,7 +78,7 @@
     }
 }
 
-- (NSUInteger)supportedInterfaceOrientations{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return UIInterfaceOrientationMaskLandscape;
     }else{
@@ -106,13 +106,14 @@
 
 - (void)displayControls{
 
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     MBJoystickView *joystick = [self joystick];
     [joystick setThumbRadius:44];
     [joystick setDeadRadius:10.0f];
     [[self view] addSubview:joystick];
     
-    [joystick setBackgroundImage:[UIImage imageNamed:@"dpad"]];
-    [joystick setThumbImage:[UIImage imageNamed:@"joystick"]];
+    [joystick setBackgroundImage:[UIImage imageNamed:@"dpad" inBundle:bundle compatibleWithTraitCollection:self.traitCollection]];
+    [joystick setThumbImage:[UIImage imageNamed:@"joystick" inBundle:bundle compatibleWithTraitCollection:self.traitCollection]];
 
     [[self view] addSubview:[self buttonA]];
     [[self buttonA] setRadius:kButtonDiameter/2];

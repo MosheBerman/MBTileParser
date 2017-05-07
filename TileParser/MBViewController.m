@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Moshe Berman. All rights reserved.
 //
 
+@import CoreGraphics;
+
 #import "MBViewController.h"
 
 #import "MBGameEngine/MBGameEngine.h"
@@ -56,7 +58,7 @@
     }
 }
 
-- (NSUInteger)supportedInterfaceOrientations{
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         return UIInterfaceOrientationMaskLandscape;
     }else{
@@ -367,9 +369,9 @@
 
 - (void)showAlert
 {
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Hello" message:nil preferredStyle:(UIAlertControllerStyleAlert)];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:(UIAlertActionStyleDefault) handler:nil]];
+    [self presentViewController:alertController animated:YES completion:false];
     
 }
 

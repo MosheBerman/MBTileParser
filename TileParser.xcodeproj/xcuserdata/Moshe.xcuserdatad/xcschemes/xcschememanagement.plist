@@ -4,15 +4,50 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TileKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>TileParser.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TileTV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>462AABF815B3EDD30058E14C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46EB1FA91EBF981B0093CD25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46EB1FBE1EBF981B0093CD25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46EB1FC91EBF981B0093CD25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46EB1FE21EBF99120093CD25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46EB1FEA1EBF99120093CD25</key>
 		<dict>
 			<key>primary</key>
 			<true/>

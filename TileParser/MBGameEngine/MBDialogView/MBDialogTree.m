@@ -48,9 +48,9 @@
 
 + (MBDialogTree *)dialogTreeWithDictionary:(NSDictionary *)dictionary
 {
-    for (NSDictionary *treeNodeData in dictionary[@"nodes"]) {
-//        MBDialogTreeNode *node = [MBDialogTreeNode nodeWithDictionary:dictionary];
-    }
+//    for (NSDictionary *treeNodeData in dictionary[@"nodes"]) {
+//
+//    }
     
     MBDialogTree *tree = [MBDialogTree new];
     

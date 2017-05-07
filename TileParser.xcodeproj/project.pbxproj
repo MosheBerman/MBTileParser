@@ -210,6 +210,8 @@
 		46EB208E1EBF9C790093CD25 /* zack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09E160F02F5003BA9B9 /* zack.plist */; };
 		46EB208F1EBF9C790093CD25 /* zack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E09F160F02F5003BA9B9 /* zack.png */; };
 		46EB20901EBF9C830093CD25 /* Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46CD08BF1724899B009882D2 /* Sample.plist */; };
+		46EB20911EBF9FB40093CD25 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02D160F02CE003BA9B9 /* dpad.png */; };
+		46EB20921EBF9FB40093CD25 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02E160F02CE003BA9B9 /* joystick.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1256,6 +1258,8 @@
 				46EB20821EBF9C790093CD25 /* zack-down-3.png in Resources */,
 				46EB208D1EBF9C790093CD25 /* zack@2x.tps in Resources */,
 				46EB20871EBF9C790093CD25 /* zack-right-2.png in Resources */,
+				46EB20911EBF9FB40093CD25 /* dpad.png in Resources */,
+				46EB20921EBF9FB40093CD25 /* joystick.png in Resources */,
 				46EB20771EBF9C790093CD25 /* explorer.png in Resources */,
 				46EB20721EBF9C5A0093CD25 /* world-sample.json in Resources */,
 				46EB20851EBF9C790093CD25 /* zack-left-3.png in Resources */,
@@ -2153,6 +2157,7 @@
 				46EB1FD31EBF981C0093CD25 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46EB1FDB1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTVTests" */ = {
 			isa = XCConfigurationList;
@@ -2162,6 +2167,7 @@
 				46EB1FD61EBF981C0093CD25 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46EB1FDC1EBF981C0093CD25 /* Build configuration list for PBXNativeTarget "TileTVUITests" */ = {
 			isa = XCConfigurationList;
@@ -2171,6 +2177,7 @@
 				46EB1FD91EBF981C0093CD25 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46EB1FFA1EBF99120093CD25 /* Build configuration list for PBXNativeTarget "TileKit" */ = {
 			isa = XCConfigurationList;
@@ -2180,6 +2187,7 @@
 				46EB1FFD1EBF99120093CD25 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		46EB1FFF1EBF99120093CD25 /* Build configuration list for PBXNativeTarget "TileKitTests" */ = {
 			isa = XCConfigurationList;
@@ -2189,6 +2197,7 @@
 				46EB20021EBF99120093CD25 /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

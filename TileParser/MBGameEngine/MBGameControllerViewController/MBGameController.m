@@ -7,10 +7,12 @@
 //
 
 #import "MBGameController.h"
+#import "MBControllerOutput.h"
 
-@interface MBGameController ()
+@interface MBGameController () <MBControllerInput>
 
 @property (nonatomic, strong) GCController *controller;
+@property (nonatomic, strong) NSMutableSet <MBControllerOutput> *observers;
 
 @end
 
@@ -20,6 +22,7 @@
 {
     self = [super init];
     if (self) {
+        _observers = [NSMutableSet<MBControllerOutput> set];
         [self _observeControllerChanges];
     }
     return self;
@@ -55,17 +58,51 @@
             self.controller = controller;
             self.controller.microGamepad.allowsRotation = YES;
             
+            __weak MBGameController *weakSelf = self;
+            
             self.controller.microGamepad.buttonA.pressedChangedHandler = ^(GCControllerButtonInput * _Nonnull button, float value, BOOL pressed)
             {
-                
+                if (weakSelf)
+                {
+                    MBGameController *c = weakSelf;
+                    
+                    if (pressed)
+                    {
+                        [c dispatchButtonPressedNotificationWithSender:MBControllerInputButtonA];
+                    }
+                    else
+                    {
+                        [c dispatchButtonReleasedNotificationWithSender:MBControllerInputButtonA];
+                    }
+                }
             };
             
             self.controller.microGamepad.dpad.valueChangedHandler = ^(GCControllerDirectionPad * _Nonnull dpad, float xValue, float yValue) {
                 
+                if (weakSelf)
+                {
+                    MBGameController *c = weakSelf;
+                    
+                    [c dispatchJoystickChangedNotificationWithVelocity:CGPointMake(xValue, yValue)];
+                    
+                }
             };
             
             self.controller.microGamepad.buttonX.pressedChangedHandler = ^(GCControllerButtonInput * _Nonnull button, float value, BOOL pressed) {
                 
+                if(weakSelf)
+                {
+                    MBGameController *c = weakSelf;
+                    
+                    if (pressed)
+                    {
+                        [c dispatchButtonPressedNotificationWithSender:MBControllerInputButtonX];
+                    }
+                    else
+                    {
+                        [c dispatchButtonReleasedNotificationWithSender:MBControllerInputButtonX];
+                    }
+                }
             };
             
             break;
@@ -84,31 +121,33 @@
     }
 }
 
-// MARK: -
-
-- (void)addObserver:(id)observer
-{
-    
+- (void)addObserver:(id)observer{
+    [[self observers] addObject:observer];
 }
 
-- (void)removeObserver:(id)observer;
-{
-    
+- (void)removeObserver:(id)observer{
+    if ([[self observers] containsObject:observer]) {
+        [[self observers] removeObject:observer];
+    }
 }
 
-- (void)dispatchButtonPressedNotificationWithSender:(id)sender;
-{
-    
+- (void)dispatchButtonPressedNotificationWithSender:(MBControllerInputButton)sender{
+    for (id<MBControllerOutput> observer in [self observers]) {
+        [observer gameController:self buttonPressedWithSender:sender];
+    }
 }
 
-- (void)dispatchButtonReleasedNotificationWithSender:(id)sender;
-{
-    
+- (void)dispatchButtonReleasedNotificationWithSender:(MBControllerInputButton)sender{
+    for (id<MBControllerOutput> observer in [self observers]) {
+        [observer gameController:self buttonReleasedWithSender:sender];
+    }
 }
 
-- (void)dispatchJoystickChangedNotificationWithSender:(id)sender;
-{
-    
+- (void)dispatchJoystickChangedNotificationWithVelocity:(CGPoint)velocity{
+    for (id<MBControllerOutput> observer in [self observers]) {
+        [observer gameController:self joystickValueChangedWithVelocity:velocity];
+    }
 }
+
 
 @end

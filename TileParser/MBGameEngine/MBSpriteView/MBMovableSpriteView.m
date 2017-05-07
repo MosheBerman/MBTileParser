@@ -8,9 +8,13 @@
 
 #import "MBMovableSpriteView.h"
 
-#import "MBControllerEvent.h"
+#import "MBControllerOutput.h"
 
 #import "MBJoystickView.h"
+
+@interface MBMovableSpriteView () <MBControllerOutput>
+
+@end
 
 @implementation MBMovableSpriteView
 
@@ -157,16 +161,18 @@
 
 #pragma mark - Game Controller Support
 
-- (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
+- (void)gameController:(id<MBControllerInput>)controller buttonPressedWithSender:(MBControllerInputButton)sender;
+{
     
 }
 
-- (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender{
+- (void)gameController:(id<MBControllerInput>)controller buttonReleasedWithSender:(MBControllerInputButton)sender;
+{
     
 }
 
-- (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
-    
+- (void)gameController:(id<MBControllerInput>)controller joystickValueChangedWithVelocity:(CGPoint)velocity;
+{
     //
     //  If we're mid-move, don't do anything.
     //
@@ -178,10 +184,6 @@
     //
     //  Setup...
     //
-    
-    MBJoystickView *joystick = value;
-    
-    CGPoint velocity = [joystick velocity];
     
     MBSpriteMovementDirection direction = [self directionFromVelocity:velocity];
     

@@ -14,7 +14,7 @@
 
 #import "UIView+Diagnostics.h"
 
-@interface MBViewController () <MBControllerEvent, MBSpriteMovementDelegate>
+@interface MBViewController () <MBControllerOutput, MBSpriteMovementDelegate>
 
 @property (nonatomic, strong) MBMovableSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
@@ -69,26 +69,23 @@
     }
 }
 
-#if TARGET_OS_TV
-
-#else
 #pragma mark - Game Controller Delegate
 
-- (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
-    if ([sender isEqual:[[self gameboyControls] buttonA]])
+- (void)gameController:(id<MBControllerInput>)controller buttonPressedWithSender:(MBControllerInputButton)sender{
+    if (sender == MBControllerInputButtonA)
     {
         
     }
-    else if ([sender isEqual:[[self gameboyControls] buttonB]])
+    else if (sender == MBControllerInputButtonX)
     {
         
     }
 }
 
-- (void)gameController:(MBControllerViewController *)controller buttonReleasedWithSender:(id)sender
+- (void)gameController:(id<MBControllerInput>)controller buttonReleasedWithSender:(MBControllerInputButton)sender
 {
-    if ([sender isEqual:[[self gameboyControls] buttonA]]) {
-        
+    if (sender == MBControllerInputButtonA)
+    {
         if(![[self dialogView] isShowing] && ![self isShowingMenu])
         {
             MBDialogTree *tree = [self dialogTreeWithIdentifier:0];
@@ -105,7 +102,7 @@
             [[self dialogView] show];
         }
     }
-    else if ([sender isEqual:[[self gameboyControls] buttonB]])
+    else if (sender == MBControllerInputButtonX)
     {
         if ([[self dialogView] isShowing])
         {
@@ -115,11 +112,10 @@
     }
 }
 
-- (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
+- (void)gameController:(id<MBControllerInput>)controller joystickValueChangedWithVelocity:(CGPoint)velocity
+{
     
 }
-
-#endif
 
 #pragma mark - Movement Delegate
 
@@ -339,10 +335,10 @@
 #if TARGET_OS_TV
     
     MBGameController *controller = [[MBGameController alloc] init];
-    self.controller = controller;
-    [self.controller pickBestController];
     [controller addObserver:[self player]];
     [controller addObserver:self];
+    self.controller = controller;
+    [self.controller pickBestController];
     
 #else
     //

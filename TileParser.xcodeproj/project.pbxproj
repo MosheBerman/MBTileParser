@@ -146,7 +146,6 @@
 		46EB204E1EBF9AFF0093CD25 /* MBControllerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E033160F02CE003BA9B9 /* MBControllerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB204F1EBF9AFF0093CD25 /* MBControllerButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E02F160F02CE003BA9B9 /* MBControllerButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB20501EBF9AFF0093CD25 /* MBJoystickView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E035160F02CE003BA9B9 /* MBJoystickView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46EB20511EBF9AFF0093CD25 /* MBControllerEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E031160F02CE003BA9B9 /* MBControllerEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB20521EBF9AFF0093CD25 /* MBControllerToggling.h in Headers */ = {isa = PBXBuildFile; fileRef = 4669E032160F02CE003BA9B9 /* MBControllerToggling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB20531EBF9AFF0093CD25 /* MBGameState.h in Headers */ = {isa = PBXBuildFile; fileRef = 463C65B616D5E85300C4EC51 /* MBGameState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46EB20541EBF9AFF0093CD25 /* MBMapState.h in Headers */ = {isa = PBXBuildFile; fileRef = 46CD08B517247B58009882D2 /* MBMapState.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,6 +211,11 @@
 		46EB20901EBF9C830093CD25 /* Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46CD08BF1724899B009882D2 /* Sample.plist */; };
 		46EB20911EBF9FB40093CD25 /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02D160F02CE003BA9B9 /* dpad.png */; };
 		46EB20921EBF9FB40093CD25 /* joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 4669E02E160F02CE003BA9B9 /* joystick.png */; };
+		46EB20A61EBFC78D0093CD25 /* MBGameController.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB20A41EBFC78D0093CD25 /* MBGameController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20A71EBFC78D0093CD25 /* MBGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB20A51EBFC78D0093CD25 /* MBGameController.m */; };
+		46EB20A81EBFC78D0093CD25 /* MBGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EB20A51EBFC78D0093CD25 /* MBGameController.m */; };
+		46EB20AB1EBFC8E90093CD25 /* MBControllerInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB20A91EBFC8E90093CD25 /* MBControllerInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46EB20AC1EBFC8E90093CD25 /* MBControllerOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 46EB20AA1EBFC8E90093CD25 /* MBControllerOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,7 +303,6 @@
 		4669E02E160F02CE003BA9B9 /* joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joystick.png; sourceTree = "<group>"; };
 		4669E02F160F02CE003BA9B9 /* MBControllerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerButton.h; sourceTree = "<group>"; };
 		4669E030160F02CE003BA9B9 /* MBControllerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBControllerButton.m; sourceTree = "<group>"; };
-		4669E031160F02CE003BA9B9 /* MBControllerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerEvent.h; sourceTree = "<group>"; };
 		4669E032160F02CE003BA9B9 /* MBControllerToggling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerToggling.h; sourceTree = "<group>"; };
 		4669E033160F02CE003BA9B9 /* MBControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerViewController.h; sourceTree = "<group>"; };
 		4669E034160F02CE003BA9B9 /* MBControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBControllerViewController.m; sourceTree = "<group>"; };
@@ -412,6 +415,10 @@
 		46EB1FEB1EBF99120093CD25 /* TileKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46EB1FF21EBF99120093CD25 /* TileKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TileKitTests.m; sourceTree = "<group>"; };
 		46EB1FF41EBF99120093CD25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46EB20A41EBFC78D0093CD25 /* MBGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGameController.h; sourceTree = "<group>"; };
+		46EB20A51EBFC78D0093CD25 /* MBGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGameController.m; sourceTree = "<group>"; };
+		46EB20A91EBFC8E90093CD25 /* MBControllerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerInput.h; sourceTree = "<group>"; };
+		46EB20AA1EBFC8E90093CD25 /* MBControllerOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBControllerOutput.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,13 +559,16 @@
 		46669B0B160F99A300CD1197 /* Base Classes */ = {
 			isa = PBXGroup;
 			children = (
+				46EB20A91EBFC8E90093CD25 /* MBControllerInput.h */,
+				46EB20AA1EBFC8E90093CD25 /* MBControllerOutput.h */,
+				46EB20A41EBFC78D0093CD25 /* MBGameController.h */,
+				46EB20A51EBFC78D0093CD25 /* MBGameController.m */,
 				4669E033160F02CE003BA9B9 /* MBControllerViewController.h */,
 				4669E034160F02CE003BA9B9 /* MBControllerViewController.m */,
 				4669E02F160F02CE003BA9B9 /* MBControllerButton.h */,
 				4669E030160F02CE003BA9B9 /* MBControllerButton.m */,
 				4669E035160F02CE003BA9B9 /* MBJoystickView.h */,
 				4669E036160F02CE003BA9B9 /* MBJoystickView.m */,
-				4669E031160F02CE003BA9B9 /* MBControllerEvent.h */,
 				4669E032160F02CE003BA9B9 /* MBControllerToggling.h */,
 			);
 			name = "Base Classes";
@@ -936,7 +946,6 @@
 				46EB204E1EBF9AFF0093CD25 /* MBControllerViewController.h in Headers */,
 				46EB204F1EBF9AFF0093CD25 /* MBControllerButton.h in Headers */,
 				46EB20501EBF9AFF0093CD25 /* MBJoystickView.h in Headers */,
-				46EB20511EBF9AFF0093CD25 /* MBControllerEvent.h in Headers */,
 				46EB20521EBF9AFF0093CD25 /* MBControllerToggling.h in Headers */,
 				46EB20531EBF9AFF0093CD25 /* MBGameState.h in Headers */,
 				46EB20541EBF9AFF0093CD25 /* MBMapState.h in Headers */,
@@ -956,6 +965,9 @@
 				46EB20621EBF9AFF0093CD25 /* MBMapViewController.h in Headers */,
 				46EB20631EBF9AFF0093CD25 /* MBTileSet.h in Headers */,
 				46EB20641EBF9AFF0093CD25 /* MBMapMetadata.h in Headers */,
+				46EB20AB1EBFC8E90093CD25 /* MBControllerInput.h in Headers */,
+				46EB20AC1EBFC8E90093CD25 /* MBControllerOutput.h in Headers */,
+				46EB20A61EBFC78D0093CD25 /* MBGameController.h in Headers */,
 				46EB20651EBF9AFF0093CD25 /* MBMovableSpriteView.h in Headers */,
 				46EB20661EBF9AFF0093CD25 /* MBSelfMovingSpriteView.h in Headers */,
 				46EB20671EBF9AFF0093CD25 /* MBSpriteMovementDelegate.h in Headers */,
@@ -1319,6 +1331,7 @@
 				46EB203E1EBF994B0093CD25 /* MBMapViewController.m in Sources */,
 				46EB20291EBF994B0093CD25 /* MBDialogTree.m in Sources */,
 				46EB20261EBF994B0093CD25 /* MBAnimatableView.m in Sources */,
+				46EB20A71EBFC78D0093CD25 /* MBGameController.m in Sources */,
 				462AAC0E15B3EDD30058E14C /* MBAppDelegate.m in Sources */,
 				46EB203B1EBF994B0093CD25 /* MBTileMapObject.m in Sources */,
 				46EB20281EBF994B0093CD25 /* MBDialogView.m in Sources */,
@@ -1371,6 +1384,7 @@
 				46EB20181EBF99380093CD25 /* UIView+Diagnostics.m in Sources */,
 				46EB20031EBF99380093CD25 /* NSString+MBDialogString.m in Sources */,
 				46EB200A1EBF99380093CD25 /* MBDialogTreeNode.m in Sources */,
+				46EB20A81EBFC78D0093CD25 /* MBGameController.m in Sources */,
 				46EB20061EBF99380093CD25 /* MBAnimatableView.m in Sources */,
 				46EB200D1EBF99380093CD25 /* MBControllerButton.m in Sources */,
 				46EB201E1EBF99380093CD25 /* MBMapViewController.m in Sources */,

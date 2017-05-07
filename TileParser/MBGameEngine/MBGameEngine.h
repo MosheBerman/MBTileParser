@@ -9,10 +9,12 @@
 #ifndef TileParser_MBGameEngine_h
 #define TileParser_MBGameEngine_h
 
-#import "MBControllerEvent.h"
+#import "MBControllerInput.h"
+#import "MBControllerOutput.h"
 
 #import "MBDialogViewController.h"
 
+#import "MBGameController.h"
 #import "MBGameBoyViewController.h"
 
 #import "MBMapViewController.h"

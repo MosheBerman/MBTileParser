@@ -8,13 +8,13 @@
 
 #import "MBControllerViewController.h"
 
-#import "MBControllerEvent.h"
+#import "MBControllerOutput.h"
 
 #import "MBJoystickView.h"
 
 #import "MBControllerButton.h"
 
-@interface MBControllerViewController ()
+@interface MBControllerViewController () <MBControllerInput>
 @property (nonatomic, strong) NSMutableSet *observers;
 @end
 
@@ -54,35 +54,46 @@
 
 #pragma mark - Input Notifications
 
-- (void)dispatchButtonPressedNotificationWithSender:(id)sender{
-    for (id<MBControllerEvent> observer in [self observers]) {
+- (void)dispatchButtonPressedNotificationWithSender:(MBControllerInputButton)sender{
+    for (id<MBControllerOutput> observer in [self observers]) {
         [observer gameController:self buttonPressedWithSender:sender];
     }
 }
 
-- (void)dispatchButtonReleasedNotificationWithSender:(id)sender{
-    for (id<MBControllerEvent> observer in [self observers]) {
+- (void)dispatchButtonReleasedNotificationWithSender:(MBControllerInputButton)sender{
+    for (id<MBControllerOutput> observer in [self observers]) {
         [observer gameController:self buttonReleasedWithSender:sender];
     }
 }
 
-- (void)dispatchJoystickChangedNotificationWithSender:(id)sender{
-    for (id<MBControllerEvent> observer in [self observers]) {
-        [observer gameController:self joystickValueChangedWithSender:sender];
+- (void)dispatchJoystickChangedNotificationWithVelocity:(CGPoint)velocity{
+    for (id<MBControllerOutput> observer in [self observers]) {
+        [observer gameController:self joystickValueChangedWithVelocity:velocity];
     }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([object isKindOfClass:[MBJoystickView class]]) {
         if ([keyPath isEqual:@"velocity"]) {
-            [self dispatchJoystickChangedNotificationWithSender:object];        
+            
+            MBJoystickView *joystick = object;
+            [self dispatchJoystickChangedNotificationWithVelocity:joystick.velocity];
         }
     }else if ([object isKindOfClass:[MBControllerButton class]]){
         if ([keyPath isEqual:@"isPressed"]) {
+            
+            MBControllerButton *button = object;
+            MBControllerInputButton buttonType = MBControllerInputButtonA;
+            
+            if ([button.titleLabel.text isEqualToString:@"B"])
+            {
+                buttonType = MBControllerInputButtonX;
+            }
+            
             if ([(MBControllerButton *)object isPressed]) {
-                [self dispatchButtonPressedNotificationWithSender:object];
+                [self dispatchButtonPressedNotificationWithSender:buttonType];
             }else{
-                [self dispatchButtonReleasedNotificationWithSender:object];
+                [self dispatchButtonReleasedNotificationWithSender:buttonType];
             }
         }
     }

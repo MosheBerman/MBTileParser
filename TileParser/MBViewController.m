@@ -18,7 +18,13 @@
 
 @property (nonatomic, strong) MBMovableSpriteView *player;
 @property (nonatomic, strong) MBMapViewController *mapViewController;
+
+#if TARGET_OS_TV
+@property (nonatomic, strong) MBGameController* controller;
+#else 
 @property (nonatomic, strong) MBGameBoyViewController *gameboyControls;
+#endif
+
 @property (nonatomic, strong) MBDialogView *dialogView;
 @property (nonatomic, strong) MBMenuView *menuView;
 
@@ -36,9 +42,6 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-
-    
 }
 
 - (void)viewDidUnload
@@ -66,6 +69,9 @@
     }
 }
 
+#if TARGET_OS_TV
+
+#else
 #pragma mark - Game Controller Delegate
 
 - (void)gameController:(MBControllerViewController *)controller buttonPressedWithSender:(id)sender{
@@ -112,6 +118,8 @@
 - (void)gameController:(MBControllerViewController *)controller joystickValueChangedWithSender:(id)value{
     
 }
+
+#endif
 
 #pragma mark - Movement Delegate
 
@@ -328,6 +336,15 @@
     [movingSprite setMovementDelegate:self];
     [movingSprite setMovementDataSource:[self mapViewController]];
     
+#if TARGET_OS_TV
+    
+    MBGameController *controller = [[MBGameController alloc] init];
+    self.controller = controller;
+    [self.controller pickBestController];
+    [controller addObserver:[self player]];
+    [controller addObserver:self];
+    
+#else
     //
     //  Set up the game controls
     //
@@ -337,6 +354,7 @@
     [controller addObserver:[self player]];
     [controller addObserver:self];
     [[self view] addSubview:[controller view]];
+#endif
     
     //
     //  Trigger automatic motion
